@@ -8,7 +8,50 @@
   <body>
     <a class="skip-link" href="#main-content">Skip to content</a>
 
-    <header class="site-header"></header>
+    <header class="site-header">
+      <div class="site-header__container container">
+        <a class="site-header__logo" href="./">Starter Kit</a>
+
+        <nav class="site-header__navigation primary-navigation" id="primary-navigation" aria-label="Primary navigation">
+          <ul class="primary-navigation__list">
+            <li class="primary-navigation__item">
+              <a class="primary-navigation__link" href="#services-title">Services</a>
+            </li>
+            <li class="primary-navigation__item">
+              <a class="primary-navigation__link" href="#benefits-title">Benefits</a>
+            </li>
+            <li class="primary-navigation__item">
+              <a class="primary-navigation__link" href="#portfolio-title">Portfolio</a>
+            </li>
+            <li class="primary-navigation__item">
+              <a class="primary-navigation__link" href="#process-title">How it works</a>
+            </li>
+            <li class="primary-navigation__item">
+              <a class="primary-navigation__link" href="#faq-title">Questions and answers</a>
+            </li>
+          </ul>
+        </nav>
+
+        <div class="site-header__actions">
+          <a class="site-header__contact" href="tel:+10000000000">+1 000 000 0000</a>
+          <a class="button button--primary button--sm" href="#contact-title">Contact us</a>
+        </div>
+
+        <button
+          class="site-header__menu-toggle"
+          type="button"
+          aria-label="Open primary navigation"
+          aria-expanded="false"
+          aria-controls="primary-navigation"
+        >
+          <span class="site-header__menu-icon" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
+        </button>
+      </div>
+    </header>
 
     <main id="main-content">
       <section class="hero" aria-labelledby="hero-title">

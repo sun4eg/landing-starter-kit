@@ -15,7 +15,7 @@ This roadmap tracks the development of a reusable, accessible, and production-re
 - [x] **HTML foundation** — Create the semantic document structure, shared metadata, landmarks, and content hierarchy.
 - [ ] **UI kit** — Build reusable, token-driven interface elements and document their states and variants.
 - [x] **Layout system** — Establish responsive grids, content wrappers, flow utilities, and consistent layout patterns.
-- [ ] **Header and navigation** — Implement an accessible responsive header with primary navigation and mobile behavior.
+- [x] **Header and navigation** — Implement an accessible responsive header with primary navigation and mobile behavior.
 - [ ] **Hero section** — Create a flexible introductory section with a clear value proposition and primary actions.
 - [ ] **Services section** — Provide a reusable structure for presenting services, products, or core offerings.
 - [ ] **Benefits section** — Present key advantages and supporting information in a concise, adaptable layout.

@@ -1,0 +1,29 @@
+.section {
+  padding-block: var(--section-padding-block);
+}
+
+.section--sm {
+  padding-block: calc(var(--section-padding-block) - var(--space-lg));
+}
+
+.section--lg {
+  padding-block: calc(var(--section-padding-block) + var(--space-lg));
+}
+
+.flow > * + * {
+  margin-block-start: var(--flow-space, var(--space-md));
+}
+
+.cluster {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--cluster-gap, var(--space-sm));
+  align-items: var(--cluster-alignment, center);
+  justify-content: var(--cluster-justification, flex-start);
+}
+
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--stack-gap, var(--space-md));
+}

@@ -33,10 +33,6 @@ a {
   outline-offset: var(--focus-ring-offset);
 }
 
-.section {
-  padding-block: var(--section-padding-block);
-}
-
 .visually-hidden {
   position: absolute;
   width: var(--border-width);

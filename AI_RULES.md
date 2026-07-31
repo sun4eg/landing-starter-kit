@@ -45,3 +45,33 @@ These rules apply to all AI assistants working on this project.
 - Fix any build errors caused by the changes before reporting completion.
 - List every file changed, created, or deleted during the task.
 - Briefly explain the changes and their purpose.
+
+## 6. Implementation Workflow
+
+Each implementation should normally be completed in a single task.
+
+The AI assistant must:
+
+1. Read the relevant project documentation and existing implementation.
+2. Define a small and predictable public API before writing code.
+3. Implement the requested component or feature.
+4. Perform a self-review of its own changes.
+5. Fix any Critical, Major, or clear Minor issues found during the self-review.
+6. Run `npm run build` and resolve all build errors.
+7. Verify that unrelated files were not modified.
+8. Report:
+   - the final public API;
+   - every changed, created, or deleted file;
+   - validation results;
+   - any intentional limitations or deferred improvements.
+
+Additional human review is optional and should be requested only when:
+
+- the component is architecturally complex;
+- JavaScript behavior or state management is involved;
+- accessibility is non-trivial;
+- the implementation changes shared APIs or design tokens;
+- the resulting code appears inconsistent or unclear.
+
+The AI assistant must never run `git commit` or `git push`.
+Commits are performed only by the project owner.

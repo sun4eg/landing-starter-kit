@@ -1,0 +1,13 @@
+.text {
+  color: var(--color-text-primary);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-base);
+}
+
+.text--muted {
+  color: var(--color-text-secondary);
+}
+
+.text--center {
+  text-align: center;
+}

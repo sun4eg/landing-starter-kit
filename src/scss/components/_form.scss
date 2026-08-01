@@ -1,0 +1,83 @@
+.form {
+  display: grid;
+  gap: var(--space-md);
+}
+
+.form__field {
+  position: relative;
+  min-width: var(--space-0);
+}
+
+.form__label {
+  position: absolute;
+  inset-block-start: var(--space-0);
+  inset-inline-start: calc(var(--space-sm) - var(--space-3xs));
+  max-width: calc(var(--size-full) - (var(--space-sm) * 2));
+  padding-inline: var(--space-3xs);
+  color: var(--color-secondary-500);
+  background-color: var(--color-transparent);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-tight);
+  overflow-wrap: anywhere;
+  pointer-events: none;
+  transform: translateY(calc((var(--control-height-lg) / 2) - 50%));
+  transform-origin: left top;
+  transition:
+    color var(--duration-fast) var(--ease-standard),
+    background-color var(--duration-fast) var(--ease-standard),
+    font-size var(--duration-fast) var(--ease-standard),
+    transform var(--duration-fast) var(--ease-standard);
+}
+
+.form__input,
+.form__textarea {
+  width: var(--size-full);
+  min-width: var(--space-0);
+  padding: var(--space-2xs) var(--space-sm);
+  color: var(--color-text-primary);
+  background-color: var(--color-background);
+  border: var(--border-width) solid var(--color-border);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-base);
+}
+
+.form__input {
+  min-height: var(--control-height-lg);
+}
+
+.form__textarea {
+  resize: vertical;
+}
+
+.form__input::placeholder,
+.form__textarea::placeholder {
+  color: var(--color-transparent);
+}
+
+.form__textarea + .form__label {
+  transform: translateY(var(--space-2xs));
+}
+
+.form__input:is(:focus, :not(:placeholder-shown), :autofill, :-webkit-autofill) + .form__label,
+.form__textarea:is(:focus, :not(:placeholder-shown), :autofill, :-webkit-autofill) + .form__label {
+  color: var(--color-text-primary);
+  background-color: var(--color-background);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-tight);
+  transform: translateY(-50%);
+}
+
+.form__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+}
+
+.form__actions > .button {
+  max-width: var(--size-full);
+  white-space: normal;
+  overflow-wrap: anywhere;
+}

@@ -23,7 +23,7 @@ This roadmap tracks the development of a reusable, accessible, and production-re
 - [x] **Process section** — Describe a sequence of steps or workflow with clear semantic relationships.
 - [x] **Reviews section** — Add an accessible pattern for testimonials, ratings, and customer attribution.
 - [x] **FAQ section** — Implement a keyboard-accessible question-and-answer disclosure pattern.
-- [ ] **Contact form** — Create an accessible form with validation, submission states, and clear error feedback.
+- [x] **Contact form** — Create an accessible form with validation, submission states, and clear error feedback.
 - [ ] **Footer** — Add reusable secondary navigation, legal information, contact details, and attribution areas.
 - [ ] **JavaScript modules** — Implement small independent ES Modules for interactive behaviors and shared utilities.
 - [ ] **Accessibility audit** — Verify keyboard navigation, focus management, semantics, contrast, motion preferences, and assistive-technology support.

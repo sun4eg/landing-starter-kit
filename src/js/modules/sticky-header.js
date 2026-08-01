@@ -1,4 +1,5 @@
 const stickyHeaderSelector = '[data-sticky-header]'
+const enhancedAttribute = 'data-sticky-header-enhanced'
 const defaultThreshold = 16
 
 function getThreshold(header) {
@@ -9,11 +10,13 @@ function getThreshold(header) {
 }
 
 export function initStickyHeaders(scope = document) {
-  const headers = [...scope.querySelectorAll(stickyHeaderSelector)].map((header) => ({
-    header,
-    threshold: getThreshold(header),
-    isScrolled: header.classList.contains('is-scrolled'),
-  }))
+  const headers = [...scope.querySelectorAll(stickyHeaderSelector)]
+    .filter((header) => !header.hasAttribute(enhancedAttribute))
+    .map((header) => ({
+      header,
+      threshold: getThreshold(header),
+      isScrolled: header.classList.contains('is-scrolled'),
+    }))
 
   if (headers.length === 0) {
     return
@@ -46,5 +49,6 @@ export function initStickyHeaders(scope = document) {
   }
 
   updateHeaders()
+  headers.forEach(({ header }) => header.setAttribute(enhancedAttribute, ''))
   window.addEventListener('scroll', requestUpdate, { passive: true })
 }

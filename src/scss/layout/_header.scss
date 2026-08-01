@@ -6,6 +6,26 @@
   border-bottom: var(--border-width) solid var(--color-border);
 }
 
+.site-header--sticky {
+  position: sticky;
+  top: var(--sticky-header-offset);
+  z-index: var(--z-sticky);
+  width: var(--size-full);
+}
+
+.site-header--shadow {
+  transition: box-shadow var(--duration-fast) var(--ease-standard);
+}
+
+.site-header--shadow.is-scrolled {
+  box-shadow: var(--shadow-sm);
+}
+
+.site-header--sticky ~ #main-content:target,
+.site-header--sticky ~ #main-content :target {
+  scroll-margin-block-start: var(--sticky-header-scroll-offset);
+}
+
 .site-header__container {
   display: flex;
   align-items: center;

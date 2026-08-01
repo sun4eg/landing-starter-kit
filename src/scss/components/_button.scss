@@ -38,11 +38,6 @@
     box-shadow var(--duration-fast) var(--ease-standard);
 }
 
-.button:focus-visible {
-  outline: var(--focus-ring-width) solid var(--color-focus-ring);
-  outline-offset: var(--focus-ring-offset);
-}
-
 @media (hover: hover) {
   .button:not(:disabled, [aria-disabled='true']):hover {
     background-color: var(--button-background-hover);
@@ -146,7 +141,7 @@
 
 .button__icon svg {
   display: block;
-  width: 100%;
-  height: 100%;
+  width: var(--size-full);
+  height: var(--size-full);
   fill: currentColor;
 }

@@ -26,7 +26,7 @@ dd {
 }
 
 body {
-  min-height: 100vh;
+  min-height: var(--viewport-height);
 }
 
 ul[role='list'],
@@ -42,7 +42,7 @@ svg,
 video,
 canvas {
   display: block;
-  max-width: 100%;
+  max-width: var(--size-full);
 }
 
 img,

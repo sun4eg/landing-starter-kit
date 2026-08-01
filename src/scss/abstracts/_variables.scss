@@ -1,9 +1,11 @@
 :root {
   /* Layout */
   --viewport-min-width: 20rem;
+  --viewport-height: 100vh;
   --container-max-width: 75rem;
   --container-padding-inline: clamp(1rem, 0.65rem + 1.5vw, 2rem);
   --section-padding-block: clamp(3.5rem, 2.25rem + 5vw, 7.5rem);
+  --section-header-spacing: var(--space-xl);
   --content-measure: 42rem;
   --header-height: calc(var(--control-height-md) + (var(--space-sm) * 2) + var(--border-width));
   --sticky-offset: var(--space-xl);
@@ -38,6 +40,7 @@
   /* Secondary palette */
   --color-secondary-50: #f8fafc;
   --color-secondary-100: #f1f5f9;
+  --color-secondary-200: #dbe3ed;
   --color-secondary-500: #64748b;
   --color-secondary-600: #475569;
   --color-secondary-900: #0f172a;
@@ -56,7 +59,7 @@
   --color-background: var(--color-neutral-0);
   --color-surface: var(--color-secondary-50);
   --color-surface-emphasis: var(--color-secondary-100);
-  --color-border: #dbe3ed;
+  --color-border: var(--color-secondary-200);
   --color-link: var(--color-primary-600);
   --color-focus-ring: var(--color-primary-500);
   --color-selection-background: var(--color-primary-100);

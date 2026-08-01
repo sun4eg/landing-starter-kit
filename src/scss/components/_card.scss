@@ -64,3 +64,92 @@
     color: var(--color-primary-900);
   }
 }
+
+.project-card {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  gap: var(--space-md);
+  min-width: var(--space-0);
+  padding-block-end: var(--space-lg);
+  border-block-end: var(--border-width) solid var(--color-border);
+}
+
+.project-card__media {
+  min-width: var(--space-0);
+  overflow: hidden;
+  background-color: var(--color-surface-emphasis);
+  border-radius: var(--radius-lg);
+}
+
+.project-card__media-placeholder,
+.project-card__media > img,
+.project-card__media > picture {
+  width: var(--size-full);
+  aspect-ratio: var(--aspect-ratio-landscape);
+}
+
+.project-card__media-placeholder {
+  display: grid;
+  place-items: center;
+  color: var(--color-primary-600);
+  background-color: var(--color-primary-50);
+}
+
+.project-card__media-placeholder span {
+  width: var(--space-3xl);
+  aspect-ratio: var(--aspect-ratio-square);
+  background-color: var(--color-background);
+  border: var(--border-width) solid currentColor;
+  border-radius: var(--radius-full);
+  box-shadow: var(--shadow-sm);
+}
+
+.project-card__media > img,
+.project-card__media > picture > img {
+  width: var(--size-full);
+  height: var(--size-full);
+  object-fit: cover;
+}
+
+.project-card__content {
+  display: grid;
+  grid-template-rows: auto auto 1fr auto;
+  gap: var(--space-xs);
+  min-width: var(--space-0);
+}
+
+.project-card__meta {
+  color: var(--color-primary-600);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-base);
+  letter-spacing: var(--letter-spacing-normal);
+  text-transform: uppercase;
+  overflow-wrap: anywhere;
+}
+
+.project-card__title {
+  font-size: var(--font-size-xl);
+  line-height: var(--line-height-heading);
+  overflow-wrap: anywhere;
+}
+
+.project-card__description {
+  overflow-wrap: anywhere;
+}
+
+.project-card__link {
+  justify-self: start;
+  color: var(--color-link);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-base);
+  overflow-wrap: anywhere;
+  transition: color var(--duration-fast) var(--ease-standard);
+}
+
+@media (hover: hover) {
+  .project-card__link:hover {
+    color: var(--color-primary-900);
+  }
+}

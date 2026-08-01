@@ -1,0 +1,44 @@
+@use '../abstracts/breakpoints';
+
+.portfolio {
+  padding-block: var(--section-padding-block);
+  background-color: var(--color-surface);
+}
+
+.portfolio__header {
+  max-width: var(--content-measure);
+  margin-block-end: var(--space-xl);
+}
+
+.portfolio__grid {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(var(--space-0), 1fr));
+  gap: var(--space-xl) var(--space-lg);
+}
+
+.portfolio__grid > .project-card {
+  grid-column: span 4;
+}
+
+.portfolio__grid > .project-card--featured,
+.portfolio__grid > .project-card--wide {
+  grid-column: span 8;
+}
+
+@media (max-width: breakpoints.$tablet) {
+  .portfolio__grid {
+    grid-template-columns: repeat(2, minmax(var(--space-0), 1fr));
+  }
+
+  .portfolio__grid > .project-card,
+  .portfolio__grid > .project-card--featured,
+  .portfolio__grid > .project-card--wide {
+    grid-column: auto;
+  }
+}
+
+@media (max-width: breakpoints.$mobile) {
+  .portfolio__grid {
+    grid-template-columns: minmax(var(--space-0), 1fr);
+  }
+}

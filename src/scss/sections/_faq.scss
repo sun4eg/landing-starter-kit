@@ -41,7 +41,7 @@
 
 .faq-cta--sticky {
   position: sticky;
-  inset-block-start: var(--sticky-offset);
+  top: var(--sticky-top);
   align-self: start;
 }
 
@@ -88,6 +88,6 @@
 
   .faq-cta--sticky {
     position: static;
-    inset-block-start: auto;
+    top: auto;
   }
 }

@@ -1,6 +1,7 @@
 @use '../abstracts/breakpoints';
 
 .site-header {
+  height: var(--header-height);
   color: var(--color-text-primary);
   background-color: var(--color-background);
   border-bottom: var(--border-width) solid var(--color-border);
@@ -30,6 +31,7 @@
   display: flex;
   align-items: center;
   gap: var(--space-md);
+  height: var(--size-full);
   padding-block: var(--space-sm);
 }
 

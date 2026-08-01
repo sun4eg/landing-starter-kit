@@ -16,7 +16,7 @@ This roadmap tracks the development of a reusable, accessible, and production-re
 - [x] **UI kit** — Build reusable, token-driven interface elements and document their states and variants.
 - [x] **Layout system** — Establish responsive grids, content wrappers, flow utilities, and consistent layout patterns.
 - [x] **Header and navigation** — Implement an accessible responsive header with primary navigation and mobile behavior.
-- [ ] **Hero section** — Create a flexible introductory section with a clear value proposition and primary actions.
+- [x] **Hero section** — Create a flexible introductory section with a clear value proposition and primary actions.
 - [ ] **Services section** — Provide a reusable structure for presenting services, products, or core offerings.
 - [ ] **Benefits section** — Present key advantages and supporting information in a concise, adaptable layout.
 - [ ] **Portfolio section** — Build a responsive showcase for projects, case studies, or selected work.

@@ -55,10 +55,38 @@
 
     <main id="main-content">
       <section class="hero" aria-labelledby="hero-title">
-        <header class="container">
-          <!-- Introduces the page and its primary purpose. -->
-          <h1 id="hero-title">Hero</h1>
-        </header>
+        <div class="hero__container container">
+          <div class="hero__content">
+            <header class="hero__heading section-heading">
+              <p class="section-heading__eyebrow">A flexible starting point</p>
+              <h1 class="section-heading__title" id="hero-title">A clear headline for your next landing page</h1>
+              <p class="section-heading__lead">
+                Introduce the offer, explain its value, and give visitors a confident next step with adaptable content.
+              </p>
+            </header>
+
+            <div class="hero__actions">
+              <a class="button button--primary button--lg" href="#services-title">Explore the offering</a>
+              <a class="button button--outline button--lg" href="#contact-title">Start a conversation</a>
+            </div>
+
+            <ul class="hero__trust-list text text--muted" role="list" aria-label="Key benefits">
+              <li class="hero__trust-item">Clear structure</li>
+              <li class="hero__trust-item">Responsive by default</li>
+              <li class="hero__trust-item">Easy to adapt</li>
+            </ul>
+          </div>
+
+          <figure class="hero__media">
+            <div class="hero__media-frame">
+              <div class="hero__media-placeholder">
+                <span>Visual preview area</span>
+              </div>
+              <div class="hero__decoration" aria-hidden="true"></div>
+            </div>
+            <figcaption class="visually-hidden">Placeholder for a product, service, or campaign visual.</figcaption>
+          </figure>
+        </div>
       </section>
 
       <section class="button-showcase section" aria-labelledby="button-showcase-title">

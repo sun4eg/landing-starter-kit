@@ -18,7 +18,7 @@ This roadmap tracks the development of a reusable, accessible, and production-re
 - [x] **Header and navigation** — Implement an accessible responsive header with primary navigation and mobile behavior.
 - [x] **Hero section** — Create a flexible introductory section with a clear value proposition and primary actions.
 - [x] **Services section** — Provide a reusable structure for presenting services, products, or core offerings.
-- [ ] **Benefits section** — Present key advantages and supporting information in a concise, adaptable layout.
+- [x] **Benefits section** — Present key advantages and supporting information in a concise, adaptable layout.
 - [ ] **Portfolio section** — Build a responsive showcase for projects, case studies, or selected work.
 - [ ] **Process section** — Describe a sequence of steps or workflow with clear semantic relationships.
 - [ ] **Reviews section** — Add an accessible pattern for testimonials, ratings, and customer attribution.

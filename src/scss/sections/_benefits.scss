@@ -1,0 +1,52 @@
+@use '../abstracts/breakpoints';
+
+.benefits {
+  padding-block: var(--section-padding-block);
+}
+
+.benefits__header {
+  max-width: var(--content-measure);
+  margin-block-end: var(--space-xl);
+}
+
+.benefits__list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(var(--space-0), 1fr));
+  gap: var(--space-0) var(--space-xl);
+  margin: var(--space-0);
+  padding: var(--space-0);
+}
+
+.benefit-item {
+  display: grid;
+  grid-template-columns: auto minmax(var(--space-0), 1fr);
+  grid-template-rows: auto 1fr;
+  gap: var(--space-xs) var(--space-md);
+  min-width: var(--space-0);
+  padding-block: var(--space-lg);
+  border-block-start: var(--border-width) solid var(--color-border);
+}
+
+.benefit-item__marker {
+  grid-row: 1 / span 2;
+  color: var(--color-primary-600);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-heading);
+}
+
+.benefit-item__title {
+  font-size: var(--font-size-xl);
+  line-height: var(--line-height-heading);
+  overflow-wrap: anywhere;
+}
+
+.benefit-item__description {
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: breakpoints.$tablet) {
+  .benefits__list {
+    grid-template-columns: minmax(var(--space-0), 1fr);
+  }
+}

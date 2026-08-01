@@ -10,8 +10,8 @@
   --header-height: calc(var(--control-height-md) + (var(--space-sm) * 2) + var(--border-width));
   --sticky-offset: var(--space-xl);
   --sticky-top: calc(var(--header-height) + var(--sticky-offset));
+  --scroll-offset: calc(var(--sticky-top) + var(--space-md));
   --sticky-header-offset: var(--space-0);
-  --sticky-header-scroll-offset: calc(var(--header-height) + var(--space-sm));
   --size-full: 100%;
   --aspect-ratio-square: 1;
   --aspect-ratio-landscape: 4 / 3;

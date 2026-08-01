@@ -22,11 +22,6 @@
   box-shadow: var(--shadow-sm);
 }
 
-.site-header--sticky ~ #main-content:target,
-.site-header--sticky ~ #main-content :target {
-  scroll-margin-block-start: var(--sticky-header-scroll-offset);
-}
-
 .site-header__container {
   position: relative;
   display: flex;

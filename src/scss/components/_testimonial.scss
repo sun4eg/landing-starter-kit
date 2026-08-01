@@ -1,0 +1,84 @@
+.testimonial {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+  min-width: var(--space-0);
+  height: var(--size-full);
+  padding: var(--space-lg);
+  background-color: var(--color-background);
+  border-block-start: var(--border-width) solid var(--color-primary-500);
+  border-radius: var(--radius-lg);
+}
+
+.testimonial__rating {
+  color: var(--color-primary-600);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-base);
+  overflow-wrap: anywhere;
+}
+
+.testimonial__quote {
+  flex: 1 1 auto;
+  color: var(--color-text-primary);
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-relaxed);
+  overflow-wrap: anywhere;
+}
+
+.testimonial__footer {
+  display: grid;
+  grid-template-columns: auto minmax(var(--space-0), 1fr);
+  gap: var(--space-sm);
+  align-items: center;
+  min-width: var(--space-0);
+  padding-block-start: var(--space-md);
+  border-block-start: var(--border-width) solid var(--color-border);
+}
+
+.testimonial__avatar {
+  display: grid;
+  place-items: center;
+  width: var(--control-height-lg);
+  aspect-ratio: var(--aspect-ratio-square);
+  overflow: hidden;
+  color: var(--color-text-primary);
+  background-color: var(--color-surface-emphasis);
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-tight);
+}
+
+.testimonial__avatar > img,
+.testimonial__avatar > picture,
+.testimonial__avatar > picture > img {
+  width: var(--size-full);
+  height: var(--size-full);
+  object-fit: cover;
+}
+
+.testimonial__author {
+  display: grid;
+  gap: var(--space-3xs);
+  min-width: var(--space-0);
+}
+
+.testimonial__author:only-child {
+  grid-column: 1 / -1;
+}
+
+.testimonial__name {
+  color: var(--color-text-primary);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-heading);
+  overflow-wrap: anywhere;
+}
+
+.testimonial__meta {
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-sm);
+  line-height: var(--line-height-base);
+  overflow-wrap: anywhere;
+}

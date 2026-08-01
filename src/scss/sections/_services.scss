@@ -1,0 +1,29 @@
+@use '../abstracts/breakpoints';
+
+.services {
+  padding-block: var(--section-padding-block);
+  background-color: var(--color-surface);
+}
+
+.services__header {
+  max-width: var(--content-measure);
+  margin-block-end: var(--space-xl);
+}
+
+.services__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(var(--space-0), 1fr));
+  gap: var(--space-lg);
+}
+
+@media (max-width: breakpoints.$tablet) {
+  .services__grid {
+    grid-template-columns: repeat(2, minmax(var(--space-0), 1fr));
+  }
+}
+
+@media (max-width: breakpoints.$mobile) {
+  .services__grid {
+    grid-template-columns: minmax(var(--space-0), 1fr);
+  }
+}

@@ -20,7 +20,7 @@ This roadmap tracks the development of a reusable, accessible, and production-re
 - [x] **Services section** — Provide a reusable structure for presenting services, products, or core offerings.
 - [x] **Benefits section** — Present key advantages and supporting information in a concise, adaptable layout.
 - [x] **Portfolio section** — Build a responsive showcase for projects, case studies, or selected work.
-- [ ] **Process section** — Describe a sequence of steps or workflow with clear semantic relationships.
+- [x] **Process section** — Describe a sequence of steps or workflow with clear semantic relationships.
 - [ ] **Reviews section** — Add an accessible pattern for testimonials, ratings, and customer attribution.
 - [ ] **FAQ section** — Implement a keyboard-accessible question-and-answer disclosure pattern.
 - [ ] **Contact form** — Create an accessible form with validation, submission states, and clear error feedback.

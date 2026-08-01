@@ -513,10 +513,214 @@
       </section>
 
       <section class="faq" aria-labelledby="faq-title">
-        <header class="container">
-          <!-- Groups frequently asked questions and answers. -->
-          <h2 id="faq-title">Frequently Asked Questions</h2>
-        </header>
+        <div class="faq__layout container">
+          <header class="faq__header section-heading">
+            <p class="section-heading__eyebrow">Questions and answers</p>
+            <h2 class="section-heading__title" id="faq-title">Helpful details before getting started</h2>
+            <p class="section-heading__lead">
+              Find straightforward answers to common questions about scope, collaboration, timing, and next steps.
+            </p>
+          </header>
+
+          <div class="faq__content accordion" data-accordion>
+            <article class="accordion__item" data-accordion-item>
+              <h3 class="accordion__heading">
+                <button
+                  class="accordion__trigger"
+                  id="faq-trigger-1"
+                  type="button"
+                  aria-expanded="true"
+                  aria-controls="faq-panel-1"
+                  data-accordion-trigger
+                  disabled
+                >
+                  <span class="accordion__label">What information is useful at the beginning?</span>
+                  <span class="accordion__icon" aria-hidden="true"></span>
+                </button>
+              </h3>
+              <div
+                class="accordion__panel"
+                id="faq-panel-1"
+                role="region"
+                aria-labelledby="faq-trigger-1"
+                data-accordion-panel
+              >
+                <div class="accordion__content text text--muted">
+                  <p>
+                    A clear objective, relevant context, known constraints, and any existing material provide a useful
+                    starting point. Missing details can be clarified together.
+                  </p>
+                </div>
+              </div>
+            </article>
+
+            <article class="accordion__item" data-accordion-item>
+              <h3 class="accordion__heading">
+                <button
+                  class="accordion__trigger"
+                  id="faq-trigger-2"
+                  type="button"
+                  aria-expanded="true"
+                  aria-controls="faq-panel-2"
+                  data-accordion-trigger
+                  disabled
+                >
+                  <span class="accordion__label">Can the scope adapt after work begins?</span>
+                  <span class="accordion__icon" aria-hidden="true"></span>
+                </button>
+              </h3>
+              <div
+                class="accordion__panel"
+                id="faq-panel-2"
+                role="region"
+                aria-labelledby="faq-trigger-2"
+                data-accordion-panel
+              >
+                <div class="accordion__content text text--muted">
+                  <p>
+                    Yes. New information can lead to sensible adjustments, provided their effect on priorities,
+                    responsibilities, timing, and outcomes is made clear.
+                  </p>
+                </div>
+              </div>
+            </article>
+
+            <article class="accordion__item" data-accordion-item>
+              <h3 class="accordion__heading">
+                <button
+                  class="accordion__trigger"
+                  id="faq-trigger-3"
+                  type="button"
+                  aria-expanded="true"
+                  aria-controls="faq-panel-3"
+                  data-accordion-trigger
+                  disabled
+                >
+                  <span class="accordion__label">How are feedback and decisions handled?</span>
+                  <span class="accordion__icon" aria-hidden="true"></span>
+                </button>
+              </h3>
+              <div
+                class="accordion__panel"
+                id="faq-panel-3"
+                role="region"
+                aria-labelledby="faq-trigger-3"
+                data-accordion-panel
+              >
+                <div class="accordion__content text text--muted">
+                  <p>
+                    Feedback is gathered at agreed checkpoints, connected to the project goals, and translated into
+                    clear decisions before the next stage proceeds.
+                  </p>
+                </div>
+              </div>
+            </article>
+
+            <article class="accordion__item" data-accordion-item>
+              <h3 class="accordion__heading">
+                <button
+                  class="accordion__trigger"
+                  id="faq-trigger-4"
+                  type="button"
+                  aria-expanded="true"
+                  aria-controls="faq-panel-4"
+                  data-accordion-trigger
+                  disabled
+                >
+                  <span class="accordion__label">What determines the expected timeline?</span>
+                  <span class="accordion__icon" aria-hidden="true"></span>
+                </button>
+              </h3>
+              <div
+                class="accordion__panel"
+                id="faq-panel-4"
+                role="region"
+                aria-labelledby="faq-trigger-4"
+                data-accordion-panel
+              >
+                <div class="accordion__content text text--muted">
+                  <p>
+                    Timing depends on scope, complexity, dependencies, and how quickly key decisions can be made. A
+                    realistic sequence is established before delivery starts.
+                  </p>
+                </div>
+              </div>
+            </article>
+
+            <article class="accordion__item" data-accordion-item>
+              <h3 class="accordion__heading">
+                <button
+                  class="accordion__trigger"
+                  id="faq-trigger-5"
+                  type="button"
+                  aria-expanded="true"
+                  aria-controls="faq-panel-5"
+                  data-accordion-trigger
+                  disabled
+                >
+                  <span class="accordion__label">Can different services be combined?</span>
+                  <span class="accordion__icon" aria-hidden="true"></span>
+                </button>
+              </h3>
+              <div
+                class="accordion__panel"
+                id="faq-panel-5"
+                role="region"
+                aria-labelledby="faq-trigger-5"
+                data-accordion-panel
+              >
+                <div class="accordion__content text text--muted">
+                  <p>
+                    Services can be combined when that creates a more coherent result. The final structure should stay
+                    focused on the actual need rather than adding unnecessary activity.
+                  </p>
+                </div>
+              </div>
+            </article>
+
+            <article class="accordion__item" data-accordion-item>
+              <h3 class="accordion__heading">
+                <button
+                  class="accordion__trigger"
+                  id="faq-trigger-6"
+                  type="button"
+                  aria-expanded="true"
+                  aria-controls="faq-panel-6"
+                  data-accordion-trigger
+                  disabled
+                >
+                  <span class="accordion__label">What happens after the main work is complete?</span>
+                  <span class="accordion__icon" aria-hidden="true"></span>
+                </button>
+              </h3>
+              <div
+                class="accordion__panel"
+                id="faq-panel-6"
+                role="region"
+                aria-labelledby="faq-trigger-6"
+                data-accordion-panel
+              >
+                <div class="accordion__content text text--muted">
+                  <p>
+                    Completion includes the agreed deliverables and relevant handover context. Ongoing guidance can be
+                    arranged separately when continued support would be valuable.
+                  </p>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <aside class="faq__aside faq-cta faq-cta--sticky" aria-labelledby="faq-cta-title">
+            <p class="faq-cta__eyebrow">Need more help?</p>
+            <h3 class="faq-cta__title" id="faq-cta-title">Didn't find your answer?</h3>
+            <p class="faq-cta__text text text--muted">
+              Tell us what you need and we’ll help you identify the right next step.
+            </p>
+            <div class="faq-cta__actions">
+              <a class="button button--primary button--full" href="#contact-title">Contact us</a>
+            </div>
+          </aside>
+        </div>
       </section>
 
       <section class="contact" aria-labelledby="contact-title">

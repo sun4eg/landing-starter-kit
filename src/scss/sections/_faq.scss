@@ -1,0 +1,93 @@
+@use '../abstracts/breakpoints';
+
+.faq {
+  padding-block: var(--section-padding-block);
+}
+
+.faq__layout {
+  display: grid;
+  grid-template-areas:
+    'header empty'
+    'content aside';
+  grid-template-columns: minmax(var(--space-0), 2fr) minmax(var(--space-0), 1fr);
+  gap: var(--space-xl);
+  align-items: start;
+}
+
+.faq__header {
+  grid-area: header;
+  max-width: var(--content-measure);
+}
+
+.faq__content {
+  grid-area: content;
+  max-width: var(--content-measure);
+}
+
+.faq__aside {
+  grid-area: aside;
+}
+
+.faq-cta {
+  display: grid;
+  gap: var(--space-sm);
+  min-width: var(--space-0);
+  padding: var(--space-lg);
+  background-color: var(--color-surface);
+  border: var(--border-width) solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+}
+
+.faq-cta--sticky {
+  position: sticky;
+  inset-block-start: var(--sticky-offset);
+  align-self: start;
+}
+
+.faq-cta__eyebrow {
+  color: var(--color-primary-600);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-base);
+  letter-spacing: var(--letter-spacing-normal);
+  text-transform: uppercase;
+}
+
+.faq-cta__title {
+  font-size: var(--font-size-xl);
+  line-height: var(--line-height-heading);
+  overflow-wrap: anywhere;
+}
+
+.faq-cta__text {
+  overflow-wrap: anywhere;
+}
+
+.faq-cta__actions {
+  margin-block-start: var(--space-xs);
+}
+
+.faq-cta__actions > .button {
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: breakpoints.$tablet) {
+  .faq__layout {
+    grid-template-areas:
+      'header'
+      'content'
+      'aside';
+    grid-template-columns: minmax(var(--space-0), 1fr);
+  }
+
+  .faq__aside {
+    max-width: var(--content-measure);
+  }
+
+  .faq-cta--sticky {
+    position: static;
+    inset-block-start: auto;
+  }
+}

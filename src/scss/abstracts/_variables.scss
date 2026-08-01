@@ -5,6 +5,7 @@
   --container-padding-inline: clamp(1rem, 0.65rem + 1.5vw, 2rem);
   --section-padding-block: clamp(3.5rem, 2.25rem + 5vw, 7.5rem);
   --content-measure: 42rem;
+  --sticky-offset: var(--space-xl);
   --size-full: 100%;
   --aspect-ratio-square: 1;
   --aspect-ratio-landscape: 4 / 3;

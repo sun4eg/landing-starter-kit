@@ -1552,13 +1552,285 @@
       <section class="playground-section section" aria-labelledby="footer-title">
         <div class="container">
           <header class="playground-section__header section-heading">
-            <p class="section-heading__eyebrow">Future section</p>
+            <p class="section-heading__eyebrow">Layout and navigation</p>
             <h2 class="playground-section__title section-heading__title" id="footer-title">Footer</h2>
             <p class="playground-section__description section-heading__lead">
-              Footer composition and content resilience will be documented here.
+              Compose a semantic page ending from the Site Footer layout block and its separate Footer Navigation
+              pattern.
             </p>
           </header>
-          <div class="playground-demo playground-demo--placeholder"><p>Demo area reserved for the Footer.</p></div>
+
+          <div class="playground-section__content stack">
+            <article class="playground-demo-group stack" aria-labelledby="footer-architecture-title">
+              <header class="playground-demo-group__header stack">
+                <h3 class="playground-demo-group__title" id="footer-architecture-title">Architecture</h3>
+                <p class="playground-demo-group__description text text--muted">
+                  Site Footer owns page-wide layout; Footer Navigation owns a semantic link group within that layout.
+                </p>
+              </header>
+              <div class="playground-demo playground-explainer-grid">
+                <div class="playground-comparison__item stack">
+                  <h4>Site Footer</h4>
+                  <p class="text text--muted">
+                    <code>.site-footer</code> composes brand, description, navigation, contact details, and the lower
+                    copyright or legal row. Page-specific copy remains content rather than reusable API.
+                  </p>
+                </div>
+                <div class="playground-comparison__item stack">
+                  <h4>Footer Navigation</h4>
+                  <p class="text text--muted">
+                    <code>.footer-navigation</code> presents one purposeful link group. It remains separate from the
+                    Footer layout even though the two patterns are commonly composed together.
+                  </p>
+                </div>
+              </div>
+            </article>
+
+            <article class="playground-demo-group stack" aria-labelledby="footer-complete-title">
+              <header class="playground-demo-group__header stack">
+                <h3 class="playground-demo-group__title" id="footer-complete-title">Complete Footer composition</h3>
+                <p class="playground-demo-group__description text text--muted">
+                  This constrained preview uses the production structure with resilient brand copy, navigation,
+                  contact information, and a wrapping lower row.
+                </p>
+              </header>
+              <div class="playground-demo">
+                <footer class="site-footer playground-footer-demo">
+                  <div class="site-footer__container container">
+                    <div class="site-footer__top">
+                      <div class="site-footer__brand">
+                        <a class="site-footer__logo" href="#footer-title">
+                          Landing Starter Kit Documentation Foundation
+                        </a>
+                        <p class="site-footer__description">
+                          A reusable foundation for teams building clear, accessible, and responsive landing pages
+                          with content that can grow naturally across several lines.
+                        </p>
+                      </div>
+
+                      <nav
+                        class="site-footer__navigation footer-navigation"
+                        aria-label="Footer preview documentation navigation"
+                      >
+                        <h4 class="site-footer__heading">Documentation</h4>
+                        <ul class="footer-navigation__list" role="list">
+                          <li class="footer-navigation__item">
+                            <a class="footer-navigation__link" href="#footer-architecture-title">Architecture</a>
+                          </li>
+                          <li class="footer-navigation__item">
+                            <a class="footer-navigation__link" href="#footer-responsive-title">
+                              Responsive layout and long-content behavior
+                            </a>
+                          </li>
+                          <li class="footer-navigation__item">
+                            <a class="footer-navigation__link" href="#footer-api-title">Public API</a>
+                          </li>
+                        </ul>
+                      </nav>
+
+                      <div class="site-footer__contact">
+                        <h4 class="site-footer__heading" id="footer-contact-title">Contact</h4>
+                        <address class="site-footer__address">
+                          <ul class="site-footer__contact-list" role="list">
+                            <li>
+                              <a class="site-footer__contact-link" href="tel:+10000000000">+1 000 000 0000</a>
+                            </li>
+                            <li>
+                              <a
+                                class="site-footer__contact-link"
+                                href="mailto:documentation.contact@example.com"
+                              >
+                                documentation.contact@example.com
+                              </a>
+                            </li>
+                            <li>123 Example Street, Example City</li>
+                          </ul>
+                        </address>
+                      </div>
+                    </div>
+
+                    <div class="site-footer__bottom">
+                      <p class="site-footer__copyright">© 2026 Landing Starter Kit. All rights reserved.</p>
+                      <nav aria-label="Footer preview publication requirements">
+                        <ul class="site-footer__legal" role="list">
+                          <li>
+                            <a class="site-footer__legal-link" href="#footer-guidance-title">
+                              Privacy policy publication requirements
+                            </a>
+                          </li>
+                          <li>
+                            <a class="site-footer__legal-link" href="#footer-optional-title">
+                              Optional legal destinations
+                            </a>
+                          </li>
+                        </ul>
+                      </nav>
+                    </div>
+                  </div>
+                </footer>
+              </div>
+            </article>
+
+            <article class="playground-demo-group stack" aria-labelledby="footer-responsive-title">
+              <header class="playground-demo-group__header stack">
+                <h3 class="playground-demo-group__title" id="footer-responsive-title">
+                  Brand and responsive behavior
+                </h3>
+                <p class="playground-demo-group__description text text--muted">
+                  The page Footer below demonstrates a short brand; the isolated preview above deliberately exercises
+                  a longer name, multi-line description, long labels, and a long email address.
+                </p>
+              </header>
+              <div class="playground-demo playground-explainer-grid">
+                <div class="playground-comparison__item stack">
+                  <h4>Layout progression</h4>
+                  <p class="text text--muted">
+                    The existing shared breakpoints move the top area from multiple columns through a reduced-column
+                    composition to a single mobile stack. The compact lower row wraps and then stacks naturally.
+                  </p>
+                </div>
+                <div class="playground-comparison__item stack">
+                  <h4>Intrinsic content</h4>
+                  <p class="text text--muted">
+                    Brand copy, links, contact values, and legal labels wrap without fixed heights. Source order remains
+                    the reading and focus order as the visual layout changes.
+                  </p>
+                </div>
+              </div>
+            </article>
+
+            <article class="playground-demo-group stack" aria-labelledby="footer-optional-title">
+              <header class="playground-demo-group__header stack">
+                <h3 class="playground-demo-group__title" id="footer-optional-title">Optional content</h3>
+                <p class="playground-demo-group__description text text--muted">
+                  Optional regions are omitted with their wrappers so the Footer retains natural height and does not
+                  expose empty groups.
+                </p>
+              </header>
+              <div class="playground-demo">
+                <ul class="playground-instructions">
+                  <li>The production Footer composes no CTA, so this preview does not invent one.</li>
+                  <li>
+                    Legal navigation is optional; omit its complete landmark when published policy destinations do not
+                    exist. The preview links lead to local documentation, not fictional policy pages.
+                  </li>
+                  <li>Fewer navigation links remain a valid intrinsic list and require no empty items.</li>
+                  <li>Long contact values wrap, and Footer regions grow with their content rather than fixed heights.</li>
+                </ul>
+              </div>
+            </article>
+
+            <article class="playground-demo-group stack" aria-labelledby="footer-contact-guidance-title">
+              <header class="playground-demo-group__header stack">
+                <h3 class="playground-demo-group__title" id="footer-contact-guidance-title">Contact semantics</h3>
+                <p class="playground-demo-group__description text text--muted">
+                  Reserve <code>&lt;address&gt;</code> for contact details associated with the Footer owner.
+                </p>
+              </header>
+              <div class="playground-demo playground-guidance">
+                <ul class="playground-guidance__list">
+                  <li>Use <code>tel:</code> for phone numbers and <code>mailto:</code> for email addresses.</li>
+                  <li>Keep a physical address as text unless a real linked destination is available.</li>
+                  <li>Do not place unrelated organization descriptions or legal copy inside <code>&lt;address&gt;</code>.</li>
+                </ul>
+              </div>
+            </article>
+
+            <article class="playground-demo-group stack" aria-labelledby="footer-guidance-title">
+              <header class="playground-demo-group__header stack">
+                <h3 class="playground-demo-group__title" id="footer-guidance-title">Usage guidance</h3>
+                <p class="playground-demo-group__description text text--muted">
+                  Keep the Footer concise, semantic, and aligned with real site destinations.
+                </p>
+              </header>
+              <div class="playground-demo playground-guidance">
+                <ul class="playground-guidance__list">
+                  <li>Keep link groups purposeful and give multiple navigation landmarks distinct accessible labels.</li>
+                  <li>Use meaningful link text, real contact links, and published legal destinations.</li>
+                  <li>Keep descriptions concise and do not force columns to equal heights.</li>
+                  <li>Preserve logical source order and sufficient text and focus-indicator contrast.</li>
+                  <li>Maintain the copyright year manually or adopt an intentional dynamic strategy elsewhere.</li>
+                  <li>Keep visual and source order aligned; the Footer should not become a component showcase.</li>
+                </ul>
+              </div>
+            </article>
+
+            <article class="playground-demo-group stack playground-api" aria-labelledby="footer-api-title">
+              <header class="playground-demo-group__header stack">
+                <h3 class="playground-demo-group__title" id="footer-api-title">Public BEM API</h3>
+                <p class="playground-demo-group__description text text--muted">
+                  Site Footer and Footer Navigation remain separate public blocks even when composed together.
+                </p>
+              </header>
+              <div class="playground-demo playground-api-grid">
+                <div class="playground-api__group stack">
+                  <h4>Site Footer layout</h4>
+                  <div class="playground-api__classes cluster">
+                    <code>.site-footer</code>
+                    <code>.site-footer__container</code>
+                    <code>.site-footer__top</code>
+                    <code>.site-footer__brand</code>
+                    <code>.site-footer__logo</code>
+                    <code>.site-footer__description</code>
+                    <code>.site-footer__heading</code>
+                    <code>.site-footer__navigation</code>
+                    <code>.site-footer__contact</code>
+                    <code>.site-footer__address</code>
+                    <code>.site-footer__contact-list</code>
+                    <code>.site-footer__contact-link</code>
+                    <code>.site-footer__bottom</code>
+                    <code>.site-footer__copyright</code>
+                    <code>.site-footer__legal</code>
+                    <code>.site-footer__legal-link</code>
+                  </div>
+                </div>
+                <div class="playground-api__group stack">
+                  <h4>Footer Navigation</h4>
+                  <div class="playground-api__classes cluster">
+                    <code>.footer-navigation</code>
+                    <code>.footer-navigation__list</code>
+                    <code>.footer-navigation__item</code>
+                    <code>.footer-navigation__link</code>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="playground-demo-group stack" aria-labelledby="footer-markup-title">
+              <header class="playground-demo-group__header stack">
+                <h3 class="playground-demo-group__title" id="footer-markup-title">Structural markup</h3>
+                <p class="playground-demo-group__description text text--muted">
+                  Keep navigation, contact information, and the lower row distinct inside the shared Footer container.
+                </p>
+              </header>
+              <div class="playground-demo">
+                <pre class="playground-code"><code>&lt;footer class=&quot;site-footer&quot;&gt;
+  &lt;div class=&quot;site-footer__container container&quot;&gt;
+    &lt;div class=&quot;site-footer__top&quot;&gt;
+      &lt;nav class=&quot;site-footer__navigation footer-navigation&quot;
+        aria-label=&quot;Footer navigation&quot;&gt;
+        &lt;ul class=&quot;footer-navigation__list&quot;&gt;
+          &lt;li class=&quot;footer-navigation__item&quot;&gt;
+            &lt;a class=&quot;footer-navigation__link&quot; href=&quot;#destination&quot;&gt;Destination&lt;/a&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/nav&gt;
+      &lt;div class=&quot;site-footer__contact&quot;&gt;
+        &lt;address class=&quot;site-footer__address&quot;&gt;
+          &lt;a class=&quot;site-footer__contact-link&quot; href=&quot;mailto:hello@example.com&quot;&gt;
+            hello@example.com
+          &lt;/a&gt;
+        &lt;/address&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;site-footer__bottom&quot;&gt;
+      &lt;p class=&quot;site-footer__copyright&quot;&gt;© 2026 Example.&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/footer&gt;</code></pre>
+              </div>
+            </article>
+          </div>
         </div>
       </section>
 
@@ -1576,7 +1848,7 @@
       </section>
     </main>
 
-    <footer class="site-footer">
+    <footer class="site-footer" aria-label="Playground page footer">
       <div class="site-footer__container container">
         <div class="site-footer__top">
           <div class="site-footer__brand">

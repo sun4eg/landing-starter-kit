@@ -75,7 +75,8 @@
 }
 
 .playground-card-grid,
-.playground-card-api-grid,
+.playground-api-grid,
+.playground-explainer-grid,
 .playground-comparison__grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(var(--space-0), 1fr));
@@ -91,6 +92,17 @@
   --stack-gap: var(--space-xs);
 }
 
+.playground-accordion-demo {
+  width: var(--size-full);
+  max-width: var(--content-measure);
+}
+
+.playground-code {
+  max-width: var(--size-full);
+  margin: var(--space-0);
+  overflow-x: auto;
+}
+
 @media (max-width: breakpoints.$tablet) {
   .playground-card-grid {
     grid-template-columns: repeat(2, minmax(var(--space-0), 1fr));
@@ -99,7 +111,8 @@
 
 @media (max-width: breakpoints.$mobile) {
   .playground-card-grid,
-  .playground-card-api-grid,
+  .playground-api-grid,
+  .playground-explainer-grid,
   .playground-comparison__grid {
     grid-template-columns: minmax(var(--space-0), 1fr);
   }

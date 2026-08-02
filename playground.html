@@ -101,18 +101,20 @@
         <div class="container">
           <header class="playground-section__header section-heading">
             <p class="section-heading__eyebrow">Component</p>
-            <h2 class="section-heading__title" id="buttons-title">Buttons</h2>
-            <p class="section-heading__lead">
+            <h2 class="playground-section__title section-heading__title" id="buttons-title">Buttons</h2>
+            <p class="playground-section__description section-heading__lead">
               Review the complete Button API across visual variants, sizes, semantics, composition, and resilient
               content.
             </p>
           </header>
 
-          <div class="playground-button-docs stack">
-            <article class="playground-demo__group stack">
-              <header class="stack">
-                <h3>Variants</h3>
-                <p class="text text--muted">Use the four supported visual treatments to express action hierarchy.</p>
+          <div class="playground-section__content stack">
+            <article class="playground-demo-group stack">
+              <header class="playground-demo-group__header stack">
+                <h3 class="playground-demo-group__title">Variants</h3>
+                <p class="playground-demo-group__description text text--muted">
+                  Use the four supported visual treatments to express action hierarchy.
+                </p>
               </header>
               <div class="playground-demo">
                 <div class="playground-demo__actions cluster">
@@ -124,12 +126,13 @@
               </div>
             </article>
 
-            <article class="playground-demo__group stack">
-              <header class="stack">
-                <h3>Sizes</h3>
-                <p class="text text--muted">
+            <article class="playground-demo-group stack">
+              <header class="playground-demo-group__header stack">
+                <h3 class="playground-demo-group__title">Sizes</h3>
+                <p class="playground-demo-group__description text text--muted">
                   <code>.button</code> uses the default medium size; <code>.button--md</code> is its explicit equivalent.
-                  Small is intended for compact interfaces. Prefer the default medium size for primary interactive actions.
+                  Small is intended for compact interfaces. Prefer the default medium size for primary interactive
+                  actions.
                 </p>
               </header>
               <div class="playground-demo">
@@ -142,19 +145,19 @@
               </div>
             </article>
 
-            <article class="playground-demo__group stack">
-              <header class="stack">
-                <h3>Width</h3>
-                <p class="text text--muted">
+            <article class="playground-demo-group stack">
+              <header class="playground-demo-group__header stack">
+                <h3 class="playground-demo-group__title">Width</h3>
+                <p class="playground-demo-group__description text text--muted">
                   Buttons use intrinsic width by default, while the full-width modifier fills its immediate container.
                 </p>
               </header>
               <div class="playground-demo stack">
-                <div class="playground-demo__group stack">
+                <div class="playground-demo-group stack">
                   <p class="playground-demo__label">Intrinsic width</p>
                   <button class="button button--primary" type="button">Intrinsic button</button>
                 </div>
-                <div class="playground-demo__group stack">
+                <div class="playground-demo-group stack">
                   <p class="playground-demo__label">Full width in a constrained container</p>
                   <div class="playground-demo__constraint">
                     <button class="button button--primary button--full" type="button">Full-width button</button>
@@ -163,10 +166,12 @@
               </div>
             </article>
 
-            <article class="playground-demo__group stack">
-              <header class="stack">
-                <h3>Element types</h3>
-                <p class="text text--muted">Use a button for actions and a link when navigating to a destination.</p>
+            <article class="playground-demo-group stack">
+              <header class="playground-demo-group__header stack">
+                <h3 class="playground-demo-group__title">Element types</h3>
+                <p class="playground-demo-group__description text text--muted">
+                  Use a button for actions and a link when navigating to a destination.
+                </p>
               </header>
               <div class="playground-demo">
                 <div class="playground-demo__actions cluster">
@@ -176,10 +181,12 @@
               </div>
             </article>
 
-            <article class="playground-demo__group stack">
-              <header class="stack">
-                <h3>Icon composition</h3>
-                <p class="text text--muted">Place a decorative icon before or after a meaningful text label.</p>
+            <article class="playground-demo-group stack">
+              <header class="playground-demo-group__header stack">
+                <h3 class="playground-demo-group__title">Icon composition</h3>
+                <p class="playground-demo-group__description text text--muted">
+                  Place a decorative icon before or after a meaningful text label.
+                </p>
               </header>
               <div class="playground-demo">
                 <div class="playground-demo__actions cluster">
@@ -203,10 +210,10 @@
               </div>
             </article>
 
-            <article class="playground-demo__group stack" aria-labelledby="button-states-title">
-              <header class="stack">
-                <h3 id="button-states-title">States</h3>
-                <p class="text text--muted">
+            <article class="playground-demo-group stack" aria-labelledby="button-states-title">
+              <header class="playground-demo-group__header stack">
+                <h3 class="playground-demo-group__title" id="button-states-title">States</h3>
+                <p class="playground-demo-group__description text text--muted">
                   Compare normal and disabled controls, then interact with enabled examples to inspect native hover,
                   active, and focus-visible states.
                 </p>
@@ -220,10 +227,10 @@
               </div>
             </article>
 
-            <article class="playground-demo__group stack">
-              <header class="stack">
-                <h3>Long-content resilience</h3>
-                <p class="text text--muted">
+            <article class="playground-demo-group stack">
+              <header class="playground-demo-group__header stack">
+                <h3 class="playground-demo-group__title">Long-content resilience</h3>
+                <p class="playground-demo-group__description text text--muted">
                   This constrained example verifies wrapping, comfortable block padding, and containment without
                   horizontal overflow.
                 </p>
@@ -238,7 +245,7 @@
             </article>
 
             <aside class="playground-guidance playground-demo stack" aria-labelledby="button-guidance-title">
-              <h3 id="button-guidance-title">Usage guidance</h3>
+              <h3 class="playground-guidance__title" id="button-guidance-title">Usage guidance</h3>
               <ul class="playground-guidance__list text">
                 <li>Use clear, verb-led labels.</li>
                 <li>Reserve primary styling for the main action.</li>
@@ -250,9 +257,11 @@
             </aside>
 
             <section class="playground-api playground-demo stack" aria-labelledby="button-api-title">
-              <header class="stack">
-                <h3 id="button-api-title">Public API reference</h3>
-                <p class="text text--muted">These are the supported classes for composing the Button component.</p>
+              <header class="playground-api__header stack">
+                <h3 class="playground-api__title" id="button-api-title">Public API reference</h3>
+                <p class="playground-api__description text text--muted">
+                  These are the supported classes for composing the Button component.
+                </p>
               </header>
 
               <dl class="playground-api__list stack">
@@ -305,19 +314,21 @@
         <div class="container">
           <header class="playground-section__header section-heading">
             <p class="section-heading__eyebrow">Foundation</p>
-            <h2 class="section-heading__title" id="typography-title">Typography</h2>
-            <p class="section-heading__lead">Review heading hierarchy and the existing body-text treatments.</p>
+            <h2 class="playground-section__title section-heading__title" id="typography-title">Typography</h2>
+            <p class="playground-section__description section-heading__lead">
+              Review heading hierarchy and the existing body-text treatments.
+            </p>
           </header>
 
           <div class="playground-demo stack">
-            <div class="playground-demo__group stack">
+            <div class="playground-demo-group stack">
               <p class="playground-demo__label">Headings</p>
               <h3>Level three heading</h3>
               <h4>Level four heading</h4>
               <h5>Level five heading</h5>
               <h6>Level six heading</h6>
             </div>
-            <div class="playground-demo__group stack">
+            <div class="playground-demo-group stack">
               <p class="playground-demo__label">Body text</p>
               <p class="text">Default body text communicates primary information with a comfortable reading line.</p>
               <p class="text text--muted">Muted body text supports descriptions and secondary information.</p>
@@ -331,8 +342,10 @@
         <div class="container">
           <header class="playground-section__header section-heading">
             <p class="section-heading__eyebrow">Component</p>
-            <h2 class="section-heading__title" id="section-heading-title">Section Heading</h2>
-            <p class="section-heading__lead">Review the reusable eyebrow, title, lead, and centered modifier.</p>
+            <h2 class="playground-section__title section-heading__title" id="section-heading-title">Section Heading</h2>
+            <p class="playground-section__description section-heading__lead">
+              Review the reusable eyebrow, title, lead, and centered modifier.
+            </p>
           </header>
 
           <div class="playground-demo stack">
@@ -352,8 +365,10 @@
         <div class="container">
           <header class="playground-section__header section-heading">
             <p class="section-heading__eyebrow">Future section</p>
-            <h2 class="section-heading__title" id="cards-title">Cards</h2>
-            <p class="section-heading__lead">Service, project, and testimonial examples will be documented here.</p>
+            <h2 class="playground-section__title section-heading__title" id="cards-title">Cards</h2>
+            <p class="playground-section__description section-heading__lead">
+              Service, project, and testimonial examples will be documented here.
+            </p>
           </header>
           <div class="playground-demo playground-demo--placeholder"><p>Demo area reserved for cards.</p></div>
         </div>
@@ -363,8 +378,10 @@
         <div class="container">
           <header class="playground-section__header section-heading">
             <p class="section-heading__eyebrow">Future section</p>
-            <h2 class="section-heading__title" id="accordion-title">Accordion</h2>
-            <p class="section-heading__lead">Accordion modes and interaction states will be documented here.</p>
+            <h2 class="playground-section__title section-heading__title" id="accordion-title">Accordion</h2>
+            <p class="playground-section__description section-heading__lead">
+              Accordion modes and interaction states will be documented here.
+            </p>
           </header>
           <div class="playground-demo playground-demo--placeholder"><p>Demo area reserved for Accordion.</p></div>
         </div>
@@ -374,8 +391,10 @@
         <div class="container">
           <header class="playground-section__header section-heading">
             <p class="section-heading__eyebrow">Future section</p>
-            <h2 class="section-heading__title" id="forms-title">Forms</h2>
-            <p class="section-heading__lead">Form fields, validation states, and actions will be documented here.</p>
+            <h2 class="playground-section__title section-heading__title" id="forms-title">Forms</h2>
+            <p class="playground-section__description section-heading__lead">
+              Form fields, validation states, and actions will be documented here.
+            </p>
           </header>
           <div class="playground-demo playground-demo--placeholder"><p>Demo area reserved for forms.</p></div>
         </div>
@@ -385,8 +404,10 @@
         <div class="container">
           <header class="playground-section__header section-heading">
             <p class="section-heading__eyebrow">Future section</p>
-            <h2 class="section-heading__title" id="navigation-title">Navigation</h2>
-            <p class="section-heading__lead">Navigation layouts and responsive behavior will be documented here.</p>
+            <h2 class="playground-section__title section-heading__title" id="navigation-title">Navigation</h2>
+            <p class="playground-section__description section-heading__lead">
+              Navigation layouts and responsive behavior will be documented here.
+            </p>
           </header>
           <div class="playground-demo playground-demo--placeholder"><p>Demo area reserved for Navigation.</p></div>
         </div>
@@ -396,8 +417,10 @@
         <div class="container">
           <header class="playground-section__header section-heading">
             <p class="section-heading__eyebrow">Future section</p>
-            <h2 class="section-heading__title" id="footer-title">Footer</h2>
-            <p class="section-heading__lead">Footer composition and content resilience will be documented here.</p>
+            <h2 class="playground-section__title section-heading__title" id="footer-title">Footer</h2>
+            <p class="playground-section__description section-heading__lead">
+              Footer composition and content resilience will be documented here.
+            </p>
           </header>
           <div class="playground-demo playground-demo--placeholder"><p>Demo area reserved for the Footer.</p></div>
         </div>
@@ -407,8 +430,10 @@
         <div class="container">
           <header class="playground-section__header section-heading">
             <p class="section-heading__eyebrow">Future section</p>
-            <h2 class="section-heading__title" id="tokens-title">Tokens</h2>
-            <p class="section-heading__lead">Existing color, spacing, type, and layout tokens will be documented here.</p>
+            <h2 class="playground-section__title section-heading__title" id="tokens-title">Tokens</h2>
+            <p class="playground-section__description section-heading__lead">
+              Existing color, spacing, type, and layout tokens will be documented here.
+            </p>
           </header>
           <div class="playground-demo playground-demo--placeholder"><p>Demo area reserved for tokens.</p></div>
         </div>

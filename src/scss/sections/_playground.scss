@@ -26,7 +26,7 @@
   border-style: dashed;
 }
 
-.playground-demo__group {
+.playground-demo-group {
   --stack-gap: var(--space-sm);
 }
 
@@ -40,7 +40,7 @@
   --cluster-alignment: flex-start;
 }
 
-.playground-button-docs {
+.playground-section__content {
   --stack-gap: var(--space-xl);
 }
 

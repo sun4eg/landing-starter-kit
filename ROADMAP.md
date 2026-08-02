@@ -25,6 +25,7 @@ This roadmap tracks the development of a reusable, accessible, and production-re
 - [x] **Reviews section** — Add an accessible pattern for testimonials, ratings, and customer attribution.
 - [x] **FAQ section** — Implement a keyboard-accessible question-and-answer disclosure pattern.
 - [x] **Contact form** — Create an accessible reusable form with native validation and a backend-ready structure.
+- [x] **Form controls** — Add native, accessible Checkbox, Radio, and Switch components with Playground documentation.
 - [x] **Footer** — Add reusable secondary navigation, contact details, copyright, and an extensible lower row.
 - [x] **JavaScript modules** — Implement small independent ES Modules for interactive behaviors and shared utilities.
 - [x] **Accessibility audit** — Verify keyboard navigation, focus management, semantics, contrast, motion preferences, and assistive-technology support.

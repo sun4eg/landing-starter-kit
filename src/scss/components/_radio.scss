@@ -1,0 +1,99 @@
+.radio {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto minmax(var(--space-0), 1fr);
+  align-items: start;
+  gap: var(--space-xs);
+  width: fit-content;
+  max-width: var(--size-full);
+  min-height: var(--control-height-md);
+  padding-block: var(--space-2xs);
+}
+
+.radio__input {
+  position: absolute;
+  inset: var(--space-0);
+  width: var(--size-full);
+  height: var(--size-full);
+  margin: var(--space-0);
+  cursor: pointer;
+  opacity: 0;
+}
+
+.radio__control {
+  display: grid;
+  place-items: center;
+  width: var(--control-icon-size-md);
+  aspect-ratio: var(--aspect-ratio-square);
+  margin-block-start: var(--space-3xs);
+  background-color: var(--color-background);
+  border: var(--border-width) solid var(--color-control-border);
+  border-radius: var(--radius-full);
+  transition:
+    background-color var(--duration-fast) var(--ease-standard),
+    border-color var(--duration-fast) var(--ease-standard);
+}
+
+.radio__control::after {
+  width: var(--control-icon-size-sm);
+  aspect-ratio: var(--aspect-ratio-square);
+  background-color: var(--color-primary-600);
+  border-radius: var(--radius-full);
+  content: '';
+  opacity: 0;
+  transform: scale(0);
+  transition:
+    opacity var(--duration-fast) var(--ease-standard),
+    transform var(--duration-fast) var(--ease-standard);
+}
+
+.radio__content {
+  display: grid;
+  gap: var(--space-3xs);
+  min-width: var(--space-0);
+}
+
+.radio__label {
+  color: var(--color-text-primary);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-base);
+  overflow-wrap: anywhere;
+}
+
+.radio__description {
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-sm);
+  line-height: var(--line-height-base);
+  overflow-wrap: anywhere;
+}
+
+.radio__input:checked + .radio__control {
+  border-color: var(--color-primary-600);
+}
+
+.radio__input:checked + .radio__control::after {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.radio__input:focus-visible + .radio__control {
+  outline: var(--focus-ring-width) solid var(--color-focus-ring);
+  outline-offset: var(--focus-ring-offset);
+}
+
+.radio__input:disabled {
+  cursor: not-allowed;
+}
+
+.radio__input:disabled ~ .radio__control,
+.radio__input:disabled ~ .radio__content {
+  opacity: var(--opacity-disabled);
+}
+
+@media (hover: hover) {
+  .radio__input:not(:disabled):hover + .radio__control {
+    background-color: var(--color-primary-50);
+    border-color: var(--color-primary-600);
+  }
+}

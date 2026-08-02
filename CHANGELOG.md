@@ -10,6 +10,7 @@ The format is based on Keep a Changelog, and this project adheres to Semantic Ve
 
 - Added a multi-page Component Playground with living documentation for reusable components, typography, navigation, Footer patterns, and design tokens.
 - Added Playground documentation navigation with synchronized current-section state across desktop and mobile presentations.
+- Added native Checkbox, Radio, and Switch components with complete Form Controls Playground documentation.
 
 ### Changed
 

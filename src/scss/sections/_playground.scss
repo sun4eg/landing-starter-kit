@@ -208,6 +208,26 @@
   max-width: var(--content-measure);
 }
 
+.playground-control-group {
+  min-width: var(--space-0);
+  margin: var(--space-0);
+}
+
+.playground-control-group__legend {
+  padding: var(--space-0);
+  margin-block-end: var(--space-md);
+  color: var(--color-text-primary);
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-heading);
+}
+
+.playground-control-list {
+  display: grid;
+  gap: var(--space-xs);
+  min-width: var(--space-0);
+}
+
 .playground-navigation-demo {
   width: var(--size-full);
   max-width: var(--container-max-width);

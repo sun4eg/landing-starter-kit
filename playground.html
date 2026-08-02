@@ -57,6 +57,7 @@
             <li class="primary-navigation__item"><a class="site-header__navigation-link primary-navigation__link" href="#cards-title" data-playground-navigation-link>Cards</a></li>
             <li class="primary-navigation__item"><a class="site-header__navigation-link primary-navigation__link" href="#accordion-title" data-playground-navigation-link>Accordion</a></li>
             <li class="primary-navigation__item"><a class="site-header__navigation-link primary-navigation__link" href="#forms-title" data-playground-navigation-link>Forms</a></li>
+            <li class="primary-navigation__item"><a class="site-header__navigation-link primary-navigation__link" href="#form-controls-title" data-playground-navigation-link>Form Controls</a></li>
             <li class="primary-navigation__item"><a class="site-header__navigation-link primary-navigation__link" href="#navigation-title" data-playground-navigation-link>Navigation</a></li>
             <li class="primary-navigation__item"><a class="site-header__navigation-link primary-navigation__link" href="#footer-title" data-playground-navigation-link>Footer</a></li>
             <li class="primary-navigation__item"><a class="site-header__navigation-link primary-navigation__link" href="#tokens-title" data-playground-navigation-link>Design Tokens</a></li>
@@ -136,6 +137,7 @@
             <li><a class="playground-navigation-panel__link" href="#cards-title" data-playground-navigation-link>Cards</a></li>
             <li><a class="playground-navigation-panel__link" href="#accordion-title" data-playground-navigation-link>Accordion</a></li>
             <li><a class="playground-navigation-panel__link" href="#forms-title" data-playground-navigation-link>Forms</a></li>
+            <li><a class="playground-navigation-panel__link" href="#form-controls-title" data-playground-navigation-link>Form Controls</a></li>
             <li><a class="playground-navigation-panel__link" href="#navigation-title" data-playground-navigation-link>Navigation</a></li>
             <li><a class="playground-navigation-panel__link" href="#footer-title" data-playground-navigation-link>Footer</a></li>
             <li><a class="playground-navigation-panel__link" href="#tokens-title" data-playground-navigation-link>Design Tokens</a></li>
@@ -1581,6 +1583,322 @@
         </div>
       </section>
 
+      <section class="playground-section section" aria-labelledby="form-controls-title">
+        <div class="container">
+          <header class="playground-section__header section-heading">
+            <p class="section-heading__eyebrow">Components</p>
+            <h2 class="playground-section__title section-heading__title" id="form-controls-title">Form Controls</h2>
+            <p class="playground-section__description section-heading__lead">
+              Compare native Checkbox, Radio, and Switch controls with shared focus, disabled, description, and
+              content-resilience patterns while preserving each control’s distinct semantics.
+            </p>
+          </header>
+
+          <div class="playground-section__content stack">
+            <article class="playground-demo-group stack" aria-labelledby="checkbox-title">
+              <header class="playground-demo-group__header stack">
+                <h3 class="playground-demo-group__title" id="checkbox-title">Checkbox</h3>
+                <p class="playground-demo-group__description text text--muted">
+                  Use Checkbox for independent selections; native checked, disabled, and indeterminate state remains
+                  authoritative.
+                </p>
+              </header>
+
+              <div class="playground-api-grid">
+                <fieldset class="playground-control-group playground-demo">
+                  <legend class="playground-control-group__legend">State specimens</legend>
+                  <div class="playground-control-list">
+                    <label class="checkbox" for="checkbox-unchecked">
+                      <input class="checkbox__input" id="checkbox-unchecked" name="checkbox-unchecked" type="checkbox" />
+                      <span class="checkbox__control" aria-hidden="true"></span>
+                      <span class="checkbox__content"><span class="checkbox__label">Unchecked</span></span>
+                    </label>
+                    <label class="checkbox" for="checkbox-checked">
+                      <input class="checkbox__input" id="checkbox-checked" name="checkbox-checked" type="checkbox" checked />
+                      <span class="checkbox__control" aria-hidden="true"></span>
+                      <span class="checkbox__content"><span class="checkbox__label">Checked</span></span>
+                    </label>
+                    <label class="checkbox" for="checkbox-disabled">
+                      <input class="checkbox__input" id="checkbox-disabled" name="checkbox-disabled" type="checkbox" disabled />
+                      <span class="checkbox__control" aria-hidden="true"></span>
+                      <span class="checkbox__content"><span class="checkbox__label">Disabled unchecked</span></span>
+                    </label>
+                    <label class="checkbox" for="checkbox-disabled-checked">
+                      <input class="checkbox__input" id="checkbox-disabled-checked" name="checkbox-disabled-checked" type="checkbox" checked disabled />
+                      <span class="checkbox__control" aria-hidden="true"></span>
+                      <span class="checkbox__content"><span class="checkbox__label">Disabled checked</span></span>
+                    </label>
+                    <label class="checkbox" for="checkbox-indeterminate">
+                      <input class="checkbox__input" id="checkbox-indeterminate" name="checkbox-indeterminate" type="checkbox" aria-labelledby="checkbox-indeterminate-label" aria-describedby="checkbox-indeterminate-description" data-playground-checkbox-indeterminate />
+                      <span class="checkbox__control" aria-hidden="true"></span>
+                      <span class="checkbox__content">
+                        <span class="checkbox__label" id="checkbox-indeterminate-label">Partially selected</span>
+                        <span class="checkbox__description" id="checkbox-indeterminate-description">Indeterminate state is assigned through the native DOM property for this demonstration.</span>
+                      </span>
+                    </label>
+                  </div>
+                </fieldset>
+
+                <fieldset class="playground-control-group playground-demo">
+                  <legend class="playground-control-group__legend">Notification preferences</legend>
+                  <div class="playground-control-list">
+                    <label class="checkbox" for="checkbox-product-news">
+                      <input class="checkbox__input" id="checkbox-product-news" name="preferences[]" type="checkbox" checked aria-labelledby="checkbox-product-news-label" aria-describedby="checkbox-product-news-description" />
+                      <span class="checkbox__control" aria-hidden="true"></span>
+                      <span class="checkbox__content">
+                        <span class="checkbox__label" id="checkbox-product-news-label">Product news</span>
+                        <span class="checkbox__description" id="checkbox-product-news-description">Receive occasional announcements about meaningful product changes.</span>
+                      </span>
+                    </label>
+                    <label class="checkbox" for="checkbox-research">
+                      <input class="checkbox__input" id="checkbox-research" name="preferences[]" type="checkbox" aria-labelledby="checkbox-research-label" aria-describedby="checkbox-research-description" />
+                      <span class="checkbox__control" aria-hidden="true"></span>
+                      <span class="checkbox__content">
+                        <span class="checkbox__label" id="checkbox-research-label">Research summaries with a deliberately longer label that wraps safely</span>
+                        <span class="checkbox__description" id="checkbox-research-description">A concise description can clarify the consequence of this independent choice without reducing the clickable label area.</span>
+                      </span>
+                    </label>
+                    <label class="checkbox" for="checkbox-events">
+                      <input class="checkbox__input" id="checkbox-events" name="preferences[]" type="checkbox" />
+                      <span class="checkbox__control" aria-hidden="true"></span>
+                      <span class="checkbox__content"><span class="checkbox__label">Event invitations</span></span>
+                    </label>
+                  </div>
+                </fieldset>
+              </div>
+            </article>
+
+            <article class="playground-demo-group stack" aria-labelledby="radio-title">
+              <header class="playground-demo-group__header stack">
+                <h3 class="playground-demo-group__title" id="radio-title">Radio</h3>
+                <p class="playground-demo-group__description text text--muted">
+                  Use Radio when one option must be selected from a named group; browser-native arrow-key behavior is
+                  retained.
+                </p>
+              </header>
+
+              <div class="playground-api-grid">
+                <fieldset class="playground-control-group playground-demo">
+                  <legend class="playground-control-group__legend">Delivery cadence</legend>
+                  <div class="playground-control-list">
+                    <label class="radio" for="radio-weekly">
+                      <input class="radio__input" id="radio-weekly" name="delivery-cadence" type="radio" checked aria-labelledby="radio-weekly-label" aria-describedby="radio-weekly-description" />
+                      <span class="radio__control" aria-hidden="true"></span>
+                      <span class="radio__content">
+                        <span class="radio__label" id="radio-weekly-label">Weekly summary</span>
+                        <span class="radio__description" id="radio-weekly-description">One consolidated update each week.</span>
+                      </span>
+                    </label>
+                    <label class="radio" for="radio-monthly">
+                      <input class="radio__input" id="radio-monthly" name="delivery-cadence" type="radio" aria-labelledby="radio-monthly-label" aria-describedby="radio-monthly-description" />
+                      <span class="radio__control" aria-hidden="true"></span>
+                      <span class="radio__content">
+                        <span class="radio__label" id="radio-monthly-label">Monthly review with a longer descriptive option label</span>
+                        <span class="radio__description" id="radio-monthly-description">A lower-frequency choice whose label and supporting copy wrap naturally.</span>
+                      </span>
+                    </label>
+                    <label class="radio" for="radio-quarterly">
+                      <input class="radio__input" id="radio-quarterly" name="delivery-cadence" type="radio" />
+                      <span class="radio__control" aria-hidden="true"></span>
+                      <span class="radio__content"><span class="radio__label">Quarterly review</span></span>
+                    </label>
+                  </div>
+                </fieldset>
+
+                <fieldset class="playground-control-group playground-demo">
+                  <legend class="playground-control-group__legend">State specimens</legend>
+                  <div class="playground-control-list">
+                    <label class="radio" for="radio-unselected">
+                      <input class="radio__input" id="radio-unselected" name="radio-unselected-state" type="radio" />
+                      <span class="radio__control" aria-hidden="true"></span>
+                      <span class="radio__content"><span class="radio__label">Unselected</span></span>
+                    </label>
+                    <label class="radio" for="radio-selected">
+                      <input class="radio__input" id="radio-selected" name="radio-selected-state" type="radio" checked />
+                      <span class="radio__control" aria-hidden="true"></span>
+                      <span class="radio__content"><span class="radio__label">Selected</span></span>
+                    </label>
+                    <label class="radio" for="radio-disabled">
+                      <input class="radio__input" id="radio-disabled" name="radio-disabled-state" type="radio" disabled />
+                      <span class="radio__control" aria-hidden="true"></span>
+                      <span class="radio__content"><span class="radio__label">Disabled unselected</span></span>
+                    </label>
+                    <label class="radio" for="radio-disabled-selected">
+                      <input class="radio__input" id="radio-disabled-selected" name="radio-disabled-selected-state" type="radio" checked disabled />
+                      <span class="radio__control" aria-hidden="true"></span>
+                      <span class="radio__content"><span class="radio__label">Disabled selected</span></span>
+                    </label>
+                  </div>
+                </fieldset>
+              </div>
+            </article>
+
+            <article class="playground-demo-group stack" aria-labelledby="switch-title">
+              <header class="playground-demo-group__header stack">
+                <h3 class="playground-demo-group__title" id="switch-title">Switch</h3>
+                <p class="playground-demo-group__description text text--muted">
+                  Use Switch for an immediately applied binary setting; checked state drives its on/off presentation
+                  without JavaScript.
+                </p>
+              </header>
+
+              <div class="playground-api-grid">
+                <fieldset class="playground-control-group playground-demo">
+                  <legend class="playground-control-group__legend">State specimens</legend>
+                  <div class="playground-control-list">
+                    <label class="switch" for="switch-off">
+                      <input class="switch__input" id="switch-off" name="switch-off" type="checkbox" role="switch" />
+                      <span class="switch__track" aria-hidden="true"><span class="switch__thumb"></span></span>
+                      <span class="switch__content"><span class="switch__label">Off</span></span>
+                    </label>
+                    <label class="switch" for="switch-on">
+                      <input class="switch__input" id="switch-on" name="switch-on" type="checkbox" role="switch" checked />
+                      <span class="switch__track" aria-hidden="true"><span class="switch__thumb"></span></span>
+                      <span class="switch__content"><span class="switch__label">On</span></span>
+                    </label>
+                    <label class="switch" for="switch-disabled-off">
+                      <input class="switch__input" id="switch-disabled-off" name="switch-disabled-off" type="checkbox" role="switch" disabled />
+                      <span class="switch__track" aria-hidden="true"><span class="switch__thumb"></span></span>
+                      <span class="switch__content"><span class="switch__label">Disabled off</span></span>
+                    </label>
+                    <label class="switch" for="switch-disabled-on">
+                      <input class="switch__input" id="switch-disabled-on" name="switch-disabled-on" type="checkbox" role="switch" checked disabled />
+                      <span class="switch__track" aria-hidden="true"><span class="switch__thumb"></span></span>
+                      <span class="switch__content"><span class="switch__label">Disabled on</span></span>
+                    </label>
+                  </div>
+                </fieldset>
+
+                <fieldset class="playground-control-group playground-demo">
+                  <legend class="playground-control-group__legend">Workspace settings</legend>
+                  <div class="playground-control-list">
+                    <label class="switch" for="switch-reduced-notifications">
+                      <input class="switch__input" id="switch-reduced-notifications" name="reduced-notifications" type="checkbox" role="switch" checked aria-labelledby="switch-reduced-notifications-label" aria-describedby="switch-reduced-notifications-description" />
+                      <span class="switch__track" aria-hidden="true"><span class="switch__thumb"></span></span>
+                      <span class="switch__content">
+                        <span class="switch__label" id="switch-reduced-notifications-label">Reduce non-essential notifications</span>
+                        <span class="switch__description" id="switch-reduced-notifications-description">This setting takes effect immediately and can be changed again at any time.</span>
+                      </span>
+                    </label>
+                    <label class="switch" for="switch-preview-features">
+                      <input class="switch__input" id="switch-preview-features" name="preview-features" type="checkbox" role="switch" aria-labelledby="switch-preview-features-label" aria-describedby="switch-preview-features-description" />
+                      <span class="switch__track" aria-hidden="true"><span class="switch__thumb"></span></span>
+                      <span class="switch__content">
+                        <span class="switch__label" id="switch-preview-features-label">Enable carefully reviewed preview features for this workspace</span>
+                        <span class="switch__description" id="switch-preview-features-description">The long label demonstrates resilient wrapping without shrinking the visual control.</span>
+                      </span>
+                    </label>
+                  </div>
+                </fieldset>
+              </div>
+            </article>
+
+            <section class="playground-demo-group stack" aria-labelledby="form-control-states-title">
+              <header class="playground-demo-group__header stack">
+                <h3 class="playground-demo-group__title" id="form-control-states-title">Native state ownership</h3>
+                <p class="playground-demo-group__description text text--muted">
+                  The native <code>:checked</code>, <code>:disabled</code>, <code>:indeterminate</code>, and
+                  <code>:focus-visible</code> states drive presentation; they are not BEM modifiers.
+                </p>
+              </header>
+              <div class="playground-demo">
+                <p class="text text--muted">
+                  Interact with each enabled control to inspect real hover, focus, and checked behavior. The
+                  indeterminate Checkbox uses a Playground-only data hook because HTML has no declarative
+                  indeterminate attribute; application code should set the native <code>indeterminate</code> property.
+                </p>
+              </div>
+            </section>
+
+            <aside class="playground-guidance playground-demo stack" aria-labelledby="form-control-guidance-title">
+              <h3 class="playground-guidance__title" id="form-control-guidance-title">Usage guidance</h3>
+              <ul class="playground-guidance__list text">
+                <li>Use Checkbox for independent selections and Radio for one choice from a named group.</li>
+                <li>Use Switch only when changing it applies a binary setting immediately.</li>
+                <li>Do not use Switch when submission or confirmation is still required.</li>
+                <li>Group related choices with a visible <code>fieldset</code> and <code>legend</code>.</li>
+                <li>Connect supporting descriptions with <code>aria-describedby</code> when they clarify the choice.</li>
+                <li>Avoid disabled controls when explanatory feedback would better help the user proceed.</li>
+              </ul>
+            </aside>
+
+            <div class="playground-api-grid">
+              <section class="playground-api playground-demo stack" aria-labelledby="checkbox-api-title">
+                <h3 class="playground-api__title" id="checkbox-api-title">Checkbox API</h3>
+                <ul class="playground-api__classes cluster" role="list">
+                  <li><code>.checkbox</code></li><li><code>.checkbox__input</code></li>
+                  <li><code>.checkbox__control</code></li><li><code>.checkbox__content</code></li>
+                  <li><code>.checkbox__label</code></li><li><code>.checkbox__description</code></li>
+                </ul>
+                <p class="text text--muted">Use a native checkbox input before the visual control and content siblings.</p>
+              </section>
+              <section class="playground-api playground-demo stack" aria-labelledby="radio-api-title">
+                <h3 class="playground-api__title" id="radio-api-title">Radio API</h3>
+                <ul class="playground-api__classes cluster" role="list">
+                  <li><code>.radio</code></li><li><code>.radio__input</code></li>
+                  <li><code>.radio__control</code></li><li><code>.radio__content</code></li>
+                  <li><code>.radio__label</code></li><li><code>.radio__description</code></li>
+                </ul>
+                <p class="text text--muted">Give every related native radio input the same non-empty <code>name</code>.</p>
+              </section>
+              <section class="playground-api playground-demo stack" aria-labelledby="switch-api-title">
+                <h3 class="playground-api__title" id="switch-api-title">Switch API</h3>
+                <ul class="playground-api__classes cluster" role="list">
+                  <li><code>.switch</code></li><li><code>.switch__input</code></li>
+                  <li><code>.switch__track</code></li><li><code>.switch__thumb</code></li>
+                  <li><code>.switch__content</code></li><li><code>.switch__label</code></li>
+                  <li><code>.switch__description</code></li>
+                </ul>
+                <p class="text text--muted">Use a native checkbox with <code>role="switch"</code>; do not add redundant <code>aria-checked</code>.</p>
+              </section>
+            </div>
+
+            <section class="playground-demo-group stack" aria-labelledby="form-control-code-title">
+              <header class="playground-demo-group__header stack">
+                <h3 class="playground-demo-group__title" id="form-control-code-title">Compact markup contracts</h3>
+                <p class="playground-demo-group__description text text--muted">Keep input, visual control, and content in this sibling order so native state selectors remain reliable.</p>
+              </header>
+              <div class="playground-api-grid">
+                <div class="playground-demo stack">
+                  <p class="playground-demo__label">Checkbox</p>
+                  <pre class="playground-code"><code>&lt;label class="checkbox" for="updates"&gt;
+  &lt;input class="checkbox__input" id="updates" type="checkbox" /&gt;
+  &lt;span class="checkbox__control" aria-hidden="true"&gt;&lt;/span&gt;
+  &lt;span class="checkbox__content"&gt;
+    &lt;span class="checkbox__label"&gt;Product updates&lt;/span&gt;
+  &lt;/span&gt;
+&lt;/label&gt;</code></pre>
+                </div>
+                <div class="playground-demo stack">
+                  <p class="playground-demo__label">Radio</p>
+                  <pre class="playground-code"><code>&lt;label class="radio" for="weekly"&gt;
+  &lt;input class="radio__input" id="weekly"
+    name="cadence" type="radio" /&gt;
+  &lt;span class="radio__control" aria-hidden="true"&gt;&lt;/span&gt;
+  &lt;span class="radio__content"&gt;
+    &lt;span class="radio__label"&gt;Weekly&lt;/span&gt;
+  &lt;/span&gt;
+&lt;/label&gt;</code></pre>
+                </div>
+                <div class="playground-demo stack">
+                  <p class="playground-demo__label">Switch</p>
+                  <pre class="playground-code"><code>&lt;label class="switch" for="alerts"&gt;
+  &lt;input class="switch__input" id="alerts"
+    type="checkbox" role="switch" /&gt;
+  &lt;span class="switch__track" aria-hidden="true"&gt;
+    &lt;span class="switch__thumb"&gt;&lt;/span&gt;
+  &lt;/span&gt;
+  &lt;span class="switch__content"&gt;
+    &lt;span class="switch__label"&gt;Alerts&lt;/span&gt;
+  &lt;/span&gt;
+&lt;/label&gt;</code></pre>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+      </section>
+
       <section class="playground-section section" aria-labelledby="navigation-title">
         <div class="container">
           <header class="playground-section__header section-heading">
@@ -2315,7 +2633,7 @@
               </header>
               <div class="playground-demo playground-token-grid">
                 <div class="playground-token-shape" style="--token-radius: var(--radius-none)"><span aria-hidden="true"></span><code>--radius-none</code><small>Active reset</small></div>
-                <div class="playground-token-shape" style="--token-radius: var(--radius-sm)"><span aria-hidden="true"></span><code>--radius-sm</code><small>Reserved</small></div>
+                <div class="playground-token-shape" style="--token-radius: var(--radius-sm)"><span aria-hidden="true"></span><code>--radius-sm</code><small>Active</small></div>
                 <div class="playground-token-shape" style="--token-radius: var(--radius-md)"><span aria-hidden="true"></span><code>--radius-md</code><small>Active</small></div>
                 <div class="playground-token-shape" style="--token-radius: var(--radius-lg)"><span aria-hidden="true"></span><code>--radius-lg</code><small>Active</small></div>
                 <div class="playground-token-shape" style="--token-radius: var(--radius-xl)"><span aria-hidden="true"></span><code>--radius-xl</code><small>Active</small></div>

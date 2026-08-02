@@ -80,3 +80,7 @@ The included Contact form has native browser validation but no submission backen
 Keep reusable component styles in `src/scss/components`, section composition in `src/scss/sections`, and structural page layout in `src/scss/layout`. JavaScript behavior must use data attributes as hooks and preserve a usable no-JavaScript fallback.
 
 Do not hardcode visual values in consuming styles. Reuse semantic tokens and shared Sass breakpoints documented in the project standards.
+
+## Live Demo
+
+https://landing-starter-kit.vercel.app

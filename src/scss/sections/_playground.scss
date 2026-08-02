@@ -102,6 +102,11 @@
   max-width: var(--content-measure);
 }
 
+.playground-navigation-demo {
+  width: var(--size-full);
+  max-width: var(--container-max-width);
+}
+
 .playground-instructions {
   display: grid;
   gap: var(--space-2xs);

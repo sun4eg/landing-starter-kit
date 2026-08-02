@@ -1224,13 +1224,328 @@
       <section class="playground-section section" aria-labelledby="navigation-title">
         <div class="container">
           <header class="playground-section__header section-heading">
-            <p class="section-heading__eyebrow">Future section</p>
+            <p class="section-heading__eyebrow">Components</p>
             <h2 class="playground-section__title section-heading__title" id="navigation-title">Navigation</h2>
             <p class="playground-section__description section-heading__lead">
-              Navigation layouts and responsive behavior will be documented here.
+              Review how the structural Header composes the reusable Primary Navigation while responsive CSS and
+              data-attribute behavior remain separate concerns.
             </p>
           </header>
-          <div class="playground-demo playground-demo--placeholder"><p>Demo area reserved for Navigation.</p></div>
+
+          <div class="playground-section__content stack">
+            <article class="playground-demo-group stack">
+              <header class="playground-demo-group__header stack">
+                <h3 class="playground-demo-group__title">Desktop-style composition</h3>
+                <p class="playground-demo-group__description text text--muted">
+                  This constrained, unenhanced composition demonstrates brand, navigation, and an optional Header
+                  action; at smaller viewports its fallback remains visible and usable.
+                </p>
+              </header>
+
+              <div class="playground-demo">
+                <div class="playground-navigation-demo">
+                  <header class="site-header">
+                    <div class="site-header__container container">
+                      <a class="site-header__logo" href="#navigation-title">Starter Kit Reference</a>
+
+                      <nav
+                        class="site-header__navigation primary-navigation"
+                        aria-label="Desktop navigation example"
+                      >
+                        <ul class="site-header__navigation-list primary-navigation__list">
+                          <li class="primary-navigation__item">
+                            <a
+                              class="site-header__navigation-link primary-navigation__link"
+                              href="#navigation-progressive-title"
+                            >
+                              Progressive enhancement
+                            </a>
+                          </li>
+                          <li class="primary-navigation__item">
+                            <a
+                              class="site-header__navigation-link primary-navigation__link"
+                              href="#navigation-guidance-title"
+                            >
+                              Accessibility guidance
+                            </a>
+                          </li>
+                          <li class="primary-navigation__item">
+                            <a
+                              class="site-header__navigation-link primary-navigation__link"
+                              href="#navigation-header-api-title"
+                            >
+                              API reference
+                            </a>
+                          </li>
+                        </ul>
+                      </nav>
+
+                      <div class="site-header__actions">
+                        <a class="button button--primary button--sm" href="#navigation-guidance-title">
+                          Review navigation guidance
+                        </a>
+                      </div>
+                    </div>
+                  </header>
+                </div>
+              </div>
+            </article>
+
+            <article class="playground-demo-group stack">
+              <header class="playground-demo-group__header stack">
+                <h3 class="playground-demo-group__title">Responsive mobile-toggle instance</h3>
+                <p class="playground-demo-group__description text text--muted">
+                  Resize to the mobile layout to test the real toggle, Escape focus restoration, and menu-link closing;
+                  this instance initializes independently from the page Header.
+                </p>
+              </header>
+
+              <div class="playground-demo">
+                <div class="playground-navigation-demo">
+                  <header class="site-header" data-navigation>
+                    <div class="site-header__container container">
+                      <a class="site-header__logo" href="#navigation-title">Starter Kit Reference</a>
+
+                      <button
+                        class="site-header__menu-toggle"
+                        type="button"
+                        aria-label="Open primary navigation"
+                        aria-expanded="false"
+                        aria-controls="playground-demo-navigation"
+                        data-navigation-toggle
+                        hidden
+                      >
+                        <span class="site-header__menu-icon" aria-hidden="true">
+                          <span></span>
+                          <span></span>
+                          <span></span>
+                        </span>
+                      </button>
+
+                      <nav
+                        class="site-header__navigation primary-navigation"
+                        id="playground-demo-navigation"
+                        aria-label="Responsive navigation demo"
+                        data-navigation-menu
+                      >
+                        <ul class="site-header__navigation-list primary-navigation__list">
+                          <li class="primary-navigation__item">
+                            <a
+                              class="site-header__navigation-link primary-navigation__link"
+                              href="#navigation-progressive-title"
+                            >
+                              Progressive enhancement behavior
+                            </a>
+                          </li>
+                          <li class="primary-navigation__item">
+                            <a
+                              class="site-header__navigation-link primary-navigation__link"
+                              href="#navigation-responsive-title"
+                            >
+                              Responsive ownership and viewport changes
+                            </a>
+                          </li>
+                          <li class="primary-navigation__item">
+                            <a
+                              class="site-header__navigation-link primary-navigation__link"
+                              href="#navigation-data-api-title"
+                            >
+                              JavaScript data API and required relationships
+                            </a>
+                          </li>
+                        </ul>
+                      </nav>
+                    </div>
+                  </header>
+                </div>
+              </div>
+            </article>
+
+            <section class="playground-explainer-grid" aria-label="Navigation enhancement and responsive ownership">
+              <article class="playground-demo stack" aria-labelledby="navigation-progressive-title">
+                <h3 id="navigation-progressive-title">Progressive enhancement</h3>
+                <div class="playground-demo-group stack">
+                  <h4>Without JavaScript</h4>
+                  <p class="text text--muted">
+                    Navigation remains visible, links remain usable, and the hidden toggle is not exposed as a broken
+                    control.
+                  </p>
+                </div>
+                <div class="playground-demo-group stack">
+                  <h4>With JavaScript</h4>
+                  <p class="text text--muted">
+                    Valid roots are enhanced, the toggle becomes available, and <code>aria-expanded</code>, its label,
+                    and the root’s runtime open state stay synchronized. The collapsed menu removes its links from the
+                    focus order; Escape and menu-link activation close it.
+                  </p>
+                </div>
+              </article>
+
+              <article class="playground-demo stack" aria-labelledby="navigation-responsive-title">
+                <h3 id="navigation-responsive-title">Responsive ownership</h3>
+                <ul class="playground-guidance__list text">
+                  <li>Desktop presentation appears above the shared tablet breakpoint.</li>
+                  <li>At and below that breakpoint, CSS exposes the toggle and collapsible menu for enhanced roots.</li>
+                  <li>JavaScript does not duplicate Sass breakpoint values.</li>
+                  <li>Viewport changes leave no conflicting inline display state because visibility remains CSS-owned.</li>
+                </ul>
+              </article>
+            </section>
+
+            <section class="playground-explainer-grid" aria-label="Navigation architecture and state ownership">
+              <article class="playground-demo stack">
+                <h3>Architecture boundaries</h3>
+                <ul class="playground-guidance__list text">
+                  <li><code>.site-header</code> is the page-wide structural Header block.</li>
+                  <li><code>.primary-navigation</code> is the reusable navigation presentation block.</li>
+                  <li>Header composition elements place the logo, navigation, toggle, contact, and actions.</li>
+                  <li>Behavior hooks use data attributes rather than BEM styling classes.</li>
+                </ul>
+              </article>
+
+              <article class="playground-demo stack">
+                <h3>State ownership</h3>
+                <ul class="playground-guidance__list text">
+                  <li><code>aria-expanded</code> communicates the toggle’s semantic state.</li>
+                  <li>The Navigation module owns the root’s runtime open state.</li>
+                  <li>Responsive visibility belongs to CSS, not JavaScript.</li>
+                  <li>Sticky and scrolled Header states belong to the separate Sticky Header module.</li>
+                  <li>Runtime enhancement attributes are implementation details, not authoring API.</li>
+                </ul>
+              </article>
+            </section>
+
+            <aside class="playground-guidance playground-demo stack" aria-labelledby="navigation-guidance-title">
+              <h3 class="playground-guidance__title" id="navigation-guidance-title">Interaction guidance</h3>
+              <ul class="playground-guidance__list text">
+                <li>Use links for destinations and a button only for opening and closing the menu.</li>
+                <li>Native Enter and Space activate the toggle.</li>
+                <li>Escape closes an open menu and restores focus to its toggle.</li>
+                <li>Following a menu link closes that instance’s menu.</li>
+                <li>Write navigation labels that remain understandable out of context.</li>
+                <li>Keep essential destinations available without JavaScript.</li>
+                <li>Give multiple navigation landmarks distinct accessible labels.</li>
+              </ul>
+            </aside>
+
+            <section class="playground-demo-group stack" aria-labelledby="navigation-structure-title">
+              <header class="playground-demo-group__header stack">
+                <h3 class="playground-demo-group__title" id="navigation-structure-title">
+                  Responsive markup contract
+                </h3>
+                <p class="playground-demo-group__description text text--muted">
+                  Scope one toggle and menu to each root, and make the toggle’s <code>aria-controls</code> match that
+                  menu’s unique ID.
+                </p>
+              </header>
+              <div class="playground-demo">
+                <pre class="playground-code"><code>&lt;header class="site-header" data-navigation&gt;
+  &lt;button aria-expanded="false" aria-controls="menu-1"
+    data-navigation-toggle hidden&gt;Menu&lt;/button&gt;
+  &lt;nav class="primary-navigation" id="menu-1"
+    aria-label="Primary navigation" data-navigation-menu&gt;
+    &lt;ul class="primary-navigation__list"&gt;
+      &lt;li class="primary-navigation__item"&gt;
+        &lt;a class="primary-navigation__link" href="#navigation-title"&gt;Navigation&lt;/a&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/nav&gt;
+&lt;/header&gt;</code></pre>
+              </div>
+            </section>
+
+            <div class="playground-api-grid">
+              <section class="playground-api playground-demo stack" aria-labelledby="navigation-header-api-title">
+                <header class="playground-api__header stack">
+                  <h3 class="playground-api__title" id="navigation-header-api-title">Header layout API</h3>
+                  <p class="playground-api__description text text--muted">
+                    Header classes control page-wide structure and placement; runtime scrolled state is not authored.
+                  </p>
+                </header>
+                <dl class="playground-api__list stack">
+                  <div class="playground-api__group stack">
+                    <dt class="playground-demo__label">Base and modifiers</dt>
+                    <dd>
+                      <ul class="playground-api__classes cluster" role="list">
+                        <li><code>.site-header</code></li>
+                        <li><code>.site-header--sticky</code></li>
+                        <li><code>.site-header--shadow</code></li>
+                      </ul>
+                    </dd>
+                  </div>
+                  <div class="playground-api__group stack">
+                    <dt class="playground-demo__label">Elements</dt>
+                    <dd>
+                      <ul class="playground-api__classes cluster" role="list">
+                        <li><code>.site-header__container</code></li>
+                        <li><code>.site-header__logo</code></li>
+                        <li><code>.site-header__navigation</code></li>
+                        <li><code>.site-header__navigation-list</code></li>
+                        <li><code>.site-header__navigation-link</code></li>
+                        <li><code>.site-header__actions</code></li>
+                        <li><code>.site-header__contact</code></li>
+                        <li><code>.site-header__menu-toggle</code></li>
+                        <li><code>.site-header__menu-icon</code></li>
+                      </ul>
+                    </dd>
+                  </div>
+                </dl>
+              </section>
+
+              <section class="playground-api playground-demo stack" aria-labelledby="primary-navigation-api-title">
+                <header class="playground-api__header stack">
+                  <h3 class="playground-api__title" id="primary-navigation-api-title">Primary Navigation API</h3>
+                  <p class="playground-api__description text text--muted">
+                    Primary Navigation owns reusable list and link presentation independently of Header placement.
+                  </p>
+                </header>
+                <dl class="playground-api__list stack">
+                  <div class="playground-api__group stack">
+                    <dt class="playground-demo__label">Base</dt>
+                    <dd><code>.primary-navigation</code></dd>
+                  </div>
+                  <div class="playground-api__group stack">
+                    <dt class="playground-demo__label">Elements</dt>
+                    <dd>
+                      <ul class="playground-api__classes cluster" role="list">
+                        <li><code>.primary-navigation__list</code></li>
+                        <li><code>.primary-navigation__item</code></li>
+                        <li><code>.primary-navigation__link</code></li>
+                      </ul>
+                    </dd>
+                  </div>
+                </dl>
+              </section>
+
+              <section class="playground-api playground-demo stack" aria-labelledby="navigation-data-api-title">
+                <header class="playground-api__header stack">
+                  <h3 class="playground-api__title" id="navigation-data-api-title">JavaScript data API</h3>
+                  <p class="playground-api__description text text--muted">
+                    All three author-facing hooks and a valid toggle/menu reference are required for enhancement.
+                  </p>
+                </header>
+                <dl class="playground-api__list stack">
+                  <div class="playground-api__group stack">
+                    <dt class="playground-demo__label">Required hooks</dt>
+                    <dd>
+                      <ul class="playground-api__classes cluster" role="list">
+                        <li><code>data-navigation</code></li>
+                        <li><code>data-navigation-toggle</code></li>
+                        <li><code>data-navigation-menu</code></li>
+                      </ul>
+                    </dd>
+                  </div>
+                  <div class="playground-api__group stack">
+                    <dt class="playground-demo__label">Required relationship</dt>
+                    <dd>
+                      The toggle’s <code>aria-controls</code> must reference the scoped menu’s unique ID;
+                      <code>aria-expanded</code> reflects open state.
+                    </dd>
+                  </div>
+                </dl>
+              </section>
+            </div>
+          </div>
         </div>
       </section>
 

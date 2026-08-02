@@ -125,8 +125,150 @@
   overflow-x: auto;
 }
 
+.playground-token-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(var(--space-0), 1fr));
+  gap: var(--space-md);
+  align-items: start;
+}
+
+.playground-token-grid--colors {
+  grid-template-columns: repeat(4, minmax(var(--space-0), 1fr));
+}
+
+.playground-token-swatch,
+.playground-token-shape,
+.playground-token-shadow,
+.playground-token-control {
+  display: grid;
+  gap: var(--space-2xs);
+  min-width: var(--space-0);
+}
+
+.playground-token-swatch code,
+.playground-token-shape code,
+.playground-token-shadow code,
+.playground-token-control code,
+.playground-token-reference code,
+.playground-token-layers code {
+  overflow-wrap: anywhere;
+}
+
+.playground-token-swatch__sample {
+  display: block;
+  aspect-ratio: var(--aspect-ratio-landscape);
+  background-color: var(--token-color);
+  border: var(--border-width) solid var(--color-border);
+  border-radius: var(--radius-md);
+}
+
+.playground-token-spacing-list,
+.playground-token-type-list,
+.playground-token-controls {
+  display: grid;
+  gap: var(--space-md);
+}
+
+.playground-token-spacing {
+  display: grid;
+  grid-template-columns: minmax(var(--space-0), calc(var(--content-measure) / 3)) minmax(var(--space-0), 1fr);
+  gap: var(--space-sm);
+  align-items: center;
+  min-width: var(--space-0);
+}
+
+.playground-token-spacing__track {
+  display: block;
+  max-width: var(--size-full);
+  overflow: hidden;
+}
+
+.playground-token-spacing__sample {
+  display: block;
+  width: var(--token-space);
+  max-width: var(--size-full);
+  height: var(--space-sm);
+  background-color: var(--color-primary-500);
+  border-radius: var(--radius-full);
+}
+
+.playground-token-type {
+  display: grid;
+  gap: var(--space-2xs);
+  margin: var(--space-0);
+  min-width: var(--space-0);
+}
+
+.playground-token-type span {
+  font-family: var(--token-font-family, var(--font-family-base));
+  font-size: var(--token-font-size, var(--font-size-base));
+  font-weight: var(--token-font-weight, var(--font-weight-regular));
+  line-height: var(--token-line-height, var(--line-height-heading));
+  letter-spacing: var(--token-letter-spacing, var(--letter-spacing-normal));
+  overflow-wrap: anywhere;
+}
+
+.playground-token-shape span,
+.playground-token-shadow span {
+  display: block;
+  min-height: var(--control-height-lg);
+  background-color: var(--color-background);
+  border: var(--border-width) solid var(--color-border);
+}
+
+.playground-token-shape span {
+  border-radius: var(--token-radius);
+}
+
+.playground-token-shadow span {
+  border-radius: var(--radius-md);
+  box-shadow: var(--token-shadow);
+}
+
+.playground-token-reference {
+  display: grid;
+  gap: var(--space-xs);
+  margin: var(--space-0);
+  padding-inline-start: var(--space-md);
+}
+
+.playground-token-layers {
+  display: grid;
+  gap: var(--space-2xs);
+  margin: var(--space-0);
+  padding-inline-start: var(--space-lg);
+}
+
+.playground-token-layers li {
+  display: grid;
+  grid-template-columns: minmax(var(--space-0), calc(var(--content-measure) / 3)) minmax(var(--space-0), 1fr);
+  gap: var(--space-sm);
+}
+
+.playground-token-control__sample {
+  display: inline-flex;
+  align-items: center;
+  justify-self: start;
+  gap: var(--space-2xs);
+  min-height: var(--token-control-height);
+  padding-inline: var(--token-control-padding);
+  background-color: var(--color-background);
+  border: var(--border-width) solid var(--color-control-border);
+  border-radius: var(--radius-md);
+}
+
+.playground-token-control__sample i {
+  display: block;
+  width: var(--token-control-icon);
+  height: var(--token-control-icon);
+  background-color: var(--color-primary-500);
+  border-radius: var(--radius-full);
+}
+
 @media (max-width: breakpoints.$tablet) {
-  .playground-card-grid {
+  .playground-card-grid,
+  .playground-token-grid,
+  .playground-token-grid--colors {
     grid-template-columns: repeat(2, minmax(var(--space-0), 1fr));
   }
 }
@@ -135,7 +277,15 @@
   .playground-card-grid,
   .playground-api-grid,
   .playground-explainer-grid,
-  .playground-comparison__grid {
+  .playground-comparison__grid,
+  .playground-token-grid,
+  .playground-token-grid--colors {
     grid-template-columns: minmax(var(--space-0), 1fr);
+  }
+
+  .playground-token-spacing,
+  .playground-token-layers li {
+    grid-template-columns: minmax(var(--space-0), 1fr);
+    gap: var(--space-2xs);
   }
 }

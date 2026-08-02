@@ -1837,13 +1837,297 @@
       <section class="playground-section section" aria-labelledby="tokens-title">
         <div class="container">
           <header class="playground-section__header section-heading">
-            <p class="section-heading__eyebrow">Future section</p>
+            <p class="section-heading__eyebrow">Foundation</p>
             <h2 class="playground-section__title section-heading__title" id="tokens-title">Tokens</h2>
             <p class="playground-section__description section-heading__lead">
-              Existing color, spacing, type, and layout tokens will be documented here.
+              Inspect the current primitive, semantic, and component-local decisions that keep the interface
+              consistent and maintainable.
             </p>
           </header>
-          <div class="playground-demo playground-demo--placeholder"><p>Demo area reserved for tokens.</p></div>
+
+          <div class="playground-section__content stack">
+            <article class="playground-demo-group stack" aria-labelledby="token-model-title">
+              <header class="playground-demo-group__header stack">
+                <h3 class="playground-demo-group__title" id="token-model-title">Token model</h3>
+                <p class="playground-demo-group__description text text--muted">
+                  Dependencies flow from component-local decisions through semantic purposes to primitive foundations.
+                </p>
+              </header>
+              <div class="playground-demo playground-token-grid">
+                <div class="playground-comparison__item stack">
+                  <h4>1. Primitive</h4>
+                  <p class="text text--muted">Raw palette, spacing, type, radius, shadow, motion, and layer values.</p>
+                </div>
+                <div class="playground-comparison__item stack">
+                  <h4>2. Semantic</h4>
+                  <p class="text text--muted">
+                    Purpose-led tokens such as text, surface, focus, control, measure, and sticky concepts. Reusable
+                    components should prefer this layer.
+                  </p>
+                </div>
+                <div class="playground-comparison__item stack">
+                  <h4>3. Component-local</h4>
+                  <p class="text text--muted">
+                    Scoped mappings such as Button’s <code>--button-background</code> and <code>--button-height</code>.
+                    They support component variants but are not global authoring tokens.
+                  </p>
+                </div>
+              </div>
+            </article>
+
+            <article class="playground-demo-group stack" aria-labelledby="token-colors-title">
+              <header class="playground-demo-group__header stack">
+                <h3 class="playground-demo-group__title" id="token-colors-title">Color system</h3>
+                <p class="playground-demo-group__description text text--muted">
+                  Each swatch uses its named custom property; visible text outside the color sample preserves readable
+                  identification without implying arbitrary foreground pairings.
+                </p>
+              </header>
+              <div class="playground-demo-group stack">
+                <h4>Primitive palette</h4>
+                <div class="playground-token-grid playground-token-grid--colors">
+                  <div class="playground-token-swatch" style="--token-color: var(--color-neutral-0)"><span class="playground-token-swatch__sample" aria-hidden="true"></span><code>--color-neutral-0</code><small>Neutral light · active through inverse/background</small></div>
+                  <div class="playground-token-swatch" style="--token-color: var(--color-neutral-1000)"><span class="playground-token-swatch__sample" aria-hidden="true"></span><code>--color-neutral-1000</code><small>Neutral dark · reserved</small></div>
+                  <div class="playground-token-swatch" style="--token-color: var(--color-transparent)"><span class="playground-token-swatch__sample" aria-hidden="true"></span><code>--color-transparent</code><small>Transparent surfaces · active</small></div>
+                  <div class="playground-token-swatch" style="--token-color: var(--color-primary-50)"><span class="playground-token-swatch__sample" aria-hidden="true"></span><code>--color-primary-50</code><small>Primary scale · active</small></div>
+                  <div class="playground-token-swatch" style="--token-color: var(--color-primary-100)"><span class="playground-token-swatch__sample" aria-hidden="true"></span><code>--color-primary-100</code><small>Primary scale · active</small></div>
+                  <div class="playground-token-swatch" style="--token-color: var(--color-primary-500)"><span class="playground-token-swatch__sample" aria-hidden="true"></span><code>--color-primary-500</code><small>Primary scale · active</small></div>
+                  <div class="playground-token-swatch" style="--token-color: var(--color-primary-600)"><span class="playground-token-swatch__sample" aria-hidden="true"></span><code>--color-primary-600</code><small>Primary scale · active</small></div>
+                  <div class="playground-token-swatch" style="--token-color: var(--color-primary-900)"><span class="playground-token-swatch__sample" aria-hidden="true"></span><code>--color-primary-900</code><small>Primary scale · active</small></div>
+                  <div class="playground-token-swatch" style="--token-color: var(--color-secondary-50)"><span class="playground-token-swatch__sample" aria-hidden="true"></span><code>--color-secondary-50</code><small>Secondary scale · active</small></div>
+                  <div class="playground-token-swatch" style="--token-color: var(--color-secondary-100)"><span class="playground-token-swatch__sample" aria-hidden="true"></span><code>--color-secondary-100</code><small>Secondary scale · active</small></div>
+                  <div class="playground-token-swatch" style="--token-color: var(--color-secondary-200)"><span class="playground-token-swatch__sample" aria-hidden="true"></span><code>--color-secondary-200</code><small>Secondary scale · active through border</small></div>
+                  <div class="playground-token-swatch" style="--token-color: var(--color-secondary-500)"><span class="playground-token-swatch__sample" aria-hidden="true"></span><code>--color-secondary-500</code><small>Secondary scale · active</small></div>
+                  <div class="playground-token-swatch" style="--token-color: var(--color-secondary-600)"><span class="playground-token-swatch__sample" aria-hidden="true"></span><code>--color-secondary-600</code><small>Secondary scale · active</small></div>
+                  <div class="playground-token-swatch" style="--token-color: var(--color-secondary-900)"><span class="playground-token-swatch__sample" aria-hidden="true"></span><code>--color-secondary-900</code><small>Secondary scale · active</small></div>
+                  <div class="playground-token-swatch" style="--token-color: var(--color-accent-50)"><span class="playground-token-swatch__sample" aria-hidden="true"></span><code>--color-accent-50</code><small>Accent scale · reserved</small></div>
+                  <div class="playground-token-swatch" style="--token-color: var(--color-accent-100)"><span class="playground-token-swatch__sample" aria-hidden="true"></span><code>--color-accent-100</code><small>Accent scale · reserved</small></div>
+                  <div class="playground-token-swatch" style="--token-color: var(--color-accent-500)"><span class="playground-token-swatch__sample" aria-hidden="true"></span><code>--color-accent-500</code><small>Accent scale · reserved</small></div>
+                  <div class="playground-token-swatch" style="--token-color: var(--color-accent-600)"><span class="playground-token-swatch__sample" aria-hidden="true"></span><code>--color-accent-600</code><small>Accent scale · reserved</small></div>
+                  <div class="playground-token-swatch" style="--token-color: var(--color-accent-900)"><span class="playground-token-swatch__sample" aria-hidden="true"></span><code>--color-accent-900</code><small>Accent scale · reserved</small></div>
+                </div>
+              </div>
+              <div class="playground-demo-group stack">
+                <h4>Semantic surfaces and text</h4>
+                <div class="playground-token-grid playground-token-grid--colors">
+                  <div class="playground-token-swatch" style="--token-color: var(--color-background)"><span class="playground-token-swatch__sample" aria-hidden="true"></span><code>--color-background</code><small>Page background</small></div>
+                  <div class="playground-token-swatch" style="--token-color: var(--color-surface)"><span class="playground-token-swatch__sample" aria-hidden="true"></span><code>--color-surface</code><small>Neutral surface</small></div>
+                  <div class="playground-token-swatch" style="--token-color: var(--color-surface-emphasis)"><span class="playground-token-swatch__sample" aria-hidden="true"></span><code>--color-surface-emphasis</code><small>Emphasized surface</small></div>
+                  <div class="playground-token-swatch" style="--token-color: var(--color-border)"><span class="playground-token-swatch__sample" aria-hidden="true"></span><code>--color-border</code><small>General border</small></div>
+                  <div class="playground-token-swatch" style="--token-color: var(--color-control-border)"><span class="playground-token-swatch__sample" aria-hidden="true"></span><code>--color-control-border</code><small>Control border</small></div>
+                  <div class="playground-token-swatch" style="--token-color: var(--color-text-primary)"><span class="playground-token-swatch__sample" aria-hidden="true"></span><code>--color-text-primary</code><small>Primary text</small></div>
+                  <div class="playground-token-swatch" style="--token-color: var(--color-text-secondary)"><span class="playground-token-swatch__sample" aria-hidden="true"></span><code>--color-text-secondary</code><small>Secondary text</small></div>
+                  <div class="playground-token-swatch" style="--token-color: var(--color-text-inverse)"><span class="playground-token-swatch__sample" aria-hidden="true"></span><code>--color-text-inverse</code><small>Text on dark surfaces</small></div>
+                </div>
+              </div>
+              <div class="playground-demo-group stack">
+                <h4>Interaction and status</h4>
+                <div class="playground-token-grid playground-token-grid--colors">
+                  <div class="playground-token-swatch" style="--token-color: var(--color-link)"><span class="playground-token-swatch__sample" aria-hidden="true"></span><code>--color-link</code><small>Text links · active</small></div>
+                  <div class="playground-token-swatch" style="--token-color: var(--color-focus-ring)"><span class="playground-token-swatch__sample" aria-hidden="true"></span><code>--color-focus-ring</code><small>Visible focus · active</small></div>
+                  <div class="playground-token-swatch" style="--token-color: var(--color-selection-background)"><span class="playground-token-swatch__sample" aria-hidden="true"></span><code>--color-selection-background</code><small>Selected-text background</small></div>
+                  <div class="playground-token-swatch" style="--token-color: var(--color-selection-text)"><span class="playground-token-swatch__sample" aria-hidden="true"></span><code>--color-selection-text</code><small>Selected text</small></div>
+                  <div class="playground-token-swatch" style="--token-color: var(--color-success)"><span class="playground-token-swatch__sample" aria-hidden="true"></span><code>--color-success</code><small>Status · reserved</small></div>
+                  <div class="playground-token-swatch" style="--token-color: var(--color-warning)"><span class="playground-token-swatch__sample" aria-hidden="true"></span><code>--color-warning</code><small>Status · reserved</small></div>
+                  <div class="playground-token-swatch" style="--token-color: var(--color-error)"><span class="playground-token-swatch__sample" aria-hidden="true"></span><code>--color-error</code><small>Status · reserved</small></div>
+                  <div class="playground-token-swatch" style="--token-color: var(--color-info)"><span class="playground-token-swatch__sample" aria-hidden="true"></span><code>--color-info</code><small>Status · reserved</small></div>
+                </div>
+              </div>
+            </article>
+
+            <article class="playground-demo-group stack" aria-labelledby="token-spacing-title">
+              <header class="playground-demo-group__header stack">
+                <h3 class="playground-demo-group__title" id="token-spacing-title">Spacing scale</h3>
+                <p class="playground-demo-group__description text text--muted">
+                  Samples preserve the source proportions while containing the largest value within the demo surface.
+                </p>
+              </header>
+              <div class="playground-demo playground-token-spacing-list">
+                <div class="playground-token-spacing" style="--token-space: var(--space-0)"><code>--space-0</code><span class="playground-token-spacing__track"><span class="playground-token-spacing__sample"></span></span></div>
+                <div class="playground-token-spacing" style="--token-space: var(--space-3xs)"><code>--space-3xs</code><span class="playground-token-spacing__track"><span class="playground-token-spacing__sample"></span></span></div>
+                <div class="playground-token-spacing" style="--token-space: var(--space-2xs)"><code>--space-2xs</code><span class="playground-token-spacing__track"><span class="playground-token-spacing__sample"></span></span></div>
+                <div class="playground-token-spacing" style="--token-space: var(--space-xs)"><code>--space-xs</code><span class="playground-token-spacing__track"><span class="playground-token-spacing__sample"></span></span></div>
+                <div class="playground-token-spacing" style="--token-space: var(--space-sm)"><code>--space-sm</code><span class="playground-token-spacing__track"><span class="playground-token-spacing__sample"></span></span></div>
+                <div class="playground-token-spacing" style="--token-space: var(--space-md)"><code>--space-md</code><span class="playground-token-spacing__track"><span class="playground-token-spacing__sample"></span></span></div>
+                <div class="playground-token-spacing" style="--token-space: var(--space-lg)"><code>--space-lg</code><span class="playground-token-spacing__track"><span class="playground-token-spacing__sample"></span></span></div>
+                <div class="playground-token-spacing" style="--token-space: var(--space-xl)"><code>--space-xl</code><span class="playground-token-spacing__track"><span class="playground-token-spacing__sample"></span></span></div>
+                <div class="playground-token-spacing" style="--token-space: var(--space-2xl)"><code>--space-2xl</code><span class="playground-token-spacing__track"><span class="playground-token-spacing__sample"></span></span></div>
+                <div class="playground-token-spacing" style="--token-space: var(--space-3xl)"><code>--space-3xl</code><span class="playground-token-spacing__track"><span class="playground-token-spacing__sample"></span></span></div>
+              </div>
+              <p class="text text--muted">Consume this scale or an established semantic spacing token instead of introducing raw dimensions.</p>
+            </article>
+
+            <article class="playground-demo-group stack" aria-labelledby="token-type-title">
+              <header class="playground-demo-group__header stack">
+                <h3 class="playground-demo-group__title" id="token-type-title">Typography foundation</h3>
+                <p class="playground-demo-group__description text text--muted">
+                  Fluid size tokens use the source <code>clamp()</code> scale; this reference shows foundations rather
+                  than assigning new semantic type roles.
+                </p>
+              </header>
+              <div class="playground-demo playground-token-type-list">
+                <p class="playground-token-type" style="--token-font-family: var(--font-family-base)"><code>--font-family-base</code><span>Accessible landing-page typography</span></p>
+                <p class="playground-token-type" style="--token-font-family: var(--font-family-heading)"><code>--font-family-heading</code><span>Accessible landing-page headings</span></p>
+                <p class="playground-token-type" style="--token-font-size: var(--font-size-xs)"><code>--font-size-xs</code><span>Fluid type specimen</span></p>
+                <p class="playground-token-type" style="--token-font-size: var(--font-size-sm)"><code>--font-size-sm</code><span>Fluid type specimen</span></p>
+                <p class="playground-token-type" style="--token-font-size: var(--font-size-base)"><code>--font-size-base</code><span>Fluid type specimen</span></p>
+                <p class="playground-token-type" style="--token-font-size: var(--font-size-lg)"><code>--font-size-lg</code><span>Fluid type specimen</span></p>
+                <p class="playground-token-type" style="--token-font-size: var(--font-size-xl)"><code>--font-size-xl</code><span>Fluid type specimen</span></p>
+                <p class="playground-token-type" style="--token-font-size: var(--font-size-2xl)"><code>--font-size-2xl</code><span>Fluid type specimen</span></p>
+                <p class="playground-token-type" style="--token-font-size: var(--font-size-3xl)"><code>--font-size-3xl</code><span>Fluid type specimen</span></p>
+                <p class="playground-token-type" style="--token-font-size: var(--font-size-4xl)"><code>--font-size-4xl</code><span>Fluid type specimen</span></p>
+              </div>
+              <div class="playground-demo playground-api-grid">
+                <div class="playground-api__group stack">
+                  <h4>Weights</h4>
+                  <div class="playground-token-type-list">
+                    <p class="playground-token-type" style="--token-font-weight: var(--font-weight-regular)"><code>--font-weight-regular</code><span>Weight specimen</span></p>
+                    <p class="playground-token-type" style="--token-font-weight: var(--font-weight-medium)"><code>--font-weight-medium</code><span>Weight specimen</span></p>
+                    <p class="playground-token-type" style="--token-font-weight: var(--font-weight-semibold)"><code>--font-weight-semibold</code><span>Weight specimen</span></p>
+                    <p class="playground-token-type" style="--token-font-weight: var(--font-weight-bold)"><code>--font-weight-bold</code><span>Weight specimen</span></p>
+                  </div>
+                </div>
+                <div class="playground-api__group stack">
+                  <h4>Line height and tracking</h4>
+                  <div class="playground-token-type-list">
+                    <p class="playground-token-type" style="--token-line-height: var(--line-height-tight)"><code>--line-height-tight</code><span>Two-line specimen<br />showing vertical rhythm</span></p>
+                    <p class="playground-token-type" style="--token-line-height: var(--line-height-heading)"><code>--line-height-heading</code><span>Two-line specimen<br />showing vertical rhythm</span></p>
+                    <p class="playground-token-type" style="--token-line-height: var(--line-height-base)"><code>--line-height-base</code><span>Two-line specimen<br />showing vertical rhythm</span></p>
+                    <p class="playground-token-type" style="--token-line-height: var(--line-height-relaxed)"><code>--line-height-relaxed</code><span>Two-line specimen<br />showing vertical rhythm</span></p>
+                    <p class="playground-token-type" style="--token-letter-spacing: var(--letter-spacing-tight)"><code>--letter-spacing-tight</code><span>Tracking specimen</span></p>
+                    <p class="playground-token-type" style="--token-letter-spacing: var(--letter-spacing-normal)"><code>--letter-spacing-normal</code><span>Tracking specimen</span></p>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="playground-demo-group stack" aria-labelledby="token-shape-title">
+              <header class="playground-demo-group__header stack">
+                <h3 class="playground-demo-group__title" id="token-shape-title">Borders and radii</h3>
+                <p class="playground-demo-group__description text text--muted">These samples use the current border foundation and each defined radius.</p>
+              </header>
+              <div class="playground-demo playground-token-grid">
+                <div class="playground-token-shape" style="--token-radius: var(--radius-none)"><span aria-hidden="true"></span><code>--radius-none</code><small>Reserved</small></div>
+                <div class="playground-token-shape" style="--token-radius: var(--radius-sm)"><span aria-hidden="true"></span><code>--radius-sm</code><small>Reserved</small></div>
+                <div class="playground-token-shape" style="--token-radius: var(--radius-md)"><span aria-hidden="true"></span><code>--radius-md</code><small>Active</small></div>
+                <div class="playground-token-shape" style="--token-radius: var(--radius-lg)"><span aria-hidden="true"></span><code>--radius-lg</code><small>Active</small></div>
+                <div class="playground-token-shape" style="--token-radius: var(--radius-xl)"><span aria-hidden="true"></span><code>--radius-xl</code><small>Active</small></div>
+                <div class="playground-token-shape" style="--token-radius: var(--radius-full)"><span aria-hidden="true"></span><code>--radius-full</code><small>Active</small></div>
+              </div>
+              <div class="playground-demo"><ul class="playground-token-reference"><li><code>--border-width</code> — standard border thickness</li><li><code>--focus-ring-width</code> — visible focus-ring thickness</li><li><code>--focus-ring-offset</code> — separation between control and focus ring</li><li><code>--color-border</code> — general semantic border color</li><li><code>--color-control-border</code> — control-specific semantic border color</li></ul></div>
+            </article>
+
+            <article class="playground-demo-group stack" aria-labelledby="token-shadow-title">
+              <header class="playground-demo-group__header stack">
+                <h3 class="playground-demo-group__title" id="token-shadow-title">Shadow system</h3>
+                <p class="playground-demo-group__description text text--muted">Static neutral surfaces show every defined elevation token without adding motion.</p>
+              </header>
+              <div class="playground-demo playground-token-grid">
+                <div class="playground-token-shadow" style="--token-shadow: var(--shadow-none)"><span aria-hidden="true"></span><code>--shadow-none</code><small>Active reset</small></div>
+                <div class="playground-token-shadow" style="--token-shadow: var(--shadow-sm)"><span aria-hidden="true"></span><code>--shadow-sm</code><small>Cards and sticky Header</small></div>
+                <div class="playground-token-shadow" style="--token-shadow: var(--shadow-md)"><span aria-hidden="true"></span><code>--shadow-md</code><small>Raised states and mobile menu</small></div>
+                <div class="playground-token-shadow" style="--token-shadow: var(--shadow-lg)"><span aria-hidden="true"></span><code>--shadow-lg</code><small>Prominent media elevation</small></div>
+              </div>
+              <p class="text text--muted">No overlay- or modal-specific shadow token is currently defined.</p>
+            </article>
+
+            <article class="playground-demo-group stack" aria-labelledby="token-motion-title">
+              <header class="playground-demo-group__header stack">
+                <h3 class="playground-demo-group__title" id="token-motion-title">Motion system</h3>
+                <p class="playground-demo-group__description text text--muted">Motion is documented statically; no autoplaying example is required to communicate the API.</p>
+              </header>
+              <div class="playground-demo playground-api-grid">
+                <div class="playground-api__group stack"><h4>Durations</h4><ul class="playground-token-reference"><li><code>--duration-instant</code> — reduced-motion override · active</li><li><code>--duration-fast</code> — interface transitions · active</li><li><code>--duration-normal</code> — reserved</li><li><code>--duration-slow</code> — reserved</li></ul></div>
+                <div class="playground-api__group stack"><h4>Easing</h4><ul class="playground-token-reference"><li><code>--ease-standard</code> — current transitions · active</li><li><code>--ease-emphasized</code> — reserved; currently shares the exact standard curve</li></ul><p class="text text--muted">The global reduced-motion rule maps transition and animation duration to <code>--duration-instant</code>.</p></div>
+              </div>
+            </article>
+
+            <article class="playground-demo-group stack" aria-labelledby="token-layout-title">
+              <header class="playground-demo-group__header stack">
+                <h3 class="playground-demo-group__title" id="token-layout-title">Layout, measure, and sticky system</h3>
+                <p class="playground-demo-group__description text text--muted">These semantic tokens describe reusable layout responsibilities rather than one-off component dimensions.</p>
+              </header>
+              <div class="playground-demo playground-api-grid">
+                <div class="playground-api__group stack"><h4>Viewport and containers</h4><ul class="playground-token-reference"><li><code>--viewport-min-width</code> — supported minimum document width</li><li><code>--viewport-height</code> — viewport-height foundation</li><li><code>--container-max-width</code> — standard container maximum</li><li><code>--container-padding-inline</code> — fluid container gutter</li><li><code>--section-padding-block</code> — fluid section rhythm</li><li><code>--section-header-spacing</code> — section header separation</li><li><code>--content-measure</code> — readable line-length measure</li><li><code>--size-full</code> — full available size</li></ul></div>
+                <div class="playground-api__group stack"><h4>Sticky and anchors</h4><ul class="playground-token-reference"><li><code>--header-height</code> — visual Header height</li><li><code>--sticky-offset</code> — shared breathing room</li><li><code>--sticky-top</code> — Header height plus sticky offset</li><li><code>--scroll-offset</code> — anchor clearance</li><li><code>--sticky-header-offset</code> — sticky Header inset</li></ul><p class="text text--muted">Sticky consumers use <code>--sticky-top</code>; anchor targets use <code>--scroll-offset</code>.</p></div>
+                <div class="playground-api__group stack"><h4>Media ratios</h4><ul class="playground-token-reference"><li><code>--aspect-ratio-square</code> — square media</li><li><code>--aspect-ratio-landscape</code> — landscape media</li></ul><p class="text text--muted">Aspect ratios preserve media consistency without fixed heights.</p></div>
+              </div>
+            </article>
+
+            <article class="playground-demo-group stack" aria-labelledby="token-breakpoints-title">
+              <header class="playground-demo-group__header stack">
+                <h3 class="playground-demo-group__title" id="token-breakpoints-title">Sass breakpoints</h3>
+                <p class="playground-demo-group__description text text--muted">Breakpoints are compile-time Sass variables, not CSS custom properties.</p>
+              </header>
+              <div class="playground-demo playground-api-grid">
+                <div class="playground-api__group stack"><h4><code>$mobile: 40rem</code></h4><p class="text text--muted">Shared transition for mobile single-column and touch-friendly compositions.</p></div>
+                <div class="playground-api__group stack"><h4><code>$tablet: 64rem</code></h4><p class="text text--muted">Shared transition for tablet and reduced-column compositions.</p></div>
+              </div>
+              <p class="text text--muted">Components consume these shared Sass variables. JavaScript must not duplicate their numeric values.</p>
+            </article>
+
+            <article class="playground-demo-group stack" aria-labelledby="token-layers-title">
+              <header class="playground-demo-group__header stack">
+                <h3 class="playground-demo-group__title" id="token-layers-title">Z-index layers</h3>
+                <p class="playground-demo-group__description text text--muted">The ordered semantic scale replaces raw stacking values.</p>
+              </header>
+              <div class="playground-demo">
+                <ol class="playground-token-layers">
+                  <li><code>--z-base</code><span>Base content · active</span></li>
+                  <li><code>--z-raised</code><span>Decorative or raised content · active</span></li>
+                  <li><code>--z-dropdown</code><span>Dropdown layer · reserved</span></li>
+                  <li><code>--z-sticky</code><span>Sticky Header · active</span></li>
+                  <li><code>--z-overlay</code><span>Overlay layer · reserved</span></li>
+                  <li><code>--z-modal</code><span>Modal layer · reserved</span></li>
+                  <li><code>--z-toast</code><span>Top utility layer and Skip link · active</span></li>
+                </ol>
+              </div>
+              <p class="text text--muted">Decorative layers stay below controls, and the Skip link remains above the sticky Header through <code>--z-toast</code>.</p>
+            </article>
+
+            <article class="playground-demo-group stack" aria-labelledby="token-controls-title">
+              <header class="playground-demo-group__header stack">
+                <h3 class="playground-demo-group__title" id="token-controls-title">Control foundation</h3>
+                <p class="playground-demo-group__description text text--muted">Shared heights, padding, and icon sizes establish the small, medium, and large control relationship.</p>
+              </header>
+              <div class="playground-demo playground-token-controls">
+                <div class="playground-token-control" style="--token-control-height: var(--control-height-sm); --token-control-padding: var(--control-padding-inline-sm); --token-control-icon: var(--control-icon-size-sm)"><span class="playground-token-control__sample"><i aria-hidden="true"></i>Small</span><code>--control-height-sm</code><code>--control-padding-inline-sm</code><code>--control-icon-size-sm</code></div>
+                <div class="playground-token-control" style="--token-control-height: var(--control-height-md); --token-control-padding: var(--control-padding-inline-md); --token-control-icon: var(--control-icon-size-md)"><span class="playground-token-control__sample"><i aria-hidden="true"></i>Medium</span><code>--control-height-md</code><code>--control-padding-inline-md</code><code>--control-icon-size-md</code></div>
+                <div class="playground-token-control" style="--token-control-height: var(--control-height-lg); --token-control-padding: var(--control-padding-inline-lg); --token-control-icon: var(--control-icon-size-lg)"><span class="playground-token-control__sample"><i aria-hidden="true"></i>Large</span><code>--control-height-lg</code><code>--control-padding-inline-lg</code><code>--control-icon-size-lg</code></div>
+              </div>
+              <div class="playground-demo"><ul class="playground-token-reference"><li><code>--opacity-disabled</code> — shared disabled-state opacity</li><li>Control tokens are foundations; Button documents the complete composed component API separately.</li></ul></div>
+            </article>
+
+            <article class="playground-demo-group stack playground-api" aria-labelledby="token-api-title">
+              <header class="playground-demo-group__header stack">
+                <h3 class="playground-demo-group__title" id="token-api-title">Public token reference</h3>
+                <p class="playground-demo-group__description text text--muted">The visual groups above are the global API reference; these compact indexes make each category discoverable without duplicating source values.</p>
+              </header>
+              <div class="playground-demo playground-api-grid">
+                <div class="playground-api__group stack"><h4>Color</h4><p><a href="#token-colors-title">Primitive palette, semantic surfaces and text, interaction, and reserved status tokens</a></p></div>
+                <div class="playground-api__group stack"><h4>Scale foundations</h4><p><a href="#token-spacing-title">Spacing</a>, <a href="#token-type-title">typography</a>, <a href="#token-shape-title">borders and radii</a>, and <a href="#token-shadow-title">shadows</a></p></div>
+                <div class="playground-api__group stack"><h4>System foundations</h4><p><a href="#token-motion-title">Motion</a>, <a href="#token-layout-title">layout and sticky</a>, <a href="#token-breakpoints-title">breakpoints</a>, and <a href="#token-layers-title">z-index</a></p></div>
+                <div class="playground-api__group stack"><h4>Controls and components</h4><p><a href="#token-controls-title">Shared controls</a>; component-local properties remain scoped implementation APIs rather than global tokens.</p></div>
+              </div>
+            </article>
+
+            <article class="playground-demo-group stack" aria-labelledby="token-guidance-title">
+              <header class="playground-demo-group__header stack">
+                <h3 class="playground-demo-group__title" id="token-guidance-title">Usage guidance</h3>
+                <p class="playground-demo-group__description text text--muted">Preserve the intent encoded by the existing system.</p>
+              </header>
+              <div class="playground-demo playground-guidance">
+                <ul class="playground-guidance__list">
+                  <li>Prefer semantic tokens over primitives inside reusable components.</li>
+                  <li>Add a token only for a demonstrated reusable concept; do not alias every primitive.</li>
+                  <li>Avoid raw visual values and keep component-local custom properties scoped.</li>
+                  <li>Use shared Sass breakpoints plus semantic z-index and sticky tokens.</li>
+                  <li>Preserve accessibility intent in color relationships, focus, reduced motion, control sizing, and readable measure.</li>
+                  <li>Review real foreground/background combinations rather than assuming a token guarantees contrast.</li>
+                </ul>
+              </div>
+            </article>
+          </div>
         </div>
       </section>
     </main>

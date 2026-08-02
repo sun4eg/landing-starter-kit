@@ -1009,13 +1009,215 @@
       <section class="playground-section section" aria-labelledby="forms-title">
         <div class="container">
           <header class="playground-section__header section-heading">
-            <p class="section-heading__eyebrow">Future section</p>
+            <p class="section-heading__eyebrow">Component</p>
             <h2 class="playground-section__title section-heading__title" id="forms-title">Forms</h2>
             <p class="playground-section__description section-heading__lead">
-              Form fields, validation states, and actions will be documented here.
+              Review floating-label fields, native validation, semantic HTML requirements, Button composition, and
+              resilient form content without a custom submission layer.
             </p>
           </header>
-          <div class="playground-demo playground-demo--placeholder"><p>Demo area reserved for forms.</p></div>
+
+          <div class="playground-section__content stack">
+            <article class="playground-demo-group stack" aria-labelledby="playground-complete-form-title">
+              <header class="playground-demo-group__header stack">
+                <h3 class="playground-demo-group__title" id="playground-complete-form-title">
+                  Complete form and native validation
+                </h3>
+                <p class="playground-demo-group__description text text--muted">
+                  Submit with required fields empty to inspect browser-native validation; exact prompts vary by browser,
+                  and this Playground has no submission backend.
+                </p>
+              </header>
+
+              <div class="playground-demo">
+                <div class="playground-form-demo stack">
+                  <p class="text text--muted">
+                    This form posts only to the current Playground URL. Do not enter personal or sensitive information.
+                  </p>
+                  <form class="form" method="post" action="" aria-labelledby="playground-complete-form-title">
+                    <div class="form__field">
+                      <input
+                        class="form__input"
+                        id="playground-form-name"
+                        name="name"
+                        type="text"
+                        placeholder=" "
+                        autocomplete="name"
+                        required
+                      />
+                      <label class="form__label" for="playground-form-name">Name (required)</label>
+                    </div>
+
+                    <div class="form__field">
+                      <input
+                        class="form__input"
+                        id="playground-form-email"
+                        name="email"
+                        type="email"
+                        placeholder=" "
+                        autocomplete="email"
+                        required
+                      />
+                      <label class="form__label" for="playground-form-email">Email (required)</label>
+                    </div>
+
+                    <div class="form__field">
+                      <input
+                        class="form__input"
+                        id="playground-form-organization"
+                        name="organization"
+                        type="text"
+                        value="Example organization with a longer descriptive operating name"
+                        placeholder=" "
+                        autocomplete="organization"
+                      />
+                      <label class="form__label" for="playground-form-organization">
+                        Organization or company for this request (optional)
+                      </label>
+                    </div>
+
+                    <div class="form__field">
+                      <textarea
+                        class="form__textarea"
+                        id="playground-form-message"
+                        name="message"
+                        placeholder=" "
+                        rows="7"
+                        required
+                      >This prefilled neutral example demonstrates a longer textarea value that wraps naturally in the control. It can be edited, cleared, and resized vertically while preserving the floating-label relationship.</textarea>
+                      <label class="form__label" for="playground-form-message">Message (required)</label>
+                    </div>
+
+                    <div class="form__actions">
+                      <button class="button button--primary button--full" type="submit">
+                        Validate Playground form
+                      </button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </article>
+
+            <article class="playground-demo-group stack">
+              <header class="playground-demo-group__header stack">
+                <h3 class="playground-demo-group__title">Inspect floating-label states</h3>
+                <p class="playground-demo-group__description text text--muted">
+                  Use the complete form above to inspect real browser states without permanent simulation classes.
+                </p>
+              </header>
+              <div class="playground-demo">
+                <ol class="playground-instructions text">
+                  <li>Start with an empty field: its label rests inside the control.</li>
+                  <li>Focus the field: the label moves onto the outlined border.</li>
+                  <li>Enter a value and blur: the label remains raised.</li>
+                  <li>Delete the value and blur: the label returns inside the control.</li>
+                  <li>Use saved browser data to inspect autofill; no fake autofill state is provided.</li>
+                  <li>Submit with required fields empty or an invalid email to inspect native validation.</li>
+                </ol>
+              </div>
+            </article>
+
+            <section class="playground-explainer-grid" aria-label="Form responsibilities">
+              <article class="playground-demo stack">
+                <h3>Required and optional fields</h3>
+                <ul class="playground-guidance__list text">
+                  <li>Use the native <code>required</code> attribute only when the field is necessary.</li>
+                  <li>Identify optional fields in visible copy when their status may be ambiguous.</li>
+                  <li>Do not communicate required state through color alone.</li>
+                  <li>Label position depends on focus or content, not validity.</li>
+                  <li>Validation state and floating-label state are separate responsibilities.</li>
+                </ul>
+              </article>
+
+              <article class="playground-demo stack">
+                <h3>Button composition</h3>
+                <p class="text text--muted">
+                  Form owns field and action layout. Button remains an independent component composed inside
+                  <code>.form__actions</code>; Form does not override Button internals.
+                </p>
+                <p class="text text--muted">
+                  The live example uses the existing primary and full-width Button APIs within the constrained form.
+                </p>
+              </article>
+            </section>
+
+            <aside class="playground-guidance playground-demo stack" aria-labelledby="form-guidance-title">
+              <h3 class="playground-guidance__title" id="form-guidance-title">Accessibility guidance</h3>
+              <ul class="playground-guidance__list text">
+                <li>Provide a real label for every control; placeholder-only labels are prohibited.</li>
+                <li>Keep every <code>for</code>/<code>id</code> relationship unique.</li>
+                <li>Match autocomplete values and native input types to each field’s purpose.</li>
+                <li>Use native required state and retain browser validation.</li>
+                <li>Keep logical DOM order because it defines keyboard tab order.</li>
+                <li>Visible focus is inherited from the global focus-visible system.</li>
+                <li>Use disabled fields carefully; this component has no intentional disabled visual API.</li>
+                <li>Custom submission errors and status updates require an accessible messaging strategy.</li>
+              </ul>
+            </aside>
+
+            <section class="playground-demo-group stack" aria-labelledby="form-structure-title">
+              <header class="playground-demo-group__header stack">
+                <h3 class="playground-demo-group__title" id="form-structure-title">Floating-label field structure</h3>
+                <p class="playground-demo-group__description text text--muted">
+                  The control must precede its label for the sibling selector, and the single-space placeholder is the
+                  CSS state hook rather than visible instructional copy.
+                </p>
+              </header>
+              <div class="playground-demo">
+                <pre class="playground-code"><code>&lt;div class="form__field"&gt;
+  &lt;input class="form__input" id="name" name="name"
+    type="text" placeholder=" " autocomplete="name" required /&gt;
+  &lt;label class="form__label" for="name"&gt;Name (required)&lt;/label&gt;
+&lt;/div&gt;</code></pre>
+              </div>
+            </section>
+
+            <div class="playground-api-grid">
+              <section class="playground-api playground-demo stack" aria-labelledby="form-bem-api-title">
+                <header class="playground-api__header stack">
+                  <h3 class="playground-api__title" id="form-bem-api-title">Form BEM API</h3>
+                  <p class="playground-api__description text text--muted">
+                    These are the complete existing Form layout and floating-label classes.
+                  </p>
+                </header>
+                <dl class="playground-api__list stack">
+                  <div class="playground-api__group stack">
+                    <dt class="playground-demo__label">Base</dt>
+                    <dd><code>.form</code></dd>
+                  </div>
+                  <div class="playground-api__group stack">
+                    <dt class="playground-demo__label">Elements</dt>
+                    <dd>
+                      <ul class="playground-api__classes cluster" role="list">
+                        <li><code>.form__field</code></li>
+                        <li><code>.form__label</code></li>
+                        <li><code>.form__input</code></li>
+                        <li><code>.form__textarea</code></li>
+                        <li><code>.form__actions</code></li>
+                      </ul>
+                    </dd>
+                  </div>
+                </dl>
+              </section>
+
+              <section class="playground-api playground-demo stack" aria-labelledby="form-html-contract-title">
+                <header class="playground-api__header stack">
+                  <h3 class="playground-api__title" id="form-html-contract-title">Required HTML contract</h3>
+                  <p class="playground-api__description text text--muted">
+                    Preserve these relationships so floating labels and native semantics remain reliable.
+                  </p>
+                </header>
+                <ul class="playground-guidance__list text">
+                  <li>Wrap each control and label with <code>.form__field</code>.</li>
+                  <li>Place the control immediately before its label.</li>
+                  <li>Include <code>placeholder=" "</code> as the CSS state hook.</li>
+                  <li>Match the control ID to the label’s <code>for</code>.</li>
+                  <li>Choose the appropriate native type and autocomplete value.</li>
+                  <li>Add <code>required</code> only when semantically necessary.</li>
+                </ul>
+              </section>
+            </div>
+          </div>
         </div>
       </section>
 

@@ -37,5 +37,37 @@
 }
 
 .playground-demo__actions {
-  --cluster-alignment: stretch;
+  --cluster-alignment: flex-start;
+}
+
+.playground-button-docs {
+  --stack-gap: var(--space-xl);
+}
+
+.playground-demo__constraint {
+  width: var(--size-full);
+  max-width: calc(var(--content-measure) / 2);
+}
+
+.playground-guidance {
+  max-width: var(--content-measure);
+}
+
+.playground-guidance__list {
+  display: grid;
+  gap: var(--space-2xs);
+  padding-inline-start: var(--space-md);
+}
+
+.playground-api__list,
+.playground-api__group {
+  --stack-gap: var(--space-xs);
+}
+
+.playground-api__classes {
+  --cluster-gap: var(--space-2xs) var(--space-md);
+}
+
+.playground-api code {
+  overflow-wrap: anywhere;
 }

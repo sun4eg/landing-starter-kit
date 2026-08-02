@@ -102,28 +102,201 @@
           <header class="playground-section__header section-heading">
             <p class="section-heading__eyebrow">Component</p>
             <h2 class="section-heading__title" id="buttons-title">Buttons</h2>
-            <p class="section-heading__lead">Compare the existing visual variants, sizes, and disabled state.</p>
+            <p class="section-heading__lead">
+              Review the complete Button API across visual variants, sizes, semantics, composition, and resilient
+              content.
+            </p>
           </header>
 
-          <div class="playground-demo stack">
-            <div class="playground-demo__group stack">
-              <p class="playground-demo__label">Variants</p>
-              <div class="playground-demo__actions cluster">
-                <button class="button button--primary" type="button">Primary button</button>
-                <button class="button button--secondary" type="button">Secondary button</button>
-                <button class="button button--outline" type="button">Outline button</button>
-                <button class="button button--ghost" type="button">Ghost button</button>
-                <button class="button button--primary" type="button" disabled>Disabled button</button>
+          <div class="playground-button-docs stack">
+            <article class="playground-demo__group stack">
+              <header class="stack">
+                <h3>Variants</h3>
+                <p class="text text--muted">Use the four supported visual treatments to express action hierarchy.</p>
+              </header>
+              <div class="playground-demo">
+                <div class="playground-demo__actions cluster">
+                  <button class="button button--primary" type="button">Primary button</button>
+                  <button class="button button--secondary" type="button">Secondary button</button>
+                  <button class="button button--outline" type="button">Outline button</button>
+                  <button class="button button--ghost" type="button">Ghost button</button>
+                </div>
               </div>
-            </div>
-            <div class="playground-demo__group stack">
-              <p class="playground-demo__label">Sizes</p>
-              <div class="playground-demo__actions cluster">
-                <button class="button button--primary button--sm" type="button">Small</button>
-                <button class="button button--primary button--md" type="button">Medium</button>
-                <button class="button button--primary button--lg" type="button">Large</button>
+            </article>
+
+            <article class="playground-demo__group stack">
+              <header class="stack">
+                <h3>Sizes</h3>
+                <p class="text text--muted">
+                  <code>.button</code> uses the default medium size; <code>.button--md</code> is its explicit equivalent.
+                  Small is intended for compact interfaces. Prefer the default medium size for primary interactive actions.
+                </p>
+              </header>
+              <div class="playground-demo">
+                <div class="playground-demo__actions cluster">
+                  <button class="button button--primary button--sm" type="button">Small</button>
+                  <button class="button button--primary" type="button">Default (medium)</button>
+                  <button class="button button--primary button--md" type="button">Medium (explicit)</button>
+                  <button class="button button--primary button--lg" type="button">Large</button>
+                </div>
               </div>
-            </div>
+            </article>
+
+            <article class="playground-demo__group stack">
+              <header class="stack">
+                <h3>Width</h3>
+                <p class="text text--muted">
+                  Buttons use intrinsic width by default, while the full-width modifier fills its immediate container.
+                </p>
+              </header>
+              <div class="playground-demo stack">
+                <div class="playground-demo__group stack">
+                  <p class="playground-demo__label">Intrinsic width</p>
+                  <button class="button button--primary" type="button">Intrinsic button</button>
+                </div>
+                <div class="playground-demo__group stack">
+                  <p class="playground-demo__label">Full width in a constrained container</p>
+                  <div class="playground-demo__constraint">
+                    <button class="button button--primary button--full" type="button">Full-width button</button>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="playground-demo__group stack">
+              <header class="stack">
+                <h3>Element types</h3>
+                <p class="text text--muted">Use a button for actions and a link when navigating to a destination.</p>
+              </header>
+              <div class="playground-demo">
+                <div class="playground-demo__actions cluster">
+                  <button class="button button--primary" type="button">Run Playground action</button>
+                  <a class="button button--outline" href="#button-guidance-title">Read usage guidance</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="playground-demo__group stack">
+              <header class="stack">
+                <h3>Icon composition</h3>
+                <p class="text text--muted">Place a decorative icon before or after a meaningful text label.</p>
+              </header>
+              <div class="playground-demo">
+                <div class="playground-demo__actions cluster">
+                  <button class="button button--secondary" type="button">
+                    <span class="button__icon button__icon--leading" aria-hidden="true">
+                      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                        <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.42-1.41L7.83 13H20v-2Z" />
+                      </svg>
+                    </span>
+                    Previous example
+                  </button>
+                  <a class="button button--primary" href="#button-states-title">
+                    Review states
+                    <span class="button__icon button__icon--trailing" aria-hidden="true">
+                      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                        <path d="m12 4-1.42 1.41L16.17 11H4v2h12.17l-5.59 5.59L12 20l8-8-8-8Z" />
+                      </svg>
+                    </span>
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <article class="playground-demo__group stack" aria-labelledby="button-states-title">
+              <header class="stack">
+                <h3 id="button-states-title">States</h3>
+                <p class="text text--muted">
+                  Compare normal and disabled controls, then interact with enabled examples to inspect native hover,
+                  active, and focus-visible states.
+                </p>
+              </header>
+              <div class="playground-demo">
+                <div class="playground-demo__actions cluster">
+                  <button class="button button--primary" type="button">Normal button</button>
+                  <button class="button button--primary" type="button" disabled>Disabled button</button>
+                  <a class="button button--outline" aria-disabled="true" tabindex="-1">Unavailable link</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="playground-demo__group stack">
+              <header class="stack">
+                <h3>Long-content resilience</h3>
+                <p class="text text--muted">
+                  This constrained example verifies wrapping, comfortable block padding, and containment without
+                  horizontal overflow.
+                </p>
+              </header>
+              <div class="playground-demo">
+                <div class="playground-demo__constraint">
+                  <button class="button button--primary button--full" type="button">
+                    Continue with this deliberately long neutral resilience-example label
+                  </button>
+                </div>
+              </div>
+            </article>
+
+            <aside class="playground-guidance playground-demo stack" aria-labelledby="button-guidance-title">
+              <h3 id="button-guidance-title">Usage guidance</h3>
+              <ul class="playground-guidance__list text">
+                <li>Use clear, verb-led labels.</li>
+                <li>Reserve primary styling for the main action.</li>
+                <li>Use links for navigation and buttons for actions.</li>
+                <li>Do not communicate state through color alone.</li>
+                <li>Keep accessible names meaningful.</li>
+                <li>Avoid disabled controls when explanatory feedback would be more useful.</li>
+              </ul>
+            </aside>
+
+            <section class="playground-api playground-demo stack" aria-labelledby="button-api-title">
+              <header class="stack">
+                <h3 id="button-api-title">Public API reference</h3>
+                <p class="text text--muted">These are the supported classes for composing the Button component.</p>
+              </header>
+
+              <dl class="playground-api__list stack">
+                <div class="playground-api__group stack">
+                  <dt class="playground-demo__label">Base</dt>
+                  <dd><code>.button</code></dd>
+                </div>
+                <div class="playground-api__group stack">
+                  <dt class="playground-demo__label">Variants</dt>
+                  <dd>
+                    <ul class="playground-api__classes cluster" role="list">
+                      <li><code>.button--primary</code></li>
+                      <li><code>.button--secondary</code></li>
+                      <li><code>.button--outline</code></li>
+                      <li><code>.button--ghost</code></li>
+                    </ul>
+                  </dd>
+                </div>
+                <div class="playground-api__group stack">
+                  <dt class="playground-demo__label">Sizes</dt>
+                  <dd>
+                    <ul class="playground-api__classes cluster" role="list">
+                      <li><code>.button--sm</code></li>
+                      <li><code>.button--md</code></li>
+                      <li><code>.button--lg</code></li>
+                    </ul>
+                  </dd>
+                </div>
+                <div class="playground-api__group stack">
+                  <dt class="playground-demo__label">Width</dt>
+                  <dd><code>.button--full</code></dd>
+                </div>
+                <div class="playground-api__group stack">
+                  <dt class="playground-demo__label">Elements</dt>
+                  <dd>
+                    <ul class="playground-api__classes cluster" role="list">
+                      <li><code>.button__icon</code></li>
+                      <li><code>.button__icon--leading</code></li>
+                      <li><code>.button__icon--trailing</code></li>
+                    </ul>
+                  </dd>
+                </div>
+              </dl>
+            </section>
           </div>
         </div>
       </section>

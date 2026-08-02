@@ -17,7 +17,9 @@
   justify-content: center;
   gap: var(--space-2xs);
   width: fit-content;
+  max-width: var(--size-full);
   min-height: var(--button-height);
+  padding-block: var(--space-2xs);
   padding-inline: var(--button-padding-inline);
   color: var(--button-color);
   background-color: var(--button-background);
@@ -29,6 +31,8 @@
   text-align: center;
   text-decoration: none;
   vertical-align: middle;
+  white-space: normal;
+  overflow-wrap: anywhere;
   cursor: pointer;
   user-select: none;
   transition:

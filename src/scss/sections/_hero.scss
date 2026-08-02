@@ -27,12 +27,6 @@
   gap: var(--space-sm);
 }
 
-.hero__actions > .button {
-  max-width: var(--size-full);
-  white-space: normal;
-  overflow-wrap: anywhere;
-}
-
 .hero__trust-list {
   display: flex;
   flex-wrap: wrap;

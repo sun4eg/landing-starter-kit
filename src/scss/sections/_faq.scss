@@ -64,11 +64,6 @@
   margin-block-start: var(--space-xs);
 }
 
-.faq-cta__actions > .button {
-  white-space: normal;
-  overflow-wrap: anywhere;
-}
-
 @media (max-width: breakpoints.$tablet) {
   .faq__layout {
     grid-template-areas:

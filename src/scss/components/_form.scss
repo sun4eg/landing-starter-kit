@@ -75,9 +75,3 @@
   flex-wrap: wrap;
   gap: var(--space-sm);
 }
-
-.form__actions > .button {
-  max-width: var(--size-full);
-  white-space: normal;
-  overflow-wrap: anywhere;
-}

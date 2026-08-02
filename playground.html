@@ -316,24 +316,240 @@
             <p class="section-heading__eyebrow">Foundation</p>
             <h2 class="playground-section__title section-heading__title" id="typography-title">Typography</h2>
             <p class="playground-section__description section-heading__lead">
-              Review heading hierarchy and the existing body-text treatments.
+              Use semantic elements first, then compose the existing Text component and fluid typography tokens where
+              their responsibilities apply.
             </p>
           </header>
 
-          <div class="playground-demo stack">
-            <div class="playground-demo-group stack">
-              <p class="playground-demo__label">Headings</p>
-              <h3>Level three heading</h3>
-              <h4>Level four heading</h4>
-              <h5>Level five heading</h5>
-              <h6>Level six heading</h6>
-            </div>
-            <div class="playground-demo-group stack">
-              <p class="playground-demo__label">Body text</p>
-              <p class="text">Default body text communicates primary information with a comfortable reading line.</p>
-              <p class="text text--muted">Muted body text supports descriptions and secondary information.</p>
-              <p class="text text--center">Centered text is available for intentionally centered compositions.</p>
-            </div>
+          <div class="playground-section__content stack">
+            <article class="playground-demo-group stack" aria-labelledby="typography-semantics-title">
+              <header class="playground-demo-group__header stack">
+                <h3 class="playground-demo-group__title" id="typography-semantics-title">Semantic foundation</h3>
+                <p class="playground-demo-group__description text text--muted">
+                  The page title above is the single <code>&lt;h1&gt;</code>, this section title demonstrates
+                  <code>&lt;h2&gt;</code>, and this demo heading demonstrates <code>&lt;h3&gt;</code> in a valid outline.
+                </p>
+              </header>
+              <div class="playground-demo stack">
+                <div class="playground-demo-group stack">
+                  <p class="playground-demo__label">Level four within this documentation group</p>
+                  <h4>A contextually correct level-four heading</h4>
+                </div>
+                <div class="playground-demo-group stack">
+                  <p class="playground-demo__label">Native text elements</p>
+                  <p>
+                    A semantic paragraph can contain <strong>strong importance</strong>,
+                    <a href="#typography-guidance-title">a descriptive inline link</a>, and ordinary body copy.
+                  </p>
+                  <small>Small text is available for genuinely secondary supporting information.</small>
+                  <ul>
+                    <li>An unordered list groups related points without implying sequence.</li>
+                    <li>List semantics remain available without component classes.</li>
+                  </ul>
+                  <ol>
+                    <li>An ordered list communicates a meaningful sequence.</li>
+                    <li>Visual styling must not replace that semantic distinction.</li>
+                  </ol>
+                </div>
+              </div>
+              <p class="text text--muted">
+                Visual scale and semantic heading level are separate responsibilities. Choose the element from the
+                document outline, never from its apparent size. Global headings use balanced wrapping, while paragraphs
+                and list items use readable wrapping where the browser supports it.
+              </p>
+            </article>
+
+            <article class="playground-demo-group stack" aria-labelledby="text-component-title">
+              <header class="playground-demo-group__header stack">
+                <h3 class="playground-demo-group__title" id="text-component-title">Text component</h3>
+                <p class="playground-demo-group__description text text--muted">
+                  <code>.text</code> is a reusable content block whose modifiers adjust presentation without changing
+                  the meaning of its HTML element.
+                </p>
+              </header>
+              <div class="playground-demo playground-api-grid">
+                <div class="playground-demo-group stack">
+                  <p class="playground-demo__label">Base and inline composition</p>
+                  <p class="text">
+                    Base Text supports <strong>meaningful emphasis</strong> and a
+                    <a href="#text-api-title">descriptive link to its public API</a> inside the normal reading flow.
+                  </p>
+                </div>
+                <div class="playground-demo-group stack">
+                  <p class="playground-demo__label">Muted modifier</p>
+                  <p class="text text--muted">
+                    Muted Text communicates supporting information while retaining the base component’s type scale and
+                    line height.
+                  </p>
+                </div>
+                <div class="playground-demo-group stack">
+                  <p class="playground-demo__label">Centered modifier</p>
+                  <p class="text text--center">
+                    Centered Text is reserved for intentionally centered compositions and always includes
+                    <code>.text</code>.
+                  </p>
+                </div>
+                <div class="playground-demo-group stack">
+                  <p class="playground-demo__label">Multiple paragraphs</p>
+                  <div class="playground-readable stack">
+                    <p class="text">Each paragraph is an independent Text block with normal document semantics.</p>
+                    <p class="text text--muted">
+                      A stack or another parent composition controls space between multiple Text roots.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="playground-demo-group stack" aria-labelledby="readable-measure-title">
+              <header class="playground-demo-group__header stack">
+                <h3 class="playground-demo-group__title" id="readable-measure-title">Readable measure</h3>
+                <p class="playground-demo-group__description text text--muted">
+                  <code>--content-measure</code> constrains text-heavy content without forcing every label or compact UI
+                  element to use the same width.
+                </p>
+              </header>
+              <div class="playground-demo stack">
+                <div class="playground-readable">
+                  <p class="text">
+                    A readable line length supports sustained reading across multiple sentences. This paragraph is long
+                    enough to demonstrate wrapping while keeping the eye’s return path comfortable and the surrounding
+                    layout free to remain wider for media, controls, or structured component grids.
+                  </p>
+                </div>
+                <div class="playground-readable playground-readable--center">
+                  <p class="text text--center">
+                    Centered readable copy combines the Text modifier with a separately centered measure constraint.
+                  </p>
+                </div>
+              </div>
+            </article>
+
+            <article class="playground-demo-group stack" aria-labelledby="fluid-type-title">
+              <header class="playground-demo-group__header stack">
+                <h3 class="playground-demo-group__title" id="fluid-type-title">Fluid type scale</h3>
+                <p class="playground-demo-group__description text text--muted">
+                  The existing <code>clamp()</code>-based sizes interpolate between their minimum and maximum values;
+                  exact computed sizes depend on the viewport.
+                </p>
+              </header>
+              <div class="playground-demo playground-type-specimen-list">
+                <p class="playground-type-specimen" style="--specimen-family: var(--font-family-base)"><code>--font-family-base</code><span>Base family specimen for body content</span></p>
+                <p class="playground-type-specimen" style="--specimen-family: var(--font-family-heading)"><code>--font-family-heading</code><span>Heading family specimen</span></p>
+                <p class="playground-type-specimen" style="--specimen-size: var(--font-size-sm)"><code>--font-size-sm</code><span>Small fluid specimen</span></p>
+                <p class="playground-type-specimen" style="--specimen-size: var(--font-size-base)"><code>--font-size-base</code><span>Base fluid specimen</span></p>
+                <p class="playground-type-specimen" style="--specimen-size: var(--font-size-lg)"><code>--font-size-lg</code><span>Large fluid specimen</span></p>
+                <p class="playground-type-specimen" style="--specimen-size: var(--font-size-xl)"><code>--font-size-xl</code><span>Extra-large fluid specimen</span></p>
+                <p class="playground-type-specimen" style="--specimen-size: var(--font-size-2xl)"><code>--font-size-2xl</code><span>Two-extra-large fluid specimen</span></p>
+                <p class="playground-type-specimen" style="--specimen-size: var(--font-size-3xl)"><code>--font-size-3xl</code><span>Three-extra-large fluid specimen</span></p>
+                <p class="playground-type-specimen" style="--specimen-size: var(--font-size-4xl)"><code>--font-size-4xl</code><span>Four-extra-large fluid specimen</span></p>
+              </div>
+            </article>
+
+            <article class="playground-demo-group stack" aria-labelledby="type-details-title">
+              <header class="playground-demo-group__header stack">
+                <h3 class="playground-demo-group__title" id="type-details-title">Weight, line height, and tracking</h3>
+                <p class="playground-demo-group__description text text--muted">
+                  These are foundation values rather than new semantic typography aliases.
+                </p>
+              </header>
+              <div class="playground-demo playground-api-grid">
+                <div class="playground-type-specimen-list">
+                  <p class="playground-type-specimen" style="--specimen-weight: var(--font-weight-regular)"><code>--font-weight-regular</code><span>Regular specimen</span></p>
+                  <p class="playground-type-specimen" style="--specimen-weight: var(--font-weight-medium)"><code>--font-weight-medium</code><span>Medium specimen</span></p>
+                  <p class="playground-type-specimen" style="--specimen-weight: var(--font-weight-semibold)"><code>--font-weight-semibold</code><span>Semibold specimen</span></p>
+                  <p class="playground-type-specimen" style="--specimen-weight: var(--font-weight-bold)"><code>--font-weight-bold</code><span>Bold specimen</span></p>
+                </div>
+                <div class="playground-type-specimen-list">
+                  <p class="playground-type-specimen" style="--specimen-line-height: var(--line-height-tight)"><code>--line-height-tight</code><span>Two-line specimen<br />showing tight rhythm</span></p>
+                  <p class="playground-type-specimen" style="--specimen-line-height: var(--line-height-heading)"><code>--line-height-heading</code><span>Two-line specimen<br />showing heading rhythm</span></p>
+                  <p class="playground-type-specimen" style="--specimen-line-height: var(--line-height-base)"><code>--line-height-base</code><span>Two-line specimen<br />showing base rhythm</span></p>
+                  <p class="playground-type-specimen" style="--specimen-line-height: var(--line-height-relaxed)"><code>--line-height-relaxed</code><span>Two-line specimen<br />showing relaxed rhythm</span></p>
+                  <p class="playground-type-specimen" style="--specimen-tracking: var(--letter-spacing-tight)"><code>--letter-spacing-tight</code><span>Tight tracking specimen</span></p>
+                  <p class="playground-type-specimen" style="--specimen-tracking: var(--letter-spacing-normal)"><code>--letter-spacing-normal</code><span>Normal tracking specimen</span></p>
+                </div>
+              </div>
+            </article>
+
+            <article class="playground-demo-group stack" aria-labelledby="typography-resilience-title">
+              <header class="playground-demo-group__header stack">
+                <h3 class="playground-demo-group__title" id="typography-resilience-title">Content resilience</h3>
+                <p class="playground-demo-group__description text text--muted">
+                  This stress example documents difficult but plausible content rather than recommending it as normal
+                  editorial style.
+                </p>
+              </header>
+              <div class="playground-demo playground-readable stack">
+                <h4 class="playground-type-resilience">
+                  A deliberately long heading demonstrates balanced wrapping without changing the semantic level chosen
+                  for this documentation group
+                </h4>
+                <p class="text playground-type-resilience">
+                  Long body copy continues across several lines and includes the URL-like string
+                  documentation.example.com/foundations/typography/content-resilience-without-horizontal-overflow plus
+                  <a href="#typography-guidance-title">
+                    a deliberately descriptive inline link whose label also wraps naturally when space is limited
+                  </a>.
+                </p>
+              </div>
+            </article>
+
+            <article class="playground-demo-group stack playground-api" aria-labelledby="text-api-title">
+              <header class="playground-demo-group__header stack">
+                <h3 class="playground-demo-group__title" id="text-api-title">Text public API</h3>
+                <p class="playground-demo-group__description text text--muted">Modifiers always accompany the base block.</p>
+              </header>
+              <div class="playground-demo playground-api-grid">
+                <div class="playground-api__group stack"><h4>Base</h4><div class="playground-api__classes cluster"><code>.text</code></div></div>
+                <div class="playground-api__group stack"><h4>Modifiers</h4><div class="playground-api__classes cluster"><code>.text--muted</code><code>.text--center</code></div></div>
+              </div>
+              <p class="text text--muted">
+                A paragraph, list item, or other suitable text element may own <code>.text</code>; semantic HTML remains
+                determined by its content rather than the class name.
+              </p>
+            </article>
+
+            <article class="playground-demo-group stack" aria-labelledby="typography-token-api-title">
+              <header class="playground-demo-group__header stack">
+                <h3 class="playground-demo-group__title" id="typography-token-api-title">Typography token reference</h3>
+                <p class="playground-demo-group__description text text--muted">A compact index complements the full Tokens section.</p>
+              </header>
+              <div class="playground-demo playground-api-grid">
+                <div class="playground-api__group stack"><h4>Families and sizes</h4><div class="playground-api__classes cluster"><code>--font-family-base</code><code>--font-family-heading</code><code>--font-size-xs</code><code>--font-size-sm</code><code>--font-size-base</code><code>--font-size-lg</code><code>--font-size-xl</code><code>--font-size-2xl</code><code>--font-size-3xl</code><code>--font-size-4xl</code></div></div>
+                <div class="playground-api__group stack"><h4>Weight, rhythm, and tracking</h4><div class="playground-api__classes cluster"><code>--font-weight-regular</code><code>--font-weight-medium</code><code>--font-weight-semibold</code><code>--font-weight-bold</code><code>--line-height-tight</code><code>--line-height-heading</code><code>--line-height-base</code><code>--line-height-relaxed</code><code>--letter-spacing-tight</code><code>--letter-spacing-normal</code></div></div>
+              </div>
+            </article>
+
+            <article class="playground-demo-group stack" aria-labelledby="text-markup-title">
+              <header class="playground-demo-group__header stack">
+                <h3 class="playground-demo-group__title" id="text-markup-title">Text structure</h3>
+                <p class="playground-demo-group__description text text--muted">Use the base class on the semantic text element and compose modifiers only when needed.</p>
+              </header>
+              <div class="playground-demo">
+                <pre class="playground-code"><code>&lt;p class=&quot;text&quot;&gt;
+  Read the &lt;a href=&quot;#guidance&quot;&gt;typography guidance&lt;/a&gt;.
+&lt;/p&gt;
+
+&lt;p class=&quot;text text--center&quot;&gt;Centered supporting copy.&lt;/p&gt;</code></pre>
+              </div>
+            </article>
+
+            <article class="playground-demo-group stack" aria-labelledby="typography-guidance-title">
+              <header class="playground-demo-group__header stack">
+                <h3 class="playground-demo-group__title" id="typography-guidance-title">Typography usage guidance</h3>
+                <p class="playground-demo-group__description text text--muted">Start from meaning, then apply the smallest appropriate presentation API.</p>
+              </header>
+              <div class="playground-demo playground-guidance">
+                <ul class="playground-guidance__list">
+                  <li>Choose the semantic element and correct heading level before considering visual size.</li>
+                  <li>Keep exactly one page-level <code>&lt;h1&gt;</code> and never skip levels for visual reasons.</li>
+                  <li>Use Text for reusable content composition and keep modifiers paired with <code>.text</code>.</li>
+                  <li>Use readable measure for sustained copy, not every label or control.</li>
+                  <li>Keep headings concise and use design tokens instead of hardcoded sizes or line heights.</li>
+                  <li>Do not use visual scale to imply document structure.</li>
+                </ul>
+              </div>
+            </article>
           </div>
         </div>
       </section>
@@ -344,19 +560,128 @@
             <p class="section-heading__eyebrow">Component</p>
             <h2 class="playground-section__title section-heading__title" id="section-heading-title">Section Heading</h2>
             <p class="playground-section__description section-heading__lead">
-              Review the reusable eyebrow, title, lead, and centered modifier.
+              Compose repeatable section introductions from optional eyebrow and lead content around a required,
+              semantically appropriate title.
             </p>
           </header>
 
-          <div class="playground-demo stack">
-            <p class="playground-demo__label">Centered variant</p>
-            <header class="section-heading section-heading--center">
-              <p class="section-heading__eyebrow">Example eyebrow</p>
-              <h3 class="section-heading__title">A reusable section heading</h3>
-              <p class="section-heading__lead">
-                Supporting copy stays readable and constrained while the component controls its own internal spacing.
-              </p>
-            </header>
+          <div class="playground-section__content stack">
+            <article class="playground-demo-group stack" aria-labelledby="section-heading-variants-title">
+              <header class="playground-demo-group__header stack">
+                <h3 class="playground-demo-group__title" id="section-heading-variants-title">Optional structure</h3>
+                <p class="playground-demo-group__description text text--muted">Omit optional elements and their markup completely; no empty placeholders are required.</p>
+              </header>
+              <div class="playground-heading-grid">
+                <div class="playground-demo stack">
+                  <p class="playground-demo__label">Full structure</p>
+                  <header class="section-heading">
+                    <p class="section-heading__eyebrow">Foundation</p>
+                    <h4 class="section-heading__title">A complete section introduction</h4>
+                    <p class="section-heading__lead">A concise lead adds context without replacing the heading.</p>
+                  </header>
+                </div>
+                <div class="playground-demo stack">
+                  <p class="playground-demo__label">Without eyebrow</p>
+                  <header class="section-heading">
+                    <h4 class="section-heading__title">A direct section introduction</h4>
+                    <p class="section-heading__lead">The title and lead remain naturally spaced without an eyebrow.</p>
+                  </header>
+                </div>
+                <div class="playground-demo stack">
+                  <p class="playground-demo__label">Without lead</p>
+                  <header class="section-heading">
+                    <p class="section-heading__eyebrow">Concise structure</p>
+                    <h4 class="section-heading__title">A heading that needs no supporting lead</h4>
+                  </header>
+                </div>
+                <div class="playground-demo stack">
+                  <p class="playground-demo__label">Title only</p>
+                  <header class="section-heading">
+                    <h4 class="section-heading__title">The smallest valid composition</h4>
+                  </header>
+                </div>
+              </div>
+            </article>
+
+            <article class="playground-demo-group stack" aria-labelledby="section-heading-centered-title">
+              <header class="playground-demo-group__header stack">
+                <h3 class="playground-demo-group__title" id="section-heading-centered-title">Centered variant</h3>
+                <p class="playground-demo-group__description text text--muted"><code>.section-heading--center</code> centers the composition and its readable lead measure.</p>
+              </header>
+              <div class="playground-demo">
+                <header class="section-heading section-heading--center">
+                  <p class="section-heading__eyebrow">Centered composition</p>
+                  <h4 class="section-heading__title">A balanced section introduction</h4>
+                  <p class="section-heading__lead">Supporting copy stays constrained and centered while the component controls its internal rhythm.</p>
+                </header>
+              </div>
+            </article>
+
+            <article class="playground-demo-group stack" aria-labelledby="section-heading-resilience-title">
+              <header class="playground-demo-group__header stack">
+                <h3 class="playground-demo-group__title" id="section-heading-resilience-title">Long-content resilience</h3>
+                <p class="playground-demo-group__description text text--muted">Plausible long content wraps naturally without fixed heights or empty component regions.</p>
+              </header>
+              <div class="playground-demo">
+                <header class="section-heading">
+                  <p class="section-heading__eyebrow">Detailed implementation guidance for multidisciplinary product teams</p>
+                  <h4 class="section-heading__title">
+                    Build accessible landing-page foundations that remain understandable as content requirements grow
+                    across multiple lines
+                  </h4>
+                  <p class="section-heading__lead">
+                    A longer lead demonstrates the existing readable measure and relaxed line height while preserving a
+                    clear relationship with the title above it on narrow and wide screens.
+                  </p>
+                </header>
+              </div>
+            </article>
+
+            <article class="playground-demo-group stack" aria-labelledby="section-heading-semantics-title">
+              <header class="playground-demo-group__header stack">
+                <h3 class="playground-demo-group__title" id="section-heading-semantics-title">Semantic heading guidance</h3>
+                <p class="playground-demo-group__description text text--muted">The component supplies presentation; the surrounding document supplies the correct heading level.</p>
+              </header>
+              <div class="playground-demo playground-guidance">
+                <ul class="playground-guidance__list">
+                  <li>The same title element may be an <code>&lt;h2&gt;</code>, <code>&lt;h3&gt;</code>, or another contextually correct level.</li>
+                  <li>Never skip heading levels to obtain a visual size, and retain exactly one <code>&lt;h1&gt;</code> per page.</li>
+                  <li>Eyebrow copy is supportive metadata, not a replacement for the semantic heading.</li>
+                  <li>Keep lead copy concise, readable, and subordinate to the title.</li>
+                  <li>Use Section Heading for repeated section introductions rather than unrelated content groups.</li>
+                </ul>
+              </div>
+            </article>
+
+            <article class="playground-demo-group stack playground-api" aria-labelledby="section-heading-api-title">
+              <header class="playground-demo-group__header stack">
+                <h3 class="playground-demo-group__title" id="section-heading-api-title">Section Heading public API</h3>
+                <p class="playground-demo-group__description text text--muted">Only the existing base, centered modifier, and three content elements are supported.</p>
+              </header>
+              <div class="playground-demo playground-api-grid">
+                <div class="playground-api__group stack"><h4>Base and modifier</h4><div class="playground-api__classes cluster"><code>.section-heading</code><code>.section-heading--center</code></div></div>
+                <div class="playground-api__group stack"><h4>Elements</h4><div class="playground-api__classes cluster"><code>.section-heading__eyebrow</code><code>.section-heading__title</code><code>.section-heading__lead</code></div></div>
+              </div>
+              <p class="text text--muted">Use every modifier with <code>.section-heading</code>; optional elements may be omitted independently.</p>
+            </article>
+
+            <article class="playground-demo-group stack" aria-labelledby="section-heading-markup-title">
+              <header class="playground-demo-group__header stack">
+                <h3 class="playground-demo-group__title" id="section-heading-markup-title">Structural examples</h3>
+                <p class="playground-demo-group__description text text--muted">Choose the title’s heading element from its real document context.</p>
+              </header>
+              <div class="playground-demo playground-api-grid">
+                <pre class="playground-code"><code>&lt;header class=&quot;section-heading&quot;&gt;
+  &lt;p class=&quot;section-heading__eyebrow&quot;&gt;Foundation&lt;/p&gt;
+  &lt;h2 class=&quot;section-heading__title&quot;&gt;Typography&lt;/h2&gt;
+  &lt;p class=&quot;section-heading__lead&quot;&gt;Concise supporting copy.&lt;/p&gt;
+&lt;/header&gt;</code></pre>
+                <pre class="playground-code"><code>&lt;header class=&quot;section-heading section-heading--center&quot;&gt;
+  &lt;h2 class=&quot;section-heading__title&quot;&gt;Centered title&lt;/h2&gt;
+  &lt;p class=&quot;section-heading__lead&quot;&gt;Centered supporting copy.&lt;/p&gt;
+&lt;/header&gt;</code></pre>
+              </div>
+            </article>
           </div>
         </div>
       </section>

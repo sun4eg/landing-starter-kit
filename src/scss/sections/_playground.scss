@@ -112,6 +112,52 @@
   max-width: var(--container-max-width);
 }
 
+.playground-readable {
+  width: var(--size-full);
+  max-width: var(--content-measure);
+}
+
+.playground-readable--center {
+  margin-inline: auto;
+}
+
+.playground-heading-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(var(--space-0), 1fr));
+  gap: var(--space-lg);
+  align-items: start;
+}
+
+.playground-type-specimen-list {
+  display: grid;
+  gap: var(--space-md);
+  min-width: var(--space-0);
+}
+
+.playground-type-specimen {
+  display: grid;
+  gap: var(--space-2xs);
+  margin: var(--space-0);
+  min-width: var(--space-0);
+}
+
+.playground-type-specimen code {
+  overflow-wrap: anywhere;
+}
+
+.playground-type-specimen span {
+  font-family: var(--specimen-family, var(--font-family-base));
+  font-size: var(--specimen-size, var(--font-size-base));
+  font-weight: var(--specimen-weight, var(--font-weight-regular));
+  line-height: var(--specimen-line-height, var(--line-height-heading));
+  letter-spacing: var(--specimen-tracking, var(--letter-spacing-normal));
+  overflow-wrap: anywhere;
+}
+
+.playground-type-resilience {
+  overflow-wrap: anywhere;
+}
+
 .playground-instructions {
   display: grid;
   gap: var(--space-2xs);
@@ -278,6 +324,7 @@
   .playground-api-grid,
   .playground-explainer-grid,
   .playground-comparison__grid,
+  .playground-heading-grid,
   .playground-token-grid,
   .playground-token-grid--colors {
     grid-template-columns: minmax(var(--space-0), 1fr);

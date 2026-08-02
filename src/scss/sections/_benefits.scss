@@ -1,9 +1,5 @@
 @use '../abstracts/breakpoints';
 
-.benefits {
-  padding-block: var(--section-padding-block);
-}
-
 .benefits__header {
   max-width: var(--content-measure);
   margin-block-end: var(--section-header-spacing);

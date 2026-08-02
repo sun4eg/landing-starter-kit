@@ -1,9 +1,5 @@
 @use '../abstracts/breakpoints';
 
-.contact {
-  padding-block: var(--section-padding-block);
-}
-
 .contact__header {
   max-width: var(--content-measure);
   margin-block-end: var(--section-header-spacing);

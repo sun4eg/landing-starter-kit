@@ -43,13 +43,6 @@ video,
 canvas {
   display: block;
   max-width: var(--size-full);
-}
-
-img,
-picture,
-svg,
-video,
-canvas {
   height: auto;
 }
 
@@ -69,8 +62,4 @@ button,
 
 a {
   color: inherit;
-}
-
-:target {
-  scroll-margin-block: var(--space-xl);
 }

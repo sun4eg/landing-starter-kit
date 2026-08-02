@@ -1,9 +1,5 @@
 @use '../abstracts/breakpoints';
 
-.faq {
-  padding-block: var(--section-padding-block);
-}
-
 .faq__layout {
   display: grid;
   grid-template-areas:

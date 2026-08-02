@@ -6,6 +6,20 @@ The format is based on Keep a Changelog, and this project adheres to Semantic Ve
 
 ## [Unreleased]
 
+### Added
+
+- Added a multi-page Component Playground with living documentation for reusable components, typography, navigation, Footer patterns, and design tokens.
+- Added Playground documentation navigation with synchronized current-section state across desktop and mobile presentations.
+
+### Changed
+
+- Refined the shared mobile Header navigation into an edge-to-edge viewport panel below the sticky Header.
+- Clarified the Button size scale and shared control foundations for small, medium, and large controls.
+
+### Fixed
+
+- Corrected Footer heading contrast and Playground documentation accuracy, responsive resilience, semantic relationships, and navigation state synchronization.
+
 ## [1.1.0] - 2026-08-02
 
 ### Added

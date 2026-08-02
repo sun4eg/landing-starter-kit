@@ -106,6 +106,19 @@ function initPlaygroundNavigation(root) {
     sections.sort((first, second) => first.top - second.top)
   }
 
+  function observeSectionLayout() {
+    if (typeof view.ResizeObserver !== 'function') {
+      return
+    }
+
+    const sectionElements = new Set(
+      sections.map((section) => section.element.closest('section')).filter(Boolean),
+    )
+    const layoutObserver = new view.ResizeObserver(() => scheduleUpdate(true))
+
+    sectionElements.forEach((section) => layoutObserver.observe(section))
+  }
+
   function determineActiveSection() {
     if (sections.length === 0) {
       return null
@@ -303,6 +316,7 @@ function initPlaygroundNavigation(root) {
   collectSections()
   measureSections()
   updateActiveSection()
+  observeSectionLayout()
 
   initializedRoots.add(root)
   return true

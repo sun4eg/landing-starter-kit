@@ -237,7 +237,7 @@
               <div class="playground-demo">
                 <div class="playground-demo__actions cluster">
                   <button class="button button--secondary" type="button">
-                    <span class="button__icon button__icon--leading" aria-hidden="true">
+                    <span class="button__icon" aria-hidden="true">
                       <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
                         <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.42-1.41L7.83 13H20v-2Z" />
                       </svg>
@@ -246,7 +246,7 @@
                   </button>
                   <a class="button button--primary" href="#button-states-title">
                     Review states
-                    <span class="button__icon button__icon--trailing" aria-hidden="true">
+                    <span class="button__icon" aria-hidden="true">
                       <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
                         <path d="m12 4-1.42 1.41L16.17 11H4v2h12.17l-5.59 5.59L12 20l8-8-8-8Z" />
                       </svg>
@@ -345,8 +345,6 @@
                   <dd>
                     <ul class="playground-api__classes cluster" role="list">
                       <li><code>.button__icon</code></li>
-                      <li><code>.button__icon--leading</code></li>
-                      <li><code>.button__icon--trailing</code></li>
                     </ul>
                   </dd>
                 </div>
@@ -961,22 +959,13 @@
                 <header class="playground-api__header stack">
                   <h3 class="playground-api__title" id="project-card-api-title">Project Card public API</h3>
                   <p class="playground-api__description text text--muted">
-                    The media placeholder is replaceable; featured and wide are Portfolio layout hooks.
+                    The media placeholder is replaceable; Portfolio placement hooks are not part of this component API.
                   </p>
                 </header>
                 <dl class="playground-api__list stack">
                   <div class="playground-api__group stack">
                     <dt class="playground-demo__label">Base</dt>
                     <dd><code>.project-card</code></dd>
-                  </div>
-                  <div class="playground-api__group stack">
-                    <dt class="playground-demo__label">Layout modifiers</dt>
-                    <dd>
-                      <ul class="playground-api__classes cluster" role="list">
-                        <li><code>.project-card--featured</code></li>
-                        <li><code>.project-card--wide</code></li>
-                      </ul>
-                    </dd>
                   </div>
                   <div class="playground-api__group stack">
                     <dt class="playground-demo__label">Elements</dt>
@@ -1664,71 +1653,18 @@
 
             <article class="playground-demo-group stack">
               <header class="playground-demo-group__header stack">
-                <h3 class="playground-demo-group__title">Responsive mobile-toggle instance</h3>
+                <h3 class="playground-demo-group__title">Live responsive Header</h3>
                 <p class="playground-demo-group__description text text--muted">
-                  Resize to the mobile layout to test the real toggle, Escape focus restoration, and menu-link closing;
-                  this instance initializes independently from the page Header.
+                  The Playground page Header is the live production-style mobile instance, avoiding a second
+                  viewport-level menu with controls embedded inside the documentation flow.
                 </p>
               </header>
 
               <div class="playground-demo">
-                <div class="playground-navigation-demo">
-                  <header class="site-header" data-navigation>
-                    <div class="site-header__container container">
-                      <a class="site-header__logo" href="#navigation-title">Starter Kit Reference</a>
-
-                      <button
-                        class="site-header__menu-toggle"
-                        type="button"
-                        aria-label="Open primary navigation"
-                        aria-expanded="false"
-                        aria-controls="playground-demo-navigation"
-                        data-navigation-toggle
-                        hidden
-                      >
-                        <span class="site-header__menu-icon" aria-hidden="true">
-                          <span></span>
-                          <span></span>
-                          <span></span>
-                        </span>
-                      </button>
-
-                      <nav
-                        class="site-header__navigation primary-navigation"
-                        id="playground-demo-navigation"
-                        aria-label="Responsive navigation demo"
-                        data-navigation-menu
-                      >
-                        <ul class="site-header__navigation-list primary-navigation__list">
-                          <li class="primary-navigation__item">
-                            <a
-                              class="site-header__navigation-link primary-navigation__link"
-                              href="#navigation-progressive-title"
-                            >
-                              Progressive enhancement behavior
-                            </a>
-                          </li>
-                          <li class="primary-navigation__item">
-                            <a
-                              class="site-header__navigation-link primary-navigation__link"
-                              href="#navigation-responsive-title"
-                            >
-                              Responsive ownership and viewport changes
-                            </a>
-                          </li>
-                          <li class="primary-navigation__item">
-                            <a
-                              class="site-header__navigation-link primary-navigation__link"
-                              href="#navigation-data-api-title"
-                            >
-                              JavaScript data API and required relationships
-                            </a>
-                          </li>
-                        </ul>
-                      </nav>
-                    </div>
-                  </header>
-                </div>
+                <p class="text text--muted">
+                  At tablet and mobile widths, use the page Header toggle to inspect full-viewport coverage, Escape
+                  focus restoration, menu-link closing, persistent Back to Landing access, and current-section state.
+                </p>
               </div>
             </article>
 
@@ -2378,7 +2314,7 @@
                 <p class="playground-demo-group__description text text--muted">These samples use the current border foundation and each defined radius.</p>
               </header>
               <div class="playground-demo playground-token-grid">
-                <div class="playground-token-shape" style="--token-radius: var(--radius-none)"><span aria-hidden="true"></span><code>--radius-none</code><small>Reserved</small></div>
+                <div class="playground-token-shape" style="--token-radius: var(--radius-none)"><span aria-hidden="true"></span><code>--radius-none</code><small>Active reset</small></div>
                 <div class="playground-token-shape" style="--token-radius: var(--radius-sm)"><span aria-hidden="true"></span><code>--radius-sm</code><small>Reserved</small></div>
                 <div class="playground-token-shape" style="--token-radius: var(--radius-md)"><span aria-hidden="true"></span><code>--radius-md</code><small>Active</small></div>
                 <div class="playground-token-shape" style="--token-radius: var(--radius-lg)"><span aria-hidden="true"></span><code>--radius-lg</code><small>Active</small></div>
@@ -2396,7 +2332,7 @@
               <div class="playground-demo playground-token-grid">
                 <div class="playground-token-shadow" style="--token-shadow: var(--shadow-none)"><span aria-hidden="true"></span><code>--shadow-none</code><small>Active reset</small></div>
                 <div class="playground-token-shadow" style="--token-shadow: var(--shadow-sm)"><span aria-hidden="true"></span><code>--shadow-sm</code><small>Cards and sticky Header</small></div>
-                <div class="playground-token-shadow" style="--token-shadow: var(--shadow-md)"><span aria-hidden="true"></span><code>--shadow-md</code><small>Raised states and mobile menu</small></div>
+                <div class="playground-token-shadow" style="--token-shadow: var(--shadow-md)"><span aria-hidden="true"></span><code>--shadow-md</code><small>Raised card states and the Skip link</small></div>
                 <div class="playground-token-shadow" style="--token-shadow: var(--shadow-lg)"><span aria-hidden="true"></span><code>--shadow-lg</code><small>Prominent media elevation</small></div>
               </div>
               <p class="text text--muted">No overlay- or modal-specific shadow token is currently defined.</p>
@@ -2446,7 +2382,7 @@
                 <ol class="playground-token-layers">
                   <li><code>--z-base</code><span>Base content · active</span></li>
                   <li><code>--z-raised</code><span>Decorative or raised content · active</span></li>
-                  <li><code>--z-dropdown</code><span>Dropdown layer · reserved</span></li>
+                  <li><code>--z-dropdown</code><span>Documentation panel layer · active</span></li>
                   <li><code>--z-sticky</code><span>Sticky Header · active</span></li>
                   <li><code>--z-overlay</code><span>Overlay layer · reserved</span></li>
                   <li><code>--z-modal</code><span>Modal layer · reserved</span></li>

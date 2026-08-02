@@ -10,7 +10,7 @@
     />
     <meta name="theme-color" content="#ffffff" />
   </head>
-  <body>
+  <body data-playground-navigation>
     <a class="skip-link" href="#main-content">Skip to content</a>
 
     <header
@@ -19,15 +19,20 @@
       data-sticky-header
       data-sticky-header-threshold="16"
     >
-      <div class="site-header__container container">
+      <div class="site-header__container playground-header__container container">
         <a class="site-header__logo" href="./">Starter Kit</a>
+
+        <a class="site-header__contact playground-header__landing-link" href="./" aria-label="Back to Landing">
+          <span class="playground-header__landing-label playground-header__landing-label--full">Back to Landing</span>
+          <span class="playground-header__landing-label playground-header__landing-label--compact">Landing</span>
+        </a>
 
         <button
           class="site-header__menu-toggle"
           type="button"
           aria-label="Open primary navigation"
           aria-expanded="false"
-          aria-controls="primary-navigation"
+          aria-controls="playground-mobile-navigation"
           data-navigation-toggle
           hidden
         >
@@ -39,26 +44,43 @@
         </button>
 
         <nav
-          class="site-header__navigation primary-navigation"
-          id="primary-navigation"
-          aria-label="Playground navigation"
+          class="site-header__navigation primary-navigation playground-mobile-navigation"
+          id="playground-mobile-navigation"
+          aria-label="Playground mobile documentation"
           data-navigation-menu
         >
-          <ul class="site-header__navigation-list primary-navigation__list">
-            <li class="primary-navigation__item">
-              <a class="site-header__navigation-link primary-navigation__link" href="#buttons-title">Buttons</a>
-            </li>
-            <li class="primary-navigation__item">
-              <a class="site-header__navigation-link primary-navigation__link" href="#typography-title">Typography</a>
-            </li>
-            <li class="primary-navigation__item">
-              <a class="site-header__navigation-link primary-navigation__link" href="#section-heading-title">Headings</a>
-            </li>
-            <li class="primary-navigation__item">
-              <a class="site-header__navigation-link primary-navigation__link" href="./">Back to Landing</a>
-            </li>
+          <ul class="site-header__navigation-list primary-navigation__list playground-mobile-navigation__list">
+            <li class="primary-navigation__item"><a class="site-header__navigation-link primary-navigation__link" href="#playground-title" data-playground-navigation-link>Introduction</a></li>
+            <li class="primary-navigation__item"><a class="site-header__navigation-link primary-navigation__link" href="#buttons-title" data-playground-navigation-link>Buttons</a></li>
+            <li class="primary-navigation__item"><a class="site-header__navigation-link primary-navigation__link" href="#typography-title" data-playground-navigation-link>Typography</a></li>
+            <li class="primary-navigation__item"><a class="site-header__navigation-link primary-navigation__link" href="#section-heading-title" data-playground-navigation-link>Section Heading</a></li>
+            <li class="primary-navigation__item"><a class="site-header__navigation-link primary-navigation__link" href="#cards-title" data-playground-navigation-link>Cards</a></li>
+            <li class="primary-navigation__item"><a class="site-header__navigation-link primary-navigation__link" href="#accordion-title" data-playground-navigation-link>Accordion</a></li>
+            <li class="primary-navigation__item"><a class="site-header__navigation-link primary-navigation__link" href="#forms-title" data-playground-navigation-link>Forms</a></li>
+            <li class="primary-navigation__item"><a class="site-header__navigation-link primary-navigation__link" href="#navigation-title" data-playground-navigation-link>Navigation</a></li>
+            <li class="primary-navigation__item"><a class="site-header__navigation-link primary-navigation__link" href="#footer-title" data-playground-navigation-link>Footer</a></li>
+            <li class="primary-navigation__item"><a class="site-header__navigation-link primary-navigation__link" href="#tokens-title" data-playground-navigation-link>Design Tokens</a></li>
           </ul>
         </nav>
+
+        <div class="site-header__actions playground-header__actions">
+          <button
+            class="playground-navigation-toggle"
+            type="button"
+            aria-label="Open documentation navigation"
+            aria-expanded="false"
+            aria-controls="playground-navigation-panel"
+            data-playground-navigation-toggle
+            hidden
+          >
+            <span class="site-header__menu-icon" aria-hidden="true">
+              <span></span>
+              <span></span>
+              <span></span>
+            </span>
+            <span>Documentation</span>
+          </button>
+        </div>
       </div>
     </header>
 
@@ -80,22 +102,46 @@
               This page is a focused workspace for checking component variants, content resilience, responsive
               behavior, and accessibility states.
             </p>
-            <nav aria-label="Playground sections">
-              <ul class="playground__index cluster" role="list">
-                <li><a href="#buttons-title">Buttons</a></li>
-                <li><a href="#typography-title">Typography</a></li>
-                <li><a href="#section-heading-title">Section Heading</a></li>
-                <li><a href="#cards-title">Cards</a></li>
-                <li><a href="#accordion-title">Accordion</a></li>
-                <li><a href="#forms-title">Forms</a></li>
-                <li><a href="#navigation-title">Navigation</a></li>
-                <li><a href="#footer-title">Footer</a></li>
-                <li><a href="#tokens-title">Tokens</a></li>
-              </ul>
-            </nav>
           </div>
         </div>
       </section>
+
+      <aside
+        class="playground-navigation-panel"
+        id="playground-navigation-panel"
+        aria-labelledby="playground-navigation-title"
+        data-playground-navigation-panel
+        hidden
+      >
+        <div class="playground-navigation-panel__header">
+          <h2 class="playground-navigation-panel__title" id="playground-navigation-title">Navigation</h2>
+          <button
+            class="playground-navigation-panel__close"
+            type="button"
+            aria-label="Close documentation navigation"
+            data-playground-navigation-close
+          >
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true" focusable="false">
+              <path d="m6 6 12 12M18 6 6 18" />
+            </svg>
+          </button>
+        </div>
+
+        <nav aria-label="Playground documentation">
+          <ul class="playground-navigation-panel__list" role="list">
+            <li><a class="playground-navigation-panel__link" href="#playground-title" data-playground-navigation-link>Introduction</a></li>
+            <li><a class="playground-navigation-panel__link" href="#buttons-title" data-playground-navigation-link>Buttons</a></li>
+            <li><a class="playground-navigation-panel__link" href="#typography-title" data-playground-navigation-link>Typography</a></li>
+            <li><a class="playground-navigation-panel__link" href="#section-heading-title" data-playground-navigation-link>Section Heading</a></li>
+            <li><a class="playground-navigation-panel__link" href="#cards-title" data-playground-navigation-link>Cards</a></li>
+            <li><a class="playground-navigation-panel__link" href="#accordion-title" data-playground-navigation-link>Accordion</a></li>
+            <li><a class="playground-navigation-panel__link" href="#forms-title" data-playground-navigation-link>Forms</a></li>
+            <li><a class="playground-navigation-panel__link" href="#navigation-title" data-playground-navigation-link>Navigation</a></li>
+            <li><a class="playground-navigation-panel__link" href="#footer-title" data-playground-navigation-link>Footer</a></li>
+            <li><a class="playground-navigation-panel__link" href="#tokens-title" data-playground-navigation-link>Design Tokens</a></li>
+          </ul>
+        </nav>
+      </aside>
 
       <section class="playground-section section" aria-labelledby="buttons-title">
         <div class="container">

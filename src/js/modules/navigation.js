@@ -9,8 +9,9 @@ function initNavigation(navigation) {
 
   const toggle = navigation.querySelector(toggleSelector)
   const menu = navigation.querySelector(menuSelector)
+  const view = navigation.ownerDocument.defaultView
 
-  if (!(toggle instanceof HTMLButtonElement) || !(menu instanceof HTMLElement)) {
+  if (!(toggle instanceof HTMLButtonElement) || !(menu instanceof HTMLElement) || view === null) {
     return false
   }
 
@@ -45,6 +46,12 @@ function initNavigation(navigation) {
   navigation.addEventListener('keydown', (event) => {
     if (event.key === 'Escape' && toggle.getAttribute('aria-expanded') === 'true') {
       setExpanded(false, true)
+    }
+  })
+
+  view.addEventListener('resize', () => {
+    if (toggle.getAttribute('aria-expanded') === 'true' && toggle.getClientRects().length === 0) {
+      setExpanded(false)
     }
   })
 

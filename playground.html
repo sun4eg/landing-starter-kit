@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Component Playground | Landing Starter Kit</title>
+    <meta
+      name="description"
+      content="A component playground for reviewing the reusable patterns included in Landing Starter Kit."
+    />
+    <meta name="theme-color" content="#ffffff" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+
+    <header
+      class="site-header site-header--sticky site-header--shadow"
+      data-navigation
+      data-sticky-header
+      data-sticky-header-threshold="16"
+    >
+      <div class="site-header__container container">
+        <a class="site-header__logo" href="./">Starter Kit</a>
+
+        <button
+          class="site-header__menu-toggle"
+          type="button"
+          aria-label="Open primary navigation"
+          aria-expanded="false"
+          aria-controls="primary-navigation"
+          data-navigation-toggle
+          hidden
+        >
+          <span class="site-header__menu-icon" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
+        </button>
+
+        <nav
+          class="site-header__navigation primary-navigation"
+          id="primary-navigation"
+          aria-label="Playground navigation"
+          data-navigation-menu
+        >
+          <ul class="site-header__navigation-list primary-navigation__list">
+            <li class="primary-navigation__item">
+              <a class="site-header__navigation-link primary-navigation__link" href="#buttons-title">Buttons</a>
+            </li>
+            <li class="primary-navigation__item">
+              <a class="site-header__navigation-link primary-navigation__link" href="#typography-title">Typography</a>
+            </li>
+            <li class="primary-navigation__item">
+              <a class="site-header__navigation-link primary-navigation__link" href="#section-heading-title">Headings</a>
+            </li>
+            <li class="primary-navigation__item">
+              <a class="site-header__navigation-link primary-navigation__link" href="./">Back to Landing</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main-content" tabindex="-1">
+      <section class="playground__intro section" aria-labelledby="playground-title">
+        <div class="container stack">
+          <header class="section-heading">
+            <p class="section-heading__eyebrow">Component reference</p>
+            <h1 class="section-heading__title" id="playground-title">Landing Starter Kit Playground</h1>
+            <p class="section-heading__lead">
+              Review reusable components in isolation while using the same styles and progressive enhancement as the
+              production landing page.
+            </p>
+          </header>
+
+          <div class="playground-demo stack">
+            <p class="playground-demo__label">Demo area</p>
+            <p class="text">
+              This page is a focused workspace for checking component variants, content resilience, responsive
+              behavior, and accessibility states.
+            </p>
+            <nav aria-label="Playground sections">
+              <ul class="playground__index cluster" role="list">
+                <li><a href="#buttons-title">Buttons</a></li>
+                <li><a href="#typography-title">Typography</a></li>
+                <li><a href="#section-heading-title">Section Heading</a></li>
+                <li><a href="#cards-title">Cards</a></li>
+                <li><a href="#accordion-title">Accordion</a></li>
+                <li><a href="#forms-title">Forms</a></li>
+                <li><a href="#navigation-title">Navigation</a></li>
+                <li><a href="#footer-title">Footer</a></li>
+                <li><a href="#tokens-title">Tokens</a></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </section>
+
+      <section class="playground-section section" aria-labelledby="buttons-title">
+        <div class="container">
+          <header class="playground-section__header section-heading">
+            <p class="section-heading__eyebrow">Component</p>
+            <h2 class="section-heading__title" id="buttons-title">Buttons</h2>
+            <p class="section-heading__lead">Compare the existing visual variants, sizes, and disabled state.</p>
+          </header>
+
+          <div class="playground-demo stack">
+            <div class="playground-demo__group stack">
+              <p class="playground-demo__label">Variants</p>
+              <div class="playground-demo__actions cluster">
+                <button class="button button--primary" type="button">Primary button</button>
+                <button class="button button--secondary" type="button">Secondary button</button>
+                <button class="button button--outline" type="button">Outline button</button>
+                <button class="button button--ghost" type="button">Ghost button</button>
+                <button class="button button--primary" type="button" disabled>Disabled button</button>
+              </div>
+            </div>
+            <div class="playground-demo__group stack">
+              <p class="playground-demo__label">Sizes</p>
+              <div class="playground-demo__actions cluster">
+                <button class="button button--primary button--sm" type="button">Small</button>
+                <button class="button button--primary button--md" type="button">Medium</button>
+                <button class="button button--primary button--lg" type="button">Large</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="playground-section section" aria-labelledby="typography-title">
+        <div class="container">
+          <header class="playground-section__header section-heading">
+            <p class="section-heading__eyebrow">Foundation</p>
+            <h2 class="section-heading__title" id="typography-title">Typography</h2>
+            <p class="section-heading__lead">Review heading hierarchy and the existing body-text treatments.</p>
+          </header>
+
+          <div class="playground-demo stack">
+            <div class="playground-demo__group stack">
+              <p class="playground-demo__label">Headings</p>
+              <h3>Level three heading</h3>
+              <h4>Level four heading</h4>
+              <h5>Level five heading</h5>
+              <h6>Level six heading</h6>
+            </div>
+            <div class="playground-demo__group stack">
+              <p class="playground-demo__label">Body text</p>
+              <p class="text">Default body text communicates primary information with a comfortable reading line.</p>
+              <p class="text text--muted">Muted body text supports descriptions and secondary information.</p>
+              <p class="text text--center">Centered text is available for intentionally centered compositions.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="playground-section section" aria-labelledby="section-heading-title">
+        <div class="container">
+          <header class="playground-section__header section-heading">
+            <p class="section-heading__eyebrow">Component</p>
+            <h2 class="section-heading__title" id="section-heading-title">Section Heading</h2>
+            <p class="section-heading__lead">Review the reusable eyebrow, title, lead, and centered modifier.</p>
+          </header>
+
+          <div class="playground-demo stack">
+            <p class="playground-demo__label">Centered variant</p>
+            <header class="section-heading section-heading--center">
+              <p class="section-heading__eyebrow">Example eyebrow</p>
+              <h3 class="section-heading__title">A reusable section heading</h3>
+              <p class="section-heading__lead">
+                Supporting copy stays readable and constrained while the component controls its own internal spacing.
+              </p>
+            </header>
+          </div>
+        </div>
+      </section>
+
+      <section class="playground-section section" aria-labelledby="cards-title">
+        <div class="container">
+          <header class="playground-section__header section-heading">
+            <p class="section-heading__eyebrow">Future section</p>
+            <h2 class="section-heading__title" id="cards-title">Cards</h2>
+            <p class="section-heading__lead">Service, project, and testimonial examples will be documented here.</p>
+          </header>
+          <div class="playground-demo playground-demo--placeholder"><p>Demo area reserved for cards.</p></div>
+        </div>
+      </section>
+
+      <section class="playground-section section" aria-labelledby="accordion-title">
+        <div class="container">
+          <header class="playground-section__header section-heading">
+            <p class="section-heading__eyebrow">Future section</p>
+            <h2 class="section-heading__title" id="accordion-title">Accordion</h2>
+            <p class="section-heading__lead">Accordion modes and interaction states will be documented here.</p>
+          </header>
+          <div class="playground-demo playground-demo--placeholder"><p>Demo area reserved for Accordion.</p></div>
+        </div>
+      </section>
+
+      <section class="playground-section section" aria-labelledby="forms-title">
+        <div class="container">
+          <header class="playground-section__header section-heading">
+            <p class="section-heading__eyebrow">Future section</p>
+            <h2 class="section-heading__title" id="forms-title">Forms</h2>
+            <p class="section-heading__lead">Form fields, validation states, and actions will be documented here.</p>
+          </header>
+          <div class="playground-demo playground-demo--placeholder"><p>Demo area reserved for forms.</p></div>
+        </div>
+      </section>
+
+      <section class="playground-section section" aria-labelledby="navigation-title">
+        <div class="container">
+          <header class="playground-section__header section-heading">
+            <p class="section-heading__eyebrow">Future section</p>
+            <h2 class="section-heading__title" id="navigation-title">Navigation</h2>
+            <p class="section-heading__lead">Navigation layouts and responsive behavior will be documented here.</p>
+          </header>
+          <div class="playground-demo playground-demo--placeholder"><p>Demo area reserved for Navigation.</p></div>
+        </div>
+      </section>
+
+      <section class="playground-section section" aria-labelledby="footer-title">
+        <div class="container">
+          <header class="playground-section__header section-heading">
+            <p class="section-heading__eyebrow">Future section</p>
+            <h2 class="section-heading__title" id="footer-title">Footer</h2>
+            <p class="section-heading__lead">Footer composition and content resilience will be documented here.</p>
+          </header>
+          <div class="playground-demo playground-demo--placeholder"><p>Demo area reserved for the Footer.</p></div>
+        </div>
+      </section>
+
+      <section class="playground-section section" aria-labelledby="tokens-title">
+        <div class="container">
+          <header class="playground-section__header section-heading">
+            <p class="section-heading__eyebrow">Future section</p>
+            <h2 class="section-heading__title" id="tokens-title">Tokens</h2>
+            <p class="section-heading__lead">Existing color, spacing, type, and layout tokens will be documented here.</p>
+          </header>
+          <div class="playground-demo playground-demo--placeholder"><p>Demo area reserved for tokens.</p></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="site-footer__container container">
+        <div class="site-footer__top">
+          <div class="site-footer__brand">
+            <a class="site-footer__logo" href="./">Starter Kit</a>
+            <p class="site-footer__description">
+              A flexible foundation for clear, accessible, and purposeful landing pages.
+            </p>
+          </div>
+
+          <nav class="site-footer__navigation footer-navigation" aria-label="Footer navigation">
+            <h2 class="site-footer__heading">Explore</h2>
+            <ul class="footer-navigation__list" role="list">
+              <li class="footer-navigation__item">
+                <a class="footer-navigation__link" href="./#services-title">Services</a>
+              </li>
+              <li class="footer-navigation__item">
+                <a class="footer-navigation__link" href="./#benefits-title">Benefits</a>
+              </li>
+              <li class="footer-navigation__item">
+                <a class="footer-navigation__link" href="./#portfolio-title">Portfolio</a>
+              </li>
+              <li class="footer-navigation__item">
+                <a class="footer-navigation__link" href="./#process-title">How it works</a>
+              </li>
+              <li class="footer-navigation__item">
+                <a class="footer-navigation__link" href="./#faq-title">Questions and answers</a>
+              </li>
+              <li class="footer-navigation__item">
+                <a class="footer-navigation__link" href="./playground.html" aria-current="page">Playground</a>
+              </li>
+            </ul>
+          </nav>
+
+          <div class="site-footer__contact">
+            <h2 class="site-footer__heading">Contact</h2>
+            <address class="site-footer__address">
+              <ul class="site-footer__contact-list" role="list">
+                <li><a class="site-footer__contact-link" href="tel:+10000000000">+1 000 000 0000</a></li>
+                <li>
+                  <a class="site-footer__contact-link" href="mailto:hello@example.com">hello@example.com</a>
+                </li>
+              </ul>
+            </address>
+          </div>
+        </div>
+
+        <div class="site-footer__bottom">
+          <p class="site-footer__copyright">© 2026 Starter Kit. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

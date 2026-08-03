@@ -28,6 +28,7 @@ The format is based on Keep a Changelog, and this project adheres to Semantic Ve
 ### Fixed
 
 - Corrected Footer heading contrast and Playground documentation accuracy, responsive resilience, semantic relationships, and navigation state synchronization.
+- Preserved native Form label activation, corrected Switch directionality, kept Number Stepper focus visible within its clipped boundary, aligned File Input control height, and removed redundant Form Controls labelling ARIA.
 
 ## [1.1.0] - 2026-08-02
 

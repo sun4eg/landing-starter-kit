@@ -48,7 +48,7 @@
   border: var(--border-width) solid var(--color-control-border);
   border-radius: var(--radius-full);
   box-shadow: var(--shadow-sm);
-  transition: transform var(--duration-fast) var(--ease-standard);
+  transition: inset-inline-start var(--duration-fast) var(--ease-standard);
 }
 
 .switch__content {
@@ -78,10 +78,10 @@
 }
 
 .switch__input:checked + .switch__track .switch__thumb {
-  border-color: var(--color-primary-900);
-  transform: translateX(
-    calc(var(--switch-track-size) - var(--switch-thumb-size) - (var(--switch-thumb-inset) * 2))
+  inset-inline-start: calc(
+    var(--switch-track-size) - var(--switch-thumb-size) - var(--switch-thumb-inset)
   );
+  border-color: var(--color-primary-900);
 }
 
 .switch__input:focus-visible + .switch__track {

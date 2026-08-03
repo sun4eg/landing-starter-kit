@@ -20,7 +20,6 @@
   font-weight: var(--font-weight-regular);
   line-height: var(--line-height-tight);
   overflow-wrap: anywhere;
-  pointer-events: none;
   transform: translateY(calc((var(--control-height-lg) / 2) - 50%));
   transform-origin: left top;
   transition:

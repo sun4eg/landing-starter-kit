@@ -46,6 +46,7 @@
 
 .number-stepper__input:focus-visible {
   border-color: var(--color-primary-600);
+  outline-offset: calc(var(--focus-ring-width) * -1);
 }
 
 .number-stepper__input:disabled {
@@ -79,6 +80,10 @@
 .number-stepper__button:disabled {
   cursor: not-allowed;
   opacity: var(--opacity-disabled);
+}
+
+.number-stepper__button:focus-visible {
+  outline-offset: calc(var(--focus-ring-width) * -1);
 }
 
 .number-stepper__button svg {

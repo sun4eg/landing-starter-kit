@@ -1589,9 +1589,9 @@
             <p class="section-heading__eyebrow">Components</p>
             <h2 class="playground-section__title section-heading__title" id="form-controls-title">Form Controls</h2>
             <p class="playground-section__description section-heading__lead">
-              Compare native Checkbox, Radio, Switch, Select, Password Input, Number Stepper, and Range Slider controls
-              with shared focus, disabled, description, and content-resilience patterns while preserving distinct
-              semantics.
+              Compare native Checkbox, Radio, Switch, Select, Password Input, Number Stepper, Range Slider, and Date
+              Picker controls with shared focus, disabled, description, and content-resilience patterns while
+              preserving distinct semantics.
             </p>
           </header>
 
@@ -2405,6 +2405,112 @@
               </div>
             </article>
 
+            <article class="playground-demo-group stack" aria-labelledby="date-picker-title">
+              <header class="playground-demo-group__header stack">
+                <h3 class="playground-demo-group__title" id="date-picker-title">Date Picker</h3>
+                <p class="playground-demo-group__description text text--muted">
+                  Use the native Date Picker for a complete calendar date while preserving platform selection,
+                  keyboard input, validation, and form submission behavior.
+                </p>
+              </header>
+
+              <div class="playground-api-grid">
+                <section class="playground-demo stack" aria-labelledby="date-picker-standard-title">
+                  <h4 id="date-picker-standard-title">Standard</h4>
+                  <p class="text text--muted">A visible label and optional associated description establish purpose.</p>
+                  <div class="date-picker">
+                    <label class="date-picker__label" for="date-picker-standard">Project start date</label>
+                    <input class="date-picker__control" id="date-picker-standard" name="project-start-demo" type="date" value="2026-09-15" aria-describedby="date-picker-standard-description" />
+                    <p class="date-picker__description" id="date-picker-standard-description">Choose the planned calendar date.</p>
+                  </div>
+                </section>
+
+                <section class="playground-demo stack" aria-labelledby="date-picker-optional-title">
+                  <h4 id="date-picker-optional-title">Optional</h4>
+                  <p class="text text--muted">Identify optional status in visible label copy when it may be ambiguous.</p>
+                  <div class="date-picker">
+                    <label class="date-picker__label" for="date-picker-optional">Follow-up date (optional)</label>
+                    <input class="date-picker__control" id="date-picker-optional" name="follow-up-date-demo" type="date" />
+                  </div>
+                </section>
+
+                <section class="playground-demo stack" aria-labelledby="date-picker-disabled-title">
+                  <h4 id="date-picker-disabled-title">Disabled</h4>
+                  <p class="text text--muted">Native <code>disabled</code> removes the control from interaction and submission.</p>
+                  <div class="date-picker">
+                    <label class="date-picker__label" for="date-picker-disabled">Archived date</label>
+                    <input class="date-picker__control" id="date-picker-disabled" name="archived-date-demo" type="date" value="2026-06-12" disabled />
+                  </div>
+                </section>
+
+                <section class="playground-demo stack" aria-labelledby="date-picker-readonly-title">
+                  <h4 id="date-picker-readonly-title">Readonly</h4>
+                  <p class="text text--muted">Native <code>readonly</code> preserves a submitted value while preventing edits.</p>
+                  <div class="date-picker">
+                    <label class="date-picker__label" for="date-picker-readonly">Recorded date</label>
+                    <input class="date-picker__control" id="date-picker-readonly" name="recorded-date-demo" type="date" value="2026-08-04" readonly />
+                  </div>
+                </section>
+
+                <section class="playground-demo stack" aria-labelledby="date-picker-bounds-title">
+                  <h4 id="date-picker-bounds-title">Minimum and maximum</h4>
+                  <p class="text text--muted">Native boundaries constrain valid values without replacing validation.</p>
+                  <div class="date-picker">
+                    <label class="date-picker__label" for="date-picker-bounded">Delivery date</label>
+                    <input class="date-picker__control" id="date-picker-bounded" name="delivery-date-demo" type="date" min="2026-09-01" max="2026-12-31" value="2026-10-15" aria-describedby="date-picker-bounded-description" />
+                    <p class="date-picker__description" id="date-picker-bounded-description">Choose a date from September through December 2026.</p>
+                  </div>
+                </section>
+
+                <section class="playground-demo stack" aria-labelledby="date-picker-long-title">
+                  <h4 id="date-picker-long-title">Long-content resilience</h4>
+                  <p class="text text--muted">Labels and descriptions wrap while the native control stays contained.</p>
+                  <div class="playground-demo__constraint playground-date-picker-demo">
+                    <div class="date-picker">
+                      <label class="date-picker__label" for="date-picker-long">Preferred completion date for the final accessibility and content-quality review</label>
+                      <input class="date-picker__control" id="date-picker-long" name="completion-date-demo" type="date" aria-describedby="date-picker-long-description" />
+                      <p class="date-picker__description" id="date-picker-long-description">Choose the date when the complete review should be ready for stakeholder approval; this supporting copy intentionally wraps in a constrained documentation surface.</p>
+                    </div>
+                  </div>
+                </section>
+              </div>
+
+              <section class="playground-demo stack" aria-labelledby="date-picker-validation-title">
+                <h4 id="date-picker-validation-title">Required native validation</h4>
+                <p class="text text--muted">
+                  Submit this empty local form to inspect the browser’s native required and bounded-date validation.
+                  Exact validation presentation varies by browser, and no data is sent to a remote endpoint.
+                </p>
+                <form class="playground-date-picker-demo stack" action="" method="post">
+                  <div class="date-picker">
+                    <label class="date-picker__label" for="date-picker-required">Review date</label>
+                    <input class="date-picker__control" id="date-picker-required" name="review-date-demo" type="date" min="2026-08-05" max="2026-12-31" aria-describedby="date-picker-required-description" required />
+                    <p class="date-picker__description" id="date-picker-required-description">Required. Choose an available date in the documented range.</p>
+                  </div>
+                  <div><button class="button button--primary" type="submit">Validate date</button></div>
+                </form>
+              </section>
+
+              <div class="playground-explainer-grid">
+                <section class="playground-demo stack" aria-labelledby="date-picker-native-title">
+                  <h4 id="date-picker-native-title">Native behavior</h4>
+                  <p class="text text--muted">
+                    The control retains native editing, calendar selection, focus, validation, and form submission.
+                    <code>required</code>, <code>min</code>, and <code>max</code> remain the authoritative constraints; no
+                    JavaScript or custom calendar is involved.
+                  </p>
+                </section>
+                <section class="playground-demo stack" aria-labelledby="date-picker-browser-title">
+                  <h4 id="date-picker-browser-title">Browser presentation</h4>
+                  <p class="text text--muted">
+                    Display order, calendar icon, picker popup, keyboard details, and mobile picker UI vary by browser,
+                    operating system, and locale. The component styles the closed field while leaving the native picker
+                    intact.
+                  </p>
+                </section>
+              </div>
+            </article>
+
             <section class="playground-demo-group stack" aria-labelledby="form-control-states-title">
               <header class="playground-demo-group__header stack">
                 <h3 class="playground-demo-group__title" id="form-control-states-title">Native state ownership</h3>
@@ -2423,7 +2529,8 @@
                   <code>type</code> and the toggle’s synchronized <code>aria-pressed</code> state. Number Stepper
                   boundaries use native constraints and real button <code>disabled</code> attributes. Range Slider
                   value, constraints, focus, and disabled behavior remain native while JavaScript updates presentation
-                  only. None of these states requires a BEM state class.
+                  only. Date Picker required, disabled, readonly, minimum, and maximum behavior is also native. None of
+                  these states requires a BEM state class.
                 </p>
               </div>
             </section>
@@ -2450,6 +2557,10 @@
                 <li>Always label Range Sliders visibly and show the current value when feedback helps users decide.</li>
                 <li>Provide meaningful range boundaries and steps, avoid excessive precision, and preserve native keyboard behavior.</li>
                 <li>Do not hide critical values exclusively behind a Range Slider.</li>
+                <li>Use Date Picker for complete calendar dates and always provide a visible associated label.</li>
+                <li>Identify optional dates in visible copy and use native <code>required</code>, <code>min</code>, and <code>max</code> only when meaningful.</li>
+                <li>Expect the native date picker and displayed date order to vary across browsers, operating systems, and locales.</li>
+                <li>Use a different control when users need partial dates, date ranges, or date-and-time input.</li>
                 <li>Group related choices with a visible <code>fieldset</code> and <code>legend</code>.</li>
                 <li>Connect supporting descriptions with <code>aria-describedby</code> when they clarify the choice.</li>
                 <li>Avoid disabled controls when explanatory feedback would better help the user proceed.</li>
@@ -2576,6 +2687,19 @@
                   suffix formatting affects visible output only and never changes the native input value.
                 </p>
               </section>
+              <section class="playground-api playground-demo stack" aria-labelledby="date-picker-api-title">
+                <h3 class="playground-api__title" id="date-picker-api-title">Date Picker API</h3>
+                <ul class="playground-api__classes cluster" role="list">
+                  <li><code>.date-picker</code></li>
+                  <li><code>.date-picker__label</code></li>
+                  <li><code>.date-picker__control</code></li>
+                  <li><code>.date-picker__description</code></li>
+                </ul>
+                <p class="text text--muted">
+                  Use a native <code>input[type="date"]</code> with a visible associated label. The description is
+                  optional and should be referenced with <code>aria-describedby</code> only when it exists.
+                </p>
+              </section>
             </div>
 
             <section class="playground-demo-group stack" aria-labelledby="form-control-code-title">
@@ -2680,6 +2804,20 @@
       type="range" min="0" max="100" step="1" value="50"
       data-range-slider-input /&gt;
   &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                </div>
+                <div class="playground-demo stack">
+                  <p class="playground-demo__label">Date Picker</p>
+                  <pre class="playground-code"><code>&lt;div class="date-picker"&gt;
+  &lt;label class="date-picker__label" for="start-date"&gt;
+    Start date
+  &lt;/label&gt;
+  &lt;input class="date-picker__control" id="start-date"
+    name="start-date" type="date" min="2026-09-01"
+    max="2026-12-31" aria-describedby="start-date-description" /&gt;
+  &lt;p class="date-picker__description" id="start-date-description"&gt;
+    Choose an available calendar date.
+  &lt;/p&gt;
 &lt;/div&gt;</code></pre>
                 </div>
               </div>

@@ -1590,8 +1590,8 @@
             <h2 class="playground-section__title section-heading__title" id="form-controls-title">Form Controls</h2>
             <p class="playground-section__description section-heading__lead">
               Compare native Checkbox, Radio, Switch, Select, Password Input, Number Stepper, Range Slider, Date
-              Picker, and Time Picker controls with shared focus, disabled, description, and content-resilience
-              patterns while preserving distinct semantics.
+              Picker, Time Picker, and DateTime Local controls with shared focus, disabled, description, and
+              content-resilience patterns while preserving distinct semantics.
             </p>
           </header>
 
@@ -2627,6 +2627,122 @@
               </div>
             </article>
 
+            <article class="playground-demo-group stack" aria-labelledby="datetime-local-title">
+              <header class="playground-demo-group__header stack">
+                <h3 class="playground-demo-group__title" id="datetime-local-title">DateTime Local</h3>
+                <p class="playground-demo-group__description text text--muted">
+                  Use the native DateTime Local control for a combined local calendar date and time without encoding a
+                  time zone or replacing platform picker behavior.
+                </p>
+              </header>
+
+              <div class="playground-api-grid">
+                <section class="playground-demo stack" aria-labelledby="datetime-local-standard-title">
+                  <h4 id="datetime-local-standard-title">Standard</h4>
+                  <p class="text text--muted">A visible label and associated description clarify the scheduling context.</p>
+                  <div class="datetime-local">
+                    <label class="datetime-local__label" for="datetime-local-standard">Project review</label>
+                    <input class="datetime-local__control" id="datetime-local-standard" name="project-review-demo" type="datetime-local" value="2026-09-15T10:30" aria-describedby="datetime-local-standard-description" />
+                    <p class="datetime-local__description" id="datetime-local-standard-description">Choose the review date and local start time.</p>
+                  </div>
+                </section>
+
+                <section class="playground-demo stack" aria-labelledby="datetime-local-optional-title">
+                  <h4 id="datetime-local-optional-title">Optional</h4>
+                  <p class="text text--muted">State optional status in visible label copy when it may otherwise be unclear.</p>
+                  <div class="datetime-local">
+                    <label class="datetime-local__label" for="datetime-local-optional">Follow-up appointment (optional)</label>
+                    <input class="datetime-local__control" id="datetime-local-optional" name="follow-up-appointment-demo" type="datetime-local" />
+                  </div>
+                </section>
+
+                <section class="playground-demo stack" aria-labelledby="datetime-local-disabled-title">
+                  <h4 id="datetime-local-disabled-title">Disabled</h4>
+                  <p class="text text--muted">Native <code>disabled</code> prevents interaction and excludes the value from submission.</p>
+                  <div class="datetime-local">
+                    <label class="datetime-local__label" for="datetime-local-disabled">Locked appointment</label>
+                    <input class="datetime-local__control" id="datetime-local-disabled" name="locked-appointment-demo" type="datetime-local" value="2026-10-08T09:00" disabled />
+                  </div>
+                </section>
+
+                <section class="playground-demo stack" aria-labelledby="datetime-local-readonly-title">
+                  <h4 id="datetime-local-readonly-title">Readonly</h4>
+                  <p class="text text--muted">Native <code>readonly</code> preserves a submitted value without allowing edits.</p>
+                  <div class="datetime-local">
+                    <label class="datetime-local__label" for="datetime-local-readonly">Recorded appointment</label>
+                    <input class="datetime-local__control" id="datetime-local-readonly" name="recorded-appointment-demo" type="datetime-local" value="2026-08-04T14:45" readonly />
+                  </div>
+                </section>
+
+                <section class="playground-demo stack" aria-labelledby="datetime-local-bounds-title">
+                  <h4 id="datetime-local-bounds-title">Scheduling window</h4>
+                  <p class="text text--muted">Native minimum and maximum values define the valid local scheduling window.</p>
+                  <div class="datetime-local">
+                    <label class="datetime-local__label" for="datetime-local-bounded">Workshop session</label>
+                    <input class="datetime-local__control" id="datetime-local-bounded" name="workshop-session-demo" type="datetime-local" min="2026-10-12T09:00" max="2026-10-16T17:00" value="2026-10-14T13:30" aria-describedby="datetime-local-bounded-description" />
+                    <p class="datetime-local__description" id="datetime-local-bounded-description">Choose a local date and time within the documented workshop week.</p>
+                  </div>
+                </section>
+
+                <section class="playground-demo stack" aria-labelledby="datetime-local-step-title">
+                  <h4 id="datetime-local-step-title">Thirty-minute intervals</h4>
+                  <p class="text text--muted"><code>step="1800"</code> defines valid date-and-time values in 30-minute increments.</p>
+                  <div class="datetime-local">
+                    <label class="datetime-local__label" for="datetime-local-step">Consultation start</label>
+                    <input class="datetime-local__control" id="datetime-local-step" name="consultation-start-demo" type="datetime-local" min="2026-11-02T08:00" max="2026-11-06T18:00" step="1800" value="2026-11-03T11:30" aria-describedby="datetime-local-step-description" />
+                    <p class="datetime-local__description" id="datetime-local-step-description">Select a half-hour interval within the available schedule.</p>
+                  </div>
+                </section>
+
+                <section class="playground-demo stack" aria-labelledby="datetime-local-long-title">
+                  <h4 id="datetime-local-long-title">Long-content resilience</h4>
+                  <p class="text text--muted">Supporting content wraps while the native control remains contained.</p>
+                  <div class="playground-demo__constraint playground-datetime-local-demo">
+                    <div class="datetime-local">
+                      <label class="datetime-local__label" for="datetime-local-long">Preferred date and local start time for the complete accessibility, content, and technical-quality review</label>
+                      <input class="datetime-local__control" id="datetime-local-long" name="complete-review-demo" type="datetime-local" aria-describedby="datetime-local-long-description" />
+                      <p class="datetime-local__description" id="datetime-local-long-description">Choose when all participants can begin the complete review; this longer supporting description intentionally wraps inside a constrained documentation surface.</p>
+                    </div>
+                  </div>
+                </section>
+              </div>
+
+              <section class="playground-demo stack" aria-labelledby="datetime-local-validation-title">
+                <h4 id="datetime-local-validation-title">Required native validation</h4>
+                <p class="text text--muted">
+                  Submit this empty local form to inspect native required, scheduling-window, and interval validation.
+                  Exact browser feedback varies, and no data is sent to a remote endpoint.
+                </p>
+                <form class="playground-datetime-local-demo stack" action="" method="post">
+                  <div class="datetime-local">
+                    <label class="datetime-local__label" for="datetime-local-required">Planning session</label>
+                    <input class="datetime-local__control" id="datetime-local-required" name="planning-session-demo" type="datetime-local" min="2026-09-01T09:00" max="2026-12-31T17:00" step="1800" aria-describedby="datetime-local-required-description" required />
+                    <p class="datetime-local__description" id="datetime-local-required-description">Required. Choose a valid half-hour interval in the documented local scheduling window.</p>
+                  </div>
+                  <div><button class="button button--primary" type="submit">Validate schedule</button></div>
+                </form>
+              </section>
+
+              <div class="playground-explainer-grid">
+                <section class="playground-demo stack" aria-labelledby="datetime-local-native-title">
+                  <h4 id="datetime-local-native-title">Native behavior</h4>
+                  <p class="text text--muted">
+                    The field retains native keyboard editing, touch and browser pickers, focus, validation, and form
+                    submission. <code>required</code>, <code>min</code>, <code>max</code>, and second-based
+                    <code>step</code> values remain authoritative without JavaScript.
+                  </p>
+                </section>
+                <section class="playground-demo stack" aria-labelledby="datetime-local-browser-title">
+                  <h4 id="datetime-local-browser-title">Browser presentation and local time</h4>
+                  <p class="text text--muted">
+                    Display order, twelve- or twenty-four-hour presentation, picker UI, and validation feedback vary by
+                    browser, operating system, and locale. The native value represents a local date and time without a
+                    time-zone offset; applications must establish time-zone meaning separately.
+                  </p>
+                </section>
+              </div>
+            </article>
+
             <section class="playground-demo-group stack" aria-labelledby="form-control-states-title">
               <header class="playground-demo-group__header stack">
                 <h3 class="playground-demo-group__title" id="form-control-states-title">Native state ownership</h3>
@@ -2645,8 +2761,8 @@
                   <code>type</code> and the toggle’s synchronized <code>aria-pressed</code> state. Number Stepper
                   boundaries use native constraints and real button <code>disabled</code> attributes. Range Slider
                   value, constraints, focus, and disabled behavior remain native while JavaScript updates presentation
-                  only. Date Picker and Time Picker required, disabled, readonly, minimum, maximum, and interval
-                  behavior is also native. None of these states requires a BEM state class.
+                  only. Date Picker, Time Picker, and DateTime Local required, disabled, readonly, minimum, maximum,
+                  and interval behavior is also native. None of these states requires a BEM state class.
                 </p>
               </div>
             </section>
@@ -2681,6 +2797,10 @@
                 <li>Use native <code>min</code>, <code>max</code>, and <code>step</code> constraints only when the permitted schedule requires them.</li>
                 <li>Expect time presentation and picker interaction to follow the user’s browser, operating system, and locale.</li>
                 <li>Use a different control for durations, time ranges, or scheduling rules that a single native time value cannot express.</li>
+                <li>Use DateTime Local only when one combined local date and time is required, and always explain its scheduling context.</li>
+                <li>Define meaningful native boundaries and intervals without treating the value as a time-zone-aware instant.</li>
+                <li>Establish time-zone handling separately when the same event must be understood across locations.</li>
+                <li>Use separate controls when independent date or time selection better matches the task.</li>
                 <li>Group related choices with a visible <code>fieldset</code> and <code>legend</code>.</li>
                 <li>Connect supporting descriptions with <code>aria-describedby</code> when they clarify the choice.</li>
                 <li>Avoid disabled controls when explanatory feedback would better help the user proceed.</li>
@@ -2833,6 +2953,20 @@
                   description and its <code>aria-describedby</code> reference together; native attributes own all state.
                 </p>
               </section>
+              <section class="playground-api playground-demo stack" aria-labelledby="datetime-local-api-title">
+                <h3 class="playground-api__title" id="datetime-local-api-title">DateTime Local API</h3>
+                <ul class="playground-api__classes cluster" role="list">
+                  <li><code>.datetime-local</code></li>
+                  <li><code>.datetime-local__label</code></li>
+                  <li><code>.datetime-local__control</code></li>
+                  <li><code>.datetime-local__description</code></li>
+                </ul>
+                <p class="text text--muted">
+                  Use a native <code>input[type="datetime-local"]</code> with a visible associated label. Add the
+                  optional description and its <code>aria-describedby</code> reference together; native attributes own
+                  every state and constraint.
+                </p>
+              </section>
             </div>
 
             <section class="playground-demo-group stack" aria-labelledby="form-control-code-title">
@@ -2964,6 +3098,21 @@
     step="900" aria-describedby="appointment-time-description" /&gt;
   &lt;p class="time-picker__description" id="appointment-time-description"&gt;
     Choose a 15-minute interval during working hours.
+  &lt;/p&gt;
+&lt;/div&gt;</code></pre>
+                </div>
+                <div class="playground-demo stack">
+                  <p class="playground-demo__label">DateTime Local</p>
+                  <pre class="playground-code"><code>&lt;div class="datetime-local"&gt;
+  &lt;label class="datetime-local__label" for="session-start"&gt;
+    Session start
+  &lt;/label&gt;
+  &lt;input class="datetime-local__control" id="session-start"
+    name="session-start" type="datetime-local"
+    min="2026-10-12T09:00" max="2026-10-16T17:00" step="1800"
+    aria-describedby="session-start-description" /&gt;
+  &lt;p class="datetime-local__description" id="session-start-description"&gt;
+    Choose a local date and half-hour start time.
   &lt;/p&gt;
 &lt;/div&gt;</code></pre>
                 </div>

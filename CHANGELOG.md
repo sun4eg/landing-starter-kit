@@ -17,6 +17,7 @@ The format is based on Keep a Changelog, and this project adheres to Semantic Ve
 - Added a native Range Slider with live output, optional unit suffixes, progress enhancement, and cross-browser Playground documentation.
 - Added a native Date Picker with required, optional, disabled, readonly, bounded-date, and validation documentation.
 - Added a native Time Picker with interval, working-hours, native-state, and validation documentation.
+- Added a native DateTime Local component with scheduling boundaries, intervals, native states, and validation documentation.
 
 ### Changed
 

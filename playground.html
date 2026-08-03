@@ -1589,8 +1589,8 @@
             <p class="section-heading__eyebrow">Components</p>
             <h2 class="playground-section__title section-heading__title" id="form-controls-title">Form Controls</h2>
             <p class="playground-section__description section-heading__lead">
-              Compare native Checkbox, Radio, and Switch controls with shared focus, disabled, description, and
-              content-resilience patterns while preserving each control’s distinct semantics.
+              Compare native Checkbox, Radio, Switch, and Select controls with shared focus, disabled, description,
+              and content-resilience patterns while preserving each control’s distinct semantics.
             </p>
           </header>
 
@@ -1793,19 +1793,184 @@
               </div>
             </article>
 
+            <article class="playground-demo-group stack" aria-labelledby="select-title">
+              <header class="playground-demo-group__header stack">
+                <h3 class="playground-demo-group__title" id="select-title">Select</h3>
+                <p class="playground-demo-group__description text text--muted">
+                  Use Select for one value from a longer predefined list while preserving the browser’s native popup,
+                  keyboard behavior, validation, form submission, and touch picker.
+                </p>
+              </header>
+
+              <div class="playground-api-grid">
+                <div class="playground-demo">
+                  <div class="select">
+                    <label class="select__label" for="select-standard">Project category (required)</label>
+                    <div class="select__control-wrapper">
+                      <select class="select__control" id="select-standard" name="project-category" required aria-describedby="select-standard-description">
+                        <option value="" selected disabled>Choose an option</option>
+                        <option value="marketing">Marketing site</option>
+                        <option value="product">Product launch</option>
+                        <option value="documentation">Documentation portal</option>
+                      </select>
+                      <svg class="select__icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false">
+                        <path d="m5 7.5 5 5 5-5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
+                      </svg>
+                    </div>
+                    <p class="select__description" id="select-standard-description">Choose the category that best describes the planned work.</p>
+                  </div>
+                </div>
+
+                <div class="playground-demo">
+                  <div class="select">
+                    <label class="select__label" for="select-selected">Preferred review cadence (optional)</label>
+                    <div class="select__control-wrapper">
+                      <select class="select__control" id="select-selected" name="review-cadence">
+                        <option value="">No preference</option>
+                        <option value="weekly" selected>Weekly review</option>
+                        <option value="monthly">Monthly review</option>
+                      </select>
+                      <svg class="select__icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false">
+                        <path d="m5 7.5 5 5 5-5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="playground-demo">
+                  <div class="select">
+                    <label class="select__label" for="select-disabled">Region</label>
+                    <div class="select__control-wrapper">
+                      <select class="select__control" id="select-disabled" name="disabled-region" disabled aria-describedby="select-disabled-description">
+                        <option value="" selected>Choose an option</option>
+                        <option value="north">North region</option>
+                      </select>
+                      <svg class="select__icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false">
+                        <path d="m5 7.5 5 5 5-5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
+                      </svg>
+                    </div>
+                    <p class="select__description" id="select-disabled-description">Disabled with no selected value.</p>
+                  </div>
+                </div>
+
+                <div class="playground-demo">
+                  <div class="select">
+                    <label class="select__label" for="select-disabled-selected">Assigned workspace</label>
+                    <div class="select__control-wrapper">
+                      <select class="select__control" id="select-disabled-selected" name="disabled-workspace" disabled aria-describedby="select-disabled-selected-description">
+                        <option value="core" selected>Core workspace</option>
+                        <option value="archive">Archive workspace</option>
+                      </select>
+                      <svg class="select__icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false">
+                        <path d="m5 7.5 5 5 5-5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
+                      </svg>
+                    </div>
+                    <p class="select__description" id="select-disabled-selected-description">Disabled with a selected value.</p>
+                  </div>
+                </div>
+
+                <div class="playground-demo">
+                  <div class="select">
+                    <label class="select__label" for="select-grouped">Service area</label>
+                    <div class="select__control-wrapper">
+                      <select class="select__control" id="select-grouped" name="service-area" aria-describedby="select-grouped-description">
+                        <option value="">Choose a service</option>
+                        <optgroup label="Strategy">
+                          <option value="research">User research</option>
+                          <option value="planning">Product planning</option>
+                        </optgroup>
+                        <optgroup label="Delivery">
+                          <option value="design">Interface design</option>
+                          <option value="development">Front-end development</option>
+                        </optgroup>
+                      </select>
+                      <svg class="select__icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false">
+                        <path d="m5 7.5 5 5 5-5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
+                      </svg>
+                    </div>
+                    <p class="select__description" id="select-grouped-description">Native optgroup presentation varies by browser and operating system.</p>
+                  </div>
+                </div>
+
+                <div class="playground-demo">
+                  <div class="select">
+                    <label class="select__label" for="select-long-content">Preferred collaboration approach for a distributed multidisciplinary team</label>
+                    <div class="select__control-wrapper">
+                      <select class="select__control" id="select-long-content" name="collaboration-approach" aria-describedby="select-long-content-description">
+                        <option value="async" selected>Asynchronous written reviews with scheduled decision checkpoints</option>
+                        <option value="workshops">Facilitated workshops followed by documented recommendations</option>
+                        <option value="embedded">Embedded collaboration throughout the delivery cycle</option>
+                      </select>
+                      <svg class="select__icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false">
+                        <path d="m5 7.5 5 5 5-5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
+                      </svg>
+                    </div>
+                    <p class="select__description" id="select-long-content-description">Long labels and descriptions wrap naturally, while the closed native control may clip or truncate a long selected value according to the browser without overlapping its decorative arrow.</p>
+                  </div>
+                </div>
+              </div>
+
+              <section class="playground-demo-group stack" aria-labelledby="select-validation-title">
+                <header class="playground-demo-group__header stack">
+                  <h4 class="playground-demo-group__title" id="select-validation-title">Native validation</h4>
+                  <p class="playground-demo-group__description text text--muted">
+                    Submit without choosing a value to inspect the browser’s native required-field response; exact
+                    validation presentation varies by browser.
+                  </p>
+                </header>
+                <div class="playground-demo">
+                  <form class="playground-select-demo stack" method="post" action="" aria-labelledby="select-validation-title">
+                    <div class="select">
+                      <label class="select__label" for="select-validation">Delivery priority (required)</label>
+                      <div class="select__control-wrapper">
+                        <select class="select__control" id="select-validation" name="delivery-priority" required aria-describedby="select-validation-description">
+                          <option value="" selected disabled>Choose a priority</option>
+                          <option value="standard">Standard</option>
+                          <option value="time-sensitive">Time-sensitive</option>
+                          <option value="exploratory">Exploratory</option>
+                        </select>
+                        <svg class="select__icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false">
+                          <path d="m5 7.5 5 5 5-5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
+                        </svg>
+                      </div>
+                      <p class="select__description" id="select-validation-description">This safe local demonstration has no external submission destination.</p>
+                    </div>
+                    <button class="button button--primary" type="submit">Validate Select</button>
+                  </form>
+                </div>
+              </section>
+
+              <div class="playground-demo stack">
+                <h4>Composition and platform behavior</h4>
+                <p class="text text--muted">
+                  Select uses a stable visible label above its control rather than the floating-label sibling pattern.
+                  Native placeholder, validity, and popup behavior differ from text fields, so forcing the existing
+                  floating-label contract would be fragile.
+                </p>
+                <p class="text text--muted">
+                  The component consistently styles the closed surface, border, text, padding, focus, disabled state,
+                  and decorative arrow. The opened option popup, option highlighting, mobile picker, and platform
+                  selection sheet remain browser-owned. Native multiple Select is outside this single-value API because
+                  its multi-row interaction and sizing responsibilities require separate design and guidance.
+                </p>
+              </div>
+            </article>
+
             <section class="playground-demo-group stack" aria-labelledby="form-control-states-title">
               <header class="playground-demo-group__header stack">
                 <h3 class="playground-demo-group__title" id="form-control-states-title">Native state ownership</h3>
                 <p class="playground-demo-group__description text text--muted">
-                  The native <code>:checked</code>, <code>:disabled</code>, <code>:indeterminate</code>, and
-                  <code>:focus-visible</code> states drive presentation; they are not BEM modifiers.
+                  Native <code>:checked</code>, <code>:disabled</code>, <code>:indeterminate</code>,
+                  <code>:required:invalid</code>, and <code>:focus-visible</code> states drive presentation; they are not
+                  BEM modifiers.
                 </p>
               </header>
               <div class="playground-demo">
                 <p class="text text--muted">
-                  Interact with each enabled control to inspect real hover, focus, and checked behavior. The
-                  indeterminate Checkbox uses a Playground-only data hook because HTML has no declarative
-                  indeterminate attribute; application code should set the native <code>indeterminate</code> property.
+                  Interact with each enabled control to inspect real hover, focus, checked, selection, and validation
+                  behavior. The indeterminate Checkbox uses a Playground-only data hook because HTML has no
+                  declarative indeterminate attribute; application code should set the native
+                  <code>indeterminate</code> property.
                 </p>
               </div>
             </section>
@@ -1816,6 +1981,9 @@
                 <li>Use Checkbox for independent selections and Radio for one choice from a named group.</li>
                 <li>Use Switch only when changing it applies a binary setting immediately.</li>
                 <li>Do not use Switch when submission or confirmation is still required.</li>
+                <li>Use Select for one choice from a longer predefined list; prefer Radio when a small set should remain visible.</li>
+                <li>Give every Select a visible label, keep options concise, and use optgroup only for meaningful grouping.</li>
+                <li>Keep native Select behavior and never use its placeholder option as a replacement for a label.</li>
                 <li>Group related choices with a visible <code>fieldset</code> and <code>legend</code>.</li>
                 <li>Connect supporting descriptions with <code>aria-describedby</code> when they clarify the choice.</li>
                 <li>Avoid disabled controls when explanatory feedback would better help the user proceed.</li>
@@ -1850,6 +2018,18 @@
                   <li><code>.switch__description</code></li>
                 </ul>
                 <p class="text text--muted">Use a native checkbox with <code>role="switch"</code>; do not add redundant <code>aria-checked</code>.</p>
+              </section>
+              <section class="playground-api playground-demo stack" aria-labelledby="select-api-title">
+                <h3 class="playground-api__title" id="select-api-title">Select API</h3>
+                <ul class="playground-api__classes cluster" role="list">
+                  <li><code>.select</code></li><li><code>.select__label</code></li>
+                  <li><code>.select__control-wrapper</code></li><li><code>.select__control</code></li>
+                  <li><code>.select__icon</code></li><li><code>.select__description</code></li>
+                </ul>
+                <p class="text text--muted">
+                  Associate the visible label through <code>for</code>/<code>id</code>, include the wrapper only when
+                  composing the decorative icon, and add <code>aria-describedby</code> only when a description exists.
+                </p>
               </section>
             </div>
 
@@ -1892,6 +2072,20 @@
     &lt;span class="switch__label"&gt;Alerts&lt;/span&gt;
   &lt;/span&gt;
 &lt;/label&gt;</code></pre>
+                </div>
+                <div class="playground-demo stack">
+                  <p class="playground-demo__label">Select</p>
+                  <pre class="playground-code"><code>&lt;div class="select"&gt;
+  &lt;label class="select__label" for="category"&gt;Category&lt;/label&gt;
+  &lt;div class="select__control-wrapper"&gt;
+    &lt;select class="select__control" id="category"
+      name="category" required&gt;
+      &lt;option value="" selected disabled&gt;Choose an option&lt;/option&gt;
+      &lt;option value="one"&gt;Option one&lt;/option&gt;
+    &lt;/select&gt;
+    &lt;svg class="select__icon" aria-hidden="true"&gt;…&lt;/svg&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
                 </div>
               </div>
             </section>

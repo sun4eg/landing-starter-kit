@@ -1,0 +1,81 @@
+.select {
+  display: grid;
+  gap: var(--space-2xs);
+  width: var(--size-full);
+  min-width: var(--space-0);
+}
+
+.select__label {
+  color: var(--color-text-primary);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-base);
+  overflow-wrap: anywhere;
+}
+
+.select__control-wrapper {
+  position: relative;
+  min-width: var(--space-0);
+}
+
+.select__control {
+  width: var(--size-full);
+  min-width: var(--space-0);
+  min-height: var(--control-height-md);
+  padding-block: var(--space-2xs);
+  padding-inline-start: var(--control-padding-inline-md);
+  padding-inline-end: calc(
+    var(--control-padding-inline-md) + var(--control-icon-size-md) + var(--space-2xs)
+  );
+  color: var(--color-text-primary);
+  text-overflow: ellipsis;
+  background-color: var(--color-background);
+  border: var(--border-width) solid var(--color-control-border);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  appearance: none;
+  transition:
+    background-color var(--duration-fast) var(--ease-standard),
+    border-color var(--duration-fast) var(--ease-standard);
+}
+
+.select__control:required:invalid {
+  color: var(--color-text-secondary);
+}
+
+.select__control:focus-visible {
+  border-color: var(--color-primary-600);
+}
+
+.select__control:disabled {
+  cursor: not-allowed;
+  opacity: var(--opacity-disabled);
+}
+
+.select__icon {
+  position: absolute;
+  inset-block-start: 50%;
+  inset-inline-end: var(--control-padding-inline-md);
+  width: var(--control-icon-size-md);
+  color: var(--color-text-secondary);
+  pointer-events: none;
+  transform: translateY(-50%);
+}
+
+.select__control:disabled + .select__icon {
+  opacity: var(--opacity-disabled);
+}
+
+.select__description {
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-sm);
+  line-height: var(--line-height-base);
+  overflow-wrap: anywhere;
+}
+
+@media (hover: hover) {
+  .select__control:not(:disabled):hover {
+    background-color: var(--color-primary-50);
+    border-color: var(--color-primary-600);
+  }
+}

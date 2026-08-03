@@ -2,16 +2,22 @@
 
 An AI-ready foundation for modern, accessible, responsive landing pages, built with Vite, token-driven Sass, BEM, semantic HTML, and vanilla JavaScript ES Modules—without a UI framework.
 
-[![Version 1.1.0](https://img.shields.io/badge/version-1.1.0-0A7EA4)](./CHANGELOG.md) [![MIT License](https://img.shields.io/badge/license-MIT-green)](./LICENSE) [![Vite](https://img.shields.io/badge/Vite-8.2-646CFF?logo=vite&logoColor=white)](https://vite.dev/) [![Sass](https://img.shields.io/badge/Sass-1.102-CC6699?logo=sass&logoColor=white)](https://sass-lang.com/) [![JavaScript ES Modules](https://img.shields.io/badge/JavaScript-ES%20Modules-F7DF1E?logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules) [![Accessibility](https://img.shields.io/badge/Accessibility-A11y-005A9C)](https://www.w3.org/WAI/) [![AI Ready](https://img.shields.io/badge/AI-Ready-8A2BE2)](./AI_RULES.md)
+[![Version 2.0.0-alpha.1](https://img.shields.io/badge/version-2.0.0--alpha.1-0A7EA4)](./CHANGELOG.md) [![MIT License](https://img.shields.io/badge/license-MIT-green)](./LICENSE) [![Vite](https://img.shields.io/badge/Vite-8.2-646CFF?logo=vite&logoColor=white)](https://vite.dev/) [![Sass](https://img.shields.io/badge/Sass-1.102-CC6699?logo=sass&logoColor=white)](https://sass-lang.com/) [![JavaScript ES Modules](https://img.shields.io/badge/JavaScript-ES%20Modules-F7DF1E?logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules) [![Accessibility](https://img.shields.io/badge/Accessibility-A11y-005A9C)](https://www.w3.org/WAI/) [![AI Ready](https://img.shields.io/badge/AI-Ready-8A2BE2)](./AI_RULES.md)
+
+> `v2.0.0-alpha.1` is an evaluation release. Manual cross-browser,
+> mobile-platform, forced-colors, and assistive-technology verification remains
+> recommended before production adoption.
 
 ## Included
 
 - Responsive Header and primary navigation
 - Hero, Services, Benefits, Portfolio, Process, Reviews, FAQ, and Contact sections
 - Reusable Button, Text, Section Heading, cards, Testimonial, Form, and Accordion components
+- Native Checkbox, Radio, Switch, Select, Password Input, Number Stepper, Range Slider, Date Picker, Time Picker, DateTime Local, and File Input components
 - Shared containers, layout utilities, breakpoints, and semantic design tokens
 - Keyboard-accessible navigation and Accordion behavior
 - Sticky Header, anchor offsets, reduced-motion handling, and visible focus foundations
+- A living Component Playground with API, state, accessibility, responsive, and design-token documentation
 
 ## Requirements
 
@@ -30,6 +36,10 @@ Create a production build with:
 ```bash
 npm run build
 ```
+
+The multi-page build emits `dist/index.html` for the landing page and
+`dist/playground.html` for the Component Playground. During development, open
+`/playground.html` to review the documented components.
 
 Preview the generated build locally with:
 
@@ -81,6 +91,13 @@ Keep reusable component styles in `src/scss/components`, section composition in 
 
 Do not hardcode visual values in consuming styles. Reuse semantic tokens and shared Sass breakpoints documented in the project standards.
 
-## Live Demo
+## Live demo
 
-https://landing-starter-kit.vercel.app
+Landing page: https://landing-starter-kit.vercel.app
+
+Component Playground: https://landing-starter-kit.vercel.app/playground.html
+
+Native Select, date/time, range, and file-picker details vary by browser,
+operating system, and mobile platform. The starter intentionally does not include
+a custom validation layer, custom date/time pickers, file uploads, drag and drop,
+or dark mode.

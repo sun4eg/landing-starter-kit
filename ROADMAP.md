@@ -14,7 +14,7 @@ This roadmap tracks the development of a reusable, accessible, and production-re
 
 - [x] **HTML foundation** — Create the semantic document structure, shared metadata, landmarks, and content hierarchy.
 - [x] **UI kit** — Build reusable, token-driven interface elements and document their states and variants.
-- [x] **Component Playground** — Provide a separate living-documentation page for reviewing reusable components, foundations, variants, states, and responsive behavior.
+- [x] **Component Playground** — Complete living documentation, responsive navigation, active-section tracking, component APIs, and design-token references.
 - [x] **Layout system** — Establish responsive grids, content wrappers, flow utilities, and consistent layout patterns.
 - [x] **Header and navigation** — Implement an accessible responsive header with primary navigation and mobile behavior.
 - [x] **Hero section** — Create a flexible introductory section with a clear value proposition and primary actions.
@@ -25,10 +25,35 @@ This roadmap tracks the development of a reusable, accessible, and production-re
 - [x] **Reviews section** — Add an accessible pattern for testimonials, ratings, and customer attribution.
 - [x] **FAQ section** — Implement a keyboard-accessible question-and-answer disclosure pattern.
 - [x] **Contact form** — Create an accessible reusable form with native validation and a backend-ready structure.
-- [x] **Form controls** — Add native Checkbox, Radio, Switch, Select, Password Input, Number Stepper, Range Slider, Date Picker, Time Picker, DateTime Local, and File Input components with Playground documentation.
+- [x] **Form controls** — Complete the native Checkbox, Radio, Switch, Select, Password Input, Number Stepper, Range Slider, Date Picker, Time Picker, DateTime Local, and File Input APIs, enhancements, validation examples, and Playground documentation.
 - [x] **Footer** — Add reusable secondary navigation, contact details, copyright, and an extensible lower row.
 - [x] **JavaScript modules** — Implement small independent ES Modules for interactive behaviors and shared utilities.
 - [x] **Accessibility audit** — Verify keyboard navigation, focus management, semantics, contrast, motion preferences, and assistive-technology support.
+- [x] **v2.0.0-alpha.1 preparation** — Version and document the first evaluation release of the completed Playground and Form Controls foundations.
 - [ ] **SEO setup** — Add metadata, social previews, canonical information, structured data, sitemap, and robots directives.
 - [ ] **Performance optimization** — Optimize images, fonts, asset delivery, rendering behavior, and Core Web Vitals.
-- [ ] **Production readiness** — Complete cross-browser testing, content checks, error handling, build verification, and deployment documentation.
+- [ ] **Alpha verification** — Complete manual Safari, Firefox, mobile-platform, forced-colors, VoiceOver, and NVDA testing.
+- [ ] **Production readiness** — Complete content checks, error handling, performance review, build verification, and deployment documentation.
+
+## Next Component Phase
+
+1. Badge
+2. Alert
+3. Divider
+4. Progress
+5. Spinner
+6. Skeleton
+7. Empty State
+8. Tabs
+9. Breadcrumbs
+10. Pagination
+11. Timeline
+12. Modal
+13. Toast
+14. Tooltip
+15. Popover
+16. Drawer
+17. Stats
+18. Logo Cloud
+19. CTA Banner
+20. Pricing Card

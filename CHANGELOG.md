@@ -6,6 +6,11 @@ The format is based on Keep a Changelog, and this project adheres to Semantic Ve
 
 ## [Unreleased]
 
+## [2.0.0-alpha.1] - 2026-08-04
+
+> Alpha release: manual Safari, Firefox, mobile-platform, forced-colors, VoiceOver,
+> and NVDA verification remains recommended before production adoption.
+
 ### Added
 
 - Added a multi-page Component Playground with living documentation for reusable components, typography, navigation, Footer patterns, and design tokens.
@@ -19,16 +24,29 @@ The format is based on Keep a Changelog, and this project adheres to Semantic Ve
 - Added a native Time Picker with interval, working-hours, native-state, and validation documentation.
 - Added a native DateTime Local component with scheduling boundaries, intervals, native states, and validation documentation.
 - Added a native File Input with single and multiple selection, accepted-type guidance, native validation, and Playground documentation.
+- Added multi-page Vite output for the landing page and Component Playground.
 
 ### Changed
 
 - Refined the shared mobile Header navigation into an edge-to-edge viewport panel below the sticky Header.
 - Clarified the Button size scale and shared control foundations for small, medium, and large controls.
+- Expanded the Playground into complete living documentation for existing production components, public APIs, responsive behavior, native states, and design-token foundations.
 
 ### Fixed
 
 - Corrected Footer heading contrast and Playground documentation accuracy, responsive resilience, semantic relationships, and navigation state synchronization.
 - Preserved native Form label activation, corrected Switch directionality, kept Number Stepper focus visible within its clipped boundary, aligned File Input control height, and removed redundant Form Controls labelling ARIA.
+
+### Accessibility
+
+- Preserved native control semantics, validation, keyboard behavior, labels, descriptions, and form submission across the Form Controls family.
+- Refined mobile navigation focus order, Escape handling, accessible toggle labels, full-row targets, and full-viewport coverage below the sticky Header.
+- Added reduced-motion-aware interactions, visible focus handling, and synchronized `aria-current="location"` documentation navigation state.
+
+### Documentation
+
+- Documented production BEM and data-attribute contracts, progressive enhancement, native browser differences, content resilience, and intentional limitations.
+- Added responsive and accessibility guidance for the complete Form Controls foundation and existing landing components.
 
 ## [1.1.0] - 2026-08-02
 

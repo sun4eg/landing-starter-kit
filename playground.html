@@ -1589,8 +1589,8 @@
             <p class="section-heading__eyebrow">Components</p>
             <h2 class="playground-section__title section-heading__title" id="form-controls-title">Form Controls</h2>
             <p class="playground-section__description section-heading__lead">
-              Compare native Checkbox, Radio, Switch, and Select controls with shared focus, disabled, description,
-              and content-resilience patterns while preserving each control’s distinct semantics.
+              Compare native Checkbox, Radio, Switch, Select, Password Input, and Number Stepper controls with shared
+              focus, disabled, description, and content-resilience patterns while preserving distinct semantics.
             </p>
           </header>
 
@@ -2080,6 +2080,177 @@
               </div>
             </article>
 
+            <article class="playground-demo-group stack" aria-labelledby="number-stepper-title">
+              <header class="playground-demo-group__header stack">
+                <h3 class="playground-demo-group__title" id="number-stepper-title">Number Stepper</h3>
+                <p class="playground-demo-group__description text text--muted">
+                  Enhance a native number input with separate decrement and increment buttons while retaining manual
+                  entry, native constraints, keyboard stepping, validation, and form submission.
+                </p>
+              </header>
+
+              <div class="playground-api-grid">
+                <div class="playground-demo">
+                  <div class="number-stepper" data-number-stepper>
+                    <label class="number-stepper__label" for="stepper-quantity">Quantity</label>
+                    <div class="number-stepper__control">
+                      <button class="number-stepper__button number-stepper__button--decrement" type="button" aria-label="Decrease quantity" aria-controls="stepper-quantity" data-number-stepper-decrement hidden>
+                        <svg viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M4 10h12" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2" /></svg>
+                      </button>
+                      <input class="number-stepper__input" id="stepper-quantity" name="quantity-demo" type="number" min="1" max="10" step="1" value="2" inputmode="numeric" aria-describedby="stepper-quantity-description" data-number-stepper-input />
+                      <button class="number-stepper__button number-stepper__button--increment" type="button" aria-label="Increase quantity" aria-controls="stepper-quantity" data-number-stepper-increment hidden>
+                        <svg viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M10 4v12M4 10h12" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2" /></svg>
+                      </button>
+                    </div>
+                    <p class="number-stepper__description" id="stepper-quantity-description">Choose a quantity from 1 to 10.</p>
+                  </div>
+                </div>
+
+                <div class="playground-demo">
+                  <div class="number-stepper" data-number-stepper>
+                    <label class="number-stepper__label" for="stepper-hours">Estimated hours</label>
+                    <div class="number-stepper__control">
+                      <button class="number-stepper__button number-stepper__button--decrement" type="button" aria-label="Decrease estimated hours" aria-controls="stepper-hours" data-number-stepper-decrement hidden>
+                        <svg viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M4 10h12" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2" /></svg>
+                      </button>
+                      <input class="number-stepper__input" id="stepper-hours" name="hours-demo" type="number" min="0.5" max="4" step="0.25" value="1.5" inputmode="decimal" aria-describedby="stepper-hours-description" data-number-stepper-input />
+                      <button class="number-stepper__button number-stepper__button--increment" type="button" aria-label="Increase estimated hours" aria-controls="stepper-hours" data-number-stepper-increment hidden>
+                        <svg viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M10 4v12M4 10h12" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2" /></svg>
+                      </button>
+                    </div>
+                    <p class="number-stepper__description" id="stepper-hours-description">Changes in quarter-hour increments while native decimal validation remains authoritative.</p>
+                  </div>
+                </div>
+
+                <div class="playground-demo">
+                  <div class="number-stepper" data-number-stepper>
+                    <label class="number-stepper__label" for="stepper-minimum">Minimum seats</label>
+                    <div class="number-stepper__control">
+                      <button class="number-stepper__button number-stepper__button--decrement" type="button" aria-label="Decrease minimum seats" aria-controls="stepper-minimum" data-number-stepper-decrement disabled hidden>
+                        <svg viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M4 10h12" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2" /></svg>
+                      </button>
+                      <input class="number-stepper__input" id="stepper-minimum" name="minimum-seats-demo" type="number" min="1" max="10" step="1" value="1" inputmode="numeric" data-number-stepper-input />
+                      <button class="number-stepper__button number-stepper__button--increment" type="button" aria-label="Increase minimum seats" aria-controls="stepper-minimum" data-number-stepper-increment hidden>
+                        <svg viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M10 4v12M4 10h12" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2" /></svg>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="playground-demo">
+                  <div class="number-stepper" data-number-stepper>
+                    <label class="number-stepper__label" for="stepper-maximum">Maximum attendees</label>
+                    <div class="number-stepper__control">
+                      <button class="number-stepper__button number-stepper__button--decrement" type="button" aria-label="Decrease maximum attendees" aria-controls="stepper-maximum" data-number-stepper-decrement hidden>
+                        <svg viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M4 10h12" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2" /></svg>
+                      </button>
+                      <input class="number-stepper__input" id="stepper-maximum" name="maximum-attendees-demo" type="number" min="1" max="10" step="1" value="10" inputmode="numeric" data-number-stepper-input />
+                      <button class="number-stepper__button number-stepper__button--increment" type="button" aria-label="Increase maximum attendees" aria-controls="stepper-maximum" data-number-stepper-increment disabled hidden>
+                        <svg viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M10 4v12M4 10h12" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2" /></svg>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="playground-demo">
+                  <div class="number-stepper" data-number-stepper>
+                    <label class="number-stepper__label" for="stepper-disabled">Managed allocation</label>
+                    <div class="number-stepper__control">
+                      <button class="number-stepper__button number-stepper__button--decrement" type="button" aria-label="Decrease managed allocation" aria-controls="stepper-disabled" data-number-stepper-decrement disabled hidden>
+                        <svg viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M4 10h12" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2" /></svg>
+                      </button>
+                      <input class="number-stepper__input" id="stepper-disabled" name="managed-allocation-demo" type="number" value="4" disabled data-number-stepper-input />
+                      <button class="number-stepper__button number-stepper__button--increment" type="button" aria-label="Increase managed allocation" aria-controls="stepper-disabled" data-number-stepper-increment disabled hidden>
+                        <svg viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M10 4v12M4 10h12" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2" /></svg>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="playground-demo">
+                  <div class="number-stepper" data-number-stepper>
+                    <label class="number-stepper__label" for="stepper-readonly">Recorded capacity</label>
+                    <div class="number-stepper__control">
+                      <button class="number-stepper__button number-stepper__button--decrement" type="button" aria-label="Decrease recorded capacity" aria-controls="stepper-readonly" data-number-stepper-decrement disabled hidden>
+                        <svg viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M4 10h12" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2" /></svg>
+                      </button>
+                      <input class="number-stepper__input" id="stepper-readonly" name="recorded-capacity-demo" type="number" value="8" readonly aria-describedby="stepper-readonly-description" data-number-stepper-input />
+                      <button class="number-stepper__button number-stepper__button--increment" type="button" aria-label="Increase recorded capacity" aria-controls="stepper-readonly" data-number-stepper-increment disabled hidden>
+                        <svg viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M10 4v12M4 10h12" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2" /></svg>
+                      </button>
+                    </div>
+                    <p class="number-stepper__description" id="stepper-readonly-description">Readonly keeps the native value focusable and selectable while both custom step buttons remain disabled.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="playground-demo">
+                <div class="playground-demo__constraint">
+                  <div class="number-stepper" data-number-stepper>
+                    <label class="number-stepper__label" for="stepper-long-content">Number of review participants who need access across all collaborating organizations</label>
+                    <div class="number-stepper__control">
+                      <button class="number-stepper__button number-stepper__button--decrement" type="button" aria-label="Decrease review participants" aria-controls="stepper-long-content" data-number-stepper-decrement hidden>
+                        <svg viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M4 10h12" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2" /></svg>
+                      </button>
+                      <input class="number-stepper__input" id="stepper-long-content" name="review-participants-demo" type="number" min="1" max="100" step="1" value="12" inputmode="numeric" aria-describedby="stepper-long-content-description" data-number-stepper-input />
+                      <button class="number-stepper__button number-stepper__button--increment" type="button" aria-label="Increase review participants" aria-controls="stepper-long-content" data-number-stepper-increment hidden>
+                        <svg viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M10 4v12M4 10h12" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2" /></svg>
+                      </button>
+                    </div>
+                    <p class="number-stepper__description" id="stepper-long-content-description">This constrained example verifies that a long visible label and supporting description wrap while the two button targets remain stable and the editable field shrinks without horizontal overflow.</p>
+                  </div>
+                </div>
+              </div>
+
+              <section class="playground-demo-group stack" aria-labelledby="number-stepper-validation-title">
+                <header class="playground-demo-group__header stack">
+                  <h4 class="playground-demo-group__title" id="number-stepper-validation-title">Required and native validation</h4>
+                  <p class="playground-demo-group__description text text--muted">
+                    Submit the empty field or manually enter an out-of-range or off-step value to inspect native
+                    validation; custom buttons do not replace browser constraint validation.
+                  </p>
+                </header>
+                <div class="playground-demo">
+                  <form class="playground-number-stepper-demo stack" method="post" action="" aria-labelledby="number-stepper-validation-title">
+                    <div class="number-stepper" data-number-stepper>
+                      <label class="number-stepper__label" for="stepper-validation">Required quantity</label>
+                      <div class="number-stepper__control">
+                        <button class="number-stepper__button number-stepper__button--decrement" type="button" aria-label="Decrease required quantity" aria-controls="stepper-validation" data-number-stepper-decrement hidden>
+                          <svg viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M4 10h12" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2" /></svg>
+                        </button>
+                        <input class="number-stepper__input" id="stepper-validation" name="required-quantity-demo" type="number" min="1" max="10" step="1" inputmode="numeric" required aria-describedby="stepper-validation-description" data-number-stepper-input />
+                        <button class="number-stepper__button number-stepper__button--increment" type="button" aria-label="Increase required quantity" aria-controls="stepper-validation" data-number-stepper-increment hidden>
+                          <svg viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M10 4v12M4 10h12" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2" /></svg>
+                        </button>
+                      </div>
+                      <p class="number-stepper__description" id="stepper-validation-description">Choose a whole number from 1 to 10. This local form has no remote submission destination.</p>
+                    </div>
+                    <button class="button button--primary" type="submit">Validate Number Stepper</button>
+                  </form>
+                </div>
+              </section>
+
+              <div class="playground-explainer-grid">
+                <section class="playground-demo stack" aria-labelledby="number-stepper-enhancement-title">
+                  <h4 id="number-stepper-enhancement-title">Progressive enhancement and events</h4>
+                  <p class="text text--muted">
+                    Without JavaScript, hidden step buttons leave a full-width native number input. Valid instances
+                    reveal operational buttons and synchronize their boundaries. A successful custom step dispatches
+                    one bubbling <code>input</code> event followed by one bubbling <code>change</code> event; a boundary
+                    or failed native step dispatches neither.
+                  </p>
+                </section>
+                <section class="playground-demo stack" aria-labelledby="number-stepper-interaction-title">
+                  <h4 id="number-stepper-interaction-title">Manual entry and focus</h4>
+                  <p class="text text--muted">
+                    Direct typing, deletion, paste, selection, and native Arrow Up or Arrow Down behavior remain
+                    available. A custom step button retains focus after activation. Empty or invalid entry is preserved,
+                    and native validation reports constraint problems without automatic clamping.
+                  </p>
+                </section>
+              </div>
+            </article>
+
             <section class="playground-demo-group stack" aria-labelledby="form-control-states-title">
               <header class="playground-demo-group__header stack">
                 <h3 class="playground-demo-group__title" id="form-control-states-title">Native state ownership</h3>
@@ -2095,7 +2266,9 @@
                   behavior. The indeterminate Checkbox uses a Playground-only data hook because HTML has no
                   declarative indeterminate attribute; application code should set the native
                   <code>indeterminate</code> property. Password visibility is owned by the input’s native
-                  <code>type</code> and the toggle’s synchronized <code>aria-pressed</code> state rather than a BEM class.
+                  <code>type</code> and the toggle’s synchronized <code>aria-pressed</code> state. Number Stepper
+                  boundaries use native constraints and real button <code>disabled</code> attributes. None of these
+                  states requires a BEM state class.
                 </p>
               </div>
             </section>
@@ -2113,6 +2286,10 @@
                 <li>Treat password visibility as optional enhancement; do not block paste or disable password managers.</li>
                 <li>Do not impose arbitrary password composition rules without explicit product and security requirements.</li>
                 <li>Use password fields only for secret content and plan accessible messages before adding custom validation.</li>
+                <li>Use Number Stepper for bounded quantities while preserving direct typing, deletion, paste, and native validation.</li>
+                <li>Prefer a plain number input when step buttons add little value, and use Select or Radio for small enumerated choices.</li>
+                <li>Keep <code>min</code>, <code>max</code>, and <code>step</code> meaningful; decimal steps remain supported.</li>
+                <li>Do not use Number Stepper for phone numbers, postal codes, identifiers, or card numbers.</li>
                 <li>Group related choices with a visible <code>fieldset</code> and <code>legend</code>.</li>
                 <li>Connect supporting descriptions with <code>aria-describedby</code> when they clarify the choice.</li>
                 <li>Avoid disabled controls when explanatory feedback would better help the user proceed.</li>
@@ -2183,6 +2360,33 @@
                 <p class="text text--muted">
                   All three author-facing hooks are required. The root scopes one instance, while the toggle’s
                   <code>aria-controls</code> must reference the control’s unique ID. Enhancement markers remain internal.
+                </p>
+              </section>
+              <section class="playground-api playground-demo stack" aria-labelledby="number-stepper-api-title">
+                <h3 class="playground-api__title" id="number-stepper-api-title">Number Stepper API</h3>
+                <ul class="playground-api__classes cluster" role="list">
+                  <li><code>.number-stepper</code></li><li><code>.number-stepper__label</code></li>
+                  <li><code>.number-stepper__control</code></li><li><code>.number-stepper__button</code></li>
+                  <li><code>.number-stepper__button--decrement</code></li><li><code>.number-stepper__button--increment</code></li>
+                  <li><code>.number-stepper__input</code></li><li><code>.number-stepper__description</code></li>
+                </ul>
+                <p class="text text--muted">
+                  Use the base button class with exactly one positional modifier. The native input remains the only
+                  value owner, and descriptions are optional but must be associated when present.
+                </p>
+              </section>
+              <section class="playground-api playground-demo stack" aria-labelledby="number-stepper-data-api-title">
+                <h3 class="playground-api__title" id="number-stepper-data-api-title">Number Stepper data API</h3>
+                <ul class="playground-api__classes cluster" role="list">
+                  <li><code>data-number-stepper</code></li>
+                  <li><code>data-number-stepper-input</code></li>
+                  <li><code>data-number-stepper-decrement</code></li>
+                  <li><code>data-number-stepper-increment</code></li>
+                </ul>
+                <p class="text text--muted">
+                  All four author-facing hooks are required. Both buttons must use <code>type="button"</code> and
+                  reference the root’s unique native input through <code>aria-controls</code>. The enhancement marker is
+                  internal implementation state, not authoring API.
                 </p>
               </section>
             </div>
@@ -2256,6 +2460,23 @@
       aria-label="Show password" data-password-input-toggle hidden&gt;
       &lt;svg class="password-input__toggle-icon" aria-hidden="true"&gt;…&lt;/svg&gt;
     &lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                </div>
+                <div class="playground-demo stack">
+                  <p class="playground-demo__label">Number Stepper</p>
+                  <pre class="playground-code"><code>&lt;div class="number-stepper" data-number-stepper&gt;
+  &lt;label class="number-stepper__label" for="quantity"&gt;Quantity&lt;/label&gt;
+  &lt;div class="number-stepper__control"&gt;
+    &lt;button class="number-stepper__button number-stepper__button--decrement"
+      type="button" aria-label="Decrease quantity" aria-controls="quantity"
+      data-number-stepper-decrement hidden&gt;…&lt;/button&gt;
+    &lt;input class="number-stepper__input" id="quantity" name="quantity"
+      type="number" min="1" max="10" step="1" value="1"
+      data-number-stepper-input /&gt;
+    &lt;button class="number-stepper__button number-stepper__button--increment"
+      type="button" aria-label="Increase quantity" aria-controls="quantity"
+      data-number-stepper-increment hidden&gt;…&lt;/button&gt;
   &lt;/div&gt;
 &lt;/div&gt;</code></pre>
                 </div>

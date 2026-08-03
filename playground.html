@@ -1589,8 +1589,9 @@
             <p class="section-heading__eyebrow">Components</p>
             <h2 class="playground-section__title section-heading__title" id="form-controls-title">Form Controls</h2>
             <p class="playground-section__description section-heading__lead">
-              Compare native Checkbox, Radio, Switch, Select, Password Input, and Number Stepper controls with shared
-              focus, disabled, description, and content-resilience patterns while preserving distinct semantics.
+              Compare native Checkbox, Radio, Switch, Select, Password Input, Number Stepper, and Range Slider controls
+              with shared focus, disabled, description, and content-resilience patterns while preserving distinct
+              semantics.
             </p>
           </header>
 
@@ -2251,6 +2252,159 @@
               </div>
             </article>
 
+            <article class="playground-demo-group stack" aria-labelledby="range-slider-title">
+              <header class="playground-demo-group__header stack">
+                <h3 class="playground-demo-group__title" id="range-slider-title">Range Slider</h3>
+                <p class="playground-demo-group__description text text--muted">
+                  Use a native range input for approximate adjustment while preserving browser-owned keyboard, touch,
+                  pointer, constraint, and form behavior.
+                </p>
+              </header>
+
+              <div class="playground-api-grid">
+                <div class="playground-demo">
+                  <div class="range-slider" data-range-slider data-range-slider-suffix="%">
+                    <div class="range-slider__header">
+                      <label class="range-slider__label" for="range-volume">Volume</label>
+                      <output class="range-slider__value" for="range-volume" data-range-slider-output>50%</output>
+                    </div>
+                    <div class="range-slider__control">
+                      <input class="range-slider__input" id="range-volume" name="volume-demo" type="range" min="0" max="100" step="1" value="50" aria-describedby="range-volume-description" data-range-slider-input />
+                    </div>
+                    <div class="range-slider__limits" aria-hidden="true">
+                      <span class="range-slider__limit">0</span><span class="range-slider__limit">100</span>
+                    </div>
+                    <p class="range-slider__description" id="range-volume-description">Adjust playback volume as a percentage.</p>
+                  </div>
+                </div>
+
+                <div class="playground-demo">
+                  <div class="range-slider" data-range-slider data-range-slider-suffix=" hours">
+                    <div class="range-slider__header">
+                      <label class="range-slider__label" for="range-hours">Estimated duration</label>
+                      <output class="range-slider__value" for="range-hours" data-range-slider-output>1.5 hours</output>
+                    </div>
+                    <div class="range-slider__control">
+                      <input class="range-slider__input" id="range-hours" name="duration-demo" type="range" min="0.5" max="4" step="0.25" value="1.5" aria-describedby="range-hours-description" data-range-slider-input />
+                    </div>
+                    <div class="range-slider__limits" aria-hidden="true">
+                      <span class="range-slider__limit">0.5</span><span class="range-slider__limit">4</span>
+                    </div>
+                    <p class="range-slider__description" id="range-hours-description">Choose an estimate in quarter-hour increments.</p>
+                  </div>
+                </div>
+
+                <div class="playground-demo">
+                  <div class="range-slider" data-range-slider>
+                    <div class="range-slider__header">
+                      <label class="range-slider__label" for="range-balance">Adjustment balance</label>
+                      <output class="range-slider__value" for="range-balance" data-range-slider-output>0</output>
+                    </div>
+                    <div class="range-slider__control">
+                      <input class="range-slider__input" id="range-balance" name="balance-demo" type="range" min="-20" max="20" step="5" value="0" aria-describedby="range-balance-description" data-range-slider-input />
+                    </div>
+                    <div class="range-slider__limits" aria-hidden="true">
+                      <span class="range-slider__limit">-20</span><span class="range-slider__limit">20</span>
+                    </div>
+                    <p class="range-slider__description" id="range-balance-description">A negative-to-positive range verifies progress calculation around a non-zero origin.</p>
+                  </div>
+                </div>
+
+                <div class="playground-demo">
+                  <div class="range-slider" data-range-slider>
+                    <div class="range-slider__header">
+                      <label class="range-slider__label" for="range-minimum">Minimum position</label>
+                      <output class="range-slider__value" for="range-minimum" data-range-slider-output>10</output>
+                    </div>
+                    <div class="range-slider__control">
+                      <input class="range-slider__input" id="range-minimum" name="minimum-range-demo" type="range" min="10" max="60" step="10" value="10" data-range-slider-input />
+                    </div>
+                    <div class="range-slider__limits" aria-hidden="true">
+                      <span class="range-slider__limit">10</span><span class="range-slider__limit">60</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="playground-demo">
+                  <div class="range-slider" data-range-slider>
+                    <div class="range-slider__header">
+                      <label class="range-slider__label" for="range-maximum">Maximum position</label>
+                      <output class="range-slider__value" for="range-maximum" data-range-slider-output>60</output>
+                    </div>
+                    <div class="range-slider__control">
+                      <input class="range-slider__input" id="range-maximum" name="maximum-range-demo" type="range" min="10" max="60" step="10" value="60" data-range-slider-input />
+                    </div>
+                    <div class="range-slider__limits" aria-hidden="true">
+                      <span class="range-slider__limit">10</span><span class="range-slider__limit">60</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="playground-demo">
+                  <div class="range-slider" data-range-slider data-range-slider-suffix="%">
+                    <div class="range-slider__header">
+                      <label class="range-slider__label" for="range-disabled">Managed intensity</label>
+                      <output class="range-slider__value" for="range-disabled" data-range-slider-output>40%</output>
+                    </div>
+                    <div class="range-slider__control">
+                      <input class="range-slider__input" id="range-disabled" name="disabled-range-demo" type="range" min="0" max="100" step="10" value="40" disabled data-range-slider-input />
+                    </div>
+                    <div class="range-slider__limits" aria-hidden="true">
+                      <span class="range-slider__limit">0</span><span class="range-slider__limit">100</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="playground-demo">
+                <div class="playground-demo__constraint">
+                  <div class="range-slider" data-range-slider data-range-slider-suffix="%">
+                    <div class="range-slider__header">
+                      <label class="range-slider__label" for="range-long-content">Preferred allocation across the complete multi-stage review and approval process</label>
+                      <output class="range-slider__value" for="range-long-content" data-range-slider-output>65%</output>
+                    </div>
+                    <div class="range-slider__control">
+                      <input class="range-slider__input" id="range-long-content" name="allocation-demo" type="range" min="0" max="100" step="5" value="65" aria-describedby="range-long-content-description" data-range-slider-input />
+                    </div>
+                    <div class="range-slider__limits" aria-hidden="true">
+                      <span class="range-slider__limit">0</span><span class="range-slider__limit">100</span>
+                    </div>
+                    <p class="range-slider__description" id="range-long-content-description">This constrained example verifies that a long label and supporting description wrap naturally while the slider, output, thumb, and visible limits remain contained and usable.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="playground-explainer-grid">
+                <section class="playground-demo stack" aria-labelledby="range-slider-enhancement-title">
+                  <h4 id="range-slider-enhancement-title">Progressive enhancement and output</h4>
+                  <p class="text text--muted">
+                    Without JavaScript, the native slider and authored initial output remain usable, while dynamic
+                    output and WebKit/Blink fill may not update. Valid instances observe the native
+                    <code>input</code> event, update only their associated output and internal progress property, and
+                    never redispatch or intercept native events.
+                  </p>
+                </section>
+                <section class="playground-demo stack" aria-labelledby="range-slider-keyboard-title">
+                  <h4 id="range-slider-keyboard-title">Constraints and native interaction</h4>
+                  <p class="text text--muted">
+                    <code>min</code> and <code>max</code> define boundaries, <code>step</code> defines increments, and
+                    <code>value</code> defines the authored starting position. Arrow keys adjust by step; Home and End
+                    move to boundaries where supported, while Page Up and Page Down behavior may vary. Required adds
+                    little meaning because a range input always has a value.
+                  </p>
+                </section>
+              </div>
+
+              <div class="playground-demo stack">
+                <h4>Cross-browser presentation</h4>
+                <p class="text text--muted">
+                  WebKit and Blink use the synchronized component progress property for the filled track; Firefox uses
+                  its native range-progress pseudo-element. The track, thumb, output, focus, and disabled treatment are
+                  consistent with the token system, while exact platform rendering and keyboard details may vary.
+                </p>
+              </div>
+            </article>
+
             <section class="playground-demo-group stack" aria-labelledby="form-control-states-title">
               <header class="playground-demo-group__header stack">
                 <h3 class="playground-demo-group__title" id="form-control-states-title">Native state ownership</h3>
@@ -2267,8 +2421,9 @@
                   declarative indeterminate attribute; application code should set the native
                   <code>indeterminate</code> property. Password visibility is owned by the input’s native
                   <code>type</code> and the toggle’s synchronized <code>aria-pressed</code> state. Number Stepper
-                  boundaries use native constraints and real button <code>disabled</code> attributes. None of these
-                  states requires a BEM state class.
+                  boundaries use native constraints and real button <code>disabled</code> attributes. Range Slider
+                  value, constraints, focus, and disabled behavior remain native while JavaScript updates presentation
+                  only. None of these states requires a BEM state class.
                 </p>
               </div>
             </section>
@@ -2290,6 +2445,11 @@
                 <li>Prefer a plain number input when step buttons add little value, and use Select or Radio for small enumerated choices.</li>
                 <li>Keep <code>min</code>, <code>max</code>, and <code>step</code> meaningful; decimal steps remain supported.</li>
                 <li>Do not use Number Stepper for phone numbers, postal codes, identifiers, or card numbers.</li>
+                <li>Use Range Slider when approximate adjustment matters more than exact typing; use Number Stepper for precise entry.</li>
+                <li>Use Select or Radio for discrete named choices rather than presenting them as a numeric continuum.</li>
+                <li>Always label Range Sliders visibly and show the current value when feedback helps users decide.</li>
+                <li>Provide meaningful range boundaries and steps, avoid excessive precision, and preserve native keyboard behavior.</li>
+                <li>Do not hide critical values exclusively behind a Range Slider.</li>
                 <li>Group related choices with a visible <code>fieldset</code> and <code>legend</code>.</li>
                 <li>Connect supporting descriptions with <code>aria-describedby</code> when they clarify the choice.</li>
                 <li>Avoid disabled controls when explanatory feedback would better help the user proceed.</li>
@@ -2389,6 +2549,33 @@
                   internal implementation state, not authoring API.
                 </p>
               </section>
+              <section class="playground-api playground-demo stack" aria-labelledby="range-slider-api-title">
+                <h3 class="playground-api__title" id="range-slider-api-title">Range Slider API</h3>
+                <ul class="playground-api__classes cluster" role="list">
+                  <li><code>.range-slider</code></li><li><code>.range-slider__header</code></li>
+                  <li><code>.range-slider__label</code></li><li><code>.range-slider__value</code></li>
+                  <li><code>.range-slider__control</code></li><li><code>.range-slider__input</code></li>
+                  <li><code>.range-slider__description</code></li><li><code>.range-slider__limits</code></li>
+                  <li><code>.range-slider__limit</code></li>
+                </ul>
+                <p class="text text--muted">
+                  The visible label is required. Output, description, and visible limits are optional; associate each
+                  output through <code>for</code> and each description through <code>aria-describedby</code> when present.
+                </p>
+              </section>
+              <section class="playground-api playground-demo stack" aria-labelledby="range-slider-data-api-title">
+                <h3 class="playground-api__title" id="range-slider-data-api-title">Range Slider data API</h3>
+                <ul class="playground-api__classes cluster" role="list">
+                  <li><code>data-range-slider</code></li>
+                  <li><code>data-range-slider-input</code></li>
+                  <li><code>data-range-slider-output</code></li>
+                  <li><code>data-range-slider-suffix</code></li>
+                </ul>
+                <p class="text text--muted">
+                  Root and input hooks are required for progress enhancement. Output and suffix hooks are optional;
+                  suffix formatting affects visible output only and never changes the native input value.
+                </p>
+              </section>
             </div>
 
             <section class="playground-demo-group stack" aria-labelledby="form-control-code-title">
@@ -2477,6 +2664,21 @@
     &lt;button class="number-stepper__button number-stepper__button--increment"
       type="button" aria-label="Increase quantity" aria-controls="quantity"
       data-number-stepper-increment hidden&gt;…&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                </div>
+                <div class="playground-demo stack">
+                  <p class="playground-demo__label">Range Slider</p>
+                  <pre class="playground-code"><code>&lt;div class="range-slider" data-range-slider data-range-slider-suffix="%"&gt;
+  &lt;div class="range-slider__header"&gt;
+    &lt;label class="range-slider__label" for="volume"&gt;Volume&lt;/label&gt;
+    &lt;output class="range-slider__value" for="volume"
+      data-range-slider-output&gt;50%&lt;/output&gt;
+  &lt;/div&gt;
+  &lt;div class="range-slider__control"&gt;
+    &lt;input class="range-slider__input" id="volume" name="volume"
+      type="range" min="0" max="100" step="1" value="50"
+      data-range-slider-input /&gt;
   &lt;/div&gt;
 &lt;/div&gt;</code></pre>
                 </div>

@@ -1590,8 +1590,8 @@
             <h2 class="playground-section__title section-heading__title" id="form-controls-title">Form Controls</h2>
             <p class="playground-section__description section-heading__lead">
               Compare native Checkbox, Radio, Switch, Select, Password Input, Number Stepper, Range Slider, Date
-              Picker, Time Picker, and DateTime Local controls with shared focus, disabled, description, and
-              content-resilience patterns while preserving distinct semantics.
+              Picker, Time Picker, DateTime Local, and File Input controls with shared focus, disabled, description,
+              and content-resilience patterns while preserving distinct semantics.
             </p>
           </header>
 
@@ -2743,6 +2743,114 @@
               </div>
             </article>
 
+            <article class="playground-demo-group stack" aria-labelledby="file-input-title">
+              <header class="playground-demo-group__header stack">
+                <h3 class="playground-demo-group__title" id="file-input-title">File Input</h3>
+                <p class="playground-demo-group__description text text--muted">
+                  Use the native File Input to select local files while preserving operating-system pickers, keyboard
+                  access, accepted-type guidance, validation, and native form submission.
+                </p>
+              </header>
+
+              <div class="playground-api-grid">
+                <section class="playground-demo stack" aria-labelledby="file-input-standard-title">
+                  <h4 id="file-input-standard-title">Standard single file</h4>
+                  <p class="text text--muted">The browser owns the choose-file action and selected filename presentation.</p>
+                  <div class="file-input">
+                    <label class="file-input__label" for="file-input-standard">Supporting document</label>
+                    <input class="file-input__control" id="file-input-standard" name="supporting-document-demo" type="file" aria-describedby="file-input-standard-description" />
+                    <p class="file-input__description" id="file-input-standard-description">Choose one relevant file from your device.</p>
+                  </div>
+                </section>
+
+                <section class="playground-demo stack" aria-labelledby="file-input-documents-title">
+                  <h4 id="file-input-documents-title">Accepted documents</h4>
+                  <p class="text text--muted">The picker is guided toward the documented extensions.</p>
+                  <div class="file-input">
+                    <label class="file-input__label" for="file-input-documents">Project documents</label>
+                    <input class="file-input__control" id="file-input-documents" name="project-documents-demo" type="file" accept=".pdf,.doc,.docx" aria-describedby="file-input-documents-description" />
+                    <p class="file-input__description" id="file-input-documents-description">Accepted picker choices: PDF or Word documents. Applications must still validate selected files securely.</p>
+                  </div>
+                </section>
+
+                <section class="playground-demo stack" aria-labelledby="file-input-images-title">
+                  <h4 id="file-input-images-title">Accepted images</h4>
+                  <p class="text text--muted">Native <code>accept="image/*"</code> guides available platform sources without creating a preview.</p>
+                  <div class="file-input">
+                    <label class="file-input__label" for="file-input-images">Reference image</label>
+                    <input class="file-input__control" id="file-input-images" name="reference-image-demo" type="file" accept="image/*" aria-describedby="file-input-images-description" />
+                    <p class="file-input__description" id="file-input-images-description">Choose an image using the sources offered by your browser and device.</p>
+                  </div>
+                </section>
+
+                <section class="playground-demo stack" aria-labelledby="file-input-multiple-title">
+                  <h4 id="file-input-multiple-title">Multiple files</h4>
+                  <p class="text text--muted">Native <code>multiple</code> permits multi-selection when the platform picker supports it.</p>
+                  <div class="file-input">
+                    <label class="file-input__label" for="file-input-multiple">Review attachments</label>
+                    <input class="file-input__control" id="file-input-multiple" name="review-attachments-demo" type="file" multiple aria-describedby="file-input-multiple-description" />
+                    <p class="file-input__description" id="file-input-multiple-description">Choose one or more relevant attachments. The browser summarizes the selected names or count.</p>
+                  </div>
+                </section>
+
+                <section class="playground-demo stack" aria-labelledby="file-input-disabled-title">
+                  <h4 id="file-input-disabled-title">Disabled</h4>
+                  <p class="text text--muted">Native <code>disabled</code> prevents opening the chooser and excludes the control from submission.</p>
+                  <div class="file-input">
+                    <label class="file-input__label" for="file-input-disabled">Unavailable attachment</label>
+                    <input class="file-input__control" id="file-input-disabled" name="unavailable-attachment-demo" type="file" disabled />
+                  </div>
+                </section>
+
+                <section class="playground-demo stack" aria-labelledby="file-input-long-title">
+                  <h4 id="file-input-long-title">Long-content resilience</h4>
+                  <p class="text text--muted">Long labels, guidance, and browser-rendered filenames remain contained.</p>
+                  <div class="playground-demo__constraint playground-file-input-demo">
+                    <div class="file-input">
+                      <label class="file-input__label" for="file-input-long">Supporting material for the complete accessibility, content, security, and technical-quality review</label>
+                      <input class="file-input__control" id="file-input-long" name="complete-review-material-demo" type="file" aria-describedby="file-input-long-description" />
+                      <p class="file-input__description" id="file-input-long-description">Choose one genuinely necessary review document; this deliberately long description verifies wrapping while long selected filenames remain clipped inside the native control instead of creating page overflow.</p>
+                    </div>
+                  </div>
+                </section>
+              </div>
+
+              <section class="playground-demo stack" aria-labelledby="file-input-validation-title">
+                <h4 id="file-input-validation-title">Required native validation</h4>
+                <p class="text text--muted">
+                  Submit this empty local form to inspect native required-file validation. Exact browser feedback
+                  varies, and the form has no remote upload endpoint.
+                </p>
+                <form class="playground-file-input-demo stack" action="" method="post" enctype="multipart/form-data">
+                  <div class="file-input">
+                    <label class="file-input__label" for="file-input-required">Required review document</label>
+                    <input class="file-input__control" id="file-input-required" name="required-review-document-demo" type="file" accept=".pdf,.doc,.docx" aria-describedby="file-input-required-description" required />
+                    <p class="file-input__description" id="file-input-required-description">Required. Choose a PDF or Word document to test native validation locally.</p>
+                  </div>
+                  <div><button class="button button--primary" type="submit">Validate file selection</button></div>
+                </form>
+              </section>
+
+              <div class="playground-explainer-grid">
+                <section class="playground-demo stack" aria-labelledby="file-input-native-title">
+                  <h4 id="file-input-native-title">Native strategy and selection</h4>
+                  <p class="text text--muted">
+                    The visible native input and its <code>::file-selector-button</code> are styled directly. The browser
+                    remains responsible for opening the picker, replacing selections, filename or file-count text,
+                    keyboard behavior, validation, and submission. No JavaScript summary or clear control is required.
+                  </p>
+                </section>
+                <section class="playground-demo stack" aria-labelledby="file-input-browser-title">
+                  <h4 id="file-input-browser-title">Browser and security boundaries</h4>
+                  <p class="text text--muted">
+                    Button wording, selected-file text, operating-system dialogs, and mobile camera, gallery, or file
+                    sources vary by platform. <code>accept</code> guides picker choices but is not security validation;
+                    real applications must validate type, size, and contents in their trusted upload layer.
+                  </p>
+                </section>
+              </div>
+            </article>
+
             <section class="playground-demo-group stack" aria-labelledby="form-control-states-title">
               <header class="playground-demo-group__header stack">
                 <h3 class="playground-demo-group__title" id="form-control-states-title">Native state ownership</h3>
@@ -2761,8 +2869,9 @@
                   <code>type</code> and the toggle’s synchronized <code>aria-pressed</code> state. Number Stepper
                   boundaries use native constraints and real button <code>disabled</code> attributes. Range Slider
                   value, constraints, focus, and disabled behavior remain native while JavaScript updates presentation
-                  only. Date Picker, Time Picker, and DateTime Local required, disabled, readonly, minimum, maximum,
-                  and interval behavior is also native. None of these states requires a BEM state class.
+                  only. Date Picker, Time Picker, and DateTime Local constraints remain native. File Input selection,
+                  required, disabled, accepted-type, and multiple-file behavior is also browser-owned. None of these
+                  states requires a BEM state class.
                 </p>
               </div>
             </section>
@@ -2801,6 +2910,11 @@
                 <li>Define meaningful native boundaries and intervals without treating the value as a time-zone-aware instant.</li>
                 <li>Establish time-zone handling separately when the same event must be understood across locations.</li>
                 <li>Use separate controls when independent date or time selection better matches the task.</li>
+                <li>Give every File Input a visible label and explain genuinely supported file types in visible text.</li>
+                <li>Treat <code>accept</code> as picker guidance rather than validation, and validate files in the trusted application or backend.</li>
+                <li>Use <code>multiple</code> only when the complete workflow truly supports multiple files.</li>
+                <li>Do not request unnecessary or sensitive documents, and do not claim size limits that the application does not enforce.</li>
+                <li>Preserve the native picker; drag and drop, previews, uploads, and individual-file removal are outside this component.</li>
                 <li>Group related choices with a visible <code>fieldset</code> and <code>legend</code>.</li>
                 <li>Connect supporting descriptions with <code>aria-describedby</code> when they clarify the choice.</li>
                 <li>Avoid disabled controls when explanatory feedback would better help the user proceed.</li>
@@ -2967,6 +3081,20 @@
                   every state and constraint.
                 </p>
               </section>
+              <section class="playground-api playground-demo stack" aria-labelledby="file-input-api-title">
+                <h3 class="playground-api__title" id="file-input-api-title">File Input API</h3>
+                <ul class="playground-api__classes cluster" role="list">
+                  <li><code>.file-input</code></li>
+                  <li><code>.file-input__label</code></li>
+                  <li><code>.file-input__control</code></li>
+                  <li><code>.file-input__description</code></li>
+                </ul>
+                <p class="text text--muted">
+                  Use a visible native <code>input[type="file"]</code> with an associated label. The description is
+                  optional and should be referenced only when present. Native attributes own selection and state; this
+                  initial API has no JavaScript data hooks.
+                </p>
+              </section>
             </div>
 
             <section class="playground-demo-group stack" aria-labelledby="form-control-code-title">
@@ -3113,6 +3241,20 @@
     aria-describedby="session-start-description" /&gt;
   &lt;p class="datetime-local__description" id="session-start-description"&gt;
     Choose a local date and half-hour start time.
+  &lt;/p&gt;
+&lt;/div&gt;</code></pre>
+                </div>
+                <div class="playground-demo stack">
+                  <p class="playground-demo__label">File Input</p>
+                  <pre class="playground-code"><code>&lt;div class="file-input"&gt;
+  &lt;label class="file-input__label" for="documents"&gt;
+    Supporting documents
+  &lt;/label&gt;
+  &lt;input class="file-input__control" id="documents" name="documents"
+    type="file" accept=".pdf,.doc,.docx" multiple
+    aria-describedby="documents-description" /&gt;
+  &lt;p class="file-input__description" id="documents-description"&gt;
+    Choose PDF or Word documents. Selection still requires validation.
   &lt;/p&gt;
 &lt;/div&gt;</code></pre>
                 </div>

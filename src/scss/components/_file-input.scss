@@ -1,0 +1,81 @@
+.file-input {
+  display: grid;
+  gap: var(--space-2xs);
+  width: var(--size-full);
+  min-width: var(--space-0);
+}
+
+.file-input__label {
+  color: var(--color-text-primary);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-base);
+  overflow-wrap: anywhere;
+}
+
+.file-input__control {
+  width: var(--size-full);
+  min-width: var(--space-0);
+  max-width: var(--size-full);
+  min-height: var(--control-height-md);
+  padding: var(--space-2xs);
+  color: var(--color-text-primary);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  background-color: var(--color-background);
+  border: var(--border-width) solid var(--color-control-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  transition:
+    background-color var(--duration-fast) var(--ease-standard),
+    border-color var(--duration-fast) var(--ease-standard);
+}
+
+.file-input__control::file-selector-button {
+  min-height: var(--control-height-sm);
+  padding-inline: var(--control-padding-inline-sm);
+  margin-inline-end: var(--space-xs);
+  color: var(--color-text-primary);
+  background-color: var(--color-surface-emphasis);
+  border: var(--border-width) solid var(--color-border);
+  border-radius: var(--radius-sm);
+  font-weight: var(--font-weight-semibold);
+  cursor: pointer;
+  transition:
+    color var(--duration-fast) var(--ease-standard),
+    background-color var(--duration-fast) var(--ease-standard),
+    border-color var(--duration-fast) var(--ease-standard);
+}
+
+.file-input__control:focus-visible {
+  border-color: var(--color-primary-600);
+}
+
+.file-input__control:disabled {
+  cursor: not-allowed;
+  opacity: var(--opacity-disabled);
+}
+
+.file-input__control:disabled::file-selector-button {
+  cursor: not-allowed;
+}
+
+.file-input__description {
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-sm);
+  line-height: var(--line-height-base);
+  overflow-wrap: anywhere;
+}
+
+@media (hover: hover) {
+  .file-input__control:not(:disabled):hover {
+    background-color: var(--color-primary-50);
+    border-color: var(--color-primary-600);
+  }
+
+  .file-input__control:not(:disabled)::file-selector-button:hover {
+    color: var(--color-primary-600);
+    background-color: var(--color-surface);
+    border-color: var(--color-primary-600);
+  }
+}

@@ -1589,9 +1589,9 @@
             <p class="section-heading__eyebrow">Components</p>
             <h2 class="playground-section__title section-heading__title" id="form-controls-title">Form Controls</h2>
             <p class="playground-section__description section-heading__lead">
-              Compare native Checkbox, Radio, Switch, Select, Password Input, Number Stepper, Range Slider, and Date
-              Picker controls with shared focus, disabled, description, and content-resilience patterns while
-              preserving distinct semantics.
+              Compare native Checkbox, Radio, Switch, Select, Password Input, Number Stepper, Range Slider, Date
+              Picker, and Time Picker controls with shared focus, disabled, description, and content-resilience
+              patterns while preserving distinct semantics.
             </p>
           </header>
 
@@ -2511,6 +2511,122 @@
               </div>
             </article>
 
+            <article class="playground-demo-group stack" aria-labelledby="time-picker-title">
+              <header class="playground-demo-group__header stack">
+                <h3 class="playground-demo-group__title" id="time-picker-title">Time Picker</h3>
+                <p class="playground-demo-group__description text text--muted">
+                  Use the native Time Picker for a time of day while preserving platform editing, picker, validation,
+                  and form-submission behavior.
+                </p>
+              </header>
+
+              <div class="playground-api-grid">
+                <section class="playground-demo stack" aria-labelledby="time-picker-standard-title">
+                  <h4 id="time-picker-standard-title">Standard</h4>
+                  <p class="text text--muted">A visible label and optional description explain the time’s purpose.</p>
+                  <div class="time-picker">
+                    <label class="time-picker__label" for="time-picker-standard">Preferred meeting time</label>
+                    <input class="time-picker__control" id="time-picker-standard" name="meeting-time-demo" type="time" value="10:30" aria-describedby="time-picker-standard-description" />
+                    <p class="time-picker__description" id="time-picker-standard-description">Choose a local time for the meeting.</p>
+                  </div>
+                </section>
+
+                <section class="playground-demo stack" aria-labelledby="time-picker-optional-title">
+                  <h4 id="time-picker-optional-title">Optional</h4>
+                  <p class="text text--muted">Identify optional status in visible copy when users might otherwise be unsure.</p>
+                  <div class="time-picker">
+                    <label class="time-picker__label" for="time-picker-optional">Reminder time (optional)</label>
+                    <input class="time-picker__control" id="time-picker-optional" name="reminder-time-demo" type="time" />
+                  </div>
+                </section>
+
+                <section class="playground-demo stack" aria-labelledby="time-picker-disabled-title">
+                  <h4 id="time-picker-disabled-title">Disabled</h4>
+                  <p class="text text--muted">Native <code>disabled</code> prevents interaction and excludes the value from submission.</p>
+                  <div class="time-picker">
+                    <label class="time-picker__label" for="time-picker-disabled">Locked start time</label>
+                    <input class="time-picker__control" id="time-picker-disabled" name="locked-time-demo" type="time" value="09:00" disabled />
+                  </div>
+                </section>
+
+                <section class="playground-demo stack" aria-labelledby="time-picker-readonly-title">
+                  <h4 id="time-picker-readonly-title">Readonly</h4>
+                  <p class="text text--muted">Native <code>readonly</code> keeps a submitted value available without permitting edits.</p>
+                  <div class="time-picker">
+                    <label class="time-picker__label" for="time-picker-readonly">Recorded time</label>
+                    <input class="time-picker__control" id="time-picker-readonly" name="recorded-time-demo" type="time" value="14:45" readonly />
+                  </div>
+                </section>
+
+                <section class="playground-demo stack" aria-labelledby="time-picker-working-hours-title">
+                  <h4 id="time-picker-working-hours-title">Working hours</h4>
+                  <p class="text text--muted">Native minimum and maximum values define the valid time window.</p>
+                  <div class="time-picker">
+                    <label class="time-picker__label" for="time-picker-working-hours">Office appointment</label>
+                    <input class="time-picker__control" id="time-picker-working-hours" name="appointment-time-demo" type="time" min="09:00" max="17:00" value="13:30" aria-describedby="time-picker-working-hours-description" />
+                    <p class="time-picker__description" id="time-picker-working-hours-description">Choose a time from 09:00 through 17:00.</p>
+                  </div>
+                </section>
+
+                <section class="playground-demo stack" aria-labelledby="time-picker-step-title">
+                  <h4 id="time-picker-step-title">Fifteen-minute intervals</h4>
+                  <p class="text text--muted"><code>step="900"</code> defines valid values in 15-minute increments.</p>
+                  <div class="time-picker">
+                    <label class="time-picker__label" for="time-picker-step">Check-in time</label>
+                    <input class="time-picker__control" id="time-picker-step" name="check-in-time-demo" type="time" min="08:00" max="18:00" step="900" value="11:15" aria-describedby="time-picker-step-description" />
+                    <p class="time-picker__description" id="time-picker-step-description">Select a quarter-hour interval during availability.</p>
+                  </div>
+                </section>
+
+                <section class="playground-demo stack" aria-labelledby="time-picker-long-title">
+                  <h4 id="time-picker-long-title">Long-content resilience</h4>
+                  <p class="text text--muted">Supporting content wraps while the native field stays within its container.</p>
+                  <div class="playground-demo__constraint playground-time-picker-demo">
+                    <div class="time-picker">
+                      <label class="time-picker__label" for="time-picker-long">Preferred start time for the complete accessibility, content, and technical-quality review</label>
+                      <input class="time-picker__control" id="time-picker-long" name="review-start-time-demo" type="time" aria-describedby="time-picker-long-description" />
+                      <p class="time-picker__description" id="time-picker-long-description">Choose the local time when all participants can begin the complete review; this supporting description intentionally wraps in a constrained documentation surface.</p>
+                    </div>
+                  </div>
+                </section>
+              </div>
+
+              <section class="playground-demo stack" aria-labelledby="time-picker-validation-title">
+                <h4 id="time-picker-validation-title">Required native validation</h4>
+                <p class="text text--muted">
+                  Submit this empty local form to inspect native required, working-hours, and interval validation.
+                  Exact browser feedback varies, and no data is sent to a remote endpoint.
+                </p>
+                <form class="playground-time-picker-demo stack" action="" method="post">
+                  <div class="time-picker">
+                    <label class="time-picker__label" for="time-picker-required">Support call time</label>
+                    <input class="time-picker__control" id="time-picker-required" name="support-call-time-demo" type="time" min="09:00" max="17:00" step="900" aria-describedby="time-picker-required-description" required />
+                    <p class="time-picker__description" id="time-picker-required-description">Required. Choose a 15-minute interval during working hours.</p>
+                  </div>
+                  <div><button class="button button--primary" type="submit">Validate time</button></div>
+                </form>
+              </section>
+
+              <div class="playground-explainer-grid">
+                <section class="playground-demo stack" aria-labelledby="time-picker-native-title">
+                  <h4 id="time-picker-native-title">Native behavior</h4>
+                  <p class="text text--muted">
+                    The field retains native keyboard editing, touch and browser pickers, focus, validation, and form
+                    submission. <code>required</code>, <code>min</code>, <code>max</code>, and second-based
+                    <code>step</code> values remain authoritative without JavaScript.
+                  </p>
+                </section>
+                <section class="playground-demo stack" aria-labelledby="time-picker-browser-title">
+                  <h4 id="time-picker-browser-title">Browser presentation</h4>
+                  <p class="text text--muted">
+                    Twelve- or twenty-four-hour display, picker icon, segment editing, touch UI, and validation feedback
+                    vary by browser, operating system, and locale. The submitted value remains a native time value while
+                    the component styles only the closed field.
+                  </p>
+                </section>
+              </div>
+            </article>
+
             <section class="playground-demo-group stack" aria-labelledby="form-control-states-title">
               <header class="playground-demo-group__header stack">
                 <h3 class="playground-demo-group__title" id="form-control-states-title">Native state ownership</h3>
@@ -2529,8 +2645,8 @@
                   <code>type</code> and the toggle’s synchronized <code>aria-pressed</code> state. Number Stepper
                   boundaries use native constraints and real button <code>disabled</code> attributes. Range Slider
                   value, constraints, focus, and disabled behavior remain native while JavaScript updates presentation
-                  only. Date Picker required, disabled, readonly, minimum, and maximum behavior is also native. None of
-                  these states requires a BEM state class.
+                  only. Date Picker and Time Picker required, disabled, readonly, minimum, maximum, and interval
+                  behavior is also native. None of these states requires a BEM state class.
                 </p>
               </div>
             </section>
@@ -2561,6 +2677,10 @@
                 <li>Identify optional dates in visible copy and use native <code>required</code>, <code>min</code>, and <code>max</code> only when meaningful.</li>
                 <li>Expect the native date picker and displayed date order to vary across browsers, operating systems, and locales.</li>
                 <li>Use a different control when users need partial dates, date ranges, or date-and-time input.</li>
+                <li>Use Time Picker for a time of day, provide a visible label, and explain the relevant time zone or local-time context.</li>
+                <li>Use native <code>min</code>, <code>max</code>, and <code>step</code> constraints only when the permitted schedule requires them.</li>
+                <li>Expect time presentation and picker interaction to follow the user’s browser, operating system, and locale.</li>
+                <li>Use a different control for durations, time ranges, or scheduling rules that a single native time value cannot express.</li>
                 <li>Group related choices with a visible <code>fieldset</code> and <code>legend</code>.</li>
                 <li>Connect supporting descriptions with <code>aria-describedby</code> when they clarify the choice.</li>
                 <li>Avoid disabled controls when explanatory feedback would better help the user proceed.</li>
@@ -2700,6 +2820,19 @@
                   optional and should be referenced with <code>aria-describedby</code> only when it exists.
                 </p>
               </section>
+              <section class="playground-api playground-demo stack" aria-labelledby="time-picker-api-title">
+                <h3 class="playground-api__title" id="time-picker-api-title">Time Picker API</h3>
+                <ul class="playground-api__classes cluster" role="list">
+                  <li><code>.time-picker</code></li>
+                  <li><code>.time-picker__label</code></li>
+                  <li><code>.time-picker__control</code></li>
+                  <li><code>.time-picker__description</code></li>
+                </ul>
+                <p class="text text--muted">
+                  Use a native <code>input[type="time"]</code> with a visible associated label. Add the optional
+                  description and its <code>aria-describedby</code> reference together; native attributes own all state.
+                </p>
+              </section>
             </div>
 
             <section class="playground-demo-group stack" aria-labelledby="form-control-code-title">
@@ -2817,6 +2950,20 @@
     max="2026-12-31" aria-describedby="start-date-description" /&gt;
   &lt;p class="date-picker__description" id="start-date-description"&gt;
     Choose an available calendar date.
+  &lt;/p&gt;
+&lt;/div&gt;</code></pre>
+                </div>
+                <div class="playground-demo stack">
+                  <p class="playground-demo__label">Time Picker</p>
+                  <pre class="playground-code"><code>&lt;div class="time-picker"&gt;
+  &lt;label class="time-picker__label" for="appointment-time"&gt;
+    Appointment time
+  &lt;/label&gt;
+  &lt;input class="time-picker__control" id="appointment-time"
+    name="appointment-time" type="time" min="09:00" max="17:00"
+    step="900" aria-describedby="appointment-time-description" /&gt;
+  &lt;p class="time-picker__description" id="appointment-time-description"&gt;
+    Choose a 15-minute interval during working hours.
   &lt;/p&gt;
 &lt;/div&gt;</code></pre>
                 </div>

@@ -16,6 +16,7 @@ The format is based on Keep a Changelog, and this project adheres to Semantic Ve
 - Added a native Number Stepper with accessible step controls, boundary synchronization, decimal stepping, and Playground validation guidance.
 - Added a native Range Slider with live output, optional unit suffixes, progress enhancement, and cross-browser Playground documentation.
 - Added a native Date Picker with required, optional, disabled, readonly, bounded-date, and validation documentation.
+- Added a native Time Picker with interval, working-hours, native-state, and validation documentation.
 
 ### Changed
 

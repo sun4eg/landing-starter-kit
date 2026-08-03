@@ -12,6 +12,7 @@ The format is based on Keep a Changelog, and this project adheres to Semantic Ve
 - Added Playground documentation navigation with synchronized current-section state across desktop and mobile presentations.
 - Added native Checkbox, Radio, and Switch components with complete Form Controls Playground documentation.
 - Added a native Select component with required, disabled, long-content, optgroup, and validation documentation.
+- Added a native Password Input with an accessible show/hide enhancement, autocomplete guidance, and Playground validation examples.
 
 ### Changed
 

@@ -1956,6 +1956,130 @@
               </div>
             </article>
 
+            <article class="playground-demo-group stack" aria-labelledby="password-input-title">
+              <header class="playground-demo-group__header stack">
+                <h3 class="playground-demo-group__title" id="password-input-title">Password Input</h3>
+                <p class="playground-demo-group__description text text--muted">
+                  Compose a native password field with an optional show/hide enhancement that changes presentation
+                  without reading, copying, or storing the entered value.
+                </p>
+              </header>
+
+              <div class="playground-api-grid">
+                <div class="playground-demo">
+                  <div class="password-input" data-password-input>
+                    <label class="password-input__label" for="password-current">Account password</label>
+                    <div class="password-input__control-wrapper">
+                      <input class="password-input__control" id="password-current" name="current-password-demo" type="password" autocomplete="current-password" aria-describedby="password-current-description" data-password-input-control />
+                      <button class="password-input__toggle" type="button" aria-controls="password-current" aria-pressed="false" aria-label="Show password" data-password-input-toggle hidden>
+                        <svg class="password-input__toggle-icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false">
+                          <path d="M2.5 10s2.75-4 7.5-4 7.5 4 7.5 4-2.75 4-7.5 4-7.5-4-7.5-4Z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
+                          <path d="m3.5 3.5 13 13" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2" />
+                        </svg>
+                      </button>
+                    </div>
+                    <p class="password-input__description" id="password-current-description">Use the password associated with the current account.</p>
+                  </div>
+                </div>
+
+                <div class="playground-demo">
+                  <div class="password-input" data-password-input>
+                    <label class="password-input__label" for="password-new">Create a new password</label>
+                    <div class="password-input__control-wrapper">
+                      <input class="password-input__control" id="password-new" name="new-password-demo" type="password" autocomplete="new-password" aria-describedby="password-new-description" data-password-input-control />
+                      <button class="password-input__toggle" type="button" aria-controls="password-new" aria-pressed="false" aria-label="Show password" data-password-input-toggle hidden>
+                        <svg class="password-input__toggle-icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false">
+                          <path d="M2.5 10s2.75-4 7.5-4 7.5 4 7.5 4-2.75 4-7.5 4-7.5-4-7.5-4Z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
+                          <path d="m3.5 3.5 13 13" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2" />
+                        </svg>
+                      </button>
+                    </div>
+                    <p class="password-input__description" id="password-new-description">Use product-approved guidance when creating a password; this component does not impose composition rules or score strength.</p>
+                  </div>
+                </div>
+
+                <div class="playground-demo">
+                  <div class="password-input" data-password-input>
+                    <label class="password-input__label" for="password-disabled">Managed account password</label>
+                    <div class="password-input__control-wrapper">
+                      <input class="password-input__control" id="password-disabled" name="disabled-password-demo" type="password" autocomplete="current-password" disabled data-password-input-control />
+                      <button class="password-input__toggle" type="button" aria-controls="password-disabled" aria-pressed="false" aria-label="Show password" disabled data-password-input-toggle hidden>
+                        <svg class="password-input__toggle-icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false">
+                          <path d="M2.5 10s2.75-4 7.5-4 7.5 4 7.5 4-2.75 4-7.5 4-7.5-4-7.5-4Z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
+                          <path d="m3.5 3.5 13 13" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2" />
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="playground-demo">
+                  <div class="password-input" data-password-input>
+                    <label class="password-input__label" for="password-long-content">Password for the shared demonstration workspace with a deliberately descriptive account label</label>
+                    <div class="password-input__control-wrapper">
+                      <input class="password-input__control" id="password-long-content" name="long-password-demo" type="password" autocomplete="current-password" aria-describedby="password-long-content-description" data-password-input-control />
+                      <button class="password-input__toggle" type="button" aria-controls="password-long-content" aria-pressed="false" aria-label="Show password" data-password-input-toggle hidden>
+                        <svg class="password-input__toggle-icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false">
+                          <path d="M2.5 10s2.75-4 7.5-4 7.5 4 7.5 4-2.75 4-7.5 4-7.5-4-7.5-4Z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
+                          <path d="m3.5 3.5 13 13" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2" />
+                        </svg>
+                      </button>
+                    </div>
+                    <p class="password-input__description" id="password-long-content-description">Enter non-sensitive demonstration text to inspect long-content behavior. The control remains within its container and reserves space so content cannot overlap the visibility button.</p>
+                  </div>
+                </div>
+              </div>
+
+              <section class="playground-demo-group stack" aria-labelledby="password-validation-title">
+                <header class="playground-demo-group__header stack">
+                  <h4 class="playground-demo-group__title" id="password-validation-title">Required and native validation</h4>
+                  <p class="playground-demo-group__description text text--muted">
+                    Submit the empty field to inspect browser-native required validation; exact presentation varies by
+                    browser, and no custom validation is added.
+                  </p>
+                </header>
+                <div class="playground-demo">
+                  <form class="playground-password-demo stack" method="post" action="" aria-labelledby="password-validation-title">
+                    <div class="password-input" data-password-input>
+                      <label class="password-input__label" for="password-validation">Password (required)</label>
+                      <div class="password-input__control-wrapper">
+                        <input class="password-input__control" id="password-validation" name="password-validation-demo" type="password" autocomplete="current-password" required aria-describedby="password-validation-description" data-password-input-control />
+                        <button class="password-input__toggle" type="button" aria-controls="password-validation" aria-pressed="false" aria-label="Show password" data-password-input-toggle hidden>
+                          <svg class="password-input__toggle-icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false">
+                            <path d="M2.5 10s2.75-4 7.5-4 7.5 4 7.5 4-2.75 4-7.5 4-7.5-4-7.5-4Z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
+                            <path d="m3.5 3.5 13 13" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2" />
+                          </svg>
+                        </button>
+                      </div>
+                      <p class="password-input__description" id="password-validation-description">This local Playground form has no remote submission destination.</p>
+                    </div>
+                    <button class="button button--primary" type="submit">Validate Password Input</button>
+                  </form>
+                </div>
+              </section>
+
+              <div class="playground-explainer-grid">
+                <section class="playground-demo stack" aria-labelledby="password-enhancement-title">
+                  <h4 id="password-enhancement-title">Progressive enhancement</h4>
+                  <p class="text text--muted">
+                    Without JavaScript, the toggle remains hidden and the native password field stays fully usable.
+                    After a valid instance initializes, the button is revealed and its label, pressed state, icon, and
+                    input type remain synchronized. The button retains focus after activation, while the input’s caret
+                    or selection is restored where the browser supports it. Invalid instances keep their native
+                    password field and hidden toggle.
+                  </p>
+                </section>
+                <section class="playground-demo stack" aria-labelledby="password-privacy-title">
+                  <h4 id="password-privacy-title">Autocomplete and privacy</h4>
+                  <p class="text text--muted">
+                    Use <code>current-password</code> for sign-in or confirmation and <code>new-password</code> for
+                    creation or change flows. The enhancement never reads or stores entered content. Revealing a field
+                    can make it observable to people nearby, so visibility remains an explicit user action.
+                  </p>
+                </section>
+              </div>
+            </article>
+
             <section class="playground-demo-group stack" aria-labelledby="form-control-states-title">
               <header class="playground-demo-group__header stack">
                 <h3 class="playground-demo-group__title" id="form-control-states-title">Native state ownership</h3>
@@ -1970,7 +2094,8 @@
                   Interact with each enabled control to inspect real hover, focus, checked, selection, and validation
                   behavior. The indeterminate Checkbox uses a Playground-only data hook because HTML has no
                   declarative indeterminate attribute; application code should set the native
-                  <code>indeterminate</code> property.
+                  <code>indeterminate</code> property. Password visibility is owned by the input’s native
+                  <code>type</code> and the toggle’s synchronized <code>aria-pressed</code> state rather than a BEM class.
                 </p>
               </div>
             </section>
@@ -1984,6 +2109,10 @@
                 <li>Use Select for one choice from a longer predefined list; prefer Radio when a small set should remain visible.</li>
                 <li>Give every Select a visible label, keep options concise, and use optgroup only for meaningful grouping.</li>
                 <li>Keep native Select behavior and never use its placeholder option as a replacement for a label.</li>
+                <li>Always label Password Inputs visibly and choose <code>current-password</code> or <code>new-password</code> autocomplete according to purpose.</li>
+                <li>Treat password visibility as optional enhancement; do not block paste or disable password managers.</li>
+                <li>Do not impose arbitrary password composition rules without explicit product and security requirements.</li>
+                <li>Use password fields only for secret content and plan accessible messages before adding custom validation.</li>
                 <li>Group related choices with a visible <code>fieldset</code> and <code>legend</code>.</li>
                 <li>Connect supporting descriptions with <code>aria-describedby</code> when they clarify the choice.</li>
                 <li>Avoid disabled controls when explanatory feedback would better help the user proceed.</li>
@@ -2029,6 +2158,31 @@
                 <p class="text text--muted">
                   Associate the visible label through <code>for</code>/<code>id</code>, include the wrapper only when
                   composing the decorative icon, and add <code>aria-describedby</code> only when a description exists.
+                </p>
+              </section>
+              <section class="playground-api playground-demo stack" aria-labelledby="password-input-api-title">
+                <h3 class="playground-api__title" id="password-input-api-title">Password Input API</h3>
+                <ul class="playground-api__classes cluster" role="list">
+                  <li><code>.password-input</code></li><li><code>.password-input__label</code></li>
+                  <li><code>.password-input__control-wrapper</code></li><li><code>.password-input__control</code></li>
+                  <li><code>.password-input__toggle</code></li><li><code>.password-input__toggle-icon</code></li>
+                  <li><code>.password-input__description</code></li>
+                </ul>
+                <p class="text text--muted">
+                  Use a native password input, visible associated label, button toggle, and an optional description
+                  referenced only when it exists.
+                </p>
+              </section>
+              <section class="playground-api playground-demo stack" aria-labelledby="password-input-data-api-title">
+                <h3 class="playground-api__title" id="password-input-data-api-title">Password Input data API</h3>
+                <ul class="playground-api__classes cluster" role="list">
+                  <li><code>data-password-input</code></li>
+                  <li><code>data-password-input-control</code></li>
+                  <li><code>data-password-input-toggle</code></li>
+                </ul>
+                <p class="text text--muted">
+                  All three author-facing hooks are required. The root scopes one instance, while the toggle’s
+                  <code>aria-controls</code> must reference the control’s unique ID. Enhancement markers remain internal.
                 </p>
               </section>
             </div>
@@ -2084,6 +2238,24 @@
       &lt;option value="one"&gt;Option one&lt;/option&gt;
     &lt;/select&gt;
     &lt;svg class="select__icon" aria-hidden="true"&gt;…&lt;/svg&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                </div>
+                <div class="playground-demo stack">
+                  <p class="playground-demo__label">Password Input</p>
+                  <pre class="playground-code"><code>&lt;div class="password-input" data-password-input&gt;
+  &lt;label class="password-input__label" for="account-password"&gt;
+    Password
+  &lt;/label&gt;
+  &lt;div class="password-input__control-wrapper"&gt;
+    &lt;input class="password-input__control" id="account-password"
+      name="password" type="password" autocomplete="current-password"
+      data-password-input-control /&gt;
+    &lt;button class="password-input__toggle" type="button"
+      aria-controls="account-password" aria-pressed="false"
+      aria-label="Show password" data-password-input-toggle hidden&gt;
+      &lt;svg class="password-input__toggle-icon" aria-hidden="true"&gt;…&lt;/svg&gt;
+    &lt;/button&gt;
   &lt;/div&gt;
 &lt;/div&gt;</code></pre>
                 </div>

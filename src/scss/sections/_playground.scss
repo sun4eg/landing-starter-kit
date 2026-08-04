@@ -240,6 +240,21 @@
   min-width: var(--space-0);
 }
 
+.playground-divider-toolbar {
+  display: flex;
+  align-items: stretch;
+  gap: var(--space-xs);
+  min-width: var(--space-0);
+  min-height: var(--control-height-lg);
+}
+
+.playground-divider-toolbar__item {
+  display: inline-flex;
+  align-items: center;
+  min-width: var(--space-0);
+  overflow-wrap: anywhere;
+}
+
 .playground-navigation-demo {
   width: var(--size-full);
   max-width: var(--container-max-width);

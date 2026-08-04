@@ -54,6 +54,7 @@
             <li class="primary-navigation__item"><a class="site-header__navigation-link primary-navigation__link" href="#buttons-title" data-playground-navigation-link>Buttons</a></li>
             <li class="primary-navigation__item"><a class="site-header__navigation-link primary-navigation__link" href="#badges-title" data-playground-navigation-link>Badges</a></li>
             <li class="primary-navigation__item"><a class="site-header__navigation-link primary-navigation__link" href="#alerts-title" data-playground-navigation-link>Alerts</a></li>
+            <li class="primary-navigation__item"><a class="site-header__navigation-link primary-navigation__link" href="#dividers-title" data-playground-navigation-link>Dividers</a></li>
             <li class="primary-navigation__item"><a class="site-header__navigation-link primary-navigation__link" href="#typography-title" data-playground-navigation-link>Typography</a></li>
             <li class="primary-navigation__item"><a class="site-header__navigation-link primary-navigation__link" href="#section-heading-title" data-playground-navigation-link>Section Heading</a></li>
             <li class="primary-navigation__item"><a class="site-header__navigation-link primary-navigation__link" href="#cards-title" data-playground-navigation-link>Cards</a></li>
@@ -136,6 +137,7 @@
             <li><a class="playground-navigation-panel__link" href="#buttons-title" data-playground-navigation-link>Buttons</a></li>
             <li><a class="playground-navigation-panel__link" href="#badges-title" data-playground-navigation-link>Badges</a></li>
             <li><a class="playground-navigation-panel__link" href="#alerts-title" data-playground-navigation-link>Alerts</a></li>
+            <li><a class="playground-navigation-panel__link" href="#dividers-title" data-playground-navigation-link>Dividers</a></li>
             <li><a class="playground-navigation-panel__link" href="#typography-title" data-playground-navigation-link>Typography</a></li>
             <li><a class="playground-navigation-panel__link" href="#section-heading-title" data-playground-navigation-link>Section Heading</a></li>
             <li><a class="playground-navigation-panel__link" href="#cards-title" data-playground-navigation-link>Cards</a></li>
@@ -878,6 +880,232 @@
     hidden
   &gt;...&lt;/button&gt;
 &lt;/div&gt;</code></pre>
+              </section>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="playground-section section" aria-labelledby="dividers-title">
+        <div class="container">
+          <header class="playground-section__header section-heading">
+            <p class="section-heading__eyebrow">Component</p>
+            <h2 class="playground-section__title section-heading__title" id="dividers-title">Dividers</h2>
+            <p class="playground-section__description section-heading__lead">
+              Divider provides a quiet, non-interactive separation between related content groups when spacing or a
+              heading alone does not communicate the break clearly enough.
+            </p>
+          </header>
+
+          <div class="playground-section__content stack">
+            <article class="playground-demo-group stack" aria-labelledby="divider-default-title">
+              <header class="playground-demo-group__header stack">
+                <h3 class="playground-demo-group__title" id="divider-default-title">Default horizontal divider</h3>
+                <p class="playground-demo-group__description text text--muted">
+                  A native <code>&lt;hr&gt;</code> communicates a thematic break. The surrounding Stack owns the space
+                  before and after the rule.
+                </p>
+              </header>
+              <div class="playground-demo stack">
+                <div class="text">
+                  <h4>Deployment preparation</h4>
+                  <p>Confirm the target environment and review the current release notes.</p>
+                </div>
+                <hr class="divider" />
+                <div class="text">
+                  <h4>Deployment verification</h4>
+                  <p>Run smoke checks after the reviewed build is available.</p>
+                </div>
+              </div>
+            </article>
+
+            <article class="playground-demo-group stack" aria-labelledby="divider-strong-title">
+              <header class="playground-demo-group__header stack">
+                <h3 class="playground-demo-group__title" id="divider-strong-title">Default and strong emphasis</h3>
+                <p class="playground-demo-group__description text text--muted">
+                  Strong changes contrast through the existing control-border token. It does not add status meaning or
+                  increase the rule into a progress-like indicator.
+                </p>
+              </header>
+              <div class="playground-comparison__grid">
+                <div class="playground-demo stack">
+                  <p class="playground-demo__label">Default</p>
+                  <p>Primary content group</p>
+                  <hr class="divider" />
+                  <p>Related content group</p>
+                </div>
+                <div class="playground-demo stack">
+                  <p class="playground-demo__label">Strong</p>
+                  <p>Primary content group</p>
+                  <hr class="divider divider--strong" />
+                  <p>Related content group</p>
+                </div>
+              </div>
+            </article>
+
+            <article class="playground-demo-group stack" aria-labelledby="divider-labelled-title">
+              <header class="playground-demo-group__header stack">
+                <h3 class="playground-demo-group__title" id="divider-labelled-title">Labelled divider</h3>
+                <p class="playground-demo-group__description text text--muted">
+                  A labelled divider uses a non-interactive container because native <code>&lt;hr&gt;</code> cannot
+                  contain text. The real visible label remains available in normal reading order.
+                </p>
+              </header>
+              <div class="playground-demo-group stack">
+                <div class="playground-demo stack">
+                  <p>Continue with an existing workspace account.</p>
+                  <div class="divider divider--labelled">
+                    <span class="divider__label">Or continue with</span>
+                  </div>
+                  <p>Create a separate account for this evaluation.</p>
+                </div>
+                <div class="playground-demo">
+                  <div class="playground-demo__constraint stack">
+                    <p class="playground-demo__label">Narrow long-label example</p>
+                    <div class="divider divider--labelled divider--strong">
+                      <span class="divider__label">
+                        Continue with a reviewed alternative integration method
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="playground-demo-group stack" aria-labelledby="divider-vertical-title">
+              <header class="playground-demo-group__header stack">
+                <h3 class="playground-demo-group__title" id="divider-vertical-title">Vertical semantics</h3>
+                <p class="playground-demo-group__description text text--muted">
+                  Vertical rules depend on a parent with meaningful block size. Use separator semantics only when the
+                  break is meaningful; hide a purely decorative rule from assistive technology.
+                </p>
+              </header>
+              <div class="playground-comparison__grid">
+                <div class="playground-demo stack">
+                  <p class="playground-demo__label">Semantic metadata separator</p>
+                  <div class="playground-divider-toolbar">
+                    <span class="playground-divider-toolbar__item">Draft</span>
+                    <div class="divider divider--vertical" role="separator" aria-orientation="vertical"></div>
+                    <span class="playground-divider-toolbar__item">Reviewed</span>
+                    <div class="divider divider--vertical" role="separator" aria-orientation="vertical"></div>
+                    <span class="playground-divider-toolbar__item">Ready</span>
+                  </div>
+                </div>
+                <div class="playground-demo stack">
+                  <p class="playground-demo__label">Decorative action separation</p>
+                  <div class="playground-divider-toolbar">
+                    <a class="button button--outline button--sm" href="#divider-guidance-title">Guidance</a>
+                    <div class="divider divider--vertical" aria-hidden="true"></div>
+                    <a class="button button--ghost button--sm" href="#divider-api-title">API reference</a>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="playground-demo-group stack" aria-labelledby="divider-composition-title">
+              <header class="playground-demo-group__header stack">
+                <h3 class="playground-demo-group__title" id="divider-composition-title">Component composition</h3>
+                <p class="playground-demo-group__description text text--muted">
+                  Divider separates groups without styling adjacent Form, Button, Text, or Card internals.
+                </p>
+              </header>
+              <div class="playground-comparison__grid">
+                <form class="form playground-demo playground-form-demo">
+                  <h4>Profile details</h4>
+                  <div class="form__field">
+                    <input
+                      class="form__input"
+                      id="divider-profile-name"
+                      name="display-name"
+                      type="text"
+                      autocomplete="name"
+                      placeholder=" "
+                    />
+                    <label class="form__label" for="divider-profile-name">Display name</label>
+                  </div>
+                  <div class="divider divider--labelled">
+                    <span class="divider__label">Review before saving</span>
+                  </div>
+                  <div class="form__actions">
+                    <button class="button button--primary" type="button">Save profile</button>
+                  </div>
+                </form>
+
+                <article class="service-card">
+                  <div class="service-card__icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none">
+                      <path d="M4 5h16v14H4V5Zm4 4h8M8 13h5" />
+                    </svg>
+                  </div>
+                  <h4 class="service-card__title">Documented integration</h4>
+                  <div class="service-card__description text text--muted stack">
+                    <p>Public component contracts remain independent.</p>
+                    <hr class="divider" />
+                    <p>The Card's own Stack composition supplies the surrounding rhythm.</p>
+                  </div>
+                  <a class="service-card__link" href="#divider-api-title">Review the Divider API</a>
+                </article>
+              </div>
+            </article>
+
+            <aside class="playground-guidance playground-demo stack" aria-labelledby="divider-guidance-title">
+              <h3 class="playground-guidance__title" id="divider-guidance-title">Usage and accessibility guidance</h3>
+              <ul class="playground-guidance__list text">
+                <li>Prefer spacing when visual breathing room communicates the relationship sufficiently.</li>
+                <li>Prefer a heading when the following group needs a meaningful name.</li>
+                <li>Use section layout and surfaces—not Divider—for page-wide section boundaries.</li>
+                <li>Use native <code>&lt;hr&gt;</code> for a meaningful horizontal thematic break without adding a redundant role.</li>
+                <li>Use <code>role="separator"</code> and <code>aria-orientation="vertical"</code> for a meaningful non-native vertical separator.</li>
+                <li>Use <code>aria-hidden="true"</code> when a vertical rule is purely decorative.</li>
+                <li>Keep labelled Divider text concise and visible; do not place text inside <code>&lt;hr&gt;</code>.</li>
+                <li>Avoid excessive semantic separators because they can add assistive-technology noise.</li>
+              </ul>
+            </aside>
+
+            <div class="playground-api-grid">
+              <section class="playground-api playground-demo stack" aria-labelledby="divider-api-title">
+                <header class="playground-api__header stack">
+                  <h3 class="playground-api__title" id="divider-api-title">Public API reference</h3>
+                  <p class="playground-api__description text text--muted">
+                    Every modifier requires the base class. The component exposes no states or JavaScript hooks.
+                  </p>
+                </header>
+                <dl class="playground-api__list stack">
+                  <div class="playground-api__group stack">
+                    <dt class="playground-demo__label">Base</dt>
+                    <dd><code>.divider</code></dd>
+                  </div>
+                  <div class="playground-api__group stack">
+                    <dt class="playground-demo__label">Modifiers</dt>
+                    <dd>
+                      <ul class="playground-api__classes cluster" role="list">
+                        <li><code>.divider--vertical</code></li>
+                        <li><code>.divider--strong</code></li>
+                        <li><code>.divider--labelled</code></li>
+                      </ul>
+                    </dd>
+                  </div>
+                  <div class="playground-api__group stack">
+                    <dt class="playground-demo__label">Element</dt>
+                    <dd><code>.divider__label</code></dd>
+                  </div>
+                </dl>
+              </section>
+
+              <section class="playground-demo stack" aria-labelledby="divider-markup-title">
+                <h3 id="divider-markup-title">Markup examples</h3>
+                <p class="playground-demo__label">Native horizontal</p>
+                <pre class="playground-code"><code>&lt;hr class=&quot;divider&quot; /&gt;</code></pre>
+                <p class="playground-demo__label">Labelled</p>
+                <pre class="playground-code"><code>&lt;div class=&quot;divider divider--labelled&quot;&gt;
+  &lt;span class=&quot;divider__label&quot;&gt;Or continue with&lt;/span&gt;
+&lt;/div&gt;</code></pre>
+                <p class="playground-demo__label">Semantic vertical</p>
+                <pre class="playground-code"><code>&lt;div
+  class=&quot;divider divider--vertical&quot;
+  role=&quot;separator&quot;
+  aria-orientation=&quot;vertical&quot;
+&gt;&lt;/div&gt;</code></pre>
               </section>
             </div>
           </div>

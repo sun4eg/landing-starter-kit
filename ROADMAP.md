@@ -39,7 +39,7 @@ This roadmap tracks the development of a reusable, accessible, and production-re
 
 1. Badge — completed
 2. Alert — completed
-3. Divider
+3. Divider — completed
 4. Progress
 5. Spinner
 6. Skeleton

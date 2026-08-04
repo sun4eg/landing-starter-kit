@@ -1,0 +1,44 @@
+.divider {
+  --divider-color: var(--color-border);
+
+  width: var(--size-full);
+  min-width: var(--space-0);
+  margin: var(--space-0);
+  border: none;
+  border-block-start: var(--border-width) solid var(--divider-color);
+}
+
+.divider--strong {
+  --divider-color: var(--color-control-border);
+}
+
+.divider--labelled {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  color: var(--color-text-secondary);
+  border-block-start: none;
+}
+
+.divider--labelled::before,
+.divider--labelled::after {
+  flex: 1;
+  min-width: var(--space-sm);
+  border-block-start: var(--border-width) solid var(--divider-color);
+  content: '';
+}
+
+.divider__label {
+  min-width: var(--space-0);
+  font-size: var(--font-size-sm);
+  line-height: var(--line-height-base);
+  text-align: center;
+  overflow-wrap: anywhere;
+}
+
+.divider--vertical {
+  align-self: stretch;
+  width: auto;
+  border-block-start: none;
+  border-inline-start: var(--border-width) solid var(--divider-color);
+}

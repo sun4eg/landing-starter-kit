@@ -1,0 +1,174 @@
+.toast-region {
+  position: fixed;
+  inset-block-end: max(var(--space-sm), env(safe-area-inset-bottom));
+  inset-inline-end: max(var(--space-sm), env(safe-area-inset-right));
+  z-index: var(--z-toast);
+  display: grid;
+  gap: var(--space-xs);
+  width: min(
+    calc(
+      var(--size-full) - max(var(--space-sm), env(safe-area-inset-left)) -
+        max(var(--space-sm), env(safe-area-inset-right))
+    ),
+    calc(var(--content-measure) / 2)
+  );
+  max-height: calc(
+    var(--viewport-height) - max(var(--space-sm), env(safe-area-inset-top)) -
+      max(var(--space-sm), env(safe-area-inset-bottom))
+  );
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  pointer-events: none;
+}
+
+.toast {
+  --toast-accent: var(--color-secondary-600);
+
+  display: grid;
+  grid-template-columns: auto minmax(var(--space-0), 1fr) auto;
+  gap: var(--space-xs);
+  align-items: start;
+  width: var(--size-full);
+  min-width: var(--space-0);
+  padding: var(--space-sm);
+  color: var(--color-text-primary);
+  background-color: var(--color-background);
+  border: var(--border-width) solid var(--color-border);
+  border-inline-start-color: var(--toast-accent);
+  border-inline-start-width: var(--focus-ring-width);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  overflow-wrap: anywhere;
+  pointer-events: auto;
+  animation: toast-enter var(--duration-normal) var(--ease-emphasized);
+}
+
+.toast--neutral {
+  --toast-accent: var(--color-secondary-600);
+}
+
+.toast--info {
+  --toast-accent: var(--color-info);
+}
+
+.toast--success {
+  --toast-accent: var(--color-success);
+}
+
+.toast--warning {
+  --toast-accent: var(--color-warning);
+}
+
+.toast--danger {
+  --toast-accent: var(--color-error);
+}
+
+.toast[data-toast-exiting] {
+  animation: toast-exit var(--duration-fast) var(--ease-standard) forwards;
+}
+
+.toast__icon {
+  grid-column: 1;
+  flex: none;
+  width: var(--control-icon-size-md);
+  height: var(--control-icon-size-md);
+  color: var(--toast-accent);
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: var(--border-width);
+  vector-effect: non-scaling-stroke;
+}
+
+.toast__content {
+  display: grid;
+  grid-column: 2;
+  gap: var(--space-3xs);
+  min-width: var(--space-0);
+}
+
+.toast__title {
+  color: var(--color-text-primary);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-heading);
+  overflow-wrap: anywhere;
+}
+
+.toast__description {
+  min-width: var(--space-0);
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-sm);
+  line-height: var(--line-height-base);
+  overflow-wrap: anywhere;
+}
+
+.toast__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2xs);
+  min-width: var(--space-0);
+  margin-block-start: var(--space-3xs);
+}
+
+.toast__dismiss {
+  display: inline-flex;
+  grid-column: 3;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  width: var(--control-height-sm);
+  height: var(--control-height-sm);
+  padding: var(--space-2xs);
+  color: var(--color-text-secondary);
+  background-color: var(--color-transparent);
+  border: var(--border-width) solid var(--color-transparent);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition:
+    color var(--duration-fast) var(--ease-standard),
+    background-color var(--duration-fast) var(--ease-standard),
+    border-color var(--duration-fast) var(--ease-standard);
+}
+
+.toast__dismiss svg {
+  width: var(--control-icon-size-sm);
+  height: var(--control-icon-size-sm);
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: var(--border-width);
+  vector-effect: non-scaling-stroke;
+}
+
+@media (hover: hover) {
+  .toast__dismiss:hover {
+    color: var(--color-text-primary);
+    background-color: var(--color-surface-emphasis);
+    border-color: var(--color-border);
+  }
+}
+
+@keyframes toast-enter {
+  from {
+    opacity: 0;
+    transform: translateY(var(--space-xs));
+  }
+}
+
+@keyframes toast-exit {
+  to {
+    opacity: 0;
+    transform: translateY(var(--space-xs));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .toast,
+  .toast[data-toast-exiting] {
+    transform: none;
+    animation-duration: var(--duration-instant);
+  }
+}

@@ -9,6 +9,7 @@ import { initPlaygroundFormControls } from './js/modules/playground-form-control
 import { initPlaygroundNavigations } from './js/modules/playground-navigation.js'
 import { initStickyHeaders } from './js/modules/sticky-header.js'
 import { initTabs } from './js/modules/tabs.js'
+import { initToasts } from './js/modules/toast.js'
 import './scss/main.scss'
 
 initAccordions()
@@ -22,3 +23,4 @@ initPlaygroundFormControls()
 initPlaygroundNavigations()
 initStickyHeaders()
 initTabs()
+initToasts()

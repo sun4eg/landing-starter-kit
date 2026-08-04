@@ -56,4 +56,4 @@ This roadmap tracks the development of a reusable, accessible, and production-re
 17. Stats
 18. Logo Cloud
 19. CTA Banner
-20. Pricing Card
+20. Pricing Card — completed

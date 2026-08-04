@@ -194,6 +194,13 @@
   grid-template-columns: repeat(3, minmax(var(--space-0), 1fr));
 }
 
+.playground-pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(var(--space-0), 1fr));
+  gap: var(--space-lg);
+  align-items: stretch;
+}
+
 .playground-comparison__item {
   --stack-gap: var(--space-xs);
 }
@@ -500,6 +507,7 @@
   }
 
   .playground-card-grid,
+  .playground-pricing-grid,
   .playground-token-grid,
   .playground-token-grid--colors {
     grid-template-columns: repeat(2, minmax(var(--space-0), 1fr));
@@ -508,6 +516,7 @@
 
 @media (max-width: breakpoints.$mobile) {
   .playground-card-grid,
+  .playground-pricing-grid,
   .playground-api-grid,
   .playground-explainer-grid,
   .playground-comparison__grid,

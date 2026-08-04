@@ -7,6 +7,7 @@ import { initRangeSliders } from './js/modules/range-slider.js'
 import { initPlaygroundFormControls } from './js/modules/playground-form-controls.js'
 import { initPlaygroundNavigations } from './js/modules/playground-navigation.js'
 import { initStickyHeaders } from './js/modules/sticky-header.js'
+import { initTabs } from './js/modules/tabs.js'
 import './scss/main.scss'
 
 initAccordions()
@@ -18,3 +19,4 @@ initRangeSliders()
 initPlaygroundFormControls()
 initPlaygroundNavigations()
 initStickyHeaders()
+initTabs()

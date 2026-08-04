@@ -44,7 +44,7 @@ This roadmap tracks the development of a reusable, accessible, and production-re
 5. Spinner — completed
 6. Skeleton — completed
 7. Empty State — completed
-8. Tabs
+8. Tabs — completed
 9. Breadcrumbs
 10. Pagination
 11. Timeline

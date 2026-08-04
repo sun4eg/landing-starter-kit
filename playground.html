@@ -66,6 +66,7 @@
             <li class="primary-navigation__item"><a class="site-header__navigation-link primary-navigation__link" href="#pagination-title" data-playground-navigation-link>Pagination</a></li>
             <li class="primary-navigation__item"><a class="site-header__navigation-link primary-navigation__link" href="#pricing-cards" data-playground-navigation-link>Pricing Cards</a></li>
             <li class="primary-navigation__item"><a class="site-header__navigation-link primary-navigation__link" href="#stats" data-playground-navigation-link>Stats</a></li>
+            <li class="primary-navigation__item"><a class="site-header__navigation-link primary-navigation__link" href="#timeline" data-playground-navigation-link>Timeline</a></li>
             <li class="primary-navigation__item"><a class="site-header__navigation-link primary-navigation__link" href="#typography-title" data-playground-navigation-link>Typography</a></li>
             <li class="primary-navigation__item"><a class="site-header__navigation-link primary-navigation__link" href="#section-heading-title" data-playground-navigation-link>Section Heading</a></li>
             <li class="primary-navigation__item"><a class="site-header__navigation-link primary-navigation__link" href="#cards-title" data-playground-navigation-link>Cards</a></li>
@@ -160,6 +161,7 @@
             <li><a class="playground-navigation-panel__link" href="#pagination-title" data-playground-navigation-link>Pagination</a></li>
             <li><a class="playground-navigation-panel__link" href="#pricing-cards" data-playground-navigation-link>Pricing Cards</a></li>
             <li><a class="playground-navigation-panel__link" href="#stats" data-playground-navigation-link>Stats</a></li>
+            <li><a class="playground-navigation-panel__link" href="#timeline" data-playground-navigation-link>Timeline</a></li>
             <li><a class="playground-navigation-panel__link" href="#typography-title" data-playground-navigation-link>Typography</a></li>
             <li><a class="playground-navigation-panel__link" href="#section-heading-title" data-playground-navigation-link>Section Heading</a></li>
             <li><a class="playground-navigation-panel__link" href="#cards-title" data-playground-navigation-link>Cards</a></li>
@@ -3644,6 +3646,150 @@
     &lt;h3 class=&quot;stats__label&quot;&gt;Primary KPI: qualified conversion&lt;/h3&gt;
   &lt;/li&gt;
 &lt;/ul&gt;</code></pre>
+              </section>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="playground-section section" id="timeline" aria-labelledby="timeline-title">
+        <div class="container">
+          <header class="playground-section__header section-heading">
+            <p class="section-heading__eyebrow">Chronology</p>
+            <h2 class="playground-section__title section-heading__title" id="timeline-title">Timeline</h2>
+            <p class="playground-section__description section-heading__lead">
+              Present releases, milestones, and process history in explicit chronological order without introducing workflow or progress semantics.
+            </p>
+          </header>
+
+          <div class="playground-section__content stack">
+            <article class="playground-demo-group stack" aria-labelledby="timeline-release-title">
+              <header class="playground-demo-group__header stack">
+                <h3 class="playground-demo-group__title" id="timeline-release-title">Release history</h3>
+                <p class="playground-demo-group__description text text--muted">The primary vertical layout uses an ordered list and native <code>&lt;time&gt;</code> elements for dated releases.</p>
+              </header>
+              <div class="playground-demo__constraint">
+                <ol class="timeline">
+                  <li class="timeline__item">
+                    <span class="timeline__marker" aria-hidden="true"></span><span class="timeline__line" aria-hidden="true"></span>
+                    <div class="timeline__content"><time class="timeline__meta" datetime="2025-11-18">18 November 2025</time><h4 class="timeline__title">Foundation preview</h4><p class="timeline__description">Established the token, layout, typography, and initial component foundations.</p></div>
+                  </li>
+                  <li class="timeline__item">
+                    <span class="timeline__marker" aria-hidden="true"></span><span class="timeline__line" aria-hidden="true"></span>
+                    <div class="timeline__content"><time class="timeline__meta" datetime="2026-02-12">12 February 2026</time><h4 class="timeline__title">Form Controls milestone</h4><p class="timeline__description">Completed the documented native control family and progressive enhancements.</p></div>
+                  </li>
+                  <li class="timeline__item">
+                    <span class="timeline__marker" aria-hidden="true"></span><span class="timeline__line" aria-hidden="true"></span>
+                    <div class="timeline__content"><div class="timeline__badge"><span class="badge badge--primary badge--pill">Current release</span></div><time class="timeline__meta" datetime="2026-08-04">4 August 2026</time><h4 class="timeline__title">Component Playground alpha</h4><p class="timeline__description">Published the evaluation foundation with living documentation and accessibility guidance.</p></div>
+                  </li>
+                </ol>
+              </div>
+            </article>
+
+            <article class="playground-demo-group stack" aria-labelledby="timeline-roadmap-title">
+              <header class="playground-demo-group__header stack">
+                <h3 class="playground-demo-group__title" id="timeline-roadmap-title">Product roadmap chronology</h3>
+                <p class="playground-demo-group__description text text--muted">Horizontal is reserved for short bounded sequences. The list scrolls locally when its intrinsic columns no longer fit.</p>
+              </header>
+              <ol class="timeline timeline--horizontal" tabindex="0">
+                <li class="timeline__item"><span class="timeline__marker" aria-hidden="true"></span><span class="timeline__line" aria-hidden="true"></span><div class="timeline__content"><time class="timeline__meta" datetime="2026-09">September 2026</time><h4 class="timeline__title">Integration review</h4><p class="timeline__description">Validate composition across representative starter-kit pages.</p></div></li>
+                <li class="timeline__item"><span class="timeline__marker" aria-hidden="true"></span><span class="timeline__line" aria-hidden="true"></span><div class="timeline__content"><time class="timeline__meta" datetime="2026-10">October 2026</time><h4 class="timeline__title">Browser verification</h4><p class="timeline__description">Complete the remaining platform and assistive-technology review.</p></div></li>
+                <li class="timeline__item"><span class="timeline__marker" aria-hidden="true"></span><span class="timeline__line" aria-hidden="true"></span><div class="timeline__content"><div class="timeline__badge"><span class="badge badge--info badge--pill">Planned</span></div><time class="timeline__meta" datetime="2026-11">November 2026</time><h4 class="timeline__title">Beta candidate</h4><p class="timeline__description">Resolve verified integration findings and prepare beta notes.</p></div></li>
+                <li class="timeline__item"><span class="timeline__marker" aria-hidden="true"></span><span class="timeline__line" aria-hidden="true"></span><div class="timeline__content"><time class="timeline__meta" datetime="2027-01">January 2027</time><h4 class="timeline__title">Production assessment</h4><p class="timeline__description">Review release evidence before any stable-version decision.</p></div></li>
+              </ol>
+            </article>
+
+            <div class="playground-comparison__grid">
+              <article class="playground-demo-group stack" aria-labelledby="timeline-milestones-title">
+                <header class="playground-demo-group__header stack"><h3 class="playground-demo-group__title" id="timeline-milestones-title">Compact project milestones</h3><p class="playground-demo-group__description text text--muted">Compact reduces spacing while preserving every event and its chronology.</p></header>
+                <ol class="timeline timeline--compact">
+                  <li class="timeline__item"><span class="timeline__marker" aria-hidden="true"></span><span class="timeline__line" aria-hidden="true"></span><div class="timeline__content"><p class="timeline__meta">Week 1</p><h4 class="timeline__title">Discovery completed</h4><p class="timeline__description">Goals, constraints, and owners documented.</p></div></li>
+                  <li class="timeline__item"><span class="timeline__marker" aria-hidden="true"></span><span class="timeline__line" aria-hidden="true"></span><div class="timeline__content"><p class="timeline__meta">Week 3</p><h4 class="timeline__title">Prototype reviewed</h4><p class="timeline__description">Core flows approved for implementation.</p></div></li>
+                  <li class="timeline__item"><span class="timeline__marker" aria-hidden="true"></span><span class="timeline__line" aria-hidden="true"></span><div class="timeline__content"><p class="timeline__meta">Week 6</p><h4 class="timeline__title">Delivery accepted</h4><p class="timeline__description">Documentation and handoff completed.</p></div></li>
+                </ol>
+              </article>
+
+              <article class="playground-demo-group stack" aria-labelledby="timeline-badges-title">
+                <header class="playground-demo-group__header stack"><h3 class="playground-demo-group__title" id="timeline-badges-title">Badge composition</h3><p class="playground-demo-group__description text text--muted">Badges add visible context but do not change sequence semantics or marker styling.</p></header>
+                <ol class="timeline timeline--compact">
+                  <li class="timeline__item"><span class="timeline__marker" aria-hidden="true"></span><span class="timeline__line" aria-hidden="true"></span><div class="timeline__content"><div class="timeline__badge"><span class="badge badge--success badge--pill">Released</span></div><time class="timeline__meta" datetime="2026-06-10">10 June 2026</time><h4 class="timeline__title">Documentation baseline</h4><p class="timeline__description">Public contracts and examples reviewed.</p></div></li>
+                  <li class="timeline__item"><span class="timeline__marker" aria-hidden="true"></span><span class="timeline__line" aria-hidden="true"></span><div class="timeline__content"><div class="timeline__badge"><span class="badge badge--warning badge--pill">In review</span></div><time class="timeline__meta" datetime="2026-08-04">4 August 2026</time><h4 class="timeline__title">Integration audit</h4><p class="timeline__description">Cross-component composition remains under review.</p></div></li>
+                </ol>
+              </article>
+            </div>
+
+            <article class="playground-demo-group stack" aria-labelledby="timeline-card-title">
+              <header class="playground-demo-group__header stack"><h3 class="playground-demo-group__title" id="timeline-card-title">Timeline inside a Card</h3><p class="playground-demo-group__description text text--muted">The existing Service Card owns its surface while Timeline retains list and chronology semantics.</p></header>
+              <div class="playground-demo__constraint">
+                <article class="service-card">
+                  <div class="service-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M6 4v16M18 4v16M6 8h12M6 16h12" /></svg></div>
+                  <h4 class="service-card__title">Onboarding history</h4>
+                  <p class="service-card__description">A short account history composed inside an established Card.</p>
+                  <ol class="timeline timeline--compact">
+                    <li class="timeline__item"><span class="timeline__marker" aria-hidden="true"></span><span class="timeline__line" aria-hidden="true"></span><div class="timeline__content"><time class="timeline__meta" datetime="2026-07-01">1 July</time><h5 class="timeline__title">Workspace created</h5></div></li>
+                    <li class="timeline__item"><span class="timeline__marker" aria-hidden="true"></span><span class="timeline__line" aria-hidden="true"></span><div class="timeline__content"><time class="timeline__meta" datetime="2026-07-03">3 July</time><h5 class="timeline__title">Team invited</h5></div></li>
+                    <li class="timeline__item"><span class="timeline__marker" aria-hidden="true"></span><span class="timeline__line" aria-hidden="true"></span><div class="timeline__content"><time class="timeline__meta" datetime="2026-07-08">8 July</time><h5 class="timeline__title">First review completed</h5></div></li>
+                  </ol>
+                </article>
+              </div>
+            </article>
+
+            <article class="playground-demo-group stack" aria-labelledby="timeline-resilience-title">
+              <header class="playground-demo-group__header stack"><h3 class="playground-demo-group__title" id="timeline-resilience-title">Long-content and narrow-container resilience</h3><p class="playground-demo-group__description text text--muted">Long headings, metadata, descriptions, and technical identifiers wrap within the primary vertical layout.</p></header>
+              <div class="playground-demo__constraint">
+                <ol class="timeline">
+                  <li class="timeline__item"><span class="timeline__marker" aria-hidden="true"></span><span class="timeline__line" aria-hidden="true"></span><div class="timeline__content"><p class="timeline__meta">International review cycle · Phase one · 4 August 2026</p><h4 class="timeline__title">Completed the multi-region architecture, accessibility, privacy, and deployment-readiness assessment</h4><p class="timeline__description">Reviewers documented requirements for identity-provider-and-regional-access-management.example and the related multilingual operational guidance without truncating the source content.</p></div></li>
+                  <li class="timeline__item"><span class="timeline__marker" aria-hidden="true"></span><span class="timeline__line" aria-hidden="true"></span><div class="timeline__content"><p class="timeline__meta">International review cycle · Phase two · Planned</p><h4 class="timeline__title">Prepare implementation evidence for independently administered business units</h4><p class="timeline__description">The next milestone remains readable as ordinary text and does not imply an interactive step that users must complete.</p></div></li>
+                </ol>
+              </div>
+            </article>
+
+            <aside class="playground-guidance playground-demo stack" aria-labelledby="timeline-guidance-title">
+              <h3 class="playground-guidance__title" id="timeline-guidance-title">Usage and accessibility guidance</h3>
+              <ul class="playground-guidance__list text">
+                <li>Use Timeline for chronological events, milestones, releases, or process history—not required workflow steps, Progress, Accordion content, activity feeds, or calendars.</li>
+                <li>Use an ordered list when chronology is meaningful, and author events in the intended reading order. Use native <code>&lt;time&gt;</code> where a machine-readable date is available.</li>
+                <li>Keep titles contextual, dates and status wording visible, and descriptions sufficient without relying on marker color or Badge tone.</li>
+                <li>Use vertical Timeline by default. Reserve horizontal Timeline for short bounded sequences and ensure its local scrolling remains reachable.</li>
+                <li>Badge is optional supporting context. It must not replace dates, titles, or event descriptions.</li>
+                <li>Use a Stepper for a task users must complete, a Progress component for measurable completion, and a table when exact cross-event comparison matters.</li>
+              </ul>
+            </aside>
+
+            <div class="playground-api-grid">
+              <section class="playground-api playground-demo stack" aria-labelledby="timeline-api-title">
+                <header class="playground-api__header stack"><h3 class="playground-api__title" id="timeline-api-title">Public API reference</h3><p class="playground-api__description text text--muted">Classes own presentation while list ordering, contextual headings, dates, and event copy remain author responsibilities.</p></header>
+                <dl class="playground-api__list stack">
+                  <div class="playground-api__group stack"><dt class="playground-demo__label">Base</dt><dd><code>.timeline</code></dd></div>
+                  <div class="playground-api__group stack"><dt class="playground-demo__label">Variants</dt><dd><ul class="playground-api__classes cluster" role="list"><li><code>.timeline--compact</code></li><li><code>.timeline--horizontal</code></li></ul></dd></div>
+                  <div class="playground-api__group stack"><dt class="playground-demo__label">Elements</dt><dd><ul class="playground-api__classes cluster" role="list"><li><code>.timeline__item</code></li><li><code>.timeline__marker</code></li><li><code>.timeline__line</code></li><li><code>.timeline__content</code></li><li><code>.timeline__title</code></li><li><code>.timeline__meta</code></li><li><code>.timeline__description</code></li><li><code>.timeline__badge</code></li></ul></dd></div>
+                </dl>
+              </section>
+
+              <section class="playground-demo stack" aria-labelledby="timeline-markup-title">
+                <h3 id="timeline-markup-title">Markup examples</h3>
+                <pre class="playground-code"><code>&lt;ol class=&quot;timeline&quot;&gt;
+  &lt;li class=&quot;timeline__item&quot;&gt;
+    &lt;span class=&quot;timeline__marker&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
+    &lt;span class=&quot;timeline__line&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
+    &lt;div class=&quot;timeline__content&quot;&gt;
+      &lt;time class=&quot;timeline__meta&quot; datetime=&quot;2026-08-04&quot;&gt;4 August 2026&lt;/time&gt;
+      &lt;h3 class=&quot;timeline__title&quot;&gt;Component Playground alpha&lt;/h3&gt;
+      &lt;p class=&quot;timeline__description&quot;&gt;Published evaluation documentation.&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;ol class=&quot;timeline timeline--horizontal&quot; tabindex=&quot;0&quot;&gt;
+  &lt;li class=&quot;timeline__item&quot;&gt;
+    &lt;span class=&quot;timeline__marker&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
+    &lt;span class=&quot;timeline__line&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
+    &lt;div class=&quot;timeline__content&quot;&gt;
+      &lt;p class=&quot;timeline__meta&quot;&gt;September 2026&lt;/p&gt;
+      &lt;h3 class=&quot;timeline__title&quot;&gt;Integration review&lt;/h3&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;</code></pre>
               </section>
             </div>
           </div>

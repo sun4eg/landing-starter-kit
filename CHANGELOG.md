@@ -6,6 +6,10 @@ The format is based on Keep a Changelog, and this project adheres to Semantic Ve
 
 ## [Unreleased]
 
+### Added
+
+- Added a reusable Badge component with semantic visual variants, outline, small and pill options, optional icons, resilient inline composition, and complete Playground documentation.
+
 ## [2.0.0-alpha.1] - 2026-08-04
 
 > Alpha release: manual Safari, Firefox, mobile-platform, forced-colors, VoiceOver,

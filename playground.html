@@ -52,6 +52,7 @@
           <ul class="site-header__navigation-list primary-navigation__list playground-mobile-navigation__list">
             <li class="primary-navigation__item"><a class="site-header__navigation-link primary-navigation__link" href="#playground-title" data-playground-navigation-link>Introduction</a></li>
             <li class="primary-navigation__item"><a class="site-header__navigation-link primary-navigation__link" href="#buttons-title" data-playground-navigation-link>Buttons</a></li>
+            <li class="primary-navigation__item"><a class="site-header__navigation-link primary-navigation__link" href="#badges-title" data-playground-navigation-link>Badges</a></li>
             <li class="primary-navigation__item"><a class="site-header__navigation-link primary-navigation__link" href="#typography-title" data-playground-navigation-link>Typography</a></li>
             <li class="primary-navigation__item"><a class="site-header__navigation-link primary-navigation__link" href="#section-heading-title" data-playground-navigation-link>Section Heading</a></li>
             <li class="primary-navigation__item"><a class="site-header__navigation-link primary-navigation__link" href="#cards-title" data-playground-navigation-link>Cards</a></li>
@@ -132,6 +133,7 @@
           <ul class="playground-navigation-panel__list" role="list">
             <li><a class="playground-navigation-panel__link" href="#playground-title" data-playground-navigation-link>Introduction</a></li>
             <li><a class="playground-navigation-panel__link" href="#buttons-title" data-playground-navigation-link>Buttons</a></li>
+            <li><a class="playground-navigation-panel__link" href="#badges-title" data-playground-navigation-link>Badges</a></li>
             <li><a class="playground-navigation-panel__link" href="#typography-title" data-playground-navigation-link>Typography</a></li>
             <li><a class="playground-navigation-panel__link" href="#section-heading-title" data-playground-navigation-link>Section Heading</a></li>
             <li><a class="playground-navigation-panel__link" href="#cards-title" data-playground-navigation-link>Cards</a></li>
@@ -352,6 +354,195 @@
                 </div>
               </dl>
             </section>
+          </div>
+        </div>
+      </section>
+
+      <section class="playground-section section" aria-labelledby="badges-title">
+        <div class="container">
+          <header class="playground-section__header section-heading">
+            <p class="section-heading__eyebrow">Component</p>
+            <h2 class="playground-section__title section-heading__title" id="badges-title">Badges</h2>
+            <p class="playground-section__description section-heading__lead">
+              Use Badge for short informational labels, categories, and compact status text without implying an
+              action.
+            </p>
+          </header>
+
+          <div class="playground-section__content stack">
+            <article class="playground-demo-group stack" aria-labelledby="badge-variants-title">
+              <header class="playground-demo-group__header stack">
+                <h3 class="playground-demo-group__title" id="badge-variants-title">Variants</h3>
+                <p class="playground-demo-group__description text text--muted">
+                  Variant names express visual intent. The visible label must still communicate the actual meaning
+                  because color alone is not an accessible status description.
+                </p>
+              </header>
+              <div class="playground-demo">
+                <div class="playground-demo__actions cluster">
+                  <span class="badge badge--neutral">Neutral</span>
+                  <span class="badge badge--primary">Primary</span>
+                  <span class="badge badge--success">Approved</span>
+                  <span class="badge badge--warning">Review needed</span>
+                  <span class="badge badge--danger">Blocked</span>
+                  <span class="badge badge--info">Information</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="playground-demo-group stack" aria-labelledby="badge-outline-title">
+              <header class="playground-demo-group__header stack">
+                <h3 class="playground-demo-group__title" id="badge-outline-title">Outline composition</h3>
+                <p class="playground-demo-group__description text text--muted">
+                  Add <code>.badge--outline</code> to a semantic variant when a quieter treatment is appropriate.
+                </p>
+              </header>
+              <div class="playground-demo">
+                <div class="playground-demo__actions cluster">
+                  <span class="badge badge--neutral badge--outline">Neutral</span>
+                  <span class="badge badge--primary badge--outline">Primary</span>
+                  <span class="badge badge--success badge--outline">Approved</span>
+                  <span class="badge badge--warning badge--outline">Review needed</span>
+                  <span class="badge badge--danger badge--outline">Blocked</span>
+                  <span class="badge badge--info badge--outline">Information</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="playground-demo-group stack" aria-labelledby="badge-options-title">
+              <header class="playground-demo-group__header stack">
+                <h3 class="playground-demo-group__title" id="badge-options-title">Size, shape, and icon</h3>
+                <p class="playground-demo-group__description text text--muted">
+                  Small and pill modifiers compose independently. A leading icon is optional and remains decorative
+                  when the adjacent text communicates the same meaning.
+                </p>
+              </header>
+              <div class="playground-demo">
+                <div class="playground-demo__actions cluster">
+                  <span class="badge badge--primary badge--small">Small</span>
+                  <span class="badge badge--info badge--pill">Pill badge</span>
+                  <span class="badge badge--success badge--small badge--pill">Small pill</span>
+                  <span class="badge badge--success">
+                    <svg class="badge__icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
+                      <path d="m9.2 16.2-4-4 1.4-1.4 2.6 2.6 8.2-8.2 1.4 1.4-9.6 9.6Z" />
+                    </svg>
+                    Verified
+                  </span>
+                </div>
+              </div>
+            </article>
+
+            <article class="playground-demo-group stack" aria-labelledby="badge-composition-title">
+              <header class="playground-demo-group__header stack">
+                <h3 class="playground-demo-group__title" id="badge-composition-title">Content composition</h3>
+                <p class="playground-demo-group__description text text--muted">
+                  Badges can sit beside heading text or inside an existing Card without becoming part of either
+                  component's public API.
+                </p>
+              </header>
+              <div class="playground-demo-group stack">
+                <div class="playground-demo stack">
+                  <h4>Quarterly release notes <span class="badge badge--primary badge--small">New</span></h4>
+                  <p class="text text--muted">The heading remains semantic; the Badge supplies supporting metadata.</p>
+                </div>
+                <div class="playground-card-grid">
+                  <article class="service-card">
+                    <div class="service-card__icon" aria-hidden="true">
+                      <svg viewBox="0 0 24 24" fill="none">
+                        <path d="M12 3 4 7v5c0 4.5 3.1 7.7 8 9 4.9-1.3 8-4.5 8-9V7l-8-4Z" />
+                      </svg>
+                    </div>
+                    <h4 class="service-card__title">Reviewed foundation <span class="badge badge--success badge--small badge--pill">Ready</span></h4>
+                    <p class="service-card__description text text--muted">
+                      The Card owns its layout while Badge remains a small, independently reusable label.
+                    </p>
+                    <a class="service-card__link" href="#badge-api-title">Review the Badge API</a>
+                  </article>
+                </div>
+              </div>
+            </article>
+
+            <article class="playground-demo-group stack" aria-labelledby="badge-resilience-title">
+              <header class="playground-demo-group__header stack">
+                <h3 class="playground-demo-group__title" id="badge-resilience-title">Long-label resilience</h3>
+                <p class="playground-demo-group__description text text--muted">
+                  Labels wrap within their container without fixed heights or page-level horizontal overflow. Prefer
+                  concise labels in production even though longer content remains safe.
+                </p>
+              </header>
+              <div class="playground-demo">
+                <div class="playground-demo__constraint">
+                  <span class="badge badge--info badge--outline">
+                    Documentation review remains in progress for this integration milestone
+                  </span>
+                </div>
+              </div>
+            </article>
+
+            <aside class="playground-guidance playground-demo stack" aria-labelledby="badge-guidance-title">
+              <h3 class="playground-guidance__title" id="badge-guidance-title">Usage and accessibility guidance</h3>
+              <ul class="playground-guidance__list text">
+                <li>Use Badge for informational labels, categories, and compact status text.</li>
+                <li>Keep labels concise and meaningful without relying on color or an icon alone.</li>
+                <li>Use a <code>&lt;span&gt;</code> for static information.</li>
+                <li>Use an <code>&lt;a&gt;</code> only when the complete Badge navigates to a real destination.</li>
+                <li>Do not use Badge as a button, toggle, dismiss control, or notification counter.</li>
+                <li>Hide decorative icons with <code>aria-hidden="true"</code>; meaningful icon-only Badges are unsupported.</li>
+              </ul>
+            </aside>
+
+            <div class="playground-api-grid">
+              <section class="playground-api playground-demo stack" aria-labelledby="badge-api-title">
+                <header class="playground-api__header stack">
+                  <h3 class="playground-api__title" id="badge-api-title">Public API reference</h3>
+                  <p class="playground-api__description text text--muted">
+                    Every modifier is composed with the required <code>.badge</code> base class.
+                  </p>
+                </header>
+                <dl class="playground-api__list stack">
+                  <div class="playground-api__group stack">
+                    <dt class="playground-demo__label">Base</dt>
+                    <dd><code>.badge</code></dd>
+                  </div>
+                  <div class="playground-api__group stack">
+                    <dt class="playground-demo__label">Variants</dt>
+                    <dd>
+                      <ul class="playground-api__classes cluster" role="list">
+                        <li><code>.badge--neutral</code></li>
+                        <li><code>.badge--primary</code></li>
+                        <li><code>.badge--success</code></li>
+                        <li><code>.badge--warning</code></li>
+                        <li><code>.badge--danger</code></li>
+                        <li><code>.badge--info</code></li>
+                        <li><code>.badge--outline</code></li>
+                      </ul>
+                    </dd>
+                  </div>
+                  <div class="playground-api__group stack">
+                    <dt class="playground-demo__label">Options</dt>
+                    <dd>
+                      <ul class="playground-api__classes cluster" role="list">
+                        <li><code>.badge--small</code></li>
+                        <li><code>.badge--pill</code></li>
+                      </ul>
+                    </dd>
+                  </div>
+                  <div class="playground-api__group stack">
+                    <dt class="playground-demo__label">Element</dt>
+                    <dd><code>.badge__icon</code></dd>
+                  </div>
+                </dl>
+              </section>
+
+              <section class="playground-demo stack" aria-labelledby="badge-markup-title">
+                <h3 id="badge-markup-title">Markup example</h3>
+                <p class="text text--muted">The icon is optional and does not replace the visible label.</p>
+                <pre class="playground-code"><code>&lt;span class=&quot;badge badge--success badge--pill&quot;&gt;
+  &lt;svg class=&quot;badge__icon&quot; aria-hidden=&quot;true&quot;&gt;...&lt;/svg&gt;
+  Verified
+&lt;/span&gt;</code></pre>
+              </section>
+            </div>
           </div>
         </div>
       </section>

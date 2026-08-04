@@ -11,6 +11,7 @@ The format is based on Keep a Changelog, and this project adheres to Semantic Ve
 - Added a reusable Badge component with semantic visual variants, outline, small and pill options, optional icons, resilient inline composition, and complete Playground documentation.
 - Added a contextual Alert component with semantic and outline variants, optional icons and actions, progressive dismissal, live-region guidance, and complete Playground documentation.
 - Added a semantic Divider component with horizontal, strong, labelled, and bounded vertical forms plus complete Playground guidance.
+- Added a determinate Progress component with size and semantic variants, optional visible labels and values, accessible custom progressbar semantics, and complete Playground documentation.
 
 ## [2.0.0-alpha.1] - 2026-08-04
 

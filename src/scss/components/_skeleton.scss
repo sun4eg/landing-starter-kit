@@ -1,0 +1,91 @@
+.skeleton {
+  --skeleton-block-size: var(--space-sm);
+  --skeleton-inline-size: var(--size-full);
+  --skeleton-radius: var(--radius-sm);
+  --skeleton-shape-size: var(--control-height-md);
+  --skeleton-control-size: var(--control-height-md);
+  --skeleton-control-inline-size: calc(var(--control-height-md) * 2);
+
+  position: relative;
+  display: block;
+  inline-size: var(--skeleton-inline-size);
+  max-inline-size: var(--size-full);
+  block-size: var(--skeleton-block-size);
+  overflow: hidden;
+  background-color: var(--color-surface-emphasis);
+  border-radius: var(--skeleton-radius);
+}
+
+.skeleton::after {
+  position: absolute;
+  inset: var(--space-0);
+  background: linear-gradient(
+    to right,
+    var(--color-transparent),
+    var(--color-surface),
+    var(--color-transparent)
+  );
+  content: '';
+  transform: translateX(-100%);
+  animation: skeleton-shimmer calc(var(--duration-slow) * 4) var(--ease-standard) infinite;
+  pointer-events: none;
+}
+
+.skeleton--text {
+  --skeleton-block-size: var(--space-xs);
+  --skeleton-radius: var(--radius-full);
+}
+
+.skeleton--title {
+  --skeleton-block-size: var(--space-md);
+  --skeleton-radius: var(--radius-full);
+}
+
+.skeleton--avatar,
+.skeleton--circle {
+  --skeleton-block-size: var(--skeleton-shape-size);
+  --skeleton-inline-size: var(--skeleton-shape-size);
+  --skeleton-radius: var(--radius-full);
+}
+
+.skeleton--button {
+  --skeleton-block-size: var(--skeleton-control-size);
+  --skeleton-inline-size: var(--skeleton-control-inline-size);
+  --skeleton-radius: var(--radius-md);
+}
+
+.skeleton--rectangle {
+  block-size: auto;
+  aspect-ratio: var(--aspect-ratio-landscape);
+}
+
+.skeleton--rounded {
+  --skeleton-radius: var(--radius-lg);
+}
+
+.skeleton--small {
+  --skeleton-block-size: var(--space-2xs);
+  --skeleton-shape-size: var(--control-height-sm);
+  --skeleton-control-size: var(--control-height-sm);
+  --skeleton-control-inline-size: calc(var(--control-height-sm) * 2);
+}
+
+.skeleton--large {
+  --skeleton-block-size: var(--space-md);
+  --skeleton-shape-size: var(--control-height-lg);
+  --skeleton-control-size: var(--control-height-lg);
+  --skeleton-control-inline-size: calc(var(--control-height-lg) * 2);
+}
+
+@keyframes skeleton-shimmer {
+  to {
+    transform: translateX(100%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skeleton::after {
+    content: none;
+    animation: none;
+  }
+}

@@ -42,7 +42,7 @@ This roadmap tracks the development of a reusable, accessible, and production-re
 3. Divider — completed
 4. Progress — completed
 5. Spinner — completed
-6. Skeleton
+6. Skeleton — completed
 7. Empty State
 8. Tabs
 9. Breadcrumbs

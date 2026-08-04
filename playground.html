@@ -58,6 +58,7 @@
             <li class="primary-navigation__item"><a class="site-header__navigation-link primary-navigation__link" href="#progress-title" data-playground-navigation-link>Progress</a></li>
             <li class="primary-navigation__item"><a class="site-header__navigation-link primary-navigation__link" href="#spinners-title" data-playground-navigation-link>Spinners</a></li>
             <li class="primary-navigation__item"><a class="site-header__navigation-link primary-navigation__link" href="#skeletons-title" data-playground-navigation-link>Skeletons</a></li>
+            <li class="primary-navigation__item"><a class="site-header__navigation-link primary-navigation__link" href="#empty-states-title" data-playground-navigation-link>Empty States</a></li>
             <li class="primary-navigation__item"><a class="site-header__navigation-link primary-navigation__link" href="#typography-title" data-playground-navigation-link>Typography</a></li>
             <li class="primary-navigation__item"><a class="site-header__navigation-link primary-navigation__link" href="#section-heading-title" data-playground-navigation-link>Section Heading</a></li>
             <li class="primary-navigation__item"><a class="site-header__navigation-link primary-navigation__link" href="#cards-title" data-playground-navigation-link>Cards</a></li>
@@ -144,6 +145,7 @@
             <li><a class="playground-navigation-panel__link" href="#progress-title" data-playground-navigation-link>Progress</a></li>
             <li><a class="playground-navigation-panel__link" href="#spinners-title" data-playground-navigation-link>Spinners</a></li>
             <li><a class="playground-navigation-panel__link" href="#skeletons-title" data-playground-navigation-link>Skeletons</a></li>
+            <li><a class="playground-navigation-panel__link" href="#empty-states-title" data-playground-navigation-link>Empty States</a></li>
             <li><a class="playground-navigation-panel__link" href="#typography-title" data-playground-navigation-link>Typography</a></li>
             <li><a class="playground-navigation-panel__link" href="#section-heading-title" data-playground-navigation-link>Section Heading</a></li>
             <li><a class="playground-navigation-panel__link" href="#cards-title" data-playground-navigation-link>Cards</a></li>
@@ -1813,6 +1815,319 @@
                 <p class="playground-demo__label">Media rectangle</p>
                 <pre class="playground-code"><code>&lt;span class=&quot;skeleton skeleton--rectangle skeleton--rounded&quot;
   aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;</code></pre>
+              </section>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="playground-section section" aria-labelledby="empty-states-title">
+        <div class="container">
+          <header class="playground-section__header section-heading">
+            <p class="section-heading__eyebrow">Component</p>
+            <h2 class="playground-section__title section-heading__title" id="empty-states-title">Empty States</h2>
+            <p class="playground-section__description section-heading__lead">
+              Empty State explains why a completed content region has nothing meaningful to show and, when useful,
+              offers a focused next step. It is an in-flow content composition rather than a loading or error pattern.
+            </p>
+          </header>
+
+          <div class="playground-section__content stack">
+            <article class="playground-demo-group stack" aria-labelledby="empty-state-first-use-title">
+              <header class="playground-demo-group__header stack">
+                <h3 class="playground-demo-group__title" id="empty-state-first-use-title">First-use Empty State</h3>
+                <p class="playground-demo-group__description text text--muted">
+                  Explain what belongs in a new collection and provide one constructive action when the user can create
+                  its first item.
+                </p>
+              </header>
+              <div class="playground-demo">
+                <section class="empty-state" aria-labelledby="empty-projects-title">
+                  <div class="empty-state__visual" aria-hidden="true">
+                    <svg class="empty-state__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                      <path d="M4 7h6l2 2h8v10H4V7Zm8 5v4m-2-2h4" />
+                    </svg>
+                  </div>
+                  <div class="empty-state__content">
+                    <p class="empty-state__eyebrow">Projects</p>
+                    <h4 class="empty-state__title" id="empty-projects-title">No projects yet</h4>
+                    <p class="empty-state__description">
+                      Create your first project to organize milestones, decisions, and delivery notes in one place.
+                    </p>
+                  </div>
+                  <div class="empty-state__actions">
+                    <button class="button button--primary" type="button">Create project</button>
+                  </div>
+                </section>
+              </div>
+            </article>
+
+            <article class="playground-demo-group stack" aria-labelledby="empty-state-results-title">
+              <header class="playground-demo-group__header stack">
+                <h3 class="playground-demo-group__title" id="empty-state-results-title">No-results Empty State</h3>
+                <p class="playground-demo-group__description text text--muted">
+                  No-results copy reflects the active query or filters instead of implying that the complete collection
+                  is empty.
+                </p>
+              </header>
+              <div class="playground-demo">
+                <section class="empty-state empty-state--bordered" aria-labelledby="empty-results-title">
+                  <div class="empty-state__visual" aria-hidden="true">
+                    <svg class="empty-state__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                      <path d="m20 20-4-4m2-5a7 7 0 1 1-14 0 7 7 0 0 1 14 0Z" />
+                    </svg>
+                  </div>
+                  <div class="empty-state__content">
+                    <h4 class="empty-state__title" id="empty-results-title">No reports match “quarterly migration”</h4>
+                    <p class="empty-state__description">
+                      Clear the current filters or adjust the search terms to review more reports.
+                    </p>
+                  </div>
+                  <div class="empty-state__actions">
+                    <button class="button button--primary" type="button">Clear filters</button>
+                    <a class="button button--ghost" href="#empty-state-guidance-title">Review search guidance</a>
+                  </div>
+                </section>
+              </div>
+            </article>
+
+            <article class="playground-demo-group stack" aria-labelledby="empty-state-structures-title">
+              <header class="playground-demo-group__header stack">
+                <h3 class="playground-demo-group__title" id="empty-state-structures-title">Optional content structures</h3>
+                <p class="playground-demo-group__description text text--muted">
+                  Visuals, eyebrows, titles, descriptions, and actions remain optional, but every instance needs useful
+                  visible text.
+                </p>
+              </header>
+              <div class="playground-comparison__grid">
+                <div class="playground-demo stack">
+                  <p class="playground-demo__label">Text only</p>
+                  <div class="empty-state empty-state--compact">
+                    <div class="empty-state__content">
+                      <p class="empty-state__description">No saved views are available for this workspace.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="playground-demo stack">
+                  <p class="playground-demo__label">Title only</p>
+                  <div class="empty-state empty-state--compact">
+                    <div class="empty-state__content">
+                      <h4 class="empty-state__title">All review tasks are complete</h4>
+                    </div>
+                  </div>
+                </div>
+                <div class="playground-demo stack">
+                  <p class="playground-demo__label">Navigation-only action</p>
+                  <div class="empty-state empty-state--compact">
+                    <div class="empty-state__content">
+                      <h4 class="empty-state__title">No archived reports</h4>
+                      <p class="empty-state__description">Archived reports will remain available from this panel.</p>
+                    </div>
+                    <div class="empty-state__actions">
+                      <a class="button button--outline" href="#empty-state-api-title">Review the Empty State API</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="playground-demo stack">
+                  <p class="playground-demo__label">No action</p>
+                  <div class="empty-state empty-state--compact">
+                    <div class="empty-state__content">
+                      <h4 class="empty-state__title">No scheduled maintenance</h4>
+                      <p class="empty-state__description">There are no planned interruptions for this service.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="playground-demo-group stack" aria-labelledby="empty-state-variants-title">
+              <header class="playground-demo-group__header stack">
+                <h3 class="playground-demo-group__title" id="empty-state-variants-title">Compact and bordered variants</h3>
+                <p class="playground-demo-group__description text text--muted">
+                  Compact reduces prominence for constrained list or sidebar contexts. Bordered adds containment without
+                  introducing Card semantics or status meaning.
+                </p>
+              </header>
+              <div class="playground-comparison__grid">
+                <div class="playground-demo stack">
+                  <p class="playground-demo__label">Compact list replacement</p>
+                  <div class="playground-demo__constraint">
+                    <div class="empty-state empty-state--compact">
+                      <div class="empty-state__visual" aria-hidden="true">
+                        <svg class="empty-state__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                          <path d="M6 5h12v14H6V5Zm3 4h6M9 13h4" />
+                        </svg>
+                      </div>
+                      <div class="empty-state__content">
+                        <h4 class="empty-state__title">No saved reports</h4>
+                        <p class="empty-state__description">Save a report to return to it quickly.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="playground-demo stack">
+                  <p class="playground-demo__label">Bordered panel</p>
+                  <div class="empty-state empty-state--bordered">
+                    <div class="empty-state__content">
+                      <p class="empty-state__eyebrow">Team</p>
+                      <h4 class="empty-state__title">No team members added</h4>
+                      <p class="empty-state__description">Invite a collaborator when the workspace is ready.</p>
+                    </div>
+                    <div class="empty-state__actions">
+                      <button class="button button--primary" type="button">Invite collaborator</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="playground-demo-group stack" aria-labelledby="empty-state-card-title">
+              <header class="playground-demo-group__header stack">
+                <h3 class="playground-demo-group__title" id="empty-state-card-title">Card composition</h3>
+                <p class="playground-demo-group__description text text--muted">
+                  The surrounding Card owns its surface and placement; Empty State owns only its internal explanation
+                  and action layout.
+                </p>
+              </header>
+              <div class="playground-card-grid">
+                <div class="service-card">
+                  <div class="empty-state empty-state--compact">
+                    <div class="empty-state__visual" aria-hidden="true">
+                      <svg class="empty-state__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                        <path d="M5 6h14v12H5V6Zm3 3h8M8 13h5" />
+                      </svg>
+                    </div>
+                    <div class="empty-state__content">
+                      <h4 class="empty-state__title">No workspace notes</h4>
+                      <p class="empty-state__description">Add a note when a decision needs shared context.</p>
+                    </div>
+                    <div class="empty-state__actions">
+                      <button class="button button--primary button--sm" type="button">Add note</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="playground-demo-group stack" aria-labelledby="empty-state-resilience-title">
+              <header class="playground-demo-group__header stack">
+                <h3 class="playground-demo-group__title" id="empty-state-resilience-title">Long-content resilience</h3>
+                <p class="playground-demo-group__description text text--muted">
+                  Long localized content and actions wrap inside a narrow panel without changing component semantics.
+                </p>
+              </header>
+              <div class="playground-demo">
+                <div class="playground-demo__constraint">
+                  <div class="empty-state empty-state--compact empty-state--bordered">
+                    <div class="empty-state__visual" aria-hidden="true">
+                      <svg class="empty-state__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                        <path d="M4 5h16v14H4V5Zm4 4h8M8 13h8" />
+                      </svg>
+                    </div>
+                    <div class="empty-state__content">
+                      <h4 class="empty-state__title">
+                        No deployment records are available for the selected integration environment
+                      </h4>
+                      <div class="empty-state__description">
+                        <p>The current workspace has not published a deployment to this environment.</p>
+                        <p>Configuration reference: workspace.example/integrations/production-candidate</p>
+                      </div>
+                    </div>
+                    <div class="empty-state__actions">
+                      <button class="button button--primary" type="button">
+                        Review available workspace setup options
+                      </button>
+                      <a class="button button--outline" href="#empty-state-guidance-title">Read deployment guidance</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <div class="playground-explainer-grid">
+              <section class="playground-demo stack" aria-labelledby="empty-state-loading-title">
+                <h3 id="empty-state-loading-title">Loading boundary</h3>
+                <p class="text text--muted">
+                  Show Skeleton while expected content structure loads, Spinner for compact indeterminate activity, and
+                  Progress for measurable completion. Render Empty State only after loading completes and the result is
+                  genuinely empty; do not flash it while a request is pending.
+                </p>
+              </section>
+              <section class="playground-demo stack" aria-labelledby="empty-state-errors-title">
+                <h3 id="empty-state-errors-title">Error boundary</h3>
+                <p class="text text--muted">
+                  Alert communicates contextual recoverable messages. Empty State is appropriate only when the region
+                  truly has no content to show; technical failures need clear recovery guidance and should not
+                  automatically be relabelled as empty content.
+                </p>
+              </section>
+            </div>
+
+            <aside class="playground-guidance playground-demo stack" aria-labelledby="empty-state-guidance-title">
+              <h3 class="playground-guidance__title" id="empty-state-guidance-title">Usage and accessibility guidance</h3>
+              <ul class="playground-guidance__list text">
+                <li>Explain what belongs in the region and why no content is currently shown.</li>
+                <li>Distinguish a genuinely empty collection from results excluded by a query or filter.</li>
+                <li>Offer a focused next step only when the user can meaningfully change the state.</li>
+                <li>Avoid generic messages such as “Nothing here” without useful context.</li>
+                <li>Limit prominent actions and use Button or link semantics according to the action.</li>
+                <li>Keep decorative visuals hidden and let visible text communicate the state.</li>
+                <li>Dynamic replacement may need application-level focus or status management; this component adds none.</li>
+              </ul>
+            </aside>
+
+            <div class="playground-api-grid">
+              <section class="playground-api playground-demo stack" aria-labelledby="empty-state-api-title">
+                <header class="playground-api__header stack">
+                  <h3 class="playground-api__title" id="empty-state-api-title">Public API reference</h3>
+                  <p class="playground-api__description text text--muted">
+                    The base class is required. Variants and elements are optional, but every instance requires at least
+                    one meaningful visible text element.
+                  </p>
+                </header>
+                <dl class="playground-api__list stack">
+                  <div class="playground-api__group stack"><dt class="playground-demo__label">Base</dt><dd><code>.empty-state</code></dd></div>
+                  <div class="playground-api__group stack">
+                    <dt class="playground-demo__label">Variants</dt>
+                    <dd><ul class="playground-api__classes cluster" role="list"><li><code>.empty-state--compact</code></li><li><code>.empty-state--bordered</code></li></ul></dd>
+                  </div>
+                  <div class="playground-api__group stack">
+                    <dt class="playground-demo__label">Elements</dt>
+                    <dd><ul class="playground-api__classes cluster" role="list"><li><code>.empty-state__visual</code></li><li><code>.empty-state__icon</code></li><li><code>.empty-state__content</code></li><li><code>.empty-state__eyebrow</code></li><li><code>.empty-state__title</code></li><li><code>.empty-state__description</code></li><li><code>.empty-state__actions</code></li></ul></dd>
+                  </div>
+                </dl>
+              </section>
+
+              <section class="playground-demo stack" aria-labelledby="empty-state-markup-title">
+                <h3 id="empty-state-markup-title">Markup examples</h3>
+                <p class="playground-demo__label">Standard</p>
+                <pre class="playground-code"><code>&lt;section class=&quot;empty-state&quot; aria-labelledby=&quot;projects-empty-title&quot;&gt;
+  &lt;div class=&quot;empty-state__visual&quot; aria-hidden=&quot;true&quot;&gt;…&lt;/div&gt;
+  &lt;div class=&quot;empty-state__content&quot;&gt;
+    &lt;h3 class=&quot;empty-state__title&quot; id=&quot;projects-empty-title&quot;&gt;
+      No projects yet
+    &lt;/h3&gt;
+    &lt;p class=&quot;empty-state__description&quot;&gt;Create your first project.&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;empty-state__actions&quot;&gt;
+    &lt;button class=&quot;button button--primary&quot; type=&quot;button&quot;&gt;Create project&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/section&gt;</code></pre>
+                <p class="playground-demo__label">Compact bordered</p>
+                <pre class="playground-code"><code>&lt;div class=&quot;empty-state empty-state--compact empty-state--bordered&quot;&gt;
+  &lt;div class=&quot;empty-state__content&quot;&gt;
+    &lt;h3 class=&quot;empty-state__title&quot;&gt;No saved reports&lt;/h3&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                <p class="playground-demo__label">No results</p>
+                <pre class="playground-code"><code>&lt;section class=&quot;empty-state&quot; aria-labelledby=&quot;results-empty-title&quot;&gt;
+  &lt;div class=&quot;empty-state__content&quot;&gt;
+    &lt;h3 class=&quot;empty-state__title&quot; id=&quot;results-empty-title&quot;&gt;
+      No results match the current filters
+    &lt;/h3&gt;
+    &lt;p class=&quot;empty-state__description&quot;&gt;Adjust or clear the filters.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/section&gt;</code></pre>
               </section>
             </div>
           </div>

@@ -1,0 +1,92 @@
+.empty-state {
+  --empty-state-gap: var(--space-md);
+  --empty-state-padding: var(--space-xl);
+  --empty-state-title-size: var(--font-size-xl);
+  --empty-state-visual-size: var(--control-height-lg);
+  --empty-state-icon-size: var(--control-icon-size-lg);
+
+  display: grid;
+  justify-items: center;
+  gap: var(--empty-state-gap);
+  width: var(--size-full);
+  min-width: var(--space-0);
+  padding: var(--empty-state-padding);
+  text-align: center;
+}
+
+.empty-state--compact {
+  --empty-state-gap: var(--space-sm);
+  --empty-state-padding: var(--space-md);
+  --empty-state-title-size: var(--font-size-lg);
+  --empty-state-visual-size: var(--control-height-md);
+  --empty-state-icon-size: var(--control-icon-size-md);
+}
+
+.empty-state--bordered {
+  background-color: var(--color-surface);
+  border: var(--border-width) solid var(--color-border);
+  border-radius: var(--radius-lg);
+}
+
+.empty-state__visual {
+  display: grid;
+  place-items: center;
+  width: var(--empty-state-visual-size);
+  aspect-ratio: var(--aspect-ratio-square);
+  color: var(--color-primary-600);
+  background-color: var(--color-primary-50);
+  border-radius: var(--radius-full);
+}
+
+.empty-state__icon {
+  width: var(--empty-state-icon-size);
+  height: var(--empty-state-icon-size);
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: var(--border-width);
+  vector-effect: non-scaling-stroke;
+}
+
+.empty-state__content {
+  display: grid;
+  gap: var(--space-2xs);
+  width: var(--size-full);
+  max-width: var(--content-measure);
+  min-width: var(--space-0);
+}
+
+.empty-state__eyebrow {
+  color: var(--color-primary-600);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-base);
+  letter-spacing: var(--letter-spacing-normal);
+  text-transform: uppercase;
+  overflow-wrap: anywhere;
+}
+
+.empty-state__title {
+  color: var(--color-text-primary);
+  font-size: var(--empty-state-title-size);
+  line-height: var(--line-height-heading);
+  overflow-wrap: anywhere;
+}
+
+.empty-state__description {
+  display: grid;
+  gap: var(--space-2xs);
+  min-width: var(--space-0);
+  color: var(--color-text-secondary);
+  overflow-wrap: anywhere;
+}
+
+.empty-state__actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-2xs);
+  max-width: var(--size-full);
+  min-width: var(--space-0);
+}

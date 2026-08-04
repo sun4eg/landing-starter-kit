@@ -46,7 +46,7 @@ This roadmap tracks the development of a reusable, accessible, and production-re
 7. Empty State — completed
 8. Tabs — completed
 9. Breadcrumbs — completed
-10. Pagination
+10. Pagination — completed
 11. Timeline
 12. Modal — completed
 13. Toast — completed

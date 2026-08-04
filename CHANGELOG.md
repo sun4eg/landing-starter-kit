@@ -19,6 +19,7 @@ The format is based on Keep a Changelog, and this project adheres to Semantic Ve
 - Added an accessible Modal component with scoped progressive enhancement, focus containment and restoration, Escape and backdrop dismissal, scroll locking, component composition, and complete Playground documentation.
 - Added an accessible Toast notification region with semantic variants, trusted template rendering, automatic and persistent lifecycles, pause-aware timers, a bounded FIFO queue, and complete Playground documentation.
 - Added a semantic Breadcrumbs component with compact spacing, optional Home icon composition, locally scrollable long hierarchies, and complete Playground documentation.
+- Added an accessible Pagination component with compact spacing, boundary states, decorative ellipses, visible icon-and-text navigation, locally scrollable long ranges, and complete Playground documentation.
 
 ## [2.0.0-alpha.1] - 2026-08-04
 

@@ -1,0 +1,98 @@
+.logo-cloud {
+  --logo-cloud-color: var(--color-text-primary);
+  --logo-cloud-gap: var(--space-sm);
+  --logo-cloud-item-padding: var(--space-md);
+  --logo-cloud-item-background: var(--color-surface);
+  --logo-cloud-item-min-inline-size: calc(var(--control-height-md) * 3);
+
+  width: var(--size-full);
+  min-width: var(--space-0);
+  color: var(--logo-cloud-color);
+}
+
+.logo-cloud--compact {
+  --logo-cloud-gap: var(--space-xs);
+  --logo-cloud-item-padding: var(--space-sm);
+}
+
+.logo-cloud--bordered {
+  --logo-cloud-item-background: var(--color-background);
+
+  padding: var(--space-lg);
+  background-color: var(--color-surface);
+  border: var(--border-width) solid var(--color-border);
+  border-radius: var(--radius-lg);
+}
+
+.logo-cloud--muted {
+  --logo-cloud-color: var(--color-text-secondary);
+  --logo-cloud-item-background: var(--color-transparent);
+}
+
+.logo-cloud__list {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(min(var(--size-full), var(--logo-cloud-item-min-inline-size)), 1fr)
+  );
+  gap: var(--logo-cloud-gap);
+  min-width: var(--space-0);
+  margin: var(--space-0);
+  padding: var(--space-0);
+  list-style: none;
+}
+
+.logo-cloud__item {
+  display: grid;
+  place-items: center;
+  min-width: var(--space-0);
+  min-height: calc(var(--control-height-lg) * 2);
+  padding: var(--logo-cloud-item-padding);
+  color: var(--logo-cloud-color);
+  background-color: var(--logo-cloud-item-background);
+  border-radius: var(--radius-md);
+  text-align: center;
+}
+
+.logo-cloud__link {
+  display: grid;
+  place-items: center;
+  gap: var(--space-2xs);
+  width: var(--size-full);
+  min-width: var(--space-0);
+  min-height: var(--control-height-lg);
+  padding: var(--space-xs);
+  color: inherit;
+  border-radius: var(--radius-md);
+  text-decoration: none;
+}
+
+@media (hover: hover) {
+  .logo-cloud__link:hover {
+    color: var(--color-text-primary);
+    background-color: var(--color-surface-emphasis);
+  }
+}
+
+.logo-cloud__link:focus-visible {
+  color: var(--color-text-primary);
+  background-color: var(--color-surface-emphasis);
+}
+
+.logo-cloud__image {
+  width: var(--size-full);
+  max-width: calc(var(--control-height-lg) * 3);
+  height: var(--control-height-lg);
+  fill: currentColor;
+  object-fit: contain;
+}
+
+.logo-cloud__label {
+  max-width: var(--size-full);
+  color: inherit;
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-heading);
+  text-align: center;
+  overflow-wrap: anywhere;
+}

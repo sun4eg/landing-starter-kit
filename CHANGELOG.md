@@ -24,6 +24,7 @@ The format is based on Keep a Changelog, and this project adheres to Semantic Ve
 - Added a reusable Stats component with compact and featured variants, semantic metric groups, resilient numeric and textual values, Card composition, and complete Playground documentation.
 - Added a semantic Timeline component with primary vertical, compact, and locally scrollable horizontal layouts, Badge and Card composition, and complete Playground documentation.
 - Added a responsive Logo Cloud component with compact, bordered, and conservative muted variants, static and linked marks, accessible asset guidance, and complete Playground documentation.
+- Added a responsive CTA Banner component with compact and featured variants, primary and secondary Button composition, optional decorative media, and complete Playground documentation.
 
 ## [2.0.0-alpha.1] - 2026-08-04
 

@@ -55,5 +55,5 @@ This roadmap tracks the development of a reusable, accessible, and production-re
 16. Drawer
 17. Stats — completed
 18. Logo Cloud — completed
-19. CTA Banner
+19. CTA Banner — completed
 20. Pricing Card — completed

@@ -1,4 +1,5 @@
 import { initAccordions } from './js/modules/accordion.js'
+import { initAlerts } from './js/modules/alert.js'
 import { initNavigations } from './js/modules/navigation.js'
 import { initNumberSteppers } from './js/modules/number-stepper.js'
 import { initPasswordInputs } from './js/modules/password-input.js'
@@ -9,6 +10,7 @@ import { initStickyHeaders } from './js/modules/sticky-header.js'
 import './scss/main.scss'
 
 initAccordions()
+initAlerts()
 initNavigations()
 initNumberSteppers()
 initPasswordInputs()

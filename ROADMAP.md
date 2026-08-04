@@ -38,7 +38,7 @@ This roadmap tracks the development of a reusable, accessible, and production-re
 ## Next Component Phase
 
 1. Badge — completed
-2. Alert
+2. Alert — completed
 3. Divider
 4. Progress
 5. Spinner

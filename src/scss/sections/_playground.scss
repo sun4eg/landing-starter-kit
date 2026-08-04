@@ -201,6 +201,19 @@
   align-items: stretch;
 }
 
+.playground-stats-grid--three {
+  grid-template-columns: repeat(3, minmax(var(--space-0), 1fr));
+}
+
+.playground-stats-grid--four {
+  grid-template-columns: repeat(4, minmax(var(--space-0), 1fr));
+}
+
+.playground-stats-resilience {
+  width: var(--size-full);
+  max-width: var(--content-measure);
+}
+
 .playground-comparison__item {
   --stack-gap: var(--space-xs);
 }
@@ -508,6 +521,8 @@
 
   .playground-card-grid,
   .playground-pricing-grid,
+  .playground-stats-grid--three,
+  .playground-stats-grid--four,
   .playground-token-grid,
   .playground-token-grid--colors {
     grid-template-columns: repeat(2, minmax(var(--space-0), 1fr));
@@ -517,6 +532,8 @@
 @media (max-width: breakpoints.$mobile) {
   .playground-card-grid,
   .playground-pricing-grid,
+  .playground-stats-grid--three,
+  .playground-stats-grid--four,
   .playground-api-grid,
   .playground-explainer-grid,
   .playground-comparison__grid,

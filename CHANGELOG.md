@@ -21,6 +21,7 @@ The format is based on Keep a Changelog, and this project adheres to Semantic Ve
 - Added a semantic Breadcrumbs component with compact spacing, optional Home icon composition, locally scrollable long hierarchies, and complete Playground documentation.
 - Added an accessible Pagination component with compact spacing, boundary states, decorative ellipses, visible icon-and-text navigation, locally scrollable long ranges, and complete Playground documentation.
 - Added a reusable Pricing Card component with featured and compact variants, structured pricing and feature content, Badge and Button composition, and complete Playground documentation.
+- Added a reusable Stats component with compact and featured variants, semantic metric groups, resilient numeric and textual values, Card composition, and complete Playground documentation.
 
 ## [2.0.0-alpha.1] - 2026-08-04
 

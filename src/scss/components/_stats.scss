@@ -1,0 +1,88 @@
+.stats {
+  --stats-gap: var(--space-sm);
+  --stats-item-padding: var(--space-lg);
+  --stats-value-size: var(--font-size-3xl);
+  --stats-item-background: var(--color-surface);
+  --stats-item-border-color: var(--color-border);
+  --stats-item-border-width: var(--border-width);
+  --stats-item-shadow: var(--shadow-none);
+
+  display: grid;
+  grid-template-columns: minmax(var(--space-0), 1fr);
+  gap: var(--stats-gap);
+  width: var(--size-full);
+  min-width: var(--space-0);
+  margin: var(--space-0);
+  padding: var(--space-0);
+  list-style: none;
+}
+
+.stats--compact {
+  --stats-gap: var(--space-xs);
+  --stats-item-padding: var(--space-md);
+}
+
+.stats--featured {
+  --stats-item-background: var(--color-primary-50);
+  --stats-item-border-color: var(--color-primary-500);
+  --stats-item-border-width: var(--focus-ring-width);
+  --stats-item-shadow: var(--shadow-md);
+}
+
+.stats__item {
+  display: grid;
+  align-content: start;
+  gap: var(--space-xs);
+  min-width: var(--space-0);
+  height: var(--size-full);
+  padding: var(--stats-item-padding);
+  background-color: var(--stats-item-background);
+  border: var(--stats-item-border-width) solid var(--stats-item-border-color);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--stats-item-shadow);
+}
+
+.stats__value,
+.stats__label,
+.stats__description,
+.stats__meta {
+  min-width: var(--space-0);
+  overflow-wrap: anywhere;
+}
+
+.stats__value {
+  color: var(--color-text-primary);
+  font-size: var(--stats-value-size);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-heading);
+}
+
+.stats__label {
+  color: var(--color-text-primary);
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-heading);
+}
+
+.stats__description {
+  color: var(--color-text-secondary);
+  line-height: var(--line-height-relaxed);
+}
+
+.stats__meta {
+  color: var(--color-primary-600);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-base);
+}
+
+.stats__icon {
+  width: var(--control-icon-size-lg);
+  height: var(--control-icon-size-lg);
+  color: var(--color-primary-600);
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: var(--border-width);
+}

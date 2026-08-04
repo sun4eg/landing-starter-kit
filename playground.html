@@ -60,6 +60,7 @@
             <li class="primary-navigation__item"><a class="site-header__navigation-link primary-navigation__link" href="#skeletons-title" data-playground-navigation-link>Skeletons</a></li>
             <li class="primary-navigation__item"><a class="site-header__navigation-link primary-navigation__link" href="#empty-states-title" data-playground-navigation-link>Empty States</a></li>
             <li class="primary-navigation__item"><a class="site-header__navigation-link primary-navigation__link" href="#tabs" data-playground-navigation-link>Tabs</a></li>
+            <li class="primary-navigation__item"><a class="site-header__navigation-link primary-navigation__link" href="#modals-title" data-playground-navigation-link>Modals</a></li>
             <li class="primary-navigation__item"><a class="site-header__navigation-link primary-navigation__link" href="#typography-title" data-playground-navigation-link>Typography</a></li>
             <li class="primary-navigation__item"><a class="site-header__navigation-link primary-navigation__link" href="#section-heading-title" data-playground-navigation-link>Section Heading</a></li>
             <li class="primary-navigation__item"><a class="site-header__navigation-link primary-navigation__link" href="#cards-title" data-playground-navigation-link>Cards</a></li>
@@ -148,6 +149,7 @@
             <li><a class="playground-navigation-panel__link" href="#skeletons-title" data-playground-navigation-link>Skeletons</a></li>
             <li><a class="playground-navigation-panel__link" href="#empty-states-title" data-playground-navigation-link>Empty States</a></li>
             <li><a class="playground-navigation-panel__link" href="#tabs" data-playground-navigation-link>Tabs</a></li>
+            <li><a class="playground-navigation-panel__link" href="#modals-title" data-playground-navigation-link>Modals</a></li>
             <li><a class="playground-navigation-panel__link" href="#typography-title" data-playground-navigation-link>Typography</a></li>
             <li><a class="playground-navigation-panel__link" href="#section-heading-title" data-playground-navigation-link>Section Heading</a></li>
             <li><a class="playground-navigation-panel__link" href="#cards-title" data-playground-navigation-link>Cards</a></li>
@@ -2381,6 +2383,239 @@
   &lt;div class=&quot;tabs__list&quot; role=&quot;tablist&quot;
     aria-label=&quot;Account settings&quot; aria-orientation=&quot;vertical&quot;
     data-tabs-list&gt;…&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+              </section>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="playground-section section" aria-labelledby="modals-title">
+        <div class="container">
+          <header class="playground-section__header section-heading">
+            <p class="section-heading__eyebrow">Component</p>
+            <h2 class="playground-section__title section-heading__title" id="modals-title">Modals</h2>
+            <p class="playground-section__description section-heading__lead">
+              Modal dialogs isolate a focused task or confirmation, contain keyboard focus while open, and restore
+              focus to the control that opened them.
+            </p>
+          </header>
+
+          <div class="playground-section__content stack">
+            <article class="playground-demo-group stack" aria-labelledby="modal-core-examples-title">
+              <header class="playground-demo-group__header stack">
+                <h3 class="playground-demo-group__title" id="modal-core-examples-title">Core dialog patterns</h3>
+                <p class="playground-demo-group__description text text--muted">
+                  Each trigger controls one dialog. A persistent close button, Escape, or the backdrop closes it.
+                </p>
+              </header>
+              <div class="playground-card-grid">
+                <div class="playground-demo stack">
+                  <h4>Basic modal</h4>
+                  <p class="text text--muted">Use a concise header, body, and footer for a focused task.</p>
+                  <button class="button button--primary" type="button" aria-controls="basic-modal" data-modal-open="basic-modal" hidden>Open basic modal</button>
+                </div>
+                <div class="playground-demo stack">
+                  <h4>Confirmation dialog</h4>
+                  <p class="text text--muted">Initial focus rests on the safer cancellation action.</p>
+                  <button class="button button--outline" type="button" aria-controls="confirmation-modal" data-modal-open="confirmation-modal" hidden>Open confirmation</button>
+                </div>
+                <div class="playground-demo stack">
+                  <h4>Form dialog</h4>
+                  <p class="text text--muted">Native fields and validation remain independent component concerns.</p>
+                  <button class="button button--secondary" type="button" aria-controls="form-modal" data-modal-open="form-modal" hidden>Open form dialog</button>
+                </div>
+              </div>
+
+              <div class="modal" id="basic-modal" data-modal hidden>
+                <div class="modal__dialog" role="dialog" aria-modal="true" aria-labelledby="basic-modal-title" aria-describedby="basic-modal-description" data-modal-dialog tabindex="-1">
+                  <header class="modal__header">
+                    <h3 class="modal__title" id="basic-modal-title">Review workspace details</h3>
+                    <button class="modal__close" type="button" aria-label="Close workspace details dialog" data-modal-close>
+                      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m6 6 12 12M18 6 6 18" /></svg>
+                    </button>
+                    <p class="modal__description" id="basic-modal-description">Confirm the current workspace information before continuing.</p>
+                  </header>
+                  <div class="modal__body">
+                    <p>The workspace includes its active projects, collaborators, and delivery settings.</p>
+                    <a href="#modal-api-title">Review the Modal API</a>
+                  </div>
+                  <footer class="modal__footer">
+                    <button class="button button--ghost" type="button" data-modal-close>Cancel</button>
+                    <button class="button button--primary" type="button">Continue</button>
+                  </footer>
+                </div>
+              </div>
+
+              <div class="modal" id="confirmation-modal" data-modal hidden>
+                <div class="modal__dialog" role="dialog" aria-modal="true" aria-labelledby="confirmation-modal-title" aria-describedby="confirmation-modal-description" data-modal-dialog tabindex="-1">
+                  <header class="modal__header">
+                    <h3 class="modal__title" id="confirmation-modal-title">Remove saved report?</h3>
+                    <button class="modal__close" type="button" aria-label="Close remove report dialog" data-modal-close>
+                      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m6 6 12 12M18 6 6 18" /></svg>
+                    </button>
+                    <p class="modal__description" id="confirmation-modal-description">This removes the report from the saved list. The example does not perform a destructive action.</p>
+                  </header>
+                  <div class="modal__body">
+                    <div class="alert alert--warning">
+                      <div class="alert__content"><h4 class="alert__title">Check before continuing</h4><p class="alert__description">Use confirmation dialogs only for focused decisions that need deliberate review.</p></div>
+                    </div>
+                  </div>
+                  <footer class="modal__footer">
+                    <button class="button button--outline" type="button" data-modal-close autofocus>Keep report</button>
+                    <button class="button button--primary" type="button">Remove report</button>
+                  </footer>
+                </div>
+              </div>
+
+              <div class="modal" id="form-modal" data-modal hidden>
+                <div class="modal__dialog" role="dialog" aria-modal="true" aria-labelledby="form-modal-title" aria-describedby="form-modal-description" data-modal-dialog tabindex="-1">
+                  <header class="modal__header">
+                    <h3 class="modal__title" id="form-modal-title">Update display name</h3>
+                    <button class="modal__close" type="button" aria-label="Close display name dialog" data-modal-close>
+                      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m6 6 12 12M18 6 6 18" /></svg>
+                    </button>
+                    <p class="modal__description" id="form-modal-description">This local example does not submit or save personal data.</p>
+                  </header>
+                  <div class="modal__body">
+                    <form class="form">
+                      <div class="form__field">
+                        <input class="form__input" id="modal-display-name" name="display-name" type="text" autocomplete="name" placeholder=" " />
+                        <label class="form__label" for="modal-display-name">Display name</label>
+                      </div>
+                    </form>
+                  </div>
+                  <footer class="modal__footer">
+                    <button class="button button--ghost" type="button" data-modal-close>Cancel</button>
+                    <button class="button button--primary" type="button">Save name</button>
+                  </footer>
+                </div>
+              </div>
+            </article>
+
+            <article class="playground-demo-group stack" aria-labelledby="modal-composition-title">
+              <header class="playground-demo-group__header stack">
+                <h3 class="playground-demo-group__title" id="modal-composition-title">Scrolling and component composition</h3>
+                <p class="playground-demo-group__description text text--muted">
+                  The dialog keeps an intrinsic height; only its body scrolls when content exceeds the viewport.
+                </p>
+              </header>
+              <div class="playground-card-grid">
+                <div class="playground-demo stack">
+                  <h4>Long scrolling content</h4>
+                  <button class="button button--outline" type="button" aria-controls="long-content-modal" data-modal-open="long-content-modal" hidden>Open long-content modal</button>
+                </div>
+                <div class="playground-demo stack">
+                  <h4>Empty State composition</h4>
+                  <button class="button button--outline" type="button" aria-controls="empty-state-modal" data-modal-open="empty-state-modal" hidden>Open empty-state modal</button>
+                </div>
+                <div class="playground-demo stack">
+                  <h4>Alert composition</h4>
+                  <button class="button button--outline" type="button" aria-controls="alert-modal" data-modal-open="alert-modal" hidden>Open alert modal</button>
+                </div>
+              </div>
+
+              <div class="modal" id="long-content-modal" data-modal hidden>
+                <div class="modal__dialog" role="dialog" aria-modal="true" aria-labelledby="long-content-modal-title" aria-describedby="long-content-modal-description" data-modal-dialog tabindex="-1">
+                  <header class="modal__header">
+                    <h3 class="modal__title" id="long-content-modal-title">Review service terms</h3>
+                    <button class="modal__close" type="button" aria-label="Close service terms dialog" data-modal-close><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m6 6 12 12M18 6 6 18" /></svg></button>
+                    <p class="modal__description" id="long-content-modal-description">The header and footer remain visible while the body scrolls internally.</p>
+                  </header>
+                  <div class="modal__body">
+                    <h4>Scope</h4><p>Review the service scope, delivery responsibilities, and approval process before proceeding.</p>
+                    <h4>Access</h4><p>Provide only the access required for the agreed work and remove it when the engagement is complete.</p>
+                    <h4>Review</h4><p>Confirm milestones in the shared review channel so changes remain traceable and understandable.</p>
+                    <h4>Delivery</h4><p>Final assets are prepared after the documented acceptance criteria have been met.</p>
+                    <h4>Support</h4><p>Ongoing support, maintenance windows, and response expectations remain defined by the applicable agreement.</p>
+                    <h4>Privacy</h4><p>Do not include sensitive information unless it is required and an approved handling process is in place.</p>
+                  </div>
+                  <footer class="modal__footer"><button class="button button--primary" type="button" data-modal-close>Done</button></footer>
+                </div>
+              </div>
+
+              <div class="modal" id="empty-state-modal" data-modal hidden>
+                <div class="modal__dialog" role="dialog" aria-modal="true" aria-labelledby="empty-state-modal-title" data-modal-dialog tabindex="-1">
+                  <header class="modal__header">
+                    <h3 class="modal__title" id="empty-state-modal-title">Choose a saved report</h3>
+                    <button class="modal__close" type="button" aria-label="Close saved reports dialog" data-modal-close><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m6 6 12 12M18 6 6 18" /></svg></button>
+                  </header>
+                  <div class="modal__body">
+                    <div class="empty-state empty-state--compact">
+                      <div class="empty-state__content"><h4 class="empty-state__title">No saved reports</h4><p class="empty-state__description">Reports saved for later will appear here.</p></div>
+                      <div class="empty-state__actions"><button class="button button--primary" type="button">Create report</button></div>
+                    </div>
+                  </div>
+                  <footer class="modal__footer"><button class="button button--ghost" type="button" data-modal-close>Close</button></footer>
+                </div>
+              </div>
+
+              <div class="modal" id="alert-modal" data-modal hidden>
+                <div class="modal__dialog" role="dialog" aria-modal="true" aria-labelledby="alert-modal-title" aria-describedby="alert-modal-description" data-modal-dialog tabindex="-1">
+                  <header class="modal__header">
+                    <h3 class="modal__title" id="alert-modal-title">Publish workspace</h3>
+                    <button class="modal__close" type="button" aria-label="Close publish workspace dialog" data-modal-close><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m6 6 12 12M18 6 6 18" /></svg></button>
+                    <p class="modal__description" id="alert-modal-description">Review the contextual notice before choosing an action.</p>
+                  </header>
+                  <div class="modal__body">
+                    <div class="alert alert--info"><div class="alert__content"><h4 class="alert__title">A review is still open</h4><p class="alert__description">Publishing now will include the latest approved changes only.</p></div></div>
+                  </div>
+                  <footer class="modal__footer"><button class="button button--ghost" type="button" data-modal-close>Cancel</button><button class="button button--primary" type="button">Publish</button></footer>
+                </div>
+              </div>
+            </article>
+
+            <div class="playground-explainer-grid">
+              <section class="playground-demo stack" aria-labelledby="modal-keyboard-title">
+                <h3 id="modal-keyboard-title">Keyboard interaction</h3>
+                <p class="text text--muted">Tab and Shift+Tab cycle through controls inside the open dialog. Escape closes it, and focus returns to its opener. Opening another instance first closes the current one.</p>
+              </section>
+              <section class="playground-demo stack" aria-labelledby="modal-enhancement-title">
+                <h3 id="modal-enhancement-title">Progressive enhancement</h3>
+                <p class="text text--muted">Triggers are authored hidden and are revealed only after a complete dialog relationship is validated. Invalid instances remain hidden instead of exposing a broken action.</p>
+              </section>
+            </div>
+
+            <aside class="playground-guidance playground-demo stack" aria-labelledby="modal-guidance-title">
+              <h3 class="playground-guidance__title" id="modal-guidance-title">Usage and accessibility guidance</h3>
+              <ul class="playground-guidance__list text">
+                <li>Use Modal for focused tasks and confirmations, not for navigation, transient Toasts, Tooltips, Popovers, or Drawer content.</li>
+                <li>Provide a concise title, a persistent close button, and only the actions required to complete or cancel the task.</li>
+                <li>Use <code>aria-describedby</code> when a short description helps explain the dialog; omit it for complex body content.</li>
+                <li>Choose initial focus deliberately for destructive confirmations; the safer action is usually appropriate.</li>
+                <li>Do not open dialogs automatically or nest one Modal inside another.</li>
+              </ul>
+            </aside>
+
+            <div class="playground-api-grid">
+              <section class="playground-api playground-demo stack" aria-labelledby="modal-api-title">
+                <header class="playground-api__header stack">
+                  <h3 class="playground-api__title" id="modal-api-title">Public and data API</h3>
+                  <p class="playground-api__description text text--muted">BEM classes own presentation; data hooks scope the progressive behavior.</p>
+                </header>
+                <dl class="playground-api__list stack">
+                  <div class="playground-api__group stack"><dt class="playground-demo__label">Base</dt><dd><code>.modal</code></dd></div>
+                  <div class="playground-api__group stack"><dt class="playground-demo__label">Elements</dt><dd><ul class="playground-api__classes cluster" role="list"><li><code>.modal__dialog</code></li><li><code>.modal__header</code></li><li><code>.modal__title</code></li><li><code>.modal__description</code></li><li><code>.modal__body</code></li><li><code>.modal__footer</code></li><li><code>.modal__close</code></li></ul></dd></div>
+                  <div class="playground-api__group stack"><dt class="playground-demo__label">Data hooks</dt><dd><ul class="playground-api__classes cluster" role="list"><li><code>data-modal</code></li><li><code>data-modal-dialog</code></li><li><code>data-modal-open="modal-id"</code></li><li><code>data-modal-close</code></li></ul></dd></div>
+                </dl>
+              </section>
+
+              <section class="playground-demo stack" aria-labelledby="modal-markup-title">
+                <h3 id="modal-markup-title">Markup example</h3>
+                <pre class="playground-code"><code>&lt;button type=&quot;button&quot; aria-controls=&quot;example-modal&quot;
+  data-modal-open=&quot;example-modal&quot; hidden&gt;Open dialog&lt;/button&gt;
+
+&lt;div class=&quot;modal&quot; id=&quot;example-modal&quot; data-modal hidden&gt;
+  &lt;div class=&quot;modal__dialog&quot; role=&quot;dialog&quot; aria-modal=&quot;true&quot;
+    aria-labelledby=&quot;example-modal-title&quot; data-modal-dialog tabindex=&quot;-1&quot;&gt;
+    &lt;header class=&quot;modal__header&quot;&gt;
+      &lt;h2 class=&quot;modal__title&quot; id=&quot;example-modal-title&quot;&gt;Dialog title&lt;/h2&gt;
+      &lt;button class=&quot;modal__close&quot; type=&quot;button&quot;
+        aria-label=&quot;Close dialog&quot; data-modal-close&gt;…&lt;/button&gt;
+    &lt;/header&gt;
+    &lt;div class=&quot;modal__body&quot;&gt;Dialog content&lt;/div&gt;
+    &lt;footer class=&quot;modal__footer&quot;&gt;…&lt;/footer&gt;
+  &lt;/div&gt;
 &lt;/div&gt;</code></pre>
               </section>
             </div>

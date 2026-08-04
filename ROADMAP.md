@@ -48,7 +48,7 @@ This roadmap tracks the development of a reusable, accessible, and production-re
 9. Breadcrumbs
 10. Pagination
 11. Timeline
-12. Modal
+12. Modal — completed
 13. Toast
 14. Tooltip
 15. Popover

@@ -16,6 +16,7 @@ The format is based on Keep a Changelog, and this project adheres to Semantic Ve
 - Added a decorative Skeleton component with content-shape, geometry, and size variants, reduced-motion behavior, compositional loading examples, and complete Playground documentation.
 - Added a reusable Empty State component with compact and bordered variants, optional visual, content, and action composition, first-use and no-results guidance, and complete Playground documentation.
 - Added an accessible Tabs component with horizontal, contained, and vertical layouts, automatic and manual activation, progressive enhancement, WAI-ARIA keyboard behavior, and complete Playground documentation.
+- Added an accessible Modal component with scoped progressive enhancement, focus containment and restoration, Escape and backdrop dismissal, scroll locking, component composition, and complete Playground documentation.
 
 ## [2.0.0-alpha.1] - 2026-08-04
 

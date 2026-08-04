@@ -1,6 +1,7 @@
 import { initAccordions } from './js/modules/accordion.js'
 import { initAlerts } from './js/modules/alert.js'
 import { initNavigations } from './js/modules/navigation.js'
+import { initModals } from './js/modules/modal.js'
 import { initNumberSteppers } from './js/modules/number-stepper.js'
 import { initPasswordInputs } from './js/modules/password-input.js'
 import { initRangeSliders } from './js/modules/range-slider.js'
@@ -13,6 +14,7 @@ import './scss/main.scss'
 initAccordions()
 initAlerts()
 initNavigations()
+initModals()
 initNumberSteppers()
 initPasswordInputs()
 initRangeSliders()

@@ -24,8 +24,8 @@
 .project-card__media-placeholder {
   display: grid;
   place-items: center;
-  color: var(--color-primary-600);
-  background-color: var(--color-primary-50);
+  color: var(--color-brand-accent);
+  background-color: var(--color-brand-surface);
 }
 
 .project-card__media-placeholder span {
@@ -52,7 +52,7 @@
 }
 
 .project-card__meta {
-  color: var(--color-primary-600);
+  color: var(--color-brand-accent);
   font-size: var(--font-size-sm);
   font-weight: var(--font-weight-semibold);
   line-height: var(--line-height-base);
@@ -83,6 +83,6 @@
 
 @media (hover: hover) {
   .project-card__link:hover {
-    color: var(--color-primary-900);
+    color: var(--color-link-hover);
   }
 }

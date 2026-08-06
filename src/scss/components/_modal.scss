@@ -17,7 +17,7 @@
   position: absolute;
   inset: var(--space-0);
   z-index: var(--z-base);
-  background-color: var(--color-secondary-900);
+  background-color: var(--color-overlay);
   opacity: var(--opacity-disabled);
   content: '';
   animation: modal-fade-in var(--duration-normal) var(--ease-standard);

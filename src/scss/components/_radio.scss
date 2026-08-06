@@ -37,7 +37,7 @@
 .radio__control::after {
   width: var(--control-icon-size-sm);
   aspect-ratio: var(--aspect-ratio-square);
-  background-color: var(--color-primary-600);
+  background-color: var(--color-interactive);
   border-radius: var(--radius-full);
   content: '';
   opacity: 0;
@@ -69,7 +69,7 @@
 }
 
 .radio__input:checked + .radio__control {
-  border-color: var(--color-primary-600);
+  border-color: var(--color-interactive);
 }
 
 .radio__input:checked + .radio__control::after {
@@ -93,7 +93,7 @@
 
 @media (hover: hover) {
   .radio__input:not(:disabled):hover + .radio__control {
-    background-color: var(--color-primary-50);
-    border-color: var(--color-primary-600);
+    background-color: var(--color-interactive-surface);
+    border-color: var(--color-interactive);
   }
 }

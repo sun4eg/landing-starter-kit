@@ -44,7 +44,7 @@
 }
 
 .select__control:focus-visible {
-  border-color: var(--color-primary-600);
+  border-color: var(--color-interactive);
 }
 
 .select__control:disabled {
@@ -75,7 +75,7 @@
 
 @media (hover: hover) {
   .select__control:not(:disabled):hover {
-    background-color: var(--color-primary-50);
-    border-color: var(--color-primary-600);
+    background-color: var(--color-interactive-surface);
+    border-color: var(--color-interactive);
   }
 }

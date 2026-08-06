@@ -1,10 +1,10 @@
 .button {
-  --button-background: var(--color-primary-500);
-  --button-background-hover: var(--color-primary-600);
-  --button-background-active: var(--color-primary-900);
-  --button-border-color: var(--color-primary-500);
-  --button-border-color-hover: var(--color-primary-600);
-  --button-border-color-active: var(--color-primary-900);
+  --button-background: var(--color-action-primary);
+  --button-background-hover: var(--color-action-primary-hover);
+  --button-background-active: var(--color-action-primary-active);
+  --button-border-color: var(--color-action-primary);
+  --button-border-color-hover: var(--color-action-primary-hover);
+  --button-border-color-active: var(--color-action-primary-active);
   --button-color: var(--color-text-inverse);
   --button-height: var(--control-height-md);
   --button-padding-inline: var(--control-padding-inline-md);
@@ -69,33 +69,33 @@
 }
 
 .button--primary {
-  --button-background: var(--color-primary-500);
-  --button-background-hover: var(--color-primary-600);
-  --button-background-active: var(--color-primary-900);
-  --button-border-color: var(--color-primary-500);
-  --button-border-color-hover: var(--color-primary-600);
-  --button-border-color-active: var(--color-primary-900);
+  --button-background: var(--color-action-primary);
+  --button-background-hover: var(--color-action-primary-hover);
+  --button-background-active: var(--color-action-primary-active);
+  --button-border-color: var(--color-action-primary);
+  --button-border-color-hover: var(--color-action-primary-hover);
+  --button-border-color-active: var(--color-action-primary-active);
   --button-color: var(--color-text-inverse);
 }
 
 .button--secondary {
-  --button-background: var(--color-secondary-900);
-  --button-background-hover: var(--color-secondary-600);
-  --button-background-active: var(--color-secondary-500);
-  --button-border-color: var(--color-secondary-900);
-  --button-border-color-hover: var(--color-secondary-600);
-  --button-border-color-active: var(--color-secondary-500);
+  --button-background: var(--color-action-secondary);
+  --button-background-hover: var(--color-action-secondary-hover);
+  --button-background-active: var(--color-action-secondary-active);
+  --button-border-color: var(--color-action-secondary);
+  --button-border-color-hover: var(--color-action-secondary-hover);
+  --button-border-color-active: var(--color-action-secondary-active);
   --button-color: var(--color-text-inverse);
 }
 
 .button--outline {
   --button-background: var(--color-transparent);
-  --button-background-hover: var(--color-primary-50);
-  --button-background-active: var(--color-primary-100);
-  --button-border-color: var(--color-primary-500);
-  --button-border-color-hover: var(--color-primary-600);
-  --button-border-color-active: var(--color-primary-900);
-  --button-color: var(--color-primary-600);
+  --button-background-hover: var(--color-interactive-surface);
+  --button-background-active: var(--color-interactive-surface-active);
+  --button-border-color: var(--color-interactive-border);
+  --button-border-color-hover: var(--color-interactive);
+  --button-border-color-active: var(--color-interactive-strong);
+  --button-color: var(--color-interactive);
 }
 
 .button--ghost {

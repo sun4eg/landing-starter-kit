@@ -41,7 +41,7 @@
   flex: none;
   width: var(--control-icon-size-md);
   aspect-ratio: var(--aspect-ratio-square);
-  color: var(--color-primary-600);
+  color: var(--color-interactive);
 }
 
 .accordion__icon::before,
@@ -82,6 +82,6 @@
 
 @media (hover: hover) {
   .accordion[data-accordion-enhanced] .accordion__trigger:hover {
-    color: var(--color-primary-600);
+    color: var(--color-interactive);
   }
 }

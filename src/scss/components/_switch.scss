@@ -73,15 +73,15 @@
 }
 
 .switch__input:checked + .switch__track {
-  background-color: var(--color-primary-600);
-  border-color: var(--color-primary-600);
+  background-color: var(--color-interactive);
+  border-color: var(--color-interactive);
 }
 
 .switch__input:checked + .switch__track .switch__thumb {
   inset-inline-start: calc(
     var(--switch-track-size) - var(--switch-thumb-size) - var(--switch-thumb-inset)
   );
-  border-color: var(--color-primary-900);
+  border-color: var(--color-interactive-strong);
 }
 
 .switch__input:focus-visible + .switch__track {
@@ -100,12 +100,12 @@
 
 @media (hover: hover) {
   .switch__input:not(:disabled):hover + .switch__track {
-    background-color: var(--color-primary-50);
-    border-color: var(--color-primary-600);
+    background-color: var(--color-interactive-surface);
+    border-color: var(--color-interactive);
   }
 
   .switch__input:checked:not(:disabled):hover + .switch__track {
-    background-color: var(--color-primary-900);
-    border-color: var(--color-primary-900);
+    background-color: var(--color-interactive-strong);
+    border-color: var(--color-interactive-strong);
   }
 }

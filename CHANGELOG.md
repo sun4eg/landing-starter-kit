@@ -8,6 +8,7 @@ The format is based on Keep a Changelog, and this project adheres to Semantic Ve
 
 ### Fixed
 
+- Aligned production color consumption with the documented primitive-to-semantic token hierarchy, adding purpose-led brand, interaction, current-state, inverse, overlay, and neutral-status roles without changing rendered palette mappings.
 - Isolated open Modal dialogs from external page and Toast controls while preserving focus restoration, Toast lifecycle state, and pre-existing inert ownership.
 - Contained focus within the full-screen mobile Primary Navigation, isolated and scroll-locked obscured content, and coordinated ownership with Modal and Toast layers.
 - Prevented Playground demonstration forms from navigating or exposing entered values while preserving browser-native constraint validation.

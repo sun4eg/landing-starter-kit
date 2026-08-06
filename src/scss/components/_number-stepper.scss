@@ -45,7 +45,7 @@
 }
 
 .number-stepper__input:focus-visible {
-  border-color: var(--color-primary-600);
+  border-color: var(--color-interactive);
   outline-offset: calc(var(--focus-ring-width) * -1);
 }
 
@@ -124,12 +124,12 @@
 
 @media (hover: hover) {
   .number-stepper__input:not(:disabled, :read-only):hover {
-    background-color: var(--color-primary-50);
-    border-color: var(--color-primary-600);
+    background-color: var(--color-interactive-surface);
+    border-color: var(--color-interactive);
   }
 
   .number-stepper__button:not(:disabled):hover {
-    color: var(--color-primary-600);
-    background-color: var(--color-primary-50);
+    color: var(--color-interactive);
+    background-color: var(--color-interactive-surface);
   }
 }

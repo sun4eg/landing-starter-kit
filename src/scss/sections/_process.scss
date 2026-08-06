@@ -40,7 +40,7 @@
   width: var(--control-height-lg);
   aspect-ratio: var(--aspect-ratio-square);
   color: var(--color-text-inverse);
-  background-color: var(--color-primary-600);
+  background-color: var(--color-brand-accent);
   border-radius: var(--radius-full);
   font-size: var(--font-size-sm);
   font-weight: var(--font-weight-semibold);
@@ -54,7 +54,7 @@
 }
 
 .process__meta {
-  color: var(--color-primary-600);
+  color: var(--color-brand-accent);
   font-size: var(--font-size-sm);
   font-weight: var(--font-weight-semibold);
   line-height: var(--line-height-base);

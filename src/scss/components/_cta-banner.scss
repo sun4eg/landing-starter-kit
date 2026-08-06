@@ -27,8 +27,8 @@
 }
 
 .cta-banner--featured {
-  --cta-banner-background: var(--color-primary-50);
-  --cta-banner-border-color: var(--color-primary-500);
+  --cta-banner-background: var(--color-brand-surface);
+  --cta-banner-border-color: var(--color-brand-border);
   --cta-banner-border-width: var(--focus-ring-width);
   --cta-banner-shadow: var(--shadow-md);
   --cta-banner-media-background: var(--color-background);
@@ -86,7 +86,7 @@
   min-height: calc(var(--control-height-lg) * 3);
   aspect-ratio: var(--aspect-ratio-landscape);
   padding: var(--space-md);
-  color: var(--color-primary-600);
+  color: var(--color-brand-accent);
   background-color: var(--cta-banner-media-background);
   border-radius: var(--radius-md);
 }

@@ -109,13 +109,13 @@ html[data-navigation-scroll-lock] {
 @media (hover: hover) {
   .site-header__logo:hover,
   .site-header__contact:hover {
-    color: var(--color-primary-600);
+    color: var(--color-link);
   }
 
   .site-header__menu-toggle:hover {
-    color: var(--color-primary-600);
+    color: var(--color-interactive);
     background-color: var(--color-surface);
-    border-color: var(--color-primary-500);
+    border-color: var(--color-interactive-border);
   }
 }
 

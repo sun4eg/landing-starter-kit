@@ -1,5 +1,5 @@
 .alert {
-  --alert-accent: var(--color-secondary-600);
+  --alert-accent: var(--color-status-neutral);
   --alert-background: var(--color-surface);
   --alert-border-color: var(--alert-accent);
 
@@ -16,7 +16,7 @@
 }
 
 .alert--neutral {
-  --alert-accent: var(--color-secondary-600);
+  --alert-accent: var(--color-status-neutral);
 }
 
 .alert--info {

@@ -71,8 +71,8 @@
 }
 
 .checkbox__input:is(:checked, :indeterminate) + .checkbox__control {
-  background-color: var(--color-primary-600);
-  border-color: var(--color-primary-600);
+  background-color: var(--color-interactive);
+  border-color: var(--color-interactive);
 }
 
 .checkbox__input:checked + .checkbox__control::after {
@@ -102,12 +102,12 @@
 
 @media (hover: hover) {
   .checkbox__input:not(:disabled):hover + .checkbox__control {
-    background-color: var(--color-primary-50);
-    border-color: var(--color-primary-600);
+    background-color: var(--color-interactive-surface);
+    border-color: var(--color-interactive);
   }
 
   .checkbox__input:is(:checked, :indeterminate):not(:disabled):hover + .checkbox__control {
-    background-color: var(--color-primary-900);
-    border-color: var(--color-primary-900);
+    background-color: var(--color-interactive-strong);
+    border-color: var(--color-interactive-strong);
   }
 }

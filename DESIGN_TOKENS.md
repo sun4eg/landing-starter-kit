@@ -31,6 +31,8 @@ Primitive names describe a scale or value family. They make the raw design langu
 
 Reusable components must not consume primitive tokens directly. Instead, a semantic or component token should translate the primitive value into an explicit responsibility. This keeps a future palette, density, or typography change from leaking implementation assumptions into component code.
 
+Palette primitives remain supported foundation tokens because semantic colors map through them, but they are not the component-authoring surface. Override a semantic role for a contextual or themed change. Override a palette primitive only when intentionally changing every semantic role that depends on that scale value.
+
 ### 2. Semantic Tokens
 
 Semantic tokens describe purpose rather than appearance. They form the shared contract used by layouts and reusable components.
@@ -42,6 +44,15 @@ Common semantic groups include:
 - **Text:** primary, secondary, and inverse text.
 - **Interaction:** focus indicators, links, and disabled states.
 - **Controls:** control heights, internal padding, and icon sizes.
+
+The active color roles are organized by responsibility:
+
+- **Text and surfaces:** `--color-text-*`, `--color-background`, `--color-surface*`, `--color-border*`, and `--color-overlay`.
+- **Interaction:** `--color-link*`, `--color-interactive*`, `--color-action-*`, `--color-current-*`, focus, and text selection.
+- **Brand emphasis:** `--color-brand-*` for decorative accents and featured marketing surfaces; these roles do not imply selection or status.
+- **Status:** neutral, success, warning, error, and info roles used consistently by Badge, Alert, Progress, Toast, and validation-related messaging.
+
+Interaction roles distinguish general interactive foregrounds and subtle surfaces from primary and secondary action fills. Current-state roles are reserved for selected or current UI, while brand roles provide non-state emphasis. These names may currently resolve to the same palette value, but their contrast and theming responsibilities remain distinct.
 
 Semantic tokens normally reference primitive tokens. Components should consume semantic tokens whenever a shared purpose already exists. A new semantic token is appropriate when the same visual responsibility can reasonably apply across multiple components, layouts, or themes.
 
@@ -60,6 +71,8 @@ For example, a Button component might define:
 
 Component tokens should normally reference semantic tokens. Modifiers may remap those local properties while the component's structural rules continue consuming the same stable API. Do not introduce a component token when it merely renames a semantic token without enabling meaningful component-level variation.
 
+Global semantic custom properties are the supported author override surface. Component-local properties are scoped implementation mappings unless a component's public documentation explicitly exposes one, such as the author-provided `--progress-value`. Palette primitives remain available for foundation/theme authors and documentation swatches, but production component, layout, and section declarations do not consume them directly.
+
 ## Rules
 
 - Never hardcode visual values in base, layout, component, or section styles.
@@ -71,6 +84,7 @@ Component tokens should normally reference semantic tokens. Modifiers may remap 
 - Keep token definitions centralized and avoid local competing scales.
 - Treat token renaming or removal as an API change and review all consumers.
 - Preserve sensible fallbacks and contrast when tokens are overridden by themes.
+- Keep palette references inside central semantic definitions, palette documentation, and intentional palette swatches.
 
 ## Naming
 

@@ -53,7 +53,7 @@
 }
 
 .file-input__control:focus-visible {
-  border-color: var(--color-primary-600);
+  border-color: var(--color-interactive);
 }
 
 .file-input__control:disabled {
@@ -74,13 +74,13 @@
 
 @media (hover: hover) {
   .file-input__control:not(:disabled):hover {
-    background-color: var(--color-primary-50);
-    border-color: var(--color-primary-600);
+    background-color: var(--color-interactive-surface);
+    border-color: var(--color-interactive);
   }
 
   .file-input__control:not(:disabled)::file-selector-button:hover {
-    color: var(--color-primary-600);
+    color: var(--color-interactive);
     background-color: var(--color-surface);
-    border-color: var(--color-primary-600);
+    border-color: var(--color-interactive);
   }
 }

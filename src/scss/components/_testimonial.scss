@@ -6,12 +6,12 @@
   height: var(--size-full);
   padding: var(--space-lg);
   background-color: var(--color-background);
-  border-block-start: var(--border-width) solid var(--color-primary-500);
+  border-block-start: var(--border-width) solid var(--color-brand-border);
   border-radius: var(--radius-lg);
 }
 
 .testimonial__rating {
-  color: var(--color-primary-600);
+  color: var(--color-brand-accent);
   font-size: var(--font-size-sm);
   font-weight: var(--font-weight-semibold);
   line-height: var(--line-height-base);

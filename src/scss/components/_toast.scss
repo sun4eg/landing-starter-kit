@@ -22,7 +22,7 @@
 }
 
 .toast {
-  --toast-accent: var(--color-secondary-600);
+  --toast-accent: var(--color-status-neutral);
 
   display: grid;
   grid-template-columns: auto minmax(var(--space-0), 1fr) auto;
@@ -44,7 +44,7 @@
 }
 
 .toast--neutral {
-  --toast-accent: var(--color-secondary-600);
+  --toast-accent: var(--color-status-neutral);
 }
 
 .toast--info {

@@ -23,8 +23,8 @@
 }
 
 .stats--featured {
-  --stats-item-background: var(--color-primary-50);
-  --stats-item-border-color: var(--color-primary-500);
+  --stats-item-background: var(--color-brand-surface);
+  --stats-item-border-color: var(--color-brand-border);
   --stats-item-border-width: var(--focus-ring-width);
   --stats-item-shadow: var(--shadow-md);
 }
@@ -70,7 +70,7 @@
 }
 
 .stats__meta {
-  color: var(--color-primary-600);
+  color: var(--color-brand-accent);
   font-size: var(--font-size-sm);
   font-weight: var(--font-weight-semibold);
   line-height: var(--line-height-base);
@@ -79,7 +79,7 @@
 .stats__icon {
   width: var(--control-icon-size-lg);
   height: var(--control-icon-size-lg);
-  color: var(--color-primary-600);
+  color: var(--color-brand-accent);
   fill: none;
   stroke: currentColor;
   stroke-linecap: round;

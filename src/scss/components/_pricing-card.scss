@@ -18,8 +18,8 @@
 }
 
 .pricing-card--featured {
-  background-color: var(--color-primary-50);
-  border-color: var(--color-primary-500);
+  background-color: var(--color-brand-surface);
+  border-color: var(--color-brand-border);
   border-width: var(--focus-ring-width);
   box-shadow: var(--shadow-md);
 }
@@ -118,7 +118,7 @@
   flex: none;
   width: var(--control-icon-size-md);
   height: var(--control-icon-size-md);
-  color: var(--color-primary-600);
+  color: var(--color-brand-accent);
   fill: none;
   stroke: currentColor;
   stroke-linecap: round;

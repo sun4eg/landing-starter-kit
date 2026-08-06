@@ -32,7 +32,7 @@
 }
 
 .date-picker__control:focus-visible {
-  border-color: var(--color-primary-600);
+  border-color: var(--color-interactive);
 }
 
 .date-picker__control:disabled {
@@ -53,7 +53,7 @@
 
 @media (hover: hover) {
   .date-picker__control:not(:disabled):not(:read-only):hover {
-    background-color: var(--color-primary-50);
-    border-color: var(--color-primary-600);
+    background-color: var(--color-interactive-surface);
+    border-color: var(--color-interactive);
   }
 }

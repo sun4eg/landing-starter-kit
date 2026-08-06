@@ -64,8 +64,8 @@
 
 .pagination__current {
   color: var(--color-text-inverse);
-  background-color: var(--color-primary-600);
-  border-color: var(--color-primary-600);
+  background-color: var(--color-current-surface);
+  border-color: var(--color-current-surface);
   font-weight: var(--font-weight-semibold);
 }
 
@@ -95,8 +95,8 @@
 
 @media (hover: hover) {
   .pagination__link:hover {
-    color: var(--color-primary-600);
+    color: var(--color-interactive);
     background-color: var(--color-surface);
-    border-color: var(--color-primary-500);
+    border-color: var(--color-interactive-border);
   }
 }

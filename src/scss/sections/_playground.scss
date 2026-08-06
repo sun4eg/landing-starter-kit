@@ -107,14 +107,14 @@
 .playground-mobile-navigation [aria-current='location'] {
   font-weight: var(--font-weight-semibold);
   background-color: var(--color-surface-emphasis);
-  border-inline-start: var(--focus-ring-width) solid var(--color-primary-500);
+  border-inline-start: var(--focus-ring-width) solid var(--color-current-border);
 }
 
 @media (hover: hover) {
   .playground-navigation-toggle:hover,
   .playground-navigation-panel__close:hover,
   .playground-navigation-panel__link:hover {
-    color: var(--color-primary-600);
+    color: var(--color-interactive);
     background-color: var(--color-surface);
   }
 }
@@ -421,7 +421,7 @@
   width: var(--token-space);
   max-width: var(--size-full);
   height: var(--space-sm);
-  background-color: var(--color-primary-500);
+  background-color: var(--color-brand-emphasis);
   border-radius: var(--radius-full);
 }
 
@@ -494,7 +494,7 @@
   display: block;
   width: var(--token-control-icon);
   height: var(--token-control-icon);
-  background-color: var(--color-primary-500);
+  background-color: var(--color-brand-emphasis);
   border-radius: var(--radius-full);
 }
 

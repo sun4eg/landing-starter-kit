@@ -64,8 +64,8 @@
   height: var(--range-slider-track-size);
   background: linear-gradient(
     var(--range-slider-fill-direction),
-    var(--color-primary-600) var(--space-0),
-    var(--color-primary-600) var(--range-slider-progress),
+    var(--color-interactive) var(--space-0),
+    var(--color-interactive) var(--range-slider-progress),
     var(--color-surface-emphasis) var(--range-slider-progress),
     var(--color-surface-emphasis) var(--size-full)
   );
@@ -78,7 +78,7 @@
   height: var(--range-slider-thumb-size);
   margin-block-start: calc((var(--range-slider-track-size) - var(--range-slider-thumb-size)) / 2);
   background-color: var(--color-background);
-  border: var(--border-width) solid var(--color-primary-600);
+  border: var(--border-width) solid var(--color-interactive);
   border-radius: var(--radius-full);
   box-shadow: var(--shadow-sm);
   appearance: none;
@@ -96,7 +96,7 @@
 
 .range-slider__input::-moz-range-progress {
   height: var(--range-slider-track-size);
-  background-color: var(--color-primary-600);
+  background-color: var(--color-interactive);
   border-radius: var(--radius-full);
 }
 
@@ -104,7 +104,7 @@
   width: var(--range-slider-thumb-size);
   height: var(--range-slider-thumb-size);
   background-color: var(--color-background);
-  border: var(--border-width) solid var(--color-primary-600);
+  border: var(--border-width) solid var(--color-interactive);
   border-radius: var(--radius-full);
   box-shadow: var(--shadow-sm);
   transition:
@@ -140,12 +140,12 @@
 
 @media (hover: hover) {
   .range-slider__input:not(:disabled):hover::-webkit-slider-thumb {
-    background-color: var(--color-primary-50);
-    border-color: var(--color-primary-900);
+    background-color: var(--color-interactive-surface);
+    border-color: var(--color-interactive-strong);
   }
 
   .range-slider__input:not(:disabled):hover::-moz-range-thumb {
-    background-color: var(--color-primary-50);
-    border-color: var(--color-primary-900);
+    background-color: var(--color-interactive-surface);
+    border-color: var(--color-interactive-strong);
   }
 }

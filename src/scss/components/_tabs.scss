@@ -40,9 +40,9 @@
 }
 
 .tabs__tab[aria-selected='true'] {
-  color: var(--color-primary-600);
+  color: var(--color-current-text);
   background-color: var(--color-surface);
-  border-block-end-color: var(--color-primary-500);
+  border-block-end-color: var(--color-current-border);
   font-weight: var(--font-weight-semibold);
 }
 
@@ -118,7 +118,7 @@
 }
 
 .tabs--vertical .tabs__tab[aria-selected='true'] {
-  border-inline-end-color: var(--color-primary-500);
+  border-inline-end-color: var(--color-current-border);
 }
 
 .tabs--vertical .tabs__panel {

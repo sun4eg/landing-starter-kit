@@ -1038,7 +1038,7 @@
                 </p>
               </header>
               <div class="playground-comparison__grid">
-                <form class="form playground-demo playground-form-demo">
+                <form class="form playground-demo playground-form-demo" data-playground-form-demo>
                   <h4>Profile details</h4>
                   <div class="form__field">
                     <input
@@ -2494,7 +2494,7 @@
                     <p class="modal__description" id="form-modal-description">This local example does not submit or save personal data.</p>
                   </header>
                   <div class="modal__body">
-                    <form class="form">
+                    <form class="form" data-playground-form-demo>
                       <div class="form__field">
                         <input class="form__input" id="modal-display-name" name="display-name" type="text" autocomplete="name" placeholder=" " />
                         <label class="form__label" for="modal-display-name">Display name</label>
@@ -5132,9 +5132,10 @@
               <div class="playground-demo">
                 <div class="playground-form-demo stack">
                   <p class="text text--muted">
-                    This form posts only to the current Playground URL. Do not enter personal or sensitive information.
+                    This interactive demonstration preserves native validation but prevents submission and navigation.
+                    Do not enter personal or sensitive information.
                   </p>
-                  <form class="form" method="post" action="" aria-labelledby="playground-complete-form-title">
+                  <form class="form" method="post" action="" aria-labelledby="playground-complete-form-title" data-playground-form-demo>
                     <div class="form__field">
                       <input
                         class="form__input"
@@ -5658,7 +5659,7 @@
                   </p>
                 </header>
                 <div class="playground-demo">
-                  <form class="playground-select-demo stack" method="post" action="" aria-labelledby="select-validation-title">
+                  <form class="playground-select-demo stack" method="post" action="" aria-labelledby="select-validation-title" data-playground-form-demo>
                     <div class="select">
                       <label class="select__label" for="select-validation">Delivery priority (required)</label>
                       <div class="select__control-wrapper">
@@ -5778,7 +5779,7 @@
                   </p>
                 </header>
                 <div class="playground-demo">
-                  <form class="playground-password-demo stack" method="post" action="" aria-labelledby="password-validation-title">
+                  <form class="playground-password-demo stack" method="post" action="" aria-labelledby="password-validation-title" data-playground-form-demo>
                     <div class="password-input" data-password-input>
                       <label class="password-input__label" for="password-validation">Password (required)</label>
                       <div class="password-input__control-wrapper">
@@ -5950,7 +5951,7 @@
                   </p>
                 </header>
                 <div class="playground-demo">
-                  <form class="playground-number-stepper-demo stack" method="post" action="" aria-labelledby="number-stepper-validation-title">
+                  <form class="playground-number-stepper-demo stack" method="post" action="" aria-labelledby="number-stepper-validation-title" data-playground-form-demo>
                     <div class="number-stepper" data-number-stepper>
                       <label class="number-stepper__label" for="stepper-validation">Required quantity</label>
                       <div class="number-stepper__control">
@@ -6219,7 +6220,7 @@
                   Submit this empty local form to inspect the browser’s native required and bounded-date validation.
                   Exact validation presentation varies by browser, and no data is sent to a remote endpoint.
                 </p>
-                <form class="playground-date-picker-demo stack" action="" method="post">
+                <form class="playground-date-picker-demo stack" action="" method="post" data-playground-form-demo>
                   <div class="date-picker">
                     <label class="date-picker__label" for="date-picker-required">Review date</label>
                     <input class="date-picker__control" id="date-picker-required" name="review-date-demo" type="date" min="2026-08-05" max="2026-12-31" aria-describedby="date-picker-required-description" required />
@@ -6335,7 +6336,7 @@
                   Submit this empty local form to inspect native required, working-hours, and interval validation.
                   Exact browser feedback varies, and no data is sent to a remote endpoint.
                 </p>
-                <form class="playground-time-picker-demo stack" action="" method="post">
+                <form class="playground-time-picker-demo stack" action="" method="post" data-playground-form-demo>
                   <div class="time-picker">
                     <label class="time-picker__label" for="time-picker-required">Support call time</label>
                     <input class="time-picker__control" id="time-picker-required" name="support-call-time-demo" type="time" min="09:00" max="17:00" step="900" aria-describedby="time-picker-required-description" required />
@@ -6451,7 +6452,7 @@
                   Submit this empty local form to inspect native required, scheduling-window, and interval validation.
                   Exact browser feedback varies, and no data is sent to a remote endpoint.
                 </p>
-                <form class="playground-datetime-local-demo stack" action="" method="post">
+                <form class="playground-datetime-local-demo stack" action="" method="post" data-playground-form-demo>
                   <div class="datetime-local">
                     <label class="datetime-local__label" for="datetime-local-required">Planning session</label>
                     <input class="datetime-local__control" id="datetime-local-required" name="planning-session-demo" type="datetime-local" min="2026-09-01T09:00" max="2026-12-31T17:00" step="1800" aria-describedby="datetime-local-required-description" required />
@@ -6559,7 +6560,7 @@
                   Submit this empty local form to inspect native required-file validation. Exact browser feedback
                   varies, and the form has no remote upload endpoint.
                 </p>
-                <form class="playground-file-input-demo stack" action="" method="post" enctype="multipart/form-data">
+                <form class="playground-file-input-demo stack" action="" method="post" enctype="multipart/form-data" data-playground-form-demo>
                   <div class="file-input">
                     <label class="file-input__label" for="file-input-required">Required review document</label>
                     <input class="file-input__control" id="file-input-required" name="required-review-document-demo" type="file" accept=".pdf,.doc,.docx" aria-describedby="file-input-required-description" required />

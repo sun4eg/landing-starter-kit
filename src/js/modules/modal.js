@@ -1,3 +1,6 @@
+import { applyIsolation, releaseIsolation } from '../utils/isolation.js'
+import { closeOpenNavigations } from './navigation.js'
+
 const modalSelector = '[data-modal]'
 const dialogSelector = '[data-modal-dialog]'
 const openSelector = '[data-modal-open]'
@@ -38,31 +41,6 @@ function collectIsolationTargets(root) {
   }
 
   return targets
-}
-
-function applyModalIsolation(root) {
-  const isolationStates = new Map()
-
-  try {
-    collectIsolationTargets(root).forEach((element) => {
-      isolationStates.set(element, element.inert)
-
-      if (!element.inert) {
-        element.inert = true
-      }
-    })
-  } catch (error) {
-    restoreModalIsolation(isolationStates)
-    throw error
-  }
-
-  return isolationStates
-}
-
-function restoreModalIsolation(isolationStates) {
-  isolationStates.forEach((wasInert, element) => {
-    element.inert = wasInert
-  })
 }
 
 function getOwnedElements(root, selector) {
@@ -193,7 +171,7 @@ export function initModalRoot(root, scope = document) {
 
     if (activeInstance?.root === root) {
       root.ownerDocument.removeEventListener('focusin', activeInstance.guardFocus, true)
-      restoreModalIsolation(activeInstance.isolationStates)
+      releaseIsolation(activeInstance.isolationOwner, activeInstance.isolationTargets)
       activeInstance = null
     }
 
@@ -225,21 +203,25 @@ export function initModalRoot(root, scope = document) {
       activeInstance.close({ restoreFocus: false })
     }
 
+    closeOpenNavigations(root.ownerDocument)
+
     returnFocusTarget = opener
     root.hidden = false
     root.dataset.modalVisible = ''
     root.ownerDocument.documentElement.dataset.modalScrollLock = ''
 
-    let isolationStates = new Map()
+    const isolationOwner = {}
+    let isolationTargets = new Set()
     let instance = null
 
     try {
-      isolationStates = applyModalIsolation(root)
+      isolationTargets = applyIsolation(isolationOwner, collectIsolationTargets(root))
       instance = {
         root,
         dialog,
         close,
-        isolationStates,
+        isolationOwner,
+        isolationTargets,
         lastFocused: null,
         guardFocus: null,
       }
@@ -271,7 +253,7 @@ export function initModalRoot(root, scope = document) {
       if (instance !== null) {
         root.ownerDocument.removeEventListener('focusin', instance.guardFocus, true)
       }
-      restoreModalIsolation(isolationStates)
+      releaseIsolation(isolationOwner, isolationTargets)
       if (activeInstance?.root === root) {
         activeInstance = null
       }

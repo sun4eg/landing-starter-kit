@@ -7103,8 +7103,9 @@
                   <h4>With JavaScript</h4>
                   <p class="text text--muted">
                     Valid roots are enhanced, the toggle becomes available, and <code>aria-expanded</code>, its label,
-                    and the root’s runtime open state stay synchronized. The collapsed menu removes its links from the
-                    focus order; Escape and menu-link activation close it.
+                    and the root’s runtime open state stay synchronized. While the full-screen mobile menu is open,
+                    obscured page content is inert, page scrolling is locked, and focus remains among the visible
+                    Header and menu controls. Escape and menu-link activation close it.
                   </p>
                 </div>
               </article>
@@ -7115,7 +7116,7 @@
                   <li>Desktop presentation appears above the shared tablet breakpoint.</li>
                   <li>At and below that breakpoint, CSS exposes the toggle and collapsible menu for enhanced roots.</li>
                   <li>JavaScript does not duplicate Sass breakpoint values.</li>
-                  <li>Viewport changes leave no conflicting inline display state because visibility remains CSS-owned.</li>
+                  <li>Viewport changes release focus containment, inertness, and scroll locking while visibility remains CSS-owned.</li>
                 </ul>
               </article>
             </section>
@@ -7150,6 +7151,7 @@
                 <li>Native Enter and Space activate the toggle.</li>
                 <li>Escape closes an open menu and restores focus to its toggle.</li>
                 <li>Following a menu link closes that instance’s menu.</li>
+                <li>The logo and Playground “Back to Landing” link remain in the active Header boundary while the mobile menu is open; obscured page and Toast controls remain unavailable.</li>
                 <li>Write navigation labels that remain understandable out of context.</li>
                 <li>Keep essential destinations available without JavaScript.</li>
                 <li>Give multiple navigation landmarks distinct accessible labels.</li>

@@ -22,6 +22,10 @@
   box-shadow: var(--shadow-sm);
 }
 
+.site-header[data-navigation-open] {
+  z-index: var(--z-modal);
+}
+
 .site-header__container {
   position: relative;
   display: flex;
@@ -96,6 +100,10 @@
   width: var(--size-full);
   height: var(--border-width);
   background-color: currentColor;
+}
+
+html[data-navigation-scroll-lock] {
+  overflow: hidden;
 }
 
 @media (hover: hover) {

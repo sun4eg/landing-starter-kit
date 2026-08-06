@@ -2584,7 +2584,7 @@
             <div class="playground-explainer-grid">
               <section class="playground-demo stack" aria-labelledby="modal-keyboard-title">
                 <h3 id="modal-keyboard-title">Keyboard interaction</h3>
-                <p class="text text--muted">Tab and Shift+Tab cycle through controls inside the open dialog. Escape closes it, and focus returns to its opener. Opening another instance first closes the current one.</p>
+                <p class="text text--muted">Tab and Shift+Tab cycle through controls inside the open dialog. External page and Toast controls remain unavailable until the dialog closes. Escape closes it, and focus returns to its opener. Opening another instance first closes the current one.</p>
               </section>
               <section class="playground-demo stack" aria-labelledby="modal-enhancement-title">
                 <h3 id="modal-enhancement-title">Progressive enhancement</h3>
@@ -2599,6 +2599,7 @@
                 <li>Provide a concise title, a persistent close button, and only the actions required to complete or cancel the task.</li>
                 <li>Use <code>aria-describedby</code> when a short description helps explain the dialog; omit it for complex body content.</li>
                 <li>Choose initial focus deliberately for destructive confirmations; the safer action is usually appropriate.</li>
+                <li>An open Modal isolates every external interactive layer. Existing Toasts remain present, but their actions and dismiss controls become available again only after the dialog closes.</li>
                 <li>Do not open dialogs automatically or nest one Modal inside another.</li>
               </ul>
             </aside>
@@ -2714,7 +2715,8 @@
                 <p class="text text--muted">
                   One region labelled “Notifications” uses <code>aria-live="polite"</code> and
                   <code>aria-relevant="additions"</code>. Toasts do not add nested status or alert roles, and queued
-                  content is announced only when inserted.
+                  content is announced only when inserted. While a Modal is open, the region is inert so unavailable
+                  external actions are neither exposed nor announced; normal notification behavior resumes after close.
                 </p>
               </section>
               <section class="playground-demo stack" aria-labelledby="toast-enhancement-title">
@@ -7803,9 +7805,9 @@
                   <li><code>--z-raised</code><span>Decorative or raised content · active</span></li>
                   <li><code>--z-dropdown</code><span>Documentation panel layer · active</span></li>
                   <li><code>--z-sticky</code><span>Sticky Header · active</span></li>
-                  <li><code>--z-overlay</code><span>Overlay layer · reserved</span></li>
-                  <li><code>--z-modal</code><span>Modal layer · reserved</span></li>
-                  <li><code>--z-toast</code><span>Top utility layer and Skip link · active</span></li>
+                  <li><code>--z-overlay</code><span>Overlay and notification foundation · active</span></li>
+                  <li><code>--z-modal</code><span>Modal layer · active</span></li>
+                  <li><code>--z-toast</code><span>Toast region and Skip link · active</span></li>
                 </ol>
               </div>
               <p class="text text--muted">Decorative layers stay below controls, and the Skip link remains above the sticky Header through <code>--z-toast</code>.</p>

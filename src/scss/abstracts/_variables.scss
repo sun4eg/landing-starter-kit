@@ -106,7 +106,7 @@
   --z-sticky: 200;
   --z-overlay: 300;
   --z-modal: 400;
-  --z-toast: 500;
+  --z-toast: var(--z-overlay);
 
   /* Motion */
   --duration-instant: 0ms;

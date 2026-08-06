@@ -13,6 +13,58 @@ const focusableSelector = [
 
 let activeInstance = null
 
+function collectIsolationTargets(root) {
+  const targets = []
+  let branch = root
+
+  while (branch.parentElement !== null) {
+    const parent = branch.parentElement
+
+    for (const element of parent.children) {
+      if (
+        element !== branch &&
+        element instanceof HTMLElement &&
+        !element.matches('script, style, template, link, meta')
+      ) {
+        targets.push(element)
+      }
+    }
+
+    if (parent === root.ownerDocument.body) {
+      break
+    }
+
+    branch = parent
+  }
+
+  return targets
+}
+
+function applyModalIsolation(root) {
+  const isolationStates = new Map()
+
+  try {
+    collectIsolationTargets(root).forEach((element) => {
+      isolationStates.set(element, element.inert)
+
+      if (!element.inert) {
+        element.inert = true
+      }
+    })
+  } catch (error) {
+    restoreModalIsolation(isolationStates)
+    throw error
+  }
+
+  return isolationStates
+}
+
+function restoreModalIsolation(isolationStates) {
+  isolationStates.forEach((wasInert, element) => {
+    element.inert = wasInert
+  })
+}
+
 function getOwnedElements(root, selector) {
   return [...root.querySelectorAll(selector)].filter(
     (element) => element.closest(modalSelector) === root,
@@ -83,13 +135,39 @@ function trapFocus(event, dialog) {
   const first = focusable[0]
   const last = focusable[focusable.length - 1]
 
-  if (event.shiftKey && document.activeElement === first) {
+  if (event.shiftKey && dialog.ownerDocument.activeElement === first) {
     event.preventDefault()
     last.focus()
-  } else if (!event.shiftKey && document.activeElement === last) {
+  } else if (!event.shiftKey && dialog.ownerDocument.activeElement === last) {
     event.preventDefault()
     first.focus()
   }
+}
+
+function getInitialFocus(dialog) {
+  const autofocusTarget = dialog.querySelector('[autofocus]')
+  const focusable = getFocusableElements(dialog)
+
+  return focusable.includes(autofocusTarget) ? autofocusTarget : focusable[0] ?? dialog
+}
+
+function getFallbackRestoreTarget(root, openers) {
+  const availableOpener = openers.find(
+    (opener) => opener.isConnected && !opener.disabled && !opener.inert && isVisible(opener),
+  )
+
+  if (availableOpener !== undefined) {
+    return availableOpener
+  }
+
+  return [...root.ownerDocument.querySelectorAll(focusableSelector)].find(
+    (element) =>
+      element instanceof HTMLElement &&
+      !root.contains(element) &&
+      !element.inert &&
+      !element.closest('[inert]') &&
+      isVisible(element),
+  )
 }
 
 export function initModalRoot(root, scope = document) {
@@ -113,22 +191,36 @@ export function initModalRoot(root, scope = document) {
       return
     }
 
+    if (activeInstance?.root === root) {
+      root.ownerDocument.removeEventListener('focusin', activeInstance.guardFocus, true)
+      restoreModalIsolation(activeInstance.isolationStates)
+      activeInstance = null
+    }
+
     root.hidden = true
     root.removeAttribute('data-modal-visible')
     root.ownerDocument.documentElement.removeAttribute('data-modal-scroll-lock')
 
-    if (activeInstance?.root === root) {
-      activeInstance = null
-    }
+    if (restoreFocus) {
+      const restoreTarget =
+        returnFocusTarget?.isConnected &&
+        !returnFocusTarget.disabled &&
+        !returnFocusTarget.inert &&
+        !returnFocusTarget.closest('[inert]')
+          ? returnFocusTarget
+          : getFallbackRestoreTarget(root, openers)
 
-    if (restoreFocus && returnFocusTarget?.isConnected && !returnFocusTarget.disabled) {
-      returnFocusTarget.focus()
+      restoreTarget?.focus()
     }
 
     returnFocusTarget = null
   }
 
   function open(opener) {
+    if (activeInstance?.root === root) {
+      return
+    }
+
     if (activeInstance !== null && activeInstance.root !== root) {
       activeInstance.close({ restoreFocus: false })
     }
@@ -137,12 +229,57 @@ export function initModalRoot(root, scope = document) {
     root.hidden = false
     root.dataset.modalVisible = ''
     root.ownerDocument.documentElement.dataset.modalScrollLock = ''
-    activeInstance = { root, close }
 
-    const autofocusTarget = dialog.querySelector('[autofocus]')
-    const focusable = getFocusableElements(dialog)
-    const initialFocus = focusable.includes(autofocusTarget) ? autofocusTarget : focusable[0] ?? dialog
-    initialFocus.focus()
+    let isolationStates = new Map()
+    let instance = null
+
+    try {
+      isolationStates = applyModalIsolation(root)
+      instance = {
+        root,
+        dialog,
+        close,
+        isolationStates,
+        lastFocused: null,
+        guardFocus: null,
+      }
+
+      instance.guardFocus = (event) => {
+        if (activeInstance !== instance) {
+          return
+        }
+
+        if (event.target instanceof Node && dialog.contains(event.target)) {
+          if (event.target instanceof HTMLElement) {
+            instance.lastFocused = event.target
+          }
+          return
+        }
+
+        const focusTarget =
+          instance.lastFocused?.isConnected && dialog.contains(instance.lastFocused)
+            ? instance.lastFocused
+            : getInitialFocus(dialog)
+
+        focusTarget.focus()
+      }
+
+      activeInstance = instance
+      root.ownerDocument.addEventListener('focusin', instance.guardFocus, true)
+      getInitialFocus(dialog).focus()
+    } catch {
+      if (instance !== null) {
+        root.ownerDocument.removeEventListener('focusin', instance.guardFocus, true)
+      }
+      restoreModalIsolation(isolationStates)
+      if (activeInstance?.root === root) {
+        activeInstance = null
+      }
+      root.hidden = true
+      root.removeAttribute('data-modal-visible')
+      root.ownerDocument.documentElement.removeAttribute('data-modal-scroll-lock')
+      returnFocusTarget = null
+    }
   }
 
   openers.forEach((opener) => {

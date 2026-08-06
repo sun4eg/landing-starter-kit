@@ -6,6 +6,10 @@ The format is based on Keep a Changelog, and this project adheres to Semantic Ve
 
 ## [Unreleased]
 
+### Fixed
+
+- Isolated open Modal dialogs from external page and Toast controls while preserving focus restoration, Toast lifecycle state, and pre-existing inert ownership.
+
 ### Added
 
 - Added a reusable Badge component with semantic visual variants, outline, small and pill options, optional icons, resilient inline composition, and complete Playground documentation.

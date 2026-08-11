@@ -15,6 +15,7 @@ The format is based on Keep a Changelog, and this project adheres to Semantic Ve
 
 ### Added
 
+- Added complete Playground documentation for the existing Testimonial component, covering its production API, semantic attribution, composition, content resilience, accessibility, and intentional limitations.
 - Added a reusable Badge component with semantic visual variants, outline, small and pill options, optional icons, resilient inline composition, and complete Playground documentation.
 - Added a contextual Alert component with semantic and outline variants, optional icons and actions, progressive dismissal, live-region guidance, and complete Playground documentation.
 - Added a semantic Divider component with horizontal, strong, labelled, and bounded vertical forms plus complete Playground guidance.

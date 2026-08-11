@@ -168,3 +168,9 @@
   --letter-spacing-normal: 0;
   --opacity-disabled: 0.6;
 }
+
+@supports (height: 100dvh) {
+  :root {
+    --viewport-height: 100dvh;
+  }
+}

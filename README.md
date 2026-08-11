@@ -10,11 +10,13 @@ An AI-ready foundation for modern, accessible, responsive landing pages, built w
 
 ## Included
 
-- Responsive Header and primary navigation
 - Hero, Services, Benefits, Portfolio, Process, Reviews, FAQ, and Contact sections
-- Reusable Button, Text, Section Heading, cards, Testimonial, Form, and Accordion components
-- Native Checkbox, Radio, Switch, Select, Password Input, Number Stepper, Range Slider, Date Picker, Time Picker, DateTime Local, and File Input components
-- Shared containers, layout utilities, breakpoints, and semantic design tokens
+- Foundations and layout: semantic design tokens, responsive typography, containers, layout utilities, breakpoints, Text, Section Heading, Header, Primary Navigation, and Footer
+- Actions and navigation: Button, Accordion, Tabs, Breadcrumbs, and Pagination
+- Forms: Form plus native Checkbox, Radio, Switch, Select, Password Input, Number Stepper, Range Slider, Date Picker, Time Picker, DateTime Local, and File Input controls
+- Feedback and states: Badge, Alert, Divider, Progress, Spinner, Skeleton, Empty State, and Toast
+- Overlays: Modal
+- Marketing and content: Service Card, Project Card, Pricing Card, Stats, Timeline, Logo Cloud, CTA Banner, and Testimonial
 - Keyboard-accessible navigation and Accordion behavior
 - Sticky Header, anchor offsets, reduced-motion handling, and visible focus foundations
 - A living Component Playground with API, state, accessibility, responsive, and design-token documentation

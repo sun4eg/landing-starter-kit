@@ -58,7 +58,7 @@
   font-size: var(--font-size-lg);
   line-height: var(--line-height-heading);
   overflow-wrap: anywhere;
-  margin-top: -0.16rem;
+  margin-block-start: calc((var(--space-3xs) + var(--border-width)) / -2);
 }
 
 .alert__description {

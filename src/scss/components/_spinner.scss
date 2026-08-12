@@ -10,7 +10,7 @@
   color: var(--color-text-primary);
 
   .spinner__visual {
-    margin-block-start: calc(var(--space-3xs) - 0.1rem);
+    margin-block-start: calc(var(--space-3xs) - (var(--border-width) * 1.5));
   }
 }
 

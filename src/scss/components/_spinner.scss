@@ -8,14 +8,26 @@
   max-width: var(--size-full);
   min-width: var(--space-0);
   color: var(--color-text-primary);
+
+  .spinner__visual {
+    margin-block-start: calc(var(--space-3xs) - 0.1rem);
+  }
 }
 
 .spinner--small {
   --spinner-size: var(--control-icon-size-sm);
+
+  .spinner__visual {
+    margin-block-start: var(--space-3xs);
+  }
 }
 
 .spinner--large {
   --spinner-size: var(--control-icon-size-lg);
+
+  .spinner__visual {
+    margin-block-start: 0;
+  }
 }
 
 .spinner--current {

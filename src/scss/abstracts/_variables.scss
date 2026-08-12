@@ -88,7 +88,7 @@
   --color-brand-surface: var(--color-primary-50);
   --color-brand-subtle: var(--color-primary-100);
   --color-overlay: var(--color-secondary-900);
-  --color-focus-ring: var(--color-primary-500);
+  --color-focus-ring: var(--color-primary-100);
   --color-selection-background: var(--color-primary-100);
   --color-selection-text: var(--color-primary-900);
   --color-status-neutral: var(--color-secondary-600);
@@ -113,7 +113,7 @@
   /* Borders and radii */
   --border-width: 0.0625rem;
   --focus-ring-width: 0.1875rem;
-  --focus-ring-offset: 0.1875rem;
+  --focus-ring-offset: 0;
   --radius-none: 0;
   --radius-sm: 0.25rem;
   --radius-md: 0.5rem;

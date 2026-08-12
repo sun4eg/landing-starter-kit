@@ -28,11 +28,15 @@ This roadmap tracks the development of a reusable, accessible, and production-re
 - [x] **Form controls** — Complete the native Checkbox, Radio, Switch, Select, Password Input, Number Stepper, Range Slider, Date Picker, Time Picker, DateTime Local, and File Input APIs, enhancements, validation examples, and Playground documentation.
 - [x] **Footer** — Add reusable secondary navigation, contact details, copyright, and an extensible lower row.
 - [x] **JavaScript modules** — Implement small independent ES Modules for interactive behaviors and shared utilities.
-- [x] **Accessibility audit** — Verify keyboard navigation, focus management, semantics, contrast, motion preferences, and assistive-technology support.
+- [x] **Source-level accessibility audit** — Verify keyboard navigation, focus management, semantics, contrast, and motion preferences while retaining platform assistive-technology checks as manual beta verification.
 - [x] **v2.0.0-alpha.1 preparation** — Version and document the first evaluation release of the completed Playground and Form Controls foundations.
+- [x] **Beta architecture and blocker remediation** — Complete Modal and mobile Navigation isolation, Playground form interception, semantic-token migration, dynamic viewport enhancement, and source-level beta-readiness reconciliation.
+- [x] **Complete beta component documentation** — Document the expanded component set, including Testimonial, and synchronize the README and Playground inventories.
+- [x] **v2.0.0-beta.1 preparation** — Version and document the beta evaluation and integration-testing milestone.
 - [ ] **SEO setup** — Add metadata, social previews, canonical information, structured data, sitemap, and robots directives.
 - [ ] **Performance optimization** — Optimize images, fonts, asset delivery, rendering behavior, and Core Web Vitals.
-- [ ] **Alpha verification** — Complete manual Safari, Firefox, mobile-platform, forced-colors, VoiceOver, and NVDA testing.
+- [ ] **Beta platform verification** — Complete manual Safari, Firefox, iOS Safari, Android Chrome, forced-colors, VoiceOver, and NVDA testing.
+- [ ] **Post-beta hardening** — Add automated interaction regression coverage and review optional API naming consistency before stable v2.0.0.
 - [ ] **Production readiness** — Complete content checks, error handling, performance review, build verification, and deployment documentation.
 
 ## Next Component Phase

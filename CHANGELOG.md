@@ -6,38 +6,34 @@ The format is based on Keep a Changelog, and this project adheres to Semantic Ve
 
 ## [Unreleased]
 
-### Fixed
+## [2.0.0-beta.1] - 2026-08-12
 
-- Kept legacy viewport-height fallback behavior while progressively using the dynamic viewport for Modal and Toast bounds in supporting browsers.
-- Aligned production color consumption with the documented primitive-to-semantic token hierarchy, adding purpose-led brand, interaction, current-state, inverse, overlay, and neutral-status roles without changing rendered palette mappings.
-- Isolated open Modal dialogs from external page and Toast controls while preserving focus restoration, Toast lifecycle state, and pre-existing inert ownership.
-- Contained focus within the full-screen mobile Primary Navigation, isolated and scroll-locked obscured content, and coordinated ownership with Modal and Toast layers.
-- Prevented Playground demonstration forms from navigating or exposing entered values while preserving browser-native constraint validation.
-
-### Documentation
-
-- Synchronized the README component inventory with the current production and Playground component set.
+> Beta release: automated production-build and Chrome regression checks pass.
+> Manual Safari, Firefox, mobile-platform, forced-colors, VoiceOver, and NVDA
+> verification remains recommended before production adoption.
 
 ### Added
 
-- Added complete Playground documentation for the existing Testimonial component, covering its production API, semantic attribution, composition, content resilience, accessibility, and intentional limitations.
-- Added a reusable Badge component with semantic visual variants, outline, small and pill options, optional icons, resilient inline composition, and complete Playground documentation.
-- Added a contextual Alert component with semantic and outline variants, optional icons and actions, progressive dismissal, live-region guidance, and complete Playground documentation.
-- Added a semantic Divider component with horizontal, strong, labelled, and bounded vertical forms plus complete Playground guidance.
-- Added a determinate Progress component with size and semantic variants, optional visible labels and values, accessible custom progressbar semantics, and complete Playground documentation.
-- Added an indeterminate Spinner component with three sizes, labelled and visual-only patterns, current-color composition, reduced-motion behavior, and complete Playground documentation.
-- Added a decorative Skeleton component with content-shape, geometry, and size variants, reduced-motion behavior, compositional loading examples, and complete Playground documentation.
-- Added a reusable Empty State component with compact and bordered variants, optional visual, content, and action composition, first-use and no-results guidance, and complete Playground documentation.
-- Added an accessible Tabs component with horizontal, contained, and vertical layouts, automatic and manual activation, progressive enhancement, WAI-ARIA keyboard behavior, and complete Playground documentation.
-- Added an accessible Modal component with scoped progressive enhancement, focus containment and restoration, Escape and backdrop dismissal, scroll locking, component composition, and complete Playground documentation.
-- Added an accessible Toast notification region with semantic variants, trusted template rendering, automatic and persistent lifecycles, pause-aware timers, a bounded FIFO queue, and complete Playground documentation.
-- Added a semantic Breadcrumbs component with compact spacing, optional Home icon composition, locally scrollable long hierarchies, and complete Playground documentation.
-- Added an accessible Pagination component with compact spacing, boundary states, decorative ellipses, visible icon-and-text navigation, locally scrollable long ranges, and complete Playground documentation.
-- Added a reusable Pricing Card component with featured and compact variants, structured pricing and feature content, Badge and Button composition, and complete Playground documentation.
-- Added a reusable Stats component with compact and featured variants, semantic metric groups, resilient numeric and textual values, Card composition, and complete Playground documentation.
-- Added a semantic Timeline component with primary vertical, compact, and locally scrollable horizontal layouts, Badge and Card composition, and complete Playground documentation.
-- Added a responsive Logo Cloud component with compact, bordered, and conservative muted variants, static and linked marks, accessible asset guidance, and complete Playground documentation.
-- Added a responsive CTA Banner component with compact and featured variants, primary and secondary Button composition, optional decorative media, and complete Playground documentation.
+- Expanded the production library and Component Playground with Badge, Alert, Divider, Progress, Spinner, Skeleton, Empty State, Tabs, Modal, Toast, Breadcrumbs, Pagination, Pricing Card, Stats, Timeline, Logo Cloud, and CTA Banner.
+- Added complete Playground documentation for Testimonial, covering its production API, semantic attribution, composition, content resilience, accessibility, and intentional limitations.
+
+### Changed
+
+- Migrated production component color consumption to purpose-led semantic roles while retaining centralized primitive palette definitions.
+- Kept legacy viewport-height fallback behavior while progressively using the dynamic viewport for Modal and Toast bounds in supporting browsers.
+- Synchronized the README component inventory with the production and Playground component set.
+
+### Fixed
+
+- Isolated open Modal dialogs from external page and Toast controls while preserving focus restoration, Toast lifecycle state, and pre-existing inert ownership.
+- Contained focus within the full-screen mobile Primary Navigation, isolated and scroll-locked obscured content, and coordinated ownership with Modal and Toast layers.
+- Prevented Playground demonstration forms from navigating or exposing entered values while preserving browser-native constraint validation.
+- Corrected post-remediation visual regressions in focus-ring visibility and kept Alert and Spinner optical alignment within the token-only styling contract.
+
+### Verification
+
+- Passed production builds, structural validation, JavaScript syntax checks, and targeted automated Chrome QA for focus, responsive containment, component alignment, and reduced motion.
+- Retained manual cross-browser, device, forced-colors, and assistive-technology verification as an explicit pre-publication recommendation.
 
 ## [2.0.0-alpha.1] - 2026-08-04
 

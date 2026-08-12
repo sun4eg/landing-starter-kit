@@ -25,10 +25,15 @@ function initPasswordInput(root) {
     return false
   }
 
+  const showLabel = toggle.getAttribute('aria-label')?.trim() || 'Show password'
+  const hideLabel = /^show\b/i.test(showLabel)
+    ? showLabel.replace(/^show\b/i, 'Hide')
+    : 'Hide password'
+
   function setVisible(visible) {
     control.type = visible ? 'text' : 'password'
     toggle.setAttribute('aria-pressed', String(visible))
-    toggle.setAttribute('aria-label', `${visible ? 'Hide' : 'Show'} password`)
+    toggle.setAttribute('aria-label', visible ? hideLabel : showLabel)
   }
 
   toggle.addEventListener('click', () => {

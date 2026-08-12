@@ -36,6 +36,7 @@ This roadmap tracks the development of a reusable, accessible, and production-re
 - [x] **Initial browser regression coverage** — Add a production-build Playwright/Chromium suite for high-risk Navigation, Modal, Toast, form, Tabs, Card-sizing, and responsive-overflow contracts.
 - [x] **Cross-engine browser CI** — Run the browser regression suite in Playwright-managed Chromium, Firefox, and WebKit on pushes and pull requests targeting `main`.
 - [x] **Automated forced-colors hardening** — Add component-level system-color fallbacks and focused Chromium emulation coverage for custom controls, current states, feedback, overlays, and featured surfaces.
+- [x] **Automated AT-semantic regression coverage** — Protect accessible names, roles, state and relationship synchronization, focus ownership, inertness, native validation, and live-region markup across the Playwright browser matrix.
 - [ ] **SEO setup** — Add metadata, social previews, canonical information, structured data, sitemap, and robots directives.
 - [ ] **Performance optimization** — Optimize images, fonts, asset delivery, rendering behavior, and Core Web Vitals.
 - [ ] **Beta platform verification** — Complete manual Safari, Firefox, iOS Safari, Android Chrome, physical Windows High Contrast, VoiceOver, and NVDA testing.

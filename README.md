@@ -89,6 +89,12 @@ controls, current states, feedback, Modal boundaries, and featured marketing
 surfaces. Emulation is regression coverage, not Windows High Contrast
 certification.
 
+The cross-engine suite also checks important DOM-level accessibility contracts:
+names, roles, state synchronization, ARIA relationships, focus ownership,
+inertness, native validation, and live-region markup. These assertions cannot
+verify spoken output, announcement timing, or a screen reader's interaction
+model, so the following physical assistive-technology passes remain necessary.
+
 ### Windows High Contrast manual checklist
 
 On Windows 11 with a High Contrast theme enabled, verify in Edge or Chrome and,
@@ -105,6 +111,22 @@ where practical, Firefox:
 
 These physical Windows and NVDA checks remain incomplete until performed on an
 actual Windows system.
+
+### VoiceOver and NVDA manual checklist
+
+With macOS VoiceOver and Safari, verify Primary Navigation expanded state,
+Accordion disclosure, Tabs selection and orientation, Modal entry/isolation/
+close/restoration, polite actionable Toast announcements, Password Input toggle
+name and state, Number Stepper, Range, File Input, native validation, Progress,
+and Testimonial reading order.
+
+With iOS VoiceOver and Safari, prioritize mobile Navigation, Modal, Tabs, Toast,
+Range, validation, and native Select/date/time/file controls. With Windows 11
+NVDA and Chrome or Edge, verify Navigation, Accordion, Tabs, Modal, Toast,
+Checkbox/Radio/Switch, Password Input, Number Stepper, Range, File Input, native
+validation, and Progress; combine this with the High Contrast spot checks where
+practical. These checks are intentionally unmarked until executed on the named
+platforms.
 
 ## Project structure
 

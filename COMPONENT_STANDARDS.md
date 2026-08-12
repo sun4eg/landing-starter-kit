@@ -77,6 +77,12 @@ disable system color adaptation across an entire component.
 
 Prefer native HTML semantics and behavior. Never remove browser accessibility without providing a complete and tested replacement.
 
+Interactive components must keep accessible names, native or ARIA states,
+control relationships, visibility, and focus ownership synchronized through
+every enhanced state. Use live regions only for genuinely dynamic updates and
+avoid nesting competing announcement roles. Automated DOM assertions protect
+these contracts but do not replace manual VoiceOver or NVDA verification.
+
 ## Responsive Design
 
 Components must work on:

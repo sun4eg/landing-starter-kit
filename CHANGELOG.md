@@ -12,14 +12,17 @@ The format is based on Keep a Changelog, and this project adheres to Semantic Ve
 - Added stable `npm run test` and focused browser-test commands that build and serve production output through a runner-managed local preview lifecycle.
 - Added GitHub Actions coverage for the complete browser suite in Playwright-managed Chromium, Firefox, and WebKit on pushes and pull requests targeting `main`, with failure-only reports and traces.
 - Added focused Chromium forced-colors regression coverage for form controls, current states, feedback, Modal boundaries, and featured marketing surfaces.
+- Added cross-engine Playwright coverage for accessible names, roles, state relationships, focus ownership, native validation, and live-region markup.
 
 ### Changed
 
 - Hardened custom controls, focus indicators, feedback geometry, progress/loading states, and selected or featured surfaces with component-local system-color behavior for forced-colors environments.
+- Preserved contextual Password Input toggle names while synchronizing Show/Hide state, preventing repeated generic toggle names in multi-instance interfaces.
 
 ### Documentation
 
 - Documented local installed-Chrome testing, the CI browser matrix, and an explicit physical Windows High Contrast and NVDA verification checklist.
+- Documented the limits of DOM-level accessibility assertions and added focused macOS/iOS VoiceOver and Windows NVDA manual checklists.
 
 ## [2.0.0-beta.1] - 2026-08-12
 

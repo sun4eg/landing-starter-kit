@@ -49,6 +49,29 @@ Preview the generated build locally with:
 npm run preview
 ```
 
+## Testing
+
+Install dependencies, ensure Google Chrome is available, then run the browser
+regression suite with:
+
+```bash
+npm run test
+```
+
+`npm run test:browser` runs the same Playwright suite directly, while
+`npm run test:browser:headed` keeps the browser visible for local diagnosis.
+The runner builds the project, serves `dist` on a deterministic local port, and
+stops the preview server after the tests finish; no manually started server is
+required.
+
+The initial Chromium coverage protects mobile Navigation isolation, Modal and
+Toast coordination, Playground demo-form interception, Tabs keyboard behavior,
+Card intrinsic sizing, and page-level responsive overflow. Automated browser
+tests complement rather than replace physical Safari, mobile-device,
+forced-colors, and assistive-technology verification. A future CI host can run
+the stable `npm run test` entry point after installing Chrome and project
+dependencies.
+
 ## Project structure
 
 ```text

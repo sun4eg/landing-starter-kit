@@ -6,6 +6,15 @@ The format is based on Keep a Changelog, and this project adheres to Semantic Ve
 
 ## [Unreleased]
 
+### Added
+
+- Added an initial Playwright browser regression suite covering mobile Navigation isolation, Modal and Toast coordination, Playground demo-form interception, Tabs keyboard behavior, Safari-sensitive Card intrinsic sizing, and responsive page overflow in Chromium.
+- Added stable `npm run test` and focused browser-test commands that build and serve production output through a runner-managed local preview lifecycle.
+
+### Documentation
+
+- Documented browser-test prerequisites, current coverage, CI-ready entry point, and the remaining need for physical Safari, mobile-device, forced-colors, and assistive-technology verification.
+
 ## [2.0.0-beta.1] - 2026-08-12
 
 > Beta release: automated production-build and Chrome regression checks pass.

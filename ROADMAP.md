@@ -33,10 +33,12 @@ This roadmap tracks the development of a reusable, accessible, and production-re
 - [x] **Beta architecture and blocker remediation** — Complete Modal and mobile Navigation isolation, Playground form interception, semantic-token migration, dynamic viewport enhancement, and source-level beta-readiness reconciliation.
 - [x] **Complete beta component documentation** — Document the expanded component set, including Testimonial, and synchronize the README and Playground inventories.
 - [x] **v2.0.0-beta.1 preparation** — Version and document the beta evaluation and integration-testing milestone.
+- [x] **Initial browser regression coverage** — Add a production-build Playwright/Chromium suite for high-risk Navigation, Modal, Toast, form, Tabs, Card-sizing, and responsive-overflow contracts.
 - [ ] **SEO setup** — Add metadata, social previews, canonical information, structured data, sitemap, and robots directives.
 - [ ] **Performance optimization** — Optimize images, fonts, asset delivery, rendering behavior, and Core Web Vitals.
 - [ ] **Beta platform verification** — Complete manual Safari, Firefox, iOS Safari, Android Chrome, forced-colors, VoiceOver, and NVDA testing.
-- [ ] **Post-beta hardening** — Add automated interaction regression coverage and review optional API naming consistency before stable v2.0.0.
+- [ ] **Expanded browser regression coverage** — Extend the initial Chromium suite to WebKit and Firefox on supported hosts and integrate it with continuous integration.
+- [ ] **Post-beta API hardening** — Review optional API naming consistency before stable v2.0.0.
 - [ ] **Production readiness** — Complete content checks, error handling, performance review, build verification, and deployment documentation.
 
 ## Next Component Phase

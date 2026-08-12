@@ -23,6 +23,7 @@ The format is based on Keep a Changelog, and this project adheres to Semantic Ve
 
 - Documented local installed-Chrome testing, the CI browser matrix, and an explicit physical Windows High Contrast and NVDA verification checklist.
 - Documented the limits of DOM-level accessibility assertions and added focused macOS/iOS VoiceOver and Windows NVDA manual checklists.
+- Recorded a targeted macOS Safari + VoiceOver smoke pass with no issue observed in the tested Modal, Navigation, Tabs, Form Control, Toast, Progress, native-validation, and Testimonial workflows; broader device and AT verification remains pending.
 
 ## [2.0.0-beta.1] - 2026-08-12
 

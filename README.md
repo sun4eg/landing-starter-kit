@@ -95,6 +95,13 @@ inertness, native validation, and live-region markup. These assertions cannot
 verify spoken output, announcement timing, or a screen reader's interaction
 model, so the following physical assistive-technology passes remain necessary.
 
+A targeted macOS Safari + VoiceOver smoke pass has been completed for priority
+Navigation, disclosure, Tabs, Modal, Toast, Form Control, native-validation,
+Progress, and Testimonial workflows, with no issue observed in those scenarios.
+This is focused verification, not complete Safari or VoiceOver certification.
+Windows NVDA, iOS VoiceOver, physical Windows High Contrast, and remaining
+physical mobile/touch coverage are still pending.
+
 ### Windows High Contrast manual checklist
 
 On Windows 11 with a High Contrast theme enabled, verify in Edge or Chrome and,
@@ -114,19 +121,20 @@ actual Windows system.
 
 ### VoiceOver and NVDA manual checklist
 
-With macOS VoiceOver and Safari, verify Primary Navigation expanded state,
-Accordion disclosure, Tabs selection and orientation, Modal entry/isolation/
-close/restoration, polite actionable Toast announcements, Password Input toggle
-name and state, Number Stepper, Range, File Input, native validation, Progress,
-and Testimonial reading order.
+Completed targeted macOS VoiceOver + Safari smoke coverage included Primary
+Navigation expanded state, Accordion disclosure, Tabs selection and navigation,
+Modal context/isolation/close/restoration, Toast announcement and focus behavior,
+Password Input names and state, Number Stepper, Range, Select, File Input, native
+validation, Progress, and Testimonial reading order. No issue was observed in
+these tested workflows.
 
 With iOS VoiceOver and Safari, prioritize mobile Navigation, Modal, Tabs, Toast,
 Range, validation, and native Select/date/time/file controls. With Windows 11
 NVDA and Chrome or Edge, verify Navigation, Accordion, Tabs, Modal, Toast,
 Checkbox/Radio/Switch, Password Input, Number Stepper, Range, File Input, native
 validation, and Progress; combine this with the High Contrast spot checks where
-practical. These checks are intentionally unmarked until executed on the named
-platforms.
+practical. The iOS and Windows checks remain incomplete until executed on the
+named platforms.
 
 ## Project structure
 

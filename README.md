@@ -84,6 +84,28 @@ responsive overflow. Playwright WebKit regression coverage is not physical
 Safari certification; automated tests complement rather than replace physical
 Safari, mobile-device, forced-colors, and assistive-technology verification.
 
+The Chromium project also runs a focused emulated forced-colors suite for custom
+controls, current states, feedback, Modal boundaries, and featured marketing
+surfaces. Emulation is regression coverage, not Windows High Contrast
+certification.
+
+### Windows High Contrast manual checklist
+
+On Windows 11 with a High Contrast theme enabled, verify in Edge or Chrome and,
+where practical, Firefox:
+
+- Checkbox and Radio: unchecked/checked/indeterminate geometry, disabled state, and keyboard focus.
+- Switch: off/on thumb position, track boundary, disabled state, and keyboard focus.
+- Select, Range, and File Input: visible affordance, selected/value state, native operation, and focus.
+- Tabs and Pagination: selected/current geometry plus keyboard focus.
+- Modal: dialog boundary, close/action focus, isolation, and restoration.
+- Alert and Toast: readable text, visible icons/boundaries, actions, and dismiss controls.
+- Progress and Spinner: visible track/fill or ring geometry and reduced-motion combination.
+- With NVDA, spot-check names and states for the custom controls, Tabs, Modal, and actionable Toast.
+
+These physical Windows and NVDA checks remain incomplete until performed on an
+actual Windows system.
+
 ## Project structure
 
 ```text

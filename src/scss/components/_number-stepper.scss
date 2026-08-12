@@ -133,3 +133,21 @@
     background-color: var(--color-interactive-surface);
   }
 }
+
+@media (forced-colors: active) {
+  .number-stepper[data-number-stepper-enhanced] .number-stepper__control,
+  .number-stepper__button--decrement,
+  .number-stepper__button--increment {
+    border-color: CanvasText;
+  }
+
+  .number-stepper__button {
+    color: ButtonText;
+    background-color: ButtonFace;
+  }
+
+  .number-stepper__button:disabled {
+    color: GrayText;
+    opacity: 1;
+  }
+}

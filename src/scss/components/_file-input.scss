@@ -84,3 +84,23 @@
     border-color: var(--color-interactive);
   }
 }
+
+@media (forced-colors: active) {
+  .file-input__control {
+    color: CanvasText;
+    background-color: Canvas;
+    border-color: CanvasText;
+  }
+
+  .file-input__control::file-selector-button {
+    color: ButtonText;
+    background-color: ButtonFace;
+    border-color: ButtonText;
+  }
+
+  .file-input__control:disabled {
+    color: GrayText;
+    border-color: GrayText;
+    opacity: 1;
+  }
+}

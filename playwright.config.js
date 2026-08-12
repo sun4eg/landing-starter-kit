@@ -12,10 +12,12 @@ const managedBrowserProjects = [
   {
     name: 'firefox',
     use: devices['Desktop Firefox'],
+    testIgnore: /forced-colors\.spec\.js/,
   },
   {
     name: 'webkit',
     use: devices['Desktop Safari'],
+    testIgnore: /forced-colors\.spec\.js/,
   },
 ]
 

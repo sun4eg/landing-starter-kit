@@ -70,6 +70,11 @@ Every interactive component must support:
 - Semantic HTML.
 - ARIA only when necessary.
 
+Components with custom-rendered controls, selected states, or essential visual
+boundaries must also remain perceivable in forced-colors mode. Prefer native
+semantics, system colors, visible geometry, and explicit focus outlines; never
+disable system color adaptation across an entire component.
+
 Prefer native HTML semantics and behavior. Never remove browser accessibility without providing a complete and tested replacement.
 
 ## Responsive Design

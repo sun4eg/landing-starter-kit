@@ -111,3 +111,27 @@
     border-color: var(--color-interactive-strong);
   }
 }
+
+@media (forced-colors: active) {
+  .checkbox__control {
+    color: HighlightText;
+    background-color: Canvas;
+    border-color: CanvasText;
+  }
+
+  .checkbox__input:is(:checked, :indeterminate) + .checkbox__control {
+    background-color: Highlight;
+    border-color: Highlight;
+  }
+
+  .checkbox__input:focus-visible + .checkbox__control {
+    outline-color: Highlight;
+  }
+
+  .checkbox__input:disabled ~ .checkbox__control,
+  .checkbox__input:disabled ~ .checkbox__content {
+    color: GrayText;
+    border-color: GrayText;
+    opacity: 1;
+  }
+}

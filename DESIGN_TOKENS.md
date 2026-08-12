@@ -6,6 +6,11 @@ Design tokens are the single source of truth for the project's visual decisions.
 
 Reusable components should consume tokens that describe intent rather than implementation. A semantic token such as `--color-background` communicates why a value is used; a raw color value communicates only what it currently looks like. This separation makes changes safer, keeps components theme-neutral, and prevents unrelated components from becoming coupled to a specific palette or scale value.
 
+In `forced-colors` overrides, CSS system color keywords such as `Canvas`,
+`CanvasText`, `ButtonText`, `Highlight`, and `GrayText` may be used directly.
+They represent user-selected platform roles rather than project palette values,
+so they should not be routed through brand or semantic color tokens.
+
 The token system is defined centrally and consumed through CSS custom properties. Sass modules continue to own architecture and shared breakpoints, while CSS custom properties provide runtime inheritance, contextual overrides, and future theming support.
 
 ---

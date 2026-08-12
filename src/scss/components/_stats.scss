@@ -86,3 +86,16 @@
   stroke-linejoin: round;
   stroke-width: var(--border-width);
 }
+
+@media (forced-colors: active) {
+  .stats__item,
+  .stats--featured .stats__item {
+    background-color: Canvas;
+    border-color: CanvasText;
+    box-shadow: none;
+  }
+
+  .stats--featured .stats__item {
+    border-color: Highlight;
+  }
+}

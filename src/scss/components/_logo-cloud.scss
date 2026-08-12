@@ -96,3 +96,13 @@
   text-align: center;
   overflow-wrap: anywhere;
 }
+
+@media (forced-colors: active) {
+  .logo-cloud--bordered {
+    border-color: CanvasText;
+  }
+
+  .logo-cloud--muted {
+    color: CanvasText;
+  }
+}

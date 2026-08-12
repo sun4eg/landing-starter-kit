@@ -149,3 +149,46 @@
     border-color: var(--color-interactive-strong);
   }
 }
+
+@media (forced-colors: active) {
+  .range-slider__input {
+    forced-color-adjust: none;
+  }
+
+  .range-slider__value {
+    color: CanvasText;
+    background-color: Canvas;
+    border: var(--border-width) solid CanvasText;
+  }
+
+  .range-slider__input::-webkit-slider-runnable-track {
+    background: Canvas;
+    border-color: CanvasText;
+  }
+
+  .range-slider__input::-webkit-slider-thumb {
+    background-color: Highlight;
+    border-color: Highlight;
+    box-shadow: none;
+  }
+
+  .range-slider__input::-moz-range-track {
+    background-color: Canvas;
+    border-color: CanvasText;
+  }
+
+  .range-slider__input::-moz-range-progress {
+    background-color: Highlight;
+  }
+
+  .range-slider__input::-moz-range-thumb {
+    background-color: Highlight;
+    border-color: Highlight;
+    box-shadow: none;
+  }
+
+  .range-slider__input:disabled {
+    color: GrayText;
+    opacity: 1;
+  }
+}

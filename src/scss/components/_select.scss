@@ -79,3 +79,21 @@
     border-color: var(--color-interactive);
   }
 }
+
+@media (forced-colors: active) {
+  .select__control {
+    color: CanvasText;
+    background-color: Canvas;
+    border-color: CanvasText;
+  }
+
+  .select__control:disabled {
+    color: GrayText;
+    border-color: GrayText;
+    opacity: 1;
+  }
+
+  .select__icon {
+    color: CanvasText;
+  }
+}

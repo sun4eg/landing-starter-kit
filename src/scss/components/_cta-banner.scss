@@ -109,3 +109,21 @@
   stroke-linejoin: round;
   stroke-width: var(--border-width);
 }
+
+@media (forced-colors: active) {
+  .cta-banner,
+  .cta-banner--featured,
+  .cta-banner__media {
+    background-color: Canvas;
+    border-color: CanvasText;
+    box-shadow: none;
+  }
+
+  .cta-banner--featured {
+    border-color: Highlight;
+  }
+
+  .cta-banner__media {
+    border: var(--border-width) solid CanvasText;
+  }
+}

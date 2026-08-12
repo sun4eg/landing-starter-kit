@@ -172,3 +172,19 @@
     animation-duration: var(--duration-instant);
   }
 }
+
+@media (forced-colors: active) {
+  .toast {
+    border-color: CanvasText;
+    border-inline-start-color: CanvasText;
+  }
+
+  .toast__icon,
+  .toast__dismiss {
+    color: CanvasText;
+  }
+
+  .toast__dismiss {
+    border-color: CanvasText;
+  }
+}

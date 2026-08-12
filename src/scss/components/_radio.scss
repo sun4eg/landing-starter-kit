@@ -97,3 +97,29 @@
     border-color: var(--color-interactive);
   }
 }
+
+@media (forced-colors: active) {
+  .radio__control {
+    background-color: Canvas;
+    border-color: CanvasText;
+  }
+
+  .radio__control::after {
+    background-color: Highlight;
+  }
+
+  .radio__input:checked + .radio__control {
+    border-color: Highlight;
+  }
+
+  .radio__input:focus-visible + .radio__control {
+    outline-color: Highlight;
+  }
+
+  .radio__input:disabled ~ .radio__control,
+  .radio__input:disabled ~ .radio__content {
+    color: GrayText;
+    border-color: GrayText;
+    opacity: 1;
+  }
+}

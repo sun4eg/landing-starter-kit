@@ -115,3 +115,15 @@
     border-color: var(--color-border);
   }
 }
+
+@media (forced-colors: active) {
+  .alert,
+  .alert__dismiss {
+    border-color: CanvasText;
+  }
+
+  .alert__icon,
+  .alert__dismiss {
+    color: CanvasText;
+  }
+}

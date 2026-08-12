@@ -59,6 +59,12 @@ a {
   outline-offset: var(--focus-ring-offset);
 }
 
+@media (forced-colors: active) {
+  :focus-visible {
+    outline-color: Highlight;
+  }
+}
+
 .visually-hidden {
   position: absolute;
   width: var(--border-width);

@@ -64,3 +64,14 @@
   background-color: var(--progress-color);
   border-radius: inherit;
 }
+
+@media (forced-colors: active) {
+  .progress__track {
+    background-color: Canvas;
+    border-color: CanvasText;
+  }
+
+  .progress__bar {
+    background-color: Highlight;
+  }
+}

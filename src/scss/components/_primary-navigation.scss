@@ -56,3 +56,12 @@
     overflow-wrap: anywhere;
   }
 }
+
+@media (forced-colors: active) {
+  .primary-navigation__link[aria-current] {
+    color: CanvasText;
+    font-weight: var(--font-weight-semibold);
+    text-decoration: underline;
+    text-decoration-thickness: var(--border-width);
+  }
+}

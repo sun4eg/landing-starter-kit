@@ -138,3 +138,20 @@
 .pricing-card__note {
   text-align: center;
 }
+
+@media (forced-colors: active) {
+  .pricing-card,
+  .pricing-card--featured {
+    background-color: Canvas;
+    border-color: CanvasText;
+    box-shadow: none;
+  }
+
+  .pricing-card--featured {
+    border-color: Highlight;
+  }
+
+  .pricing-card__feature-icon {
+    color: CanvasText;
+  }
+}

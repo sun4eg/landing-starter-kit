@@ -67,3 +67,16 @@
     animation: none;
   }
 }
+
+@media (forced-colors: active) {
+  .spinner__visual {
+    border-color: CanvasText;
+    border-inline-start-color: Highlight;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .spinner__visual {
+      border-color: CanvasText;
+    }
+  }
+}

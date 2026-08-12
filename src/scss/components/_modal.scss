@@ -132,3 +132,20 @@ html[data-modal-scroll-lock] {
     opacity: 0;
   }
 }
+
+@media (forced-colors: active) {
+  .modal::before {
+    background-color: Canvas;
+  }
+
+  .modal__dialog,
+  .modal__header,
+  .modal__footer,
+  .modal__close {
+    border-color: CanvasText;
+  }
+
+  .modal__close {
+    color: ButtonText;
+  }
+}

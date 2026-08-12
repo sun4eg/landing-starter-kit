@@ -89,3 +89,15 @@
     animation: none;
   }
 }
+
+@media (forced-colors: active) {
+  .skeleton {
+    background-color: Canvas;
+    border: var(--border-width) solid CanvasText;
+  }
+
+  .skeleton::after {
+    content: none;
+    animation: none;
+  }
+}

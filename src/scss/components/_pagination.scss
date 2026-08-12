@@ -100,3 +100,18 @@
     border-color: var(--color-interactive-border);
   }
 }
+
+@media (forced-colors: active) {
+  .pagination__link,
+  .pagination__current {
+    color: CanvasText;
+    background-color: Canvas;
+    border-color: CanvasText;
+  }
+
+  .pagination__current {
+    border-color: Highlight;
+    border-width: var(--focus-ring-width);
+    forced-color-adjust: none;
+  }
+}

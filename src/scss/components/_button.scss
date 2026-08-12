@@ -149,3 +149,18 @@
   height: var(--size-full);
   fill: currentColor;
 }
+
+@media (forced-colors: active) {
+  .button {
+    color: ButtonText;
+    background-color: ButtonFace;
+    border-color: ButtonText;
+  }
+
+  .button:disabled,
+  .button[aria-disabled='true'] {
+    color: GrayText;
+    border-color: GrayText;
+    opacity: 1;
+  }
+}

@@ -109,3 +109,37 @@
     border-color: var(--color-interactive-strong);
   }
 }
+
+@media (forced-colors: active) {
+  .switch__track {
+    background-color: Canvas;
+    border-color: CanvasText;
+  }
+
+  .switch__thumb {
+    background-color: CanvasText;
+    border-color: CanvasText;
+    box-shadow: none;
+  }
+
+  .switch__input:checked + .switch__track {
+    background-color: Canvas;
+    border-color: Highlight;
+  }
+
+  .switch__input:checked + .switch__track .switch__thumb {
+    background-color: Highlight;
+    border-color: Highlight;
+  }
+
+  .switch__input:focus-visible + .switch__track {
+    outline-color: Highlight;
+  }
+
+  .switch__input:disabled ~ .switch__track,
+  .switch__input:disabled ~ .switch__content {
+    color: GrayText;
+    border-color: GrayText;
+    opacity: 1;
+  }
+}

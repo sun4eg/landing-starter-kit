@@ -135,3 +135,25 @@
 .tabs--contained.tabs--vertical .tabs__panel {
   padding: var(--space-md);
 }
+
+@media (forced-colors: active) {
+  .tabs__list,
+  .tabs--vertical .tabs__list,
+  .tabs--contained {
+    border-color: CanvasText;
+  }
+
+  .tabs__tab[aria-selected='true'] {
+    color: CanvasText;
+    background-color: Canvas;
+    border-block-end-color: Highlight;
+  }
+
+  .tabs--vertical .tabs__tab[aria-selected='true'] {
+    border-inline-end-color: Highlight;
+  }
+
+  .tabs__tab:focus-visible {
+    outline-color: Highlight;
+  }
+}

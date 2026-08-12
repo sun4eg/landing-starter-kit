@@ -11,10 +11,15 @@ The format is based on Keep a Changelog, and this project adheres to Semantic Ve
 - Added an initial Playwright browser regression suite covering mobile Navigation isolation, Modal and Toast coordination, Playground demo-form interception, Tabs keyboard behavior, Safari-sensitive Card intrinsic sizing, and responsive page overflow in Chromium.
 - Added stable `npm run test` and focused browser-test commands that build and serve production output through a runner-managed local preview lifecycle.
 - Added GitHub Actions coverage for the complete browser suite in Playwright-managed Chromium, Firefox, and WebKit on pushes and pull requests targeting `main`, with failure-only reports and traces.
+- Added focused Chromium forced-colors regression coverage for form controls, current states, feedback, Modal boundaries, and featured marketing surfaces.
+
+### Changed
+
+- Hardened custom controls, focus indicators, feedback geometry, progress/loading states, and selected or featured surfaces with component-local system-color behavior for forced-colors environments.
 
 ### Documentation
 
-- Documented local installed-Chrome testing, the CI browser matrix, and the remaining need for physical Safari, mobile-device, forced-colors, and assistive-technology verification.
+- Documented local installed-Chrome testing, the CI browser matrix, and an explicit physical Windows High Contrast and NVDA verification checklist.
 
 ## [2.0.0-beta.1] - 2026-08-12
 

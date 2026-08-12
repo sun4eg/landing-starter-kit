@@ -51,26 +51,38 @@ npm run preview
 
 ## Testing
 
-Install dependencies, ensure Google Chrome is available, then run the browser
-regression suite with:
+Install dependencies, ensure Google Chrome is available, then run the local
+Chromium regression suite with:
 
 ```bash
 npm run test
 ```
 
-`npm run test:browser` runs the same Playwright suite directly, while
-`npm run test:browser:headed` keeps the browser visible for local diagnosis.
+`npm run test:browser:chrome` runs that installed-Chrome target directly, while
+`npm run test:browser:headed` keeps it visible for local diagnosis. On hosts
+that support Playwright-managed browsers, install them with
+`npx playwright install --with-deps` and use `npm run test:browser` to run the
+configured Chromium, Firefox, and WebKit projects.
+
+Run one managed engine with:
+
+```bash
+npm run test:browser -- --project=chromium
+npm run test:browser -- --project=firefox
+npm run test:browser -- --project=webkit
+```
+
 The runner builds the project, serves `dist` on a deterministic local port, and
 stops the preview server after the tests finish; no manually started server is
 required.
 
-The initial Chromium coverage protects mobile Navigation isolation, Modal and
-Toast coordination, Playground demo-form interception, Tabs keyboard behavior,
-Card intrinsic sizing, and page-level responsive overflow. Automated browser
-tests complement rather than replace physical Safari, mobile-device,
-forced-colors, and assistive-technology verification. A future CI host can run
-the stable `npm run test` entry point after installing Chrome and project
-dependencies.
+GitHub Actions runs the complete suite in Playwright-managed Chromium, Firefox,
+and WebKit on pushes and pull requests targeting `main`. Coverage protects
+mobile Navigation isolation, Modal and Toast coordination, Playground demo-form
+interception, Tabs keyboard behavior, Card intrinsic sizing, and page-level
+responsive overflow. Playwright WebKit regression coverage is not physical
+Safari certification; automated tests complement rather than replace physical
+Safari, mobile-device, forced-colors, and assistive-technology verification.
 
 ## Project structure
 

@@ -7,9 +7,10 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "test": "npm run test:browser",
+    "test": "npm run test:browser:chrome",
     "test:browser": "playwright test",
-    "test:browser:headed": "playwright test --headed"
+    "test:browser:chrome": "PLAYWRIGHT_USE_INSTALLED_CHROME=true playwright test",
+    "test:browser:headed": "PLAYWRIGHT_USE_INSTALLED_CHROME=true playwright test --headed"
   },
   "devDependencies": {
     "@playwright/test": "^1.62.1",

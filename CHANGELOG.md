@@ -6,10 +6,6 @@ The format is based on Keep a Changelog, and this project adheres to Semantic Ve
 
 ## [Unreleased]
 
-### Fixed
-
-- Removed Service Card's percentage block size so intrinsic Card compositions no longer over-resolve auto-sized Grid rows in Safari while parent grids retain intentional equal-height stretching.
-
 ## [2.0.0-beta.1] - 2026-08-12
 
 > Beta release: automated production-build and Chrome regression checks pass.
@@ -33,10 +29,12 @@ The format is based on Keep a Changelog, and this project adheres to Semantic Ve
 - Contained focus within the full-screen mobile Primary Navigation, isolated and scroll-locked obscured content, and coordinated ownership with Modal and Toast layers.
 - Prevented Playground demonstration forms from navigating or exposing entered values while preserving browser-native constraint validation.
 - Corrected post-remediation visual regressions in focus-ring visibility and kept Alert and Spinner optical alignment within the token-only styling contract.
+- Removed Service Card's ambiguous percentage block size so intrinsic Card compositions no longer over-resolve auto-sized Grid rows in Safari while parent grids retain intentional equal-height stretching.
 
 ### Verification
 
 - Passed production builds, structural validation, JavaScript syntax checks, and targeted automated Chrome QA for focus, responsive containment, component alignment, and reduced motion.
+- Confirmed through targeted manual Safari smoke testing that the reproduced Service Card composition no longer stretches beyond its content.
 - Retained manual cross-browser, device, forced-colors, and assistive-technology verification as an explicit pre-publication recommendation.
 
 ## [2.0.0-alpha.1] - 2026-08-04

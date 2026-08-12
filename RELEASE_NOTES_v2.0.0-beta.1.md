@@ -15,6 +15,7 @@ It is not the stable v2.0.0 release. Cross-browser, physical-device, forced-colo
 - Added Testimonial documentation and synchronized the README component inventory.
 - Added progressive `100dvh` viewport bounds while preserving the `100vh` fallback.
 - Corrected post-remediation focus-ring visibility and token-compliance regressions.
+- Removed Service Card's ambiguous percentage height; parent Grid stretching continues to provide intentional equal-height rows, and targeted manual Safari verification confirmed the reproduced Playground Card no longer stretches.
 
 ## 3. Component Coverage
 
@@ -94,6 +95,7 @@ Treat platform-specific differences in native controls as expected unless they c
 - [x] Playground Form and Form Controls automated smoke.
 - [x] Tabs automated keyboard smoke.
 - [x] Reduced-motion automated smoke.
+- [x] Targeted Safari verification of the reproduced Service Card composition regression.
 - [ ] Chrome desktop manual smoke.
 - [ ] Firefox desktop smoke.
 - [ ] Safari desktop smoke.

@@ -6,6 +6,10 @@ The format is based on Keep a Changelog, and this project adheres to Semantic Ve
 
 ## [Unreleased]
 
+### Fixed
+
+- Removed Service Card's percentage block size so intrinsic Card compositions no longer over-resolve auto-sized Grid rows in Safari while parent grids retain intentional equal-height stretching.
+
 ## [2.0.0-beta.1] - 2026-08-12
 
 > Beta release: automated production-build and Chrome regression checks pass.

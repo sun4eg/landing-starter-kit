@@ -2,7 +2,7 @@
   --switch-track-size: var(--control-height-sm);
   --switch-track-thickness: var(--control-icon-size-lg);
   --switch-thumb-size: var(--control-icon-size-md);
-  --switch-thumb-inset: calc((var(--switch-track-thickness) - var(--switch-thumb-size)) / 2);
+  --switch-thumb-inset: calc((var(--switch-track-thickness) - var(--switch-thumb-size)) / 4);
 
   position: relative;
   display: grid;

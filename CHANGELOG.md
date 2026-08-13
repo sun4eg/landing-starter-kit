@@ -6,6 +6,12 @@ The format is based on Keep a Changelog, and this project adheres to Semantic Ve
 
 ## [Unreleased]
 
+### Fixed
+
+- Applied the shared sticky-header scroll offset to nested structural fragment targets so in-page guidance and subsection headings remain visible after link activation or direct hash loading.
+- Kept raised floating Form labels on one line at narrow mobile widths without changing their inactive state or existing notch treatment.
+- Clarified responsive Navigation state by using persistent Header toggles that switch from menu to close icons while open, including the simplified Playground documentation panel.
+
 ## [2.0.0-beta.2] - 2026-08-13
 
 > Post-beta hardening release for continued evaluation and integration testing.

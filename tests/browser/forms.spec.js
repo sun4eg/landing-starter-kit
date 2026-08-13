@@ -70,3 +70,85 @@ test('textarea Enter inserts a newline without submitting', async ({ page }) => 
   await expect(textarea).toHaveValue('First line\nSecond line')
   expect(new URL(page.url()).search).toBe('')
 })
+
+const floatingLabelWidths = [320, 390, 768, 1440]
+
+for (const width of floatingLabelWidths) {
+  test(`raised floating labels stay single-line and contained at ${width}px`, async ({ page }) => {
+    await page.setViewportSize({ width, height: width <= 390 ? 568 : 900 })
+    await page.goto('/playground.html#forms-title')
+
+    const inactiveInput = page.locator('#playground-form-name')
+    const inactiveLabel = page.locator('label[for="playground-form-name"]')
+    await expect(inactiveInput).toHaveValue('')
+    await expect(inactiveLabel).toHaveCSS('white-space', 'normal')
+
+    const states = [
+      {
+        control: page.locator('#playground-form-organization'),
+        label: page.locator('label[for="playground-form-organization"]'),
+      },
+      {
+        control: page.locator('#playground-form-message'),
+        label: page.locator('label[for="playground-form-message"]'),
+      },
+    ]
+
+    await inactiveInput.focus()
+    states.push({ control: inactiveInput, label: inactiveLabel })
+
+    for (const { control, label } of states) {
+      await expect(label).toHaveCSS('white-space', 'nowrap')
+      const geometry = await label.evaluate((element) => {
+        const field = element.closest('.form__field')
+        const style = getComputedStyle(element)
+        const labelRect = element.getBoundingClientRect()
+        const fieldRect = field.getBoundingClientRect()
+        const lineHeight = parseFloat(style.lineHeight)
+
+        return {
+          singleLine: labelRect.height <= lineHeight * 1.25,
+          containedInline:
+            labelRect.left >= fieldRect.left - 1 && labelRect.right <= fieldRect.right + 1,
+        }
+      })
+
+      expect(geometry).toEqual({ singleLine: true, containedInline: true })
+      await expect(control).toBeVisible()
+    }
+
+    await inactiveInput.blur()
+    await page.getByRole('button', { name: 'Validate Playground form' }).click()
+    await expect(inactiveInput).toBeFocused()
+    expect(await inactiveInput.evaluate((control) => control.validity.valid)).toBe(false)
+    await expect(inactiveLabel).toHaveCSS('white-space', 'nowrap')
+
+    await expect.poll(() => page.evaluate(
+      () => document.documentElement.scrollWidth <= document.documentElement.clientWidth,
+    )).toBe(true)
+  })
+}
+
+test('floating-label selectors retain focus, filled, textarea, and autofill states', async ({ page }) => {
+  await page.goto('/playground.html#forms-title')
+
+  const selectorCoverage = await page.evaluate(() => {
+    const selectors = []
+
+    for (const sheet of document.styleSheets) {
+      for (const rule of sheet.cssRules) {
+        if (rule instanceof CSSStyleRule && rule.selectorText?.includes('.form__label')) {
+          selectors.push(rule.selectorText)
+        }
+      }
+    }
+
+    return selectors.join(' ')
+  })
+
+  expect(selectorCoverage).toContain(':focus')
+  expect(selectorCoverage).toContain(':not(:placeholder-shown)')
+  expect(selectorCoverage).toContain(':autofill')
+  expect(selectorCoverage).toContain(':-webkit-autofill')
+  expect(selectorCoverage).toContain('.form__textarea')
+})

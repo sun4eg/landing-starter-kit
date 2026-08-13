@@ -2,9 +2,9 @@
 
 An AI-ready foundation for modern, accessible, responsive landing pages, built with Vite, token-driven Sass, BEM, semantic HTML, and vanilla JavaScript ES Modules—without a UI framework.
 
-[![Version 2.0.0-beta.1](https://img.shields.io/badge/version-2.0.0--beta.1-0A7EA4)](./CHANGELOG.md) [![MIT License](https://img.shields.io/badge/license-MIT-green)](./LICENSE) [![Vite](https://img.shields.io/badge/Vite-8.2-646CFF?logo=vite&logoColor=white)](https://vite.dev/) [![Sass](https://img.shields.io/badge/Sass-1.102-CC6699?logo=sass&logoColor=white)](https://sass-lang.com/) [![JavaScript ES Modules](https://img.shields.io/badge/JavaScript-ES%20Modules-F7DF1E?logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules) [![Accessibility](https://img.shields.io/badge/Accessibility-A11y-005A9C)](https://www.w3.org/WAI/) [![AI Ready](https://img.shields.io/badge/AI-Ready-8A2BE2)](./AI_RULES.md)
+[![Version 2.0.0-beta.2](https://img.shields.io/badge/version-2.0.0--beta.2-0A7EA4)](./CHANGELOG.md) [![MIT License](https://img.shields.io/badge/license-MIT-green)](./LICENSE) [![Vite](https://img.shields.io/badge/Vite-8.2-646CFF?logo=vite&logoColor=white)](https://vite.dev/) [![Sass](https://img.shields.io/badge/Sass-1.102-CC6699?logo=sass&logoColor=white)](https://sass-lang.com/) [![JavaScript ES Modules](https://img.shields.io/badge/JavaScript-ES%20Modules-F7DF1E?logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules) [![Accessibility](https://img.shields.io/badge/Accessibility-A11y-005A9C)](https://www.w3.org/WAI/) [![AI Ready](https://img.shields.io/badge/AI-Ready-8A2BE2)](./AI_RULES.md)
 
-> `v2.0.0-beta.1` is an evaluation and integration-testing release. Manual cross-browser,
+> `v2.0.0-beta.2` is an evaluation and integration-testing release. Manual cross-browser,
 > mobile-platform, forced-colors, and assistive-technology verification remains
 > recommended before production adoption.
 
@@ -95,12 +95,12 @@ inertness, native validation, and live-region markup. These assertions cannot
 verify spoken output, announcement timing, or a screen reader's interaction
 model, so the following physical assistive-technology passes remain necessary.
 
-A targeted macOS Safari + VoiceOver smoke pass has been completed for priority
-Navigation, disclosure, Tabs, Modal, Toast, Form Control, native-validation,
-Progress, and Testimonial workflows, with no issue observed in those scenarios.
-This is focused verification, not complete Safari or VoiceOver certification.
-Windows NVDA, iOS VoiceOver, physical Windows High Contrast, and remaining
-physical mobile/touch coverage are still pending.
+Targeted macOS and iOS Safari + VoiceOver smoke passes have been completed for
+priority Navigation, disclosure, Tabs, Modal, Toast, Form Control, validation,
+Progress, and reading-order workflows, with no issue observed in the tested
+scenarios. The iOS pass also included a basic touch smoke. This is focused
+verification, not complete Safari, iOS, or VoiceOver certification. Windows
+NVDA, physical Windows High Contrast, and Android Chrome/touch remain pending.
 
 ### Windows High Contrast manual checklist
 
@@ -128,13 +128,15 @@ Password Input names and state, Number Stepper, Range, Select, File Input, nativ
 validation, Progress, and Testimonial reading order. No issue was observed in
 these tested workflows.
 
-With iOS VoiceOver and Safari, prioritize mobile Navigation, Modal, Tabs, Toast,
-Range, validation, and native Select/date/time/file controls. With Windows 11
-NVDA and Chrome or Edge, verify Navigation, Accordion, Tabs, Modal, Toast,
+Completed targeted iOS VoiceOver + Safari coverage included mobile Navigation,
+Modal, Tabs, Toast, Modal + Toast isolation, Range, Password Input naming,
+native Select/date/time/file controls, native validation, and a basic touch
+smoke. No issue was observed in these tested workflows. With Windows 11 NVDA
+and Chrome or Edge, verify Navigation, Accordion, Tabs, Modal, Toast,
 Checkbox/Radio/Switch, Password Input, Number Stepper, Range, File Input, native
 validation, and Progress; combine this with the High Contrast spot checks where
-practical. The iOS and Windows checks remain incomplete until executed on the
-named platforms.
+practical. The Windows checks remain incomplete until executed on the named
+platform; Android Chrome/touch also remains pending.
 
 ## Project structure
 

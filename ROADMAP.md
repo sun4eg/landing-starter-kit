@@ -38,12 +38,15 @@ This roadmap tracks the development of a reusable, accessible, and production-re
 - [x] **Automated forced-colors hardening** — Add component-level system-color fallbacks and focused Chromium emulation coverage for custom controls, current states, feedback, overlays, and featured surfaces.
 - [x] **Automated AT-semantic regression coverage** — Protect accessible names, roles, state and relationship synchronization, focus ownership, inertness, native validation, and live-region markup across the Playwright browser matrix.
 - [x] **Targeted macOS VoiceOver verification** — Complete a Safari + VoiceOver smoke pass across priority Navigation, disclosure, Modal, Toast, Form Control, validation, Progress, and Testimonial workflows with no issue observed in the tested scenarios.
+- [x] **Targeted iOS VoiceOver verification** — Complete an iOS Safari + VoiceOver pass across priority mobile Navigation, Modal, Tabs, Toast, Form Control, validation, and basic touch workflows with no issue observed in the tested scenarios.
+- [x] **v2.0.0-beta.2 preparation** — Reconcile post-beta browser tooling, forced-colors and semantic hardening, and targeted macOS/iOS verification for owner review.
 - [ ] **SEO setup** — Add metadata, social previews, canonical information, structured data, sitemap, and robots directives.
 - [ ] **Performance optimization** — Optimize images, fonts, asset delivery, rendering behavior, and Core Web Vitals.
-- [ ] **Remaining beta platform verification** — Complete iOS VoiceOver, Windows NVDA, physical Windows High Contrast, Android/touch, and any broader platform checks indicated by beta feedback.
+- [ ] **Remaining beta platform verification** — Complete Windows NVDA, physical Windows High Contrast, Android Chrome/touch, and any broader platform checks indicated by beta feedback.
 - [ ] **Expanded browser regression coverage** — Add further engine-specific scenarios where beta feedback identifies concrete interoperability risks.
 - [ ] **Post-beta API hardening** — Review optional API naming consistency before stable v2.0.0.
 - [ ] **Production readiness** — Complete content checks, error handling, performance review, build verification, and deployment documentation.
+- [ ] **Stable/RC readiness** — Reconcile beta feedback and remaining platform evidence before selecting a release-candidate or stable v2 milestone.
 
 ## Next Component Phase
 

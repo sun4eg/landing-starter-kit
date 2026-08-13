@@ -6,24 +6,27 @@ The format is based on Keep a Changelog, and this project adheres to Semantic Ve
 
 ## [Unreleased]
 
-### Added
+## [2.0.0-beta.2] - 2026-08-13
 
-- Added an initial Playwright browser regression suite covering mobile Navigation isolation, Modal and Toast coordination, Playground demo-form interception, Tabs keyboard behavior, Safari-sensitive Card intrinsic sizing, and responsive page overflow in Chromium.
-- Added stable `npm run test` and focused browser-test commands that build and serve production output through a runner-managed local preview lifecycle.
-- Added GitHub Actions coverage for the complete browser suite in Playwright-managed Chromium, Firefox, and WebKit on pushes and pull requests targeting `main`, with failure-only reports and traces.
-- Added focused Chromium forced-colors regression coverage for form controls, current states, feedback, Modal boundaries, and featured marketing surfaces.
-- Added cross-engine Playwright coverage for accessible names, roles, state relationships, focus ownership, native validation, and live-region markup.
+> Post-beta hardening release for continued evaluation and integration testing.
+> Windows NVDA, physical Windows High Contrast, and Android device/touch
+> verification remain pending and are not represented by browser emulation.
 
-### Changed
+### Fixed
 
-- Hardened custom controls, focus indicators, feedback geometry, progress/loading states, and selected or featured surfaces with component-local system-color behavior for forced-colors environments.
 - Preserved contextual Password Input toggle names while synchronizing Show/Hide state, preventing repeated generic toggle names in multi-instance interfaces.
 
-### Documentation
+### Accessibility
 
-- Documented local installed-Chrome testing, the CI browser matrix, and an explicit physical Windows High Contrast and NVDA verification checklist.
-- Documented the limits of DOM-level accessibility assertions and added focused macOS/iOS VoiceOver and Windows NVDA manual checklists.
-- Recorded a targeted macOS Safari + VoiceOver smoke pass with no issue observed in the tested Modal, Navigation, Tabs, Form Control, Toast, Progress, native-validation, and Testimonial workflows; broader device and AT verification remains pending.
+- Hardened custom controls, focus indicators, feedback geometry, progress/loading states, and selected or featured surfaces with component-local system-color behavior for forced-colors environments.
+- Added focused Chromium forced-colors emulation coverage and cross-engine DOM-level regression coverage for accessible names, roles, state relationships, focus ownership, native validation, and live-region markup.
+- Completed targeted macOS Safari + VoiceOver and iOS Safari + VoiceOver smoke passes with no issue observed in the tested priority workflows; the iOS pass also included a basic touch smoke.
+
+### Testing and Tooling
+
+- Added a production-build Playwright regression suite for mobile Navigation, Modal and Toast coordination, Playground forms, Tabs, responsive overflow, and the Safari-sensitive Service Card intrinsic-height contract already fixed in beta.1.
+- Added stable local installed-Chrome commands and GitHub Actions coverage in Playwright-managed Chromium, Firefox, and WebKit, with deterministic preview lifecycle and failure-only artifacts.
+- Documented the distinction between Playwright WebKit and physical Safari, forced-colors emulation and physical Windows High Contrast, and DOM assertions and real screen-reader output.
 
 ## [2.0.0-beta.1] - 2026-08-12
 

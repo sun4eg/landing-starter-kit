@@ -1,6 +1,6 @@
 import { expect, test } from '@playwright/test'
 
-const widths = [320, 390, 768, 1440]
+const widths = [320, 390, 430, 768, 1024, 1440]
 
 for (const width of widths) {
   for (const path of ['/', '/playground.html']) {

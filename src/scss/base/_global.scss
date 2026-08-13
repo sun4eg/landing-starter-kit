@@ -24,8 +24,7 @@ a {
   text-underline-offset: var(--space-3xs);
 }
 
-#main-content,
-.section-heading__title[id] {
+:where(main, section, h1, h2, h3, h4, h5, h6)[id] {
   scroll-margin-block-start: var(--scroll-offset);
 }
 

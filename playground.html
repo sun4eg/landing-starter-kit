@@ -86,7 +86,7 @@
           <button
             class="playground-navigation-toggle"
             type="button"
-            aria-label="Open documentation navigation"
+            aria-label="Open navigation"
             aria-expanded="false"
             aria-controls="playground-navigation-panel"
             data-playground-navigation-toggle
@@ -97,7 +97,17 @@
               <span></span>
               <span></span>
             </span>
-            <span>Documentation</span>
+            <svg
+              class="playground-navigation-toggle__close-icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              aria-hidden="true"
+              focusable="false"
+            >
+              <path d="m6 6 12 12M18 6 6 18" />
+            </svg>
+            <span>Navigation</span>
           </button>
         </div>
       </div>
@@ -128,24 +138,10 @@
       <aside
         class="playground-navigation-panel"
         id="playground-navigation-panel"
-        aria-labelledby="playground-navigation-title"
+        aria-label="Documentation navigation panel"
         data-playground-navigation-panel
         hidden
       >
-        <div class="playground-navigation-panel__header">
-          <h2 class="playground-navigation-panel__title" id="playground-navigation-title">Navigation</h2>
-          <button
-            class="playground-navigation-panel__close"
-            type="button"
-            aria-label="Close documentation navigation"
-            data-playground-navigation-close
-          >
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true" focusable="false">
-              <path d="m6 6 12 12M18 6 6 18" />
-            </svg>
-          </button>
-        </div>
-
         <nav aria-label="Playground documentation">
           <ul class="playground-navigation-panel__list" role="list">
             <li><a class="playground-navigation-panel__link" href="#playground-title" data-playground-navigation-link>Introduction</a></li>

@@ -1,7 +1,6 @@
 const rootSelector = '[data-playground-navigation]'
 const toggleSelector = '[data-playground-navigation-toggle]'
 const panelSelector = '[data-playground-navigation-panel]'
-const closeSelector = '[data-playground-navigation-close]'
 const linkSelector = '[data-playground-navigation-link]'
 
 const initializedRoots = new WeakSet()
@@ -32,7 +31,6 @@ function initPlaygroundNavigation(root) {
   const view = ownerDocument.defaultView
   const toggle = root.querySelector(toggleSelector)
   const panel = root.querySelector(panelSelector)
-  const closeButton = root.querySelector(closeSelector)
   const navigationLinks = Array.from(root.querySelectorAll(linkSelector)).filter(
     (link) => link instanceof HTMLAnchorElement,
   )
@@ -40,7 +38,6 @@ function initPlaygroundNavigation(root) {
   if (
     !(toggle instanceof HTMLButtonElement) ||
     !(panel instanceof HTMLElement) ||
-    !(closeButton instanceof HTMLButtonElement) ||
     view === null ||
     toggle.getAttribute('aria-controls') !== panel.id ||
     panel.id === '' ||
@@ -240,7 +237,7 @@ function initPlaygroundNavigation(root) {
 
   function setToggleState(expanded) {
     toggle.setAttribute('aria-expanded', String(expanded))
-    toggle.setAttribute('aria-label', `${expanded ? 'Close' : 'Open'} documentation navigation`)
+    toggle.setAttribute('aria-label', `${expanded ? 'Close' : 'Open'} navigation`)
   }
 
   function openPanel() {
@@ -250,7 +247,7 @@ function initPlaygroundNavigation(root) {
 
     panel.hidden = false
     setToggleState(true)
-    closeButton.focus()
+    navigationLinks.find((link) => link.getClientRects().length > 0)?.focus()
   }
 
   function closePanel(restoreFocus = true) {
@@ -273,8 +270,6 @@ function initPlaygroundNavigation(root) {
       closePanel()
     }
   })
-
-  closeButton.addEventListener('click', () => closePanel())
 
   ownerDocument.addEventListener('keydown', (event) => {
     if (event.key === 'Escape' && !panel.hidden) {

@@ -102,6 +102,30 @@
   background-color: currentColor;
 }
 
+.site-header__menu-toggle[aria-expanded='true'] .site-header__menu-icon {
+  position: relative;
+  display: block;
+  height: var(--control-icon-size-md);
+}
+
+.site-header__menu-toggle[aria-expanded='true'] .site-header__menu-icon > span {
+  position: absolute;
+  inset-block-start: 50%;
+  inset-inline-start: var(--space-0);
+}
+
+.site-header__menu-toggle[aria-expanded='true'] .site-header__menu-icon > span:first-child {
+  transform: rotate(0.125turn);
+}
+
+.site-header__menu-toggle[aria-expanded='true'] .site-header__menu-icon > span:nth-child(2) {
+  display: none;
+}
+
+.site-header__menu-toggle[aria-expanded='true'] .site-header__menu-icon > span:last-child {
+  transform: rotate(-0.125turn);
+}
+
 html[data-navigation-scroll-lock] {
   overflow: hidden;
 }

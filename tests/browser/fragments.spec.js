@@ -8,7 +8,10 @@ const viewports = [
 ]
 
 async function expectTargetBelowStickyHeader(page, targetSelector) {
-  await expect.poll(() => page.evaluate((selector) => {
+  await expect.poll(() => page.evaluate(async (selector) => {
+    await document.fonts.ready
+    await new Promise((resolve) => requestAnimationFrame(() => requestAnimationFrame(resolve)))
+
     const header = document.querySelector('[data-sticky-header]')
     const target = document.querySelector(selector)
 
@@ -24,13 +27,17 @@ async function expectTargetBelowStickyHeader(page, targetSelector) {
       clearsHeader: targetTop >= headerBottom + 1,
       excessiveOffset: targetTop - headerBottom > scrollOffset,
     }
-  }, targetSelector)).toEqual({ clearsHeader: true, excessiveOffset: false })
+  }, targetSelector), {
+    message: `${targetSelector} should settle below the sticky Header without excessive offset`,
+    timeout: 10_000,
+  }).toEqual({ clearsHeader: true, excessiveOffset: false })
 }
 
 for (const viewport of viewports) {
   test(`nested fragment clears the sticky Header at ${viewport.width}px`, async ({ page }) => {
     await page.setViewportSize(viewport)
     await page.goto('/playground.html#buttons-title')
+    await page.evaluate(() => document.fonts.ready)
 
     await page.locator('a[href="#button-guidance-title"]').first().click()
     await expect(page).toHaveURL(/#button-guidance-title$/)

@@ -129,26 +129,22 @@ for (const width of floatingLabelWidths) {
   })
 }
 
-test('floating-label selectors retain focus, filled, textarea, and autofill states', async ({ page }) => {
+test('compiled floating-label CSS retains focus, filled, textarea, and autofill states', async ({ page }) => {
   await page.goto('/playground.html#forms-title')
 
-  const selectorCoverage = await page.evaluate(() => {
-    const selectors = []
+  const compiledCSS = await page.evaluate(async () => {
+    const stylesheetURLs = [...document.querySelectorAll('link[rel="stylesheet"]')]
+      .map((link) => link.href)
+    const stylesheets = await Promise.all(
+      stylesheetURLs.map(async (url) => (await fetch(url)).text()),
+    )
 
-    for (const sheet of document.styleSheets) {
-      for (const rule of sheet.cssRules) {
-        if (rule instanceof CSSStyleRule && rule.selectorText?.includes('.form__label')) {
-          selectors.push(rule.selectorText)
-        }
-      }
-    }
-
-    return selectors.join(' ')
+    return stylesheets.join('\n')
   })
 
-  expect(selectorCoverage).toContain(':focus')
-  expect(selectorCoverage).toContain(':not(:placeholder-shown)')
-  expect(selectorCoverage).toContain(':autofill')
-  expect(selectorCoverage).toContain(':-webkit-autofill')
-  expect(selectorCoverage).toContain('.form__textarea')
+  expect(compiledCSS).toMatch(/\.form__input:is\([^}]*:focus/)
+  expect(compiledCSS).toMatch(/\.form__input:is\([^}]*:not\(:placeholder-shown\)/)
+  expect(compiledCSS).toMatch(/\.form__textarea:is\([^}]*:focus/)
+  expect(compiledCSS).toMatch(/\.form__(?:input|textarea):is\([^}]*:autofill/)
+  expect(compiledCSS).toMatch(/\.form__(?:input|textarea)[^{]*:-webkit-autofill/)
 })

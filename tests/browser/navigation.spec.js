@@ -2,6 +2,120 @@ import { expect, test } from '@playwright/test'
 
 test.use({ viewport: { width: 390, height: 664 } })
 
+async function getPlaygroundSideNavigation(page, width) {
+  return width <= 1024
+    ? {
+        toggle: page.locator('[data-navigation-toggle]'),
+        container: page.locator('[data-navigation-menu]'),
+      }
+    : {
+        toggle: page.locator('[data-playground-navigation-toggle]'),
+        container: page.locator('[data-playground-navigation-panel]'),
+      }
+}
+
+async function expectCurrentLinkPositioned(page, container, targetHash) {
+  const currentLink = container.locator(
+    `[data-playground-navigation-link][href="${targetHash}"][aria-current="location"]`,
+  )
+
+  await expect(currentLink).toBeVisible()
+  await expect.poll(() => container.evaluate((element, hash) => {
+    const link = element.querySelector(
+      `[data-playground-navigation-link][href="${hash}"][aria-current="location"]`,
+    )
+
+    if (!(link instanceof HTMLAnchorElement)) {
+      return null
+    }
+
+    const containerRect = element.getBoundingClientRect()
+    const linkRect = link.getBoundingClientRect()
+    const maximumScrollPosition = Math.max(element.scrollHeight - element.clientHeight, 0)
+    const linkCenter = linkRect.top - containerRect.top + element.scrollTop + (linkRect.height / 2)
+    const expectedScrollPosition = Math.min(
+      Math.max(linkCenter - (element.clientHeight / 2), 0),
+      maximumScrollPosition,
+    )
+
+    return {
+      fullyVisible: linkRect.top >= containerRect.top - 1 && linkRect.bottom <= containerRect.bottom + 1,
+      centeredOrClamped: Math.abs(element.scrollTop - expectedScrollPosition) <= 2,
+    }
+  }, targetHash)).toEqual({ fullyVisible: true, centeredOrClamped: true })
+}
+
+async function settleCurrentSection(page, container, targetHash) {
+  await page.evaluate((hash) => {
+    const target = document.querySelector(hash)
+
+    if (!(target instanceof HTMLElement)) {
+      return
+    }
+
+    const measurement = document.createElement('div')
+    measurement.style.position = 'absolute'
+    measurement.style.visibility = 'hidden'
+    measurement.style.blockSize = 'var(--scroll-offset)'
+    document.body.append(measurement)
+    const scrollOffset = measurement.getBoundingClientRect().height
+    measurement.remove()
+
+    const targetPosition = target.getBoundingClientRect().top + scrollY
+    document.documentElement.style.scrollBehavior = 'auto'
+    scrollTo({ top: Math.max(targetPosition - scrollOffset + 4, 0), behavior: 'auto' })
+  }, targetHash)
+  await expect(container.locator(`[href="${targetHash}"]`)).toHaveAttribute('aria-current', 'location')
+}
+
+for (const width of [320, 390, 768, 1024, 1440]) {
+  test(`Playground side Navigation centers its current item at ${width}px without moving the page`, async ({ page }) => {
+    await page.setViewportSize({ width, height: 420 })
+    await page.goto('/playground.html#timeline')
+
+    const { toggle, container } = await getPlaygroundSideNavigation(page, width)
+    await settleCurrentSection(page, container, '#timeline')
+    const pageScrollPosition = await page.evaluate(() => scrollY)
+
+    await toggle.click()
+    await expect(toggle).toHaveAttribute('aria-expanded', 'true')
+    await expect(container).toBeVisible()
+
+    await expectCurrentLinkPositioned(page, container, '#timeline')
+    expect(Math.abs((await page.evaluate(() => scrollY)) - pageScrollPosition)).toBeLessThanOrEqual(1)
+
+    if (width <= 1024) {
+      await expect(toggle).toBeFocused()
+    } else {
+      await expect(container.getByRole('link', { name: 'Introduction' })).toBeFocused()
+    }
+  })
+}
+
+for (const width of [390, 1440]) {
+  test(`Playground side Navigation clamps at its ends and follows current-item changes at ${width}px`, async ({ page }) => {
+    await page.setViewportSize({ width, height: 420 })
+    await page.goto('/playground.html#tokens-title')
+
+    const { toggle, container } = await getPlaygroundSideNavigation(page, width)
+    await settleCurrentSection(page, container, '#tokens-title')
+    await toggle.evaluate((element) => element.click())
+    await expect(toggle).toHaveAttribute('aria-expanded', 'true')
+    await expectCurrentLinkPositioned(page, container, '#tokens-title')
+    await expect.poll(() => container.evaluate(
+      (element) => Math.abs(element.scrollTop - (element.scrollHeight - element.clientHeight)) <= 2,
+    )).toBe(true)
+
+    await toggle.evaluate((element) => element.click())
+    await page.evaluate(() => { location.hash = 'playground-title' })
+    await settleCurrentSection(page, container, '#playground-title')
+    await toggle.evaluate((element) => element.click())
+    await expect(toggle).toHaveAttribute('aria-expanded', 'true')
+    await expectCurrentLinkPositioned(page, container, '#playground-title')
+    await expect.poll(() => container.evaluate((element) => element.scrollTop <= 2)).toBe(true)
+  })
+}
+
 test('Playground documentation panel uses one persistent Header toggle', async ({ page }) => {
   await page.setViewportSize({ width: 1440, height: 900 })
   await page.goto('/playground.html')

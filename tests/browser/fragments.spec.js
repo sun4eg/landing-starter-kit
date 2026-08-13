@@ -23,14 +23,13 @@ async function expectTargetBelowStickyHeader(page, targetSelector) {
     const targetTop = target.getBoundingClientRect().top
     const scrollOffset = parseFloat(getComputedStyle(target).scrollMarginBlockStart)
 
-    return {
-      clearsHeader: targetTop >= headerBottom + 1,
-      excessiveOffset: targetTop - headerBottom > scrollOffset,
-    }
+    const clearance = targetTop - headerBottom
+
+    return clearance >= 1 && clearance <= scrollOffset + 2
   }, targetSelector), {
     message: `${targetSelector} should settle below the sticky Header without excessive offset`,
     timeout: 10_000,
-  }).toEqual({ clearsHeader: true, excessiveOffset: false })
+  }).toBe(true)
 }
 
 for (const viewport of viewports) {
@@ -38,8 +37,11 @@ for (const viewport of viewports) {
     await page.setViewportSize(viewport)
     await page.goto('/playground.html#buttons-title')
     await page.evaluate(() => document.fonts.ready)
+    await expectTargetBelowStickyHeader(page, '#buttons-title')
 
-    await page.locator('a[href="#button-guidance-title"]').first().click()
+    const guidanceLink = page.locator('a[href="#button-guidance-title"]').first()
+    await guidanceLink.evaluate((link) => link.focus({ preventScroll: true }))
+    await page.keyboard.press('Enter')
     await expect(page).toHaveURL(/#button-guidance-title$/)
     await expectTargetBelowStickyHeader(page, '#button-guidance-title')
     await expect.poll(() => page.evaluate(

@@ -2,6 +2,8 @@ const rootSelector = '[data-playground-navigation]'
 const toggleSelector = '[data-playground-navigation-toggle]'
 const panelSelector = '[data-playground-navigation-panel]'
 const linkSelector = '[data-playground-navigation-link]'
+const mobileToggleSelector = '[data-navigation-toggle]'
+const mobileMenuSelector = '[data-navigation-menu]'
 
 const initializedRoots = new WeakSet()
 const anchorCorrection = 2
@@ -31,6 +33,8 @@ function initPlaygroundNavigation(root) {
   const view = ownerDocument.defaultView
   const toggle = root.querySelector(toggleSelector)
   const panel = root.querySelector(panelSelector)
+  const mobileToggle = root.querySelector(mobileToggleSelector)
+  const mobileMenu = root.querySelector(mobileMenuSelector)
   const navigationLinks = Array.from(root.querySelectorAll(linkSelector)).filter(
     (link) => link instanceof HTMLAnchorElement,
   )
@@ -51,7 +55,45 @@ function initPlaygroundNavigation(root) {
   let updateFrame = 0
   let measurementRequired = false
   let anchorCorrectionFrame = 0
+  let currentLinkFrame = 0
   let correctedAnchor = null
+
+  function centerCurrentLink(container) {
+    if (!(container instanceof HTMLElement) || container.getClientRects().length === 0) {
+      return
+    }
+
+    const currentLink = container.querySelector(`${linkSelector}[aria-current='location']`)
+
+    if (!(currentLink instanceof HTMLAnchorElement)) {
+      return
+    }
+
+    const maximumScrollPosition = Math.max(container.scrollHeight - container.clientHeight, 0)
+
+    if (maximumScrollPosition === 0) {
+      return
+    }
+
+    const containerRect = container.getBoundingClientRect()
+    const currentLinkRect = currentLink.getBoundingClientRect()
+    const currentLinkCenter =
+      currentLinkRect.top - containerRect.top + container.scrollTop + (currentLinkRect.height / 2)
+    const desiredScrollPosition = currentLinkCenter - (container.clientHeight / 2)
+
+    container.scrollTop = Math.min(Math.max(desiredScrollPosition, 0), maximumScrollPosition)
+  }
+
+  function scheduleCurrentLinkCenter(container) {
+    if (currentLinkFrame !== 0) {
+      view.cancelAnimationFrame(currentLinkFrame)
+    }
+
+    currentLinkFrame = view.requestAnimationFrame(() => {
+      currentLinkFrame = 0
+      centerCurrentLink(container)
+    })
+  }
 
   function collectSections() {
     const sectionMap = new Map()
@@ -247,7 +289,8 @@ function initPlaygroundNavigation(root) {
 
     panel.hidden = false
     setToggleState(true)
-    navigationLinks.find((link) => link.getClientRects().length > 0)?.focus()
+    navigationLinks.find((link) => link.getClientRects().length > 0)?.focus({ preventScroll: true })
+    scheduleCurrentLinkCenter(panel)
   }
 
   function closePanel(restoreFocus = true) {
@@ -276,6 +319,16 @@ function initPlaygroundNavigation(root) {
       closePanel()
     }
   })
+
+  if (mobileToggle instanceof HTMLButtonElement && mobileMenu instanceof HTMLElement) {
+    const mobileToggleObserver = new MutationObserver(() => {
+      if (mobileToggle.getAttribute('aria-expanded') === 'true') {
+        scheduleCurrentLinkCenter(mobileMenu)
+      }
+    })
+
+    mobileToggleObserver.observe(mobileToggle, { attributes: true, attributeFilter: ['aria-expanded'] })
+  }
 
   navigationLinks.forEach((link) => {
     link.addEventListener('click', () => {

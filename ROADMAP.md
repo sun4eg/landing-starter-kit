@@ -42,13 +42,14 @@ This roadmap tracks the development of a reusable, accessible, and production-re
 - [x] **v2.0.0-beta.2 preparation** — Reconcile post-beta browser tooling, forced-colors and semantic hardening, and targeted macOS/iOS verification for owner review.
 - [x] **Post-beta.2 interaction stabilization** — Correct nested fragment offsets and raised floating-label containment, simplify responsive Navigation toggles, center the current Playground navigation item on open, and stabilize the corresponding cross-engine regression coverage.
 - [x] **v2.0.0-rc.1 preparation** — Freeze features and reconcile the release candidate for final integration and acceptance testing.
+- [x] **v2.0.0 stable preparation** — Complete RC stabilization, validate the frozen API and automated browser matrix, and prepare the stable v2 documentation and release metadata.
+- [x] **Stable v2 automated coverage** — Retain production-build installed-Chrome checks and managed Chromium, Firefox, and WebKit CI coverage for the documented interaction contracts.
 - [ ] **SEO setup** — Add metadata, social previews, canonical information, structured data, sitemap, and robots directives.
 - [ ] **Performance optimization** — Optimize images, fonts, asset delivery, rendering behavior, and Core Web Vitals.
-- [ ] **Remaining RC platform verification** — Complete Windows NVDA, physical Windows High Contrast, and broader evidence-driven device checks; targeted Android Chrome/touch spot checks completed so far reported no issue.
-- [ ] **Expanded browser regression coverage** — Add further engine-specific scenarios where beta feedback identifies concrete interoperability risks.
-- [ ] **Post-RC feature and API work** — Defer optional API naming cleanup and all new feature work until after stable v2.0.0 unless required by a verified release blocker.
-- [ ] **Production readiness** — Complete content checks, error handling, performance review, build verification, and deployment documentation.
-- [ ] **Stable readiness** — Reconcile RC feedback, required platform evidence, and release blockers before stable v2.0.0.
+- [ ] **Post-2.0 platform evidence** — Complete Windows NVDA, physical Windows High Contrast, and broader evidence-driven device checks when the required environments are available.
+- [ ] **Post-2.0 regression expansion** — Add engine-specific scenarios only where production feedback identifies concrete interoperability risks.
+- [ ] **Post-2.0 features and API evolution** — Treat optional naming cleanup, new components, and new variants as separately reviewed future-version work.
+- [ ] **Adopter production integration** — Complete deployment-specific content, backend/error handling, performance, privacy, SEO, and hosting checks for each consuming project.
 
 ## Next Component Phase
 

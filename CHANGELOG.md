@@ -6,6 +6,28 @@ The format is based on Keep a Changelog, and this project adheres to Semantic Ve
 
 ## [Unreleased]
 
+## [2.0.0] - 2026-08-14
+
+> Stable v2 component-system release. The documented component APIs are the
+> supported v2 surface; platform-specific manual limitations remain documented.
+
+### Highlights
+
+- Completed the production component system and multi-page Component Playground with documented APIs, responsive examples, native Form Controls, feedback, overlays, navigation, and marketing/content compositions.
+- Established semantic design-token architecture, dynamic viewport geometry, reduced-motion and forced-colors resilience, and coordinated Navigation, Modal, and Toast isolation.
+- Added production-build Playwright regression infrastructure covering 53 installed-Chrome cases and 151 configured Chromium, Firefox, and WebKit CI cases.
+
+### Fixed and Stabilized
+
+- Stabilized sticky-Header fragment positioning, responsive Navigation state/current-item behavior, floating-label containment, Playground form interception, and Safari-sensitive intrinsic Card sizing.
+- Preserved native semantics, validation, focus ownership, accessible names and states, live-region boundaries, and one-active-context behavior across high-risk interactions.
+
+### Testing and Accessibility
+
+- Retained Chromium forced-colors emulation and cross-engine semantic, focus, Navigation, fragment, Form, Modal, Toast, Tabs, layout, and responsive-overflow regression coverage.
+- Completed targeted Safari Service Card, macOS Safari + VoiceOver, iOS Safari + VoiceOver/touch, and Android Chrome/touch spot checks with no issue reported in the tested scenarios.
+- Kept Windows NVDA, physical Windows High Contrast, exhaustive device coverage, and real screen-reader speech behavior as explicit manual gaps rather than certification claims.
+
 ## [2.0.0-rc.1] - 2026-08-14
 
 > Feature-frozen release candidate for final integration and acceptance testing.

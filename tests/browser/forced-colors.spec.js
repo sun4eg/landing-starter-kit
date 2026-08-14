@@ -5,6 +5,35 @@ test.beforeEach(async ({ page }) => {
   await expect.poll(() => page.evaluate(() => matchMedia('(forced-colors: active)').matches)).toBe(true)
 })
 
+test('Spinner remains visible in forced colors with and without motion', async ({ page }) => {
+  await page.emulateMedia({ forcedColors: 'active', reducedMotion: 'no-preference' })
+  await page.goto('/playground.html#spinners-title')
+
+  const spinners = page.locator(
+    '.playground-demo-group[aria-labelledby="spinner-sizes-title"] .spinner__visual',
+  )
+  const initialTransforms = await spinners.evaluateAll((elements) =>
+    elements.map((element) => getComputedStyle(element).transform),
+  )
+
+  await expect.poll(() => spinners.evaluateAll((elements) =>
+    elements.map((element) => getComputedStyle(element).transform),
+  )).not.toEqual(initialTransforms)
+
+  for (const spinner of await spinners.all()) {
+    await expect(spinner).toBeVisible()
+    await expect(spinner).toHaveCSS('border-style', 'solid')
+  }
+
+  await page.emulateMedia({ forcedColors: 'active', reducedMotion: 'reduce' })
+
+  for (const spinner of await spinners.all()) {
+    await expect(spinner).toBeVisible()
+    await expect(spinner).toHaveCSS('animation-name', 'none')
+    await expect(spinner).toHaveCSS('border-style', 'solid')
+  }
+})
+
 test('custom selection controls retain state geometry and focus', async ({ page }) => {
   await page.goto('/playground.html#form-controls-title')
 

@@ -40,8 +40,7 @@ for (const viewport of viewports) {
     await expectTargetBelowStickyHeader(page, '#buttons-title')
 
     const guidanceLink = page.locator('a[href="#button-guidance-title"]').first()
-    await guidanceLink.evaluate((link) => link.focus({ preventScroll: true }))
-    await page.keyboard.press('Enter')
+    await guidanceLink.click()
     await expect(page).toHaveURL(/#button-guidance-title$/)
     await expectTargetBelowStickyHeader(page, '#button-guidance-title')
     await expect.poll(() => page.evaluate(

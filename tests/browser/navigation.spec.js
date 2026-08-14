@@ -46,7 +46,10 @@ async function expectCurrentLinkPositioned(page, container, targetHash) {
 }
 
 async function settleCurrentSection(page, container, targetHash) {
-  await page.evaluate((hash) => {
+  await page.evaluate(async (hash) => {
+    await document.fonts.ready
+    await new Promise((resolve) => requestAnimationFrame(() => requestAnimationFrame(resolve)))
+
     const target = document.querySelector(hash)
 
     if (!(target instanceof HTMLElement)) {

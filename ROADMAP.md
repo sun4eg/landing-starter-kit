@@ -40,13 +40,15 @@ This roadmap tracks the development of a reusable, accessible, and production-re
 - [x] **Targeted macOS VoiceOver verification** — Complete a Safari + VoiceOver smoke pass across priority Navigation, disclosure, Modal, Toast, Form Control, validation, Progress, and Testimonial workflows with no issue observed in the tested scenarios.
 - [x] **Targeted iOS VoiceOver verification** — Complete an iOS Safari + VoiceOver pass across priority mobile Navigation, Modal, Tabs, Toast, Form Control, validation, and basic touch workflows with no issue observed in the tested scenarios.
 - [x] **v2.0.0-beta.2 preparation** — Reconcile post-beta browser tooling, forced-colors and semantic hardening, and targeted macOS/iOS verification for owner review.
+- [x] **Post-beta.2 interaction stabilization** — Correct nested fragment offsets and raised floating-label containment, simplify responsive Navigation toggles, center the current Playground navigation item on open, and stabilize the corresponding cross-engine regression coverage.
+- [x] **v2.0.0-rc.1 preparation** — Freeze features and reconcile the release candidate for final integration and acceptance testing.
 - [ ] **SEO setup** — Add metadata, social previews, canonical information, structured data, sitemap, and robots directives.
 - [ ] **Performance optimization** — Optimize images, fonts, asset delivery, rendering behavior, and Core Web Vitals.
-- [ ] **Remaining beta platform verification** — Complete Windows NVDA, physical Windows High Contrast, Android Chrome/touch, and any broader platform checks indicated by beta feedback.
+- [ ] **Remaining RC platform verification** — Complete Windows NVDA, physical Windows High Contrast, and broader evidence-driven device checks; targeted Android Chrome/touch spot checks completed so far reported no issue.
 - [ ] **Expanded browser regression coverage** — Add further engine-specific scenarios where beta feedback identifies concrete interoperability risks.
-- [ ] **Post-beta API hardening** — Review optional API naming consistency before stable v2.0.0.
+- [ ] **Post-RC feature and API work** — Defer optional API naming cleanup and all new feature work until after stable v2.0.0 unless required by a verified release blocker.
 - [ ] **Production readiness** — Complete content checks, error handling, performance review, build verification, and deployment documentation.
-- [ ] **Stable/RC readiness** — Reconcile beta feedback and remaining platform evidence before selecting a release-candidate or stable v2 milestone.
+- [ ] **Stable readiness** — Reconcile RC feedback, required platform evidence, and release blockers before stable v2.0.0.
 
 ## Next Component Phase
 

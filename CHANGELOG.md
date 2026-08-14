@@ -6,12 +6,26 @@ The format is based on Keep a Changelog, and this project adheres to Semantic Ve
 
 ## [Unreleased]
 
+## [2.0.0-rc.1] - 2026-08-14
+
+> Feature-frozen release candidate for final integration and acceptance testing.
+> Windows NVDA and physical Windows High Contrast remain documented manual gaps.
+
 ### Fixed
 
 - Applied the shared sticky-header scroll offset to nested structural fragment targets so in-page guidance and subsection headings remain visible after link activation or direct hash loading.
 - Kept raised floating Form labels on one line at narrow mobile widths without changing their inactive state or existing notch treatment.
-- Clarified responsive Navigation state by using persistent Header toggles that switch from menu to close icons while open, including the simplified Playground documentation panel.
+
+### Changed
+
+- Simplified the responsive Playground Navigation to one persistent Header toggle and made both responsive Navigation toggles switch from menu to close icons while open.
 - Playground side Navigation now brings the current section into view when opened.
+
+### Testing
+
+- Stabilized floating-label coverage by separating runtime behavior assertions from compiled autofill-selector checks instead of relying on cross-engine CSSOM serialization.
+- Stabilized fragment navigation coverage around settled font/layout geometry without fixed sleeps or engine skips.
+- Expanded the browser suite to 53 installed-Chrome tests and 151 managed CI cases across Chromium, Firefox, and WebKit configurations.
 
 ## [2.0.0-beta.2] - 2026-08-13
 

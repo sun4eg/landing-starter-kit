@@ -2,11 +2,11 @@
 
 An AI-ready foundation for modern, accessible, responsive landing pages, built with Vite, token-driven Sass, BEM, semantic HTML, and vanilla JavaScript ES Modules—without a UI framework.
 
-[![Version 2.0.0-beta.2](https://img.shields.io/badge/version-2.0.0--beta.2-0A7EA4)](./CHANGELOG.md) [![MIT License](https://img.shields.io/badge/license-MIT-green)](./LICENSE) [![Vite](https://img.shields.io/badge/Vite-8.2-646CFF?logo=vite&logoColor=white)](https://vite.dev/) [![Sass](https://img.shields.io/badge/Sass-1.102-CC6699?logo=sass&logoColor=white)](https://sass-lang.com/) [![JavaScript ES Modules](https://img.shields.io/badge/JavaScript-ES%20Modules-F7DF1E?logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules) [![Accessibility](https://img.shields.io/badge/Accessibility-A11y-005A9C)](https://www.w3.org/WAI/) [![AI Ready](https://img.shields.io/badge/AI-Ready-8A2BE2)](./AI_RULES.md)
+[![Version 2.0.0-rc.1](https://img.shields.io/badge/version-2.0.0--rc.1-0A7EA4)](./CHANGELOG.md) [![MIT License](https://img.shields.io/badge/license-MIT-green)](./LICENSE) [![Vite](https://img.shields.io/badge/Vite-8.2-646CFF?logo=vite&logoColor=white)](https://vite.dev/) [![Sass](https://img.shields.io/badge/Sass-1.102-CC6699?logo=sass&logoColor=white)](https://sass-lang.com/) [![JavaScript ES Modules](https://img.shields.io/badge/JavaScript-ES%20Modules-F7DF1E?logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules) [![Accessibility](https://img.shields.io/badge/Accessibility-A11y-005A9C)](https://www.w3.org/WAI/) [![AI Ready](https://img.shields.io/badge/AI-Ready-8A2BE2)](./AI_RULES.md)
 
-> `v2.0.0-beta.2` is an evaluation and integration-testing release. Manual cross-browser,
-> mobile-platform, forced-colors, and assistive-technology verification remains
-> recommended before production adoption.
+> `v2.0.0-rc.1` is a feature-frozen release candidate for final integration and
+> acceptance testing. Remaining work before stable v2.0.0 is limited to verified
+> defects, release blockers, and documented platform validation.
 
 ## Included
 
@@ -98,9 +98,11 @@ model, so the following physical assistive-technology passes remain necessary.
 Targeted macOS and iOS Safari + VoiceOver smoke passes have been completed for
 priority Navigation, disclosure, Tabs, Modal, Toast, Form Control, validation,
 Progress, and reading-order workflows, with no issue observed in the tested
-scenarios. The iOS pass also included a basic touch smoke. This is focused
+scenarios. The iOS pass included a basic touch smoke, and Android Chrome/touch
+spot checks completed so far reported no issue. This is focused
 verification, not complete Safari, iOS, or VoiceOver certification. Windows
-NVDA, physical Windows High Contrast, and Android Chrome/touch remain pending.
+NVDA and physical Windows High Contrast remain pending; broader Android and
+device coverage remains evidence-driven.
 
 ### Windows High Contrast manual checklist
 
@@ -136,7 +138,8 @@ and Chrome or Edge, verify Navigation, Accordion, Tabs, Modal, Toast,
 Checkbox/Radio/Switch, Password Input, Number Stepper, Range, File Input, native
 validation, and Progress; combine this with the High Contrast spot checks where
 practical. The Windows checks remain incomplete until executed on the named
-platform; Android Chrome/touch also remains pending.
+platform; broader Android/device coverage remains non-exhaustive despite the
+completed Android Chrome/touch spot checks.
 
 ## Project structure
 

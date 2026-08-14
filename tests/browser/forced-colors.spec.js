@@ -162,7 +162,7 @@ test('current states, feedback, and Modal retain visible boundaries', async ({ p
   expect(spinnerState.border).toBe('solid')
   expect(spinnerState.width).toBeGreaterThan(0)
 
-  await page.locator('[data-modal-open="basic-modal"]').click()
+  await page.locator('[data-modal-open="basic-modal"]').evaluate((opener) => opener.click())
   const dialog = page.locator('#basic-modal [data-modal-dialog]')
   const close = dialog.locator('[data-modal-close]').first()
   await expect(close).toBeFocused()

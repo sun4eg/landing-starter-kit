@@ -3,11 +3,6 @@ import { expect, test } from '@playwright/test'
 const widths = [320, 390, 768, 1440]
 const sizeSpinners = '.playground-demo-group[aria-labelledby="spinner-sizes-title"] .spinner__visual'
 
-function isTransparentColor(color) {
-  return color === 'transparent'
-    || /^rgba\([^)]*(?:,|\s)0(?:\.0+)?\s*\)$/.test(color)
-}
-
 async function expectTransformsToAdvance(spinners) {
   const initialTransforms = await spinners.evaluateAll((elements) =>
     elements.map((element) => getComputedStyle(element).transform),
@@ -33,6 +28,8 @@ test('Spinner continuously rotates at every size when motion is allowed', async 
 
     const initialGeometry = await spinners.evaluateAll((elements) => elements.map((element) => {
       const style = getComputedStyle(element)
+      const before = getComputedStyle(element, '::before')
+      const after = getComputedStyle(element, '::after')
 
       return {
         width: element.offsetWidth,
@@ -54,6 +51,17 @@ test('Spinner continuously rotates at every size when motion is allowed', async 
           style.borderBottomWidth,
           style.borderLeftWidth,
         ],
+        caps: [before, after].map((cap) => ({
+          content: cap.content,
+          width: Number.parseFloat(cap.width),
+          height: Number.parseFloat(cap.height),
+          radius: cap.borderRadius,
+          color: cap.backgroundColor,
+          top: cap.top,
+          right: cap.right,
+          bottom: cap.bottom,
+          left: cap.left,
+        })),
       }
     }))
 
@@ -63,11 +71,26 @@ test('Spinner continuously rotates at every size when motion is allowed', async 
       expect(state.animationIterationCount).toBe('infinite')
       expect(state.animationTimingFunction).toBe('linear')
       expect(state.transformOrigin).not.toBe('0px 0px')
-      const [cueSide, ...ringSides] = state.borderColors
-      expect(isTransparentColor(cueSide)).toBe(true)
-      expect(new Set(ringSides).size).toBe(1)
-      expect(ringSides).not.toContain(cueSide)
+      const [strongTop, ghostRight, ghostBottom, strongLeft] = state.borderColors
+      expect(strongTop).toBe(strongLeft)
+      expect(ghostRight).toBe(ghostBottom)
+      expect(strongTop).not.toBe(ghostRight)
       expect(new Set(state.borderWidths).size).toBe(1)
+      const borderWidth = Number.parseFloat(state.borderWidths[0])
+
+      for (const cap of state.caps) {
+        expect(cap.content).not.toBe('none')
+        expect(cap.width).toBeGreaterThan(0)
+        expect(cap.width).toBe(cap.height)
+        expect(cap.width).toBe(borderWidth)
+        expect(cap.radius).not.toBe('0px')
+        expect(cap.color).toBe(strongTop)
+      }
+
+      expect(Number.parseFloat(state.caps[0].top)).toBe(0)
+      expect(Number.parseFloat(state.caps[0].right)).toBe(0)
+      expect(Number.parseFloat(state.caps[1].bottom)).toBe(0)
+      expect(Number.parseFloat(state.caps[1].left)).toBe(0)
     }
 
     await expectTransformsToAdvance(spinners)
@@ -100,5 +123,22 @@ test('Spinner is intentionally static and visible with reduced motion', async ({
     await expect(spinner).toBeVisible()
     await expect(spinner).toHaveCSS('animation-name', 'none')
     await expect(spinner).toHaveCSS('transform', 'none')
+  }
+
+  const staticStates = await spinners.evaluateAll((elements) => elements.map((element) => ({
+    borderColors: [
+      getComputedStyle(element).borderTopColor,
+      getComputedStyle(element).borderRightColor,
+      getComputedStyle(element).borderBottomColor,
+      getComputedStyle(element).borderLeftColor,
+    ],
+    beforeContent: getComputedStyle(element, '::before').content,
+    afterContent: getComputedStyle(element, '::after').content,
+  })))
+
+  for (const state of staticStates) {
+    expect(new Set(state.borderColors).size).toBe(1)
+    expect(state.beforeContent).toBe('none')
+    expect(state.afterContent).toBe('none')
   }
 })

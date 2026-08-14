@@ -8,7 +8,7 @@ The format is based on Keep a Changelog, and this project adheres to Semantic Ve
 
 ### Fixed
 
-- Replaced Spinner's subtle logical-side color cue with a clear rotating physical-side gap so motion remains perceptible in Android Chrome and Firefox.
+- Rebuilt Spinner's rotating cue as a strong-and-ghost arc with rounded transition caps so motion remains perceptible in Android Chrome and Firefox.
 
 ## [2.0.0] - 2026-08-14
 

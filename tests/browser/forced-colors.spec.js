@@ -20,9 +20,30 @@ test('Spinner remains visible in forced colors with and without motion', async (
     elements.map((element) => getComputedStyle(element).transform),
   )).not.toEqual(initialTransforms)
 
+  const cueStates = await spinners.evaluateAll((elements) => elements.map((element) => {
+    const style = getComputedStyle(element)
+
+    return {
+      cue: style.borderTopColor,
+      ring: [style.borderRightColor, style.borderBottomColor, style.borderLeftColor],
+      widths: [
+        style.borderTopWidth,
+        style.borderRightWidth,
+        style.borderBottomWidth,
+        style.borderLeftWidth,
+      ],
+    }
+  }))
+
   for (const spinner of await spinners.all()) {
     await expect(spinner).toBeVisible()
     await expect(spinner).toHaveCSS('border-style', 'solid')
+  }
+
+  for (const state of cueStates) {
+    expect(state.cue).not.toBe(state.ring[0])
+    expect(new Set(state.ring).size).toBe(1)
+    expect(new Set(state.widths).size).toBe(1)
   }
 
   await page.emulateMedia({ forcedColors: 'active', reducedMotion: 'reduce' })
@@ -32,6 +53,18 @@ test('Spinner remains visible in forced colors with and without motion', async (
     await expect(spinner).toHaveCSS('animation-name', 'none')
     await expect(spinner).toHaveCSS('border-style', 'solid')
   }
+
+  const staticRingColors = await spinners.evaluateAll((elements) => elements.map((element) => {
+    const style = getComputedStyle(element)
+
+    return new Set([
+      style.borderTopColor,
+      style.borderRightColor,
+      style.borderBottomColor,
+      style.borderLeftColor,
+    ]).size
+  }))
+  expect(staticRingColors).toEqual([1, 1, 1])
 })
 
 test('custom selection controls retain state geometry and focus', async ({ page }) => {

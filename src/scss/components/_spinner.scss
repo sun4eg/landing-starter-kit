@@ -41,8 +41,8 @@
   inline-size: var(--spinner-size);
   block-size: var(--spinner-size);
   margin-block-start: var(--space-3xs);
-  border: calc(var(--border-width) * 2) solid var(--color-border);
-  border-inline-start-color: var(--spinner-color);
+  border: calc(var(--border-width) * 2) solid var(--spinner-color);
+  border-top-color: transparent;
   border-radius: var(--radius-full);
   animation: spinner-rotate calc(var(--duration-slow) * 2) linear infinite;
 }
@@ -71,7 +71,8 @@
 @media (forced-colors: active) {
   .spinner__visual {
     border-color: CanvasText;
-    border-inline-start-color: Highlight;
+    border-top-color: transparent;
+    forced-color-adjust: none;
   }
 
   @media (prefers-reduced-motion: reduce) {

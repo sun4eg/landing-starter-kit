@@ -3,6 +3,11 @@ import { expect, test } from '@playwright/test'
 const widths = [320, 390, 768, 1440]
 const sizeSpinners = '.playground-demo-group[aria-labelledby="spinner-sizes-title"] .spinner__visual'
 
+function isTransparentColor(color) {
+  return color === 'transparent'
+    || /^rgba\([^)]*(?:,|\s)0(?:\.0+)?\s*\)$/.test(color)
+}
+
 async function expectTransformsToAdvance(spinners) {
   const initialTransforms = await spinners.evaluateAll((elements) =>
     elements.map((element) => getComputedStyle(element).transform),
@@ -37,12 +42,18 @@ test('Spinner continuously rotates at every size when motion is allowed', async 
         animationIterationCount: style.animationIterationCount,
         animationTimingFunction: style.animationTimingFunction,
         transformOrigin: style.transformOrigin,
-        asymmetricCue: new Set([
+        borderColors: [
           style.borderTopColor,
           style.borderRightColor,
           style.borderBottomColor,
           style.borderLeftColor,
-        ]).size > 1,
+        ],
+        borderWidths: [
+          style.borderTopWidth,
+          style.borderRightWidth,
+          style.borderBottomWidth,
+          style.borderLeftWidth,
+        ],
       }
     }))
 
@@ -52,7 +63,11 @@ test('Spinner continuously rotates at every size when motion is allowed', async 
       expect(state.animationIterationCount).toBe('infinite')
       expect(state.animationTimingFunction).toBe('linear')
       expect(state.transformOrigin).not.toBe('0px 0px')
-      expect(state.asymmetricCue).toBe(true)
+      const [cueSide, ...ringSides] = state.borderColors
+      expect(isTransparentColor(cueSide)).toBe(true)
+      expect(new Set(ringSides).size).toBe(1)
+      expect(ringSides).not.toContain(cueSide)
+      expect(new Set(state.borderWidths).size).toBe(1)
     }
 
     await expectTransformsToAdvance(spinners)

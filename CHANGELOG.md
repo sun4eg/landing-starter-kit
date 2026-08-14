@@ -8,7 +8,7 @@ The format is based on Keep a Changelog, and this project adheres to Semantic Ve
 
 ### Fixed
 
-- Rebuilt Spinner's rotating cue as a strong-and-ghost arc with rounded transition caps so motion remains perceptible in Android Chrome and Firefox.
+- Aligned Spinner's rotating arc mechanics with the Android-safe individual-rotation implementation to improve motion visibility in Android Chrome and Firefox.
 
 ## [2.0.0] - 2026-08-14
 

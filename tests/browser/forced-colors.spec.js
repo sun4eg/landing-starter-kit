@@ -12,13 +12,13 @@ test('Spinner remains visible in forced colors with and without motion', async (
   const spinners = page.locator(
     '.playground-demo-group[aria-labelledby="spinner-sizes-title"] .spinner__visual',
   )
-  const initialTransforms = await spinners.evaluateAll((elements) =>
-    elements.map((element) => getComputedStyle(element).transform),
+  const initialRotations = await spinners.evaluateAll((elements) =>
+    elements.map((element) => getComputedStyle(element).rotate),
   )
 
   await expect.poll(() => spinners.evaluateAll((elements) =>
-    elements.map((element) => getComputedStyle(element).transform),
-  )).not.toEqual(initialTransforms)
+    elements.map((element) => getComputedStyle(element).rotate),
+  )).not.toEqual(initialRotations)
 
   const cueStates = await spinners.evaluateAll((elements) => elements.map((element) => {
     const style = getComputedStyle(element)
@@ -48,6 +48,7 @@ test('Spinner remains visible in forced colors with and without motion', async (
   for (const spinner of await spinners.all()) {
     await expect(spinner).toBeVisible()
     await expect(spinner).toHaveCSS('border-style', 'solid')
+    await expect(spinner).toHaveCSS('transform', 'none')
   }
 
   for (const state of cueStates) {
@@ -69,6 +70,7 @@ test('Spinner remains visible in forced colors with and without motion', async (
   for (const spinner of await spinners.all()) {
     await expect(spinner).toBeVisible()
     await expect(spinner).toHaveCSS('animation-name', 'none')
+    await expect(spinner).toHaveCSS('rotate', 'none')
     await expect(spinner).toHaveCSS('border-style', 'solid')
   }
 

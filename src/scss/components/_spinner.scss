@@ -38,22 +38,24 @@
 
 .spinner__visual {
   --spinner-border-width: calc(var(--border-width) * 2);
+  --spinner-ghost-color: color-mix(in srgb, var(--spinner-color) 10%, transparent);
 
   flex: none;
-  inline-size: var(--spinner-size);
-  block-size: var(--spinner-size);
+  display: inline-block;
+  width: var(--spinner-size);
+  aspect-ratio: var(--aspect-ratio-square);
   margin-block-start: var(--space-3xs);
   border: var(--spinner-border-width) solid;
-  border-color: var(--spinner-color) var(--color-border) var(--color-border) var(--spinner-color);
+  border-color: var(--spinner-color) var(--spinner-ghost-color) var(--spinner-ghost-color) var(--spinner-color);
   border-radius: var(--radius-full);
-  animation: spinner-rotate calc(var(--duration-slow) * 2) linear infinite;
+  animation: spinner-rotate calc(var(--duration-slow) * 2) infinite linear;
   position: relative;
 
   &::before,
   &::after {
-    inline-size: var(--spinner-border-width);
-    block-size: var(--spinner-border-width);
-    background-color: var(--spinner-color);
+    width: var(--spinner-border-width);
+    aspect-ratio: var(--aspect-ratio-square);
+    background: var(--spinner-color);
     border-radius: var(--radius-full);
     content: "";
     position: absolute;
@@ -79,8 +81,12 @@
 }
 
 @keyframes spinner-rotate {
-  to {
-    transform: rotate(1turn);
+  0% {
+    rotate: 0deg;
+  }
+
+  100% {
+    rotate: 360deg;
   }
 }
 
@@ -88,6 +94,7 @@
   .spinner__visual {
     border-color: var(--spinner-color);
     animation: none;
+    rotate: none;
 
     &::before,
     &::after {

@@ -3,14 +3,14 @@ import { expect, test } from '@playwright/test'
 const widths = [320, 390, 768, 1440]
 const sizeSpinners = '.playground-demo-group[aria-labelledby="spinner-sizes-title"] .spinner__visual'
 
-async function expectTransformsToAdvance(spinners) {
-  const initialTransforms = await spinners.evaluateAll((elements) =>
-    elements.map((element) => getComputedStyle(element).transform),
+async function expectRotationsToAdvance(spinners) {
+  const initialRotations = await spinners.evaluateAll((elements) =>
+    elements.map((element) => getComputedStyle(element).rotate),
   )
 
   await expect.poll(() => spinners.evaluateAll((elements) =>
-    elements.map((element) => getComputedStyle(element).transform),
-  )).not.toEqual(initialTransforms)
+    elements.map((element) => getComputedStyle(element).rotate),
+  )).not.toEqual(initialRotations)
 }
 
 test('Spinner continuously rotates at every size when motion is allowed', async ({ page }) => {
@@ -34,10 +34,14 @@ test('Spinner continuously rotates at every size when motion is allowed', async 
       return {
         width: element.offsetWidth,
         height: element.offsetHeight,
+        display: style.display,
+        aspectRatio: style.aspectRatio,
         animationName: style.animationName,
         animationDuration: style.animationDuration,
         animationIterationCount: style.animationIterationCount,
         animationTimingFunction: style.animationTimingFunction,
+        rotate: style.rotate,
+        transform: style.transform,
         transformOrigin: style.transformOrigin,
         borderColors: [
           style.borderTopColor,
@@ -70,7 +74,12 @@ test('Spinner continuously rotates at every size when motion is allowed', async 
       expect(state.animationDuration).not.toBe('0s')
       expect(state.animationIterationCount).toBe('infinite')
       expect(state.animationTimingFunction).toBe('linear')
+      expect(state.rotate).not.toBe('none')
+      expect(state.transform).toBe('none')
       expect(state.transformOrigin).not.toBe('0px 0px')
+      expect(['block', 'inline-block']).toContain(state.display)
+      expect(state.aspectRatio).toBe('1 / 1')
+      expect(state.width).toBe(state.height)
       const [strongTop, ghostRight, ghostBottom, strongLeft] = state.borderColors
       expect(strongTop).toBe(strongLeft)
       expect(ghostRight).toBe(ghostBottom)
@@ -93,7 +102,7 @@ test('Spinner continuously rotates at every size when motion is allowed', async 
       expect(Number.parseFloat(state.caps[1].left)).toBe(0)
     }
 
-    await expectTransformsToAdvance(spinners)
+    await expectRotationsToAdvance(spinners)
 
     const finalGeometry = await spinners.evaluateAll((elements) => elements.map((element) => ({
       width: element.offsetWidth,
@@ -122,6 +131,7 @@ test('Spinner is intentionally static and visible with reduced motion', async ({
   for (const spinner of await spinners.all()) {
     await expect(spinner).toBeVisible()
     await expect(spinner).toHaveCSS('animation-name', 'none')
+    await expect(spinner).toHaveCSS('rotate', 'none')
     await expect(spinner).toHaveCSS('transform', 'none')
   }
 

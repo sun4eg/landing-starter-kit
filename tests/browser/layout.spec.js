@@ -71,3 +71,69 @@ test('landing Services Grid retains equal-height Cards within each row', async (
   expect(heights).toHaveLength(6)
   expect(Math.max(...heights) - Math.min(...heights)).toBeLessThan(2)
 })
+
+test('Button centers its Spinner without changing standalone Spinner alignment', async ({ page }) => {
+  const results = []
+
+  for (const width of [320, 390, 768, 1440]) {
+    await page.setViewportSize({ width, height: width <= 390 ? 664 : 900 })
+    await page.goto('/playground.html#spinner-composition-title')
+    await page.evaluate(() => document.fonts.ready)
+
+    const button = page.locator('#spinner-composition-title').locator('..').locator('..').getByRole('button')
+    await expect(button).toHaveAccessibleName('Saving…')
+    await expect(button.locator('.spinner')).toHaveAttribute('aria-hidden', 'true')
+
+    results.push(await page.evaluate(() => {
+      const heading = document.querySelector('#spinner-composition-title')
+      const group = heading.closest('.playground-demo-group')
+      const button = group.querySelector('.button')
+      const buttonSpinner = button.querySelector('.spinner__visual')
+      const standaloneSpinner = document.querySelector('.spinner--small[role="status"] .spinner__visual')
+      const labelNode = [...button.childNodes].find(
+        (node) => node.nodeType === Node.TEXT_NODE && node.textContent.includes('Saving'),
+      )
+      const labelRange = document.createRange()
+      labelRange.selectNode(labelNode)
+
+      const buttonRect = button.getBoundingClientRect()
+      const spinnerRect = buttonSpinner.getBoundingClientRect()
+      const labelRect = labelRange.getBoundingClientRect()
+      const standaloneRect = standaloneSpinner.getBoundingClientRect()
+
+      return {
+        buttonHeight: buttonRect.height,
+        contentGap: parseFloat(getComputedStyle(button).columnGap),
+        centerDifference: Math.abs(
+          (spinnerRect.top + spinnerRect.height / 2) - (labelRect.top + labelRect.height / 2),
+        ),
+        buttonSpinnerHeight: spinnerRect.height,
+        buttonSpinnerWidth: spinnerRect.width,
+        standaloneSpinnerHeight: standaloneRect.height,
+        standaloneSpinnerWidth: standaloneRect.width,
+        buttonMarginBlockStart: parseFloat(getComputedStyle(buttonSpinner).marginBlockStart),
+        standaloneMarginBlockStart: parseFloat(getComputedStyle(standaloneSpinner).marginBlockStart),
+        overflows: document.documentElement.scrollWidth > document.documentElement.clientWidth,
+      }
+    }))
+  }
+
+  for (const result of results) {
+    expect(result.centerDifference).toBeLessThanOrEqual(1)
+    expect(result.buttonMarginBlockStart).toBe(0)
+    expect(result.standaloneMarginBlockStart).toBeGreaterThan(0)
+    expect(Math.abs(result.buttonSpinnerWidth - result.standaloneSpinnerWidth)).toBeLessThan(1)
+    expect(Math.abs(result.buttonSpinnerHeight - result.standaloneSpinnerHeight)).toBeLessThan(1)
+    expect(result.overflows).toBe(false)
+  }
+
+  expect(
+    Math.max(...results.map(({ buttonHeight }) => buttonHeight))
+      - Math.min(...results.map(({ buttonHeight }) => buttonHeight)),
+  ).toBeLessThan(1)
+  expect(Math.min(...results.map(({ contentGap }) => contentGap))).toBeGreaterThan(0)
+  expect(
+    Math.max(...results.map(({ contentGap }) => contentGap))
+      - Math.min(...results.map(({ contentGap }) => contentGap)),
+  ).toBeLessThan(1)
+})

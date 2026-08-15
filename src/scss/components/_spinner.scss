@@ -55,6 +55,10 @@
   overflow-wrap: anywhere;
 }
 
+.button .spinner__visual {
+  margin-block-start: 0;
+}
+
 @keyframes spinner-rotate {
   to {
     transform: rotate(1turn);

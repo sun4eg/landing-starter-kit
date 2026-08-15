@@ -37,39 +37,14 @@
 }
 
 .spinner__visual {
-  --spinner-border-width: calc(var(--border-width) * 2);
-  --spinner-ghost-color: var(--color-border);
-
   flex: none;
-  display: inline-block;
-  width: var(--spinner-size);
-  aspect-ratio: var(--aspect-ratio-square);
+  inline-size: var(--spinner-size);
+  block-size: var(--spinner-size);
   margin-block-start: var(--space-3xs);
-  border: var(--spinner-border-width) solid;
-  border-color: var(--spinner-color) var(--spinner-ghost-color) var(--spinner-ghost-color) var(--spinner-color);
+  border: calc(var(--border-width) * 2) solid var(--color-border);
+  border-inline-start-color: var(--spinner-color);
   border-radius: var(--radius-full);
-  animation: spinner-rotate calc(var(--duration-slow) * 2) infinite linear;
-  position: relative;
-
-  &::before,
-  &::after {
-    width: var(--spinner-border-width);
-    aspect-ratio: var(--aspect-ratio-square);
-    background: var(--spinner-color);
-    border-radius: var(--radius-full);
-    content: "";
-    position: absolute;
-  }
-
-  &::before {
-    top: var(--space-0);
-    right: var(--space-0);
-  }
-
-  &::after {
-    bottom: var(--space-0);
-    left: var(--space-0);
-  }
+  animation: spinner-rotate calc(var(--duration-slow) * 2) linear infinite;
 }
 
 .spinner__label {
@@ -81,12 +56,8 @@
 }
 
 @keyframes spinner-rotate {
-  0% {
-    rotate: 0deg;
-  }
-
-  100% {
-    rotate: 360deg;
+  to {
+    transform: rotate(1turn);
   }
 }
 
@@ -94,24 +65,13 @@
   .spinner__visual {
     border-color: var(--spinner-color);
     animation: none;
-    rotate: none;
-
-    &::before,
-    &::after {
-      content: none;
-    }
   }
 }
 
 @media (forced-colors: active) {
   .spinner__visual {
-    border-color: Highlight CanvasText CanvasText Highlight;
-    forced-color-adjust: none;
-
-    &::before,
-    &::after {
-      background-color: Highlight;
-    }
+    border-color: CanvasText;
+    border-inline-start-color: Highlight;
   }
 
   @media (prefers-reduced-motion: reduce) {

@@ -6,10 +6,6 @@ The format is based on Keep a Changelog, and this project adheres to Semantic Ve
 
 ## [Unreleased]
 
-### Fixed
-
-- Aligned Spinner's rotating arc mechanics with the Android-safe individual-rotation implementation to improve motion visibility in Android Chrome and Firefox.
-
 ## [2.0.0] - 2026-08-14
 
 > Stable v2 component-system release. The documented component APIs are the

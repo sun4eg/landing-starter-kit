@@ -1461,80 +1461,6 @@
               </div>
             </article>
 
-            <!-- Temporary Android diagnostic: remove after the physical A/B/C result is recorded. -->
-            <article
-              class="playground-demo-group stack"
-              aria-labelledby="spinner-android-diagnostic-title"
-              data-spinner-animation-diagnostic
-            >
-              <header class="playground-demo-group__header stack">
-                <h3 class="playground-demo-group__title" id="spinner-android-diagnostic-title">
-                  Android Spinner diagnostic
-                </h3>
-                <p class="playground-demo-group__description text text--muted">
-                  Temporary A/B/C comparison. These controls follow the device motion preference and are not public
-                  Spinner variants.
-                </p>
-                <p class="spinner-diagnostic__motion-state text">
-                  Motion preference:
-                  <span class="spinner-diagnostic__motion-default">animation allowed</span>
-                  <span class="spinner-diagnostic__motion-reduce">reduced motion</span>
-                </p>
-              </header>
-              <div class="playground-card-grid">
-                <div class="playground-demo stack">
-                  <p class="playground-demo__label">A — CodePen mechanics</p>
-                  <span
-                    class="diagnostic-codepen-spinner"
-                    aria-hidden="true"
-                    data-spinner-diagnostic-target="A"
-                  ></span>
-                </div>
-                <div class="playground-demo stack">
-                  <p class="playground-demo__label">B — CodePen mechanics + reference box model</p>
-                  <span
-                    class="diagnostic-codepen-spinner diagnostic-codepen-spinner--content-box"
-                    aria-hidden="true"
-                    data-spinner-diagnostic-target="B"
-                  ></span>
-                </div>
-                <div class="playground-demo stack">
-                  <p class="playground-demo__label">C — Production Spinner</p>
-                  <span class="spinner spinner--large" aria-hidden="true">
-                    <span class="spinner__visual" aria-hidden="true" data-spinner-diagnostic-target="C"></span>
-                  </span>
-                </div>
-                <div class="playground-demo stack">
-                  <p class="playground-demo__label">D — Individual rotate probe</p>
-                  <span
-                    class="spinner-diagnostic__probe spinner-diagnostic__probe--rotate"
-                    aria-hidden="true"
-                    data-spinner-diagnostic-target="D"
-                  ></span>
-                </div>
-                <div class="playground-demo stack">
-                  <p class="playground-demo__label">E — Transform rotate probe</p>
-                  <span
-                    class="spinner-diagnostic__probe spinner-diagnostic__probe--transform"
-                    aria-hidden="true"
-                    data-spinner-diagnostic-target="E"
-                  ></span>
-                </div>
-              </div>
-              <section class="playground-demo spinner-diagnostic__panel stack" aria-labelledby="spinner-diagnostic-panel-title">
-                <div class="spinner-diagnostic__panel-header">
-                  <h4 id="spinner-diagnostic-panel-title">Temporary Android animation diagnostic</h4>
-                  <button class="button button--secondary button--small" type="button" data-spinner-diagnostic-run>
-                    Run diagnostic again
-                  </button>
-                </div>
-                <p class="spinner-diagnostic__preference" data-spinner-diagnostic-preference>
-                  prefers-reduced-motion: checking…
-                </p>
-                <div class="spinner-diagnostic__results" data-spinner-diagnostic-results></div>
-              </section>
-            </article>
-
             <article class="playground-demo-group stack" aria-labelledby="spinner-labels-title">
               <header class="playground-demo-group__header stack">
                 <h3 class="playground-demo-group__title" id="spinner-labels-title">Labelled and visual-only patterns</h3>
@@ -8238,6 +8164,5 @@
     </footer>
 
     <script type="module" src="/src/main.js"></script>
-    <script type="module" src="/src/js/modules/playground-spinner-diagnostic.js"></script>
   </body>
 </html>

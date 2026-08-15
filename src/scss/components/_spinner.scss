@@ -38,7 +38,7 @@
 
 .spinner__visual {
   --spinner-border-width: calc(var(--border-width) * 2);
-  --spinner-ghost-color: color-mix(in srgb, var(--spinner-color) 10%, transparent);
+  --spinner-ghost-color: var(--color-border);
 
   flex: none;
   display: inline-block;

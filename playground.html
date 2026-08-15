@@ -1461,6 +1461,43 @@
               </div>
             </article>
 
+            <!-- Temporary Android diagnostic: remove after the physical A/B/C result is recorded. -->
+            <article class="playground-demo-group stack" aria-labelledby="spinner-android-diagnostic-title">
+              <header class="playground-demo-group__header stack">
+                <h3 class="playground-demo-group__title" id="spinner-android-diagnostic-title">
+                  Android Spinner diagnostic
+                </h3>
+                <p class="playground-demo-group__description text text--muted">
+                  Temporary A/B/C comparison. These controls follow the device motion preference and are not public
+                  Spinner variants.
+                </p>
+                <p class="spinner-diagnostic__motion-state text">
+                  Motion preference:
+                  <span class="spinner-diagnostic__motion-default">animation allowed</span>
+                  <span class="spinner-diagnostic__motion-reduce">reduced motion</span>
+                </p>
+              </header>
+              <div class="playground-card-grid">
+                <div class="playground-demo stack">
+                  <p class="playground-demo__label">A — CodePen mechanics</p>
+                  <span class="diagnostic-codepen-spinner" aria-hidden="true"></span>
+                </div>
+                <div class="playground-demo stack">
+                  <p class="playground-demo__label">B — CodePen mechanics + reference box model</p>
+                  <span
+                    class="diagnostic-codepen-spinner diagnostic-codepen-spinner--content-box"
+                    aria-hidden="true"
+                  ></span>
+                </div>
+                <div class="playground-demo stack">
+                  <p class="playground-demo__label">C — Production Spinner</p>
+                  <span class="spinner spinner--large" aria-hidden="true">
+                    <span class="spinner__visual" aria-hidden="true"></span>
+                  </span>
+                </div>
+              </div>
+            </article>
+
             <article class="playground-demo-group stack" aria-labelledby="spinner-labels-title">
               <header class="playground-demo-group__header stack">
                 <h3 class="playground-demo-group__title" id="spinner-labels-title">Labelled and visual-only patterns</h3>

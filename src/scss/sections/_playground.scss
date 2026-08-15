@@ -136,6 +136,83 @@
   --cluster-alignment: flex-start;
 }
 
+/* Temporary Android Spinner diagnostic; keep isolated from the production Spinner API. */
+.diagnostic-codepen-spinner {
+  --diagnostic-size: 2em;
+  --diagnostic-color: #357;
+  --diagnostic-ghost-color: color-mix(in srgb, currentcolor 10%, transparent);
+  --diagnostic-border-width: calc(var(--diagnostic-size) * 0.172);
+
+  position: relative;
+  display: inline-block;
+  width: var(--diagnostic-size);
+  aspect-ratio: 1;
+  color: var(--diagnostic-color);
+  border: var(--diagnostic-border-width) solid;
+  border-color:
+    var(--diagnostic-color)
+    var(--diagnostic-ghost-color)
+    var(--diagnostic-ghost-color)
+    var(--diagnostic-color);
+  border-radius: 100%;
+  animation: diagnostic-codepen-spinner-rotate 0.5s infinite linear;
+}
+
+.diagnostic-codepen-spinner::before,
+.diagnostic-codepen-spinner::after {
+  position: absolute;
+  width: var(--diagnostic-border-width);
+  aspect-ratio: 1;
+  background: var(--diagnostic-color);
+  border-radius: 100%;
+  content: "";
+}
+
+.diagnostic-codepen-spinner::before {
+  top: 0;
+  right: 0;
+}
+
+.diagnostic-codepen-spinner::after {
+  bottom: 0;
+  left: 0;
+}
+
+.diagnostic-codepen-spinner--content-box,
+.diagnostic-codepen-spinner--content-box::before,
+.diagnostic-codepen-spinner--content-box::after {
+  box-sizing: content-box;
+}
+
+.spinner-diagnostic__motion-reduce {
+  display: none;
+}
+
+@keyframes diagnostic-codepen-spinner-rotate {
+  0% {
+    rotate: 0deg;
+  }
+
+  100% {
+    rotate: 360deg;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .diagnostic-codepen-spinner {
+    animation: none;
+    rotate: none;
+  }
+
+  .spinner-diagnostic__motion-default {
+    display: none;
+  }
+
+  .spinner-diagnostic__motion-reduce {
+    display: inline;
+  }
+}
+
 .playground-section__content {
   --stack-gap: var(--space-xl);
 }

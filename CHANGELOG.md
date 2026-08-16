@@ -6,9 +6,11 @@ The format is based on Keep a Changelog, and this project adheres to Semantic Ve
 
 ## [Unreleased]
 
+## [2.0.1] - 2026-08-16
+
 ### Fixed
 
-- Corrected Spinner alignment inside Button content without changing standalone Spinner positioning.
+- Corrected Spinner alignment inside Button content while preserving standalone Spinner positioning and behavior.
 
 ## [2.0.0] - 2026-08-14
 

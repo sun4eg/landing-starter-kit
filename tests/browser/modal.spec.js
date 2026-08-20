@@ -74,3 +74,39 @@ test('actionable Toast is isolated while Modal is active and restored afterward'
   await expect(toastControl).toBeFocused()
   await expect(dialog).toBeHidden()
 })
+
+test('Modal actions remain reachable in a short reflow viewport', async ({ page }) => {
+  await page.setViewportSize({ width: 360, height: 225 })
+  await page.goto('/playground.html#modals-title')
+
+  await page.locator('[data-modal-open="basic-modal"]').click()
+  const modal = page.locator('#basic-modal')
+  const dialog = modal.locator('[data-modal-dialog]')
+  const footer = dialog.locator('.modal__footer')
+
+  await expect(modal).toBeVisible()
+
+  const initial = await dialog.evaluate((element) => {
+    const rect = element.getBoundingClientRect()
+    return {
+      withinViewport: rect.top >= -1
+        && rect.bottom <= innerHeight + 1
+        && rect.left >= -1
+        && rect.right <= innerWidth + 1,
+      scrollable: element.scrollHeight > element.clientHeight
+        && getComputedStyle(element).overflowY === 'auto',
+    }
+  })
+
+  expect(initial).toEqual({ withinViewport: true, scrollable: true })
+
+  await footer.evaluate((element) => element.scrollIntoView({ block: 'end' }))
+
+  await expect.poll(() => footer.evaluate((element) => {
+    const footerRect = element.getBoundingClientRect()
+    const dialogRect = element.closest('[data-modal-dialog]').getBoundingClientRect()
+    return footerRect.top >= dialogRect.top - 1 && footerRect.bottom <= dialogRect.bottom + 1
+  })).toBe(true)
+  await expect(page.locator('body > .site-header')).toHaveJSProperty('inert', true)
+  await expect(page.locator('html')).toHaveAttribute('data-modal-scroll-lock', '')
+})

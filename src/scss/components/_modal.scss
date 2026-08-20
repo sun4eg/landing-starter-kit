@@ -36,7 +36,8 @@
   border: var(--border-width) solid var(--color-border);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-lg);
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
   animation: modal-fade-in var(--duration-normal) var(--ease-standard);
 }
 

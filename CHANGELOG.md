@@ -6,6 +6,10 @@ The format is based on Keep a Changelog, and this project adheres to Semantic Ve
 
 ## [Unreleased]
 
+### Fixed
+
+- Kept Modal actions reachable in short-height, high-zoom reflow conditions.
+
 ## [2.0.1] - 2026-08-16
 
 ### Fixed

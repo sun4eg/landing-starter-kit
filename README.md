@@ -2,9 +2,9 @@
 
 An AI-ready foundation for modern, accessible, responsive landing pages, built with Vite, token-driven Sass, BEM, semantic HTML, and vanilla JavaScript ES Modules—without a UI framework.
 
-[![Version 2.0.1](https://img.shields.io/badge/version-2.0.1-0A7EA4)](./CHANGELOG.md) [![MIT License](https://img.shields.io/badge/license-MIT-green)](./LICENSE) [![Vite](https://img.shields.io/badge/Vite-8.2-646CFF?logo=vite&logoColor=white)](https://vite.dev/) [![Sass](https://img.shields.io/badge/Sass-1.102-CC6699?logo=sass&logoColor=white)](https://sass-lang.com/) [![JavaScript ES Modules](https://img.shields.io/badge/JavaScript-ES%20Modules-F7DF1E?logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules) [![Accessibility](https://img.shields.io/badge/Accessibility-A11y-005A9C)](https://www.w3.org/WAI/) [![AI Ready](https://img.shields.io/badge/AI-Ready-8A2BE2)](./AI_RULES.md)
+[![Version 2.0.2](https://img.shields.io/badge/version-2.0.2-0A7EA4)](./CHANGELOG.md) [![MIT License](https://img.shields.io/badge/license-MIT-green)](./LICENSE) [![Vite](https://img.shields.io/badge/Vite-8.2-646CFF?logo=vite&logoColor=white)](https://vite.dev/) [![Sass](https://img.shields.io/badge/Sass-1.102-CC6699?logo=sass&logoColor=white)](https://sass-lang.com/) [![JavaScript ES Modules](https://img.shields.io/badge/JavaScript-ES%20Modules-F7DF1E?logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules) [![Accessibility](https://img.shields.io/badge/Accessibility-A11y-005A9C)](https://www.w3.org/WAI/) [![AI Ready](https://img.shields.io/badge/AI-Ready-8A2BE2)](./AI_RULES.md)
 
-> `v2.0.1` is the current stable maintenance release of the documented v2 component APIs. Automated
+> `v2.0.2` is the current stable maintenance release of the documented v2 component APIs. Automated
 > regression and targeted platform testing support this release, while deployment-specific
 > browser, device, forced-colors, and assistive-technology verification remains recommended.
 
@@ -94,6 +94,11 @@ names, roles, state synchronization, ARIA relationships, focus ownership,
 inertness, native validation, and live-region markup. These assertions cannot
 verify spoken output, announcement timing, or a screen reader's interaction
 model, so the following physical assistive-technology passes remain necessary.
+
+A targeted Chrome 200% browser-zoom check confirmed that Modal footer actions
+remain reachable and operable. A 360×225 short-height reflow proxy protects the
+same contract in automation; true Chrome 400%, Firefox, and Safari browser-zoom
+verification remains manual and is not implied by that proxy.
 
 Targeted macOS and iOS Safari + VoiceOver smoke passes have been completed for
 priority Navigation, disclosure, Tabs, Modal, Toast, Form Control, validation,

@@ -44,9 +44,10 @@ This roadmap tracks the development of a reusable, accessible, and production-re
 - [x] **v2.0.0-rc.1 preparation** — Freeze features and reconcile the release candidate for final integration and acceptance testing.
 - [x] **v2.0.0 stable preparation** — Complete RC stabilization, validate the frozen API and automated browser matrix, and prepare the stable v2 documentation and release metadata.
 - [x] **Stable v2 automated coverage** — Retain production-build installed-Chrome checks and managed Chromium, Firefox, and WebKit CI coverage for the documented interaction contracts.
+- [x] **Targeted Chrome zoom and Modal reflow verification** — Confirm Modal action reachability at actual 200% Chrome zoom and protect the unusually short, 400%-equivalent reflow condition with a browser regression test.
 - [ ] **SEO setup** — Add metadata, social previews, canonical information, structured data, sitemap, and robots directives.
 - [ ] **Performance optimization** — Optimize images, fonts, asset delivery, rendering behavior, and Core Web Vitals.
-- [ ] **Post-2.0 platform evidence** — Complete Windows NVDA, physical Windows High Contrast, and broader evidence-driven device checks when the required environments are available.
+- [ ] **Post-2.0 platform evidence** — Complete Windows NVDA, physical Windows High Contrast, true 400% and Firefox/Safari browser-zoom checks, and broader evidence-driven device checks when the required environments are available.
 - [ ] **Post-2.0 regression expansion** — Add engine-specific scenarios only where production feedback identifies concrete interoperability risks.
 - [ ] **Post-2.0 features and API evolution** — Treat optional naming cleanup, new components, and new variants as separately reviewed future-version work.
 - [ ] **Adopter production integration** — Complete deployment-specific content, backend/error handling, performance, privacy, SEO, and hosting checks for each consuming project.

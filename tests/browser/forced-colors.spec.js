@@ -133,30 +133,67 @@ test('native and custom form controls retain visible affordances', async ({ page
   expect(fileState.buttonDisplay).not.toBe('none')
   expect(fileState.outline).toBe('solid')
 
-  for (const [selector, type] of [
-    ['#date-picker-standard', 'date'],
-    ['#time-picker-working-hours', 'time'],
-  ]) {
-    const pickerState = await page.locator(selector).evaluate((control) => {
+  const pickerCases = [
+    ['#date-picker-standard', 'date', '.date-picker'],
+    ['#time-picker-working-hours', 'time', '.time-picker'],
+  ]
+  const forcedPickerStates = []
+
+  for (const [selector, type, wrapperSelector] of pickerCases) {
+    const pickerState = await page.locator(selector).evaluate((control, hostSelector) => {
+      const host = control.closest(hostSelector)
+      const fallback = getComputedStyle(host, '::after')
       const indicator = getComputedStyle(control, '::-webkit-calendar-picker-indicator')
+      const rect = control.getBoundingClientRect()
       return {
         type: control.type,
-        colorScheme: getComputedStyle(control).colorScheme,
-        indicatorDisplay: indicator.display,
-        indicatorOpacity: indicator.opacity,
+        inputPointerEvents: getComputedStyle(control).pointerEvents,
+        inputWidth: rect.width,
+        inputHeight: rect.height,
         indicatorPointerEvents: indicator.pointerEvents,
-        indicatorWidth: parseFloat(indicator.width),
-        indicatorHeight: parseFloat(indicator.height),
+        fallbackContent: fallback.content,
+        fallbackWidth: parseFloat(fallback.width),
+        fallbackHeight: parseFloat(fallback.height),
+        fallbackBorderStyle: fallback.borderStyle,
+        fallbackBorderWidth: parseFloat(fallback.borderWidth),
+        fallbackBackground: fallback.backgroundImage,
+        fallbackPointerEvents: fallback.pointerEvents,
+        fallbackForcedColorAdjust: fallback.forcedColorAdjust,
       }
-    })
+    }, wrapperSelector)
 
     expect(pickerState.type).toBe(type)
-    expect(pickerState.colorScheme).not.toBe('light')
-    expect(pickerState.indicatorDisplay).not.toBe('none')
-    expect(pickerState.indicatorOpacity).toBe('1')
+    expect(pickerState.inputPointerEvents).not.toBe('none')
+    expect(pickerState.inputWidth).toBeGreaterThan(0)
+    expect(pickerState.inputHeight).toBeGreaterThan(0)
     expect(pickerState.indicatorPointerEvents).not.toBe('none')
-    expect(pickerState.indicatorWidth).toBeGreaterThan(0)
-    expect(pickerState.indicatorHeight).toBeGreaterThan(0)
+    expect(pickerState.fallbackContent).not.toBe('none')
+    expect(pickerState.fallbackWidth).toBeGreaterThan(0)
+    expect(pickerState.fallbackHeight).toBeGreaterThan(0)
+    expect(pickerState.fallbackBorderStyle).toBe('solid')
+    expect(pickerState.fallbackBorderWidth).toBeGreaterThan(0)
+    expect(pickerState.fallbackBackground).not.toBe('none')
+    expect(pickerState.fallbackPointerEvents).toBe('none')
+    expect(pickerState.fallbackForcedColorAdjust).toBe('none')
+    forcedPickerStates.push(pickerState)
+  }
+
+  await page.emulateMedia({ forcedColors: 'none' })
+  await expect.poll(() => page.evaluate(() => matchMedia('(forced-colors: active)').matches)).toBe(false)
+
+  for (const [index, [selector, , wrapperSelector]] of pickerCases.entries()) {
+    const normalState = await page.locator(selector).evaluate((control, hostSelector) => {
+      const rect = control.getBoundingClientRect()
+      return {
+        inputWidth: rect.width,
+        inputHeight: rect.height,
+        fallbackContent: getComputedStyle(control.closest(hostSelector), '::after').content,
+      }
+    }, wrapperSelector)
+
+    expect(['none', 'normal']).toContain(normalState.fallbackContent)
+    expect(normalState.inputWidth).toBeCloseTo(forcedPickerStates[index].inputWidth, 0)
+    expect(normalState.inputHeight).toBeCloseTo(forcedPickerStates[index].inputHeight, 0)
   }
 })
 

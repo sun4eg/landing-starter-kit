@@ -60,14 +60,27 @@
 
 @media (forced-colors: active) {
   .time-picker__control {
+    padding-inline-end: calc(var(--control-padding-inline-md) + var(--control-icon-size-md) + var(--space-2xs));
     color: CanvasText;
     background-color: Canvas;
     border-color: ButtonText;
-    color-scheme: normal;
   }
 
-  .time-picker__control::-webkit-calendar-picker-indicator {
-    color: ButtonText;
-    opacity: 1;
+  .time-picker::after {
+    grid-row: 2;
+    grid-column: 1;
+    align-self: center;
+    justify-self: end;
+    width: var(--control-icon-size-md);
+    aspect-ratio: var(--aspect-ratio-square);
+    margin-inline-end: var(--control-padding-inline-md);
+    background:
+      linear-gradient(ButtonText, ButtonText) center 25% / var(--border-width) 30% no-repeat,
+      linear-gradient(ButtonText, ButtonText) 68% 55% / 30% var(--border-width) no-repeat;
+    border: var(--border-width) solid ButtonText;
+    border-radius: var(--radius-full);
+    content: '';
+    pointer-events: none;
+    forced-color-adjust: none;
   }
 }

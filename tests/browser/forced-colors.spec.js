@@ -8,29 +8,54 @@ test.beforeEach(async ({ page }) => {
 test('custom selection controls retain state geometry and focus', async ({ page }) => {
   await page.goto('/playground.html#form-controls-title')
 
-  const checkboxState = await page.evaluate(() => {
-    const unchecked = document.querySelector('#checkbox-unchecked + .checkbox__control')
-    const checked = document.querySelector('#checkbox-checked + .checkbox__control')
-    const uncheckedMark = getComputedStyle(unchecked, '::after')
-    const checkedMark = getComputedStyle(checked, '::after')
+  await expect.poll(() => page.locator('#checkbox-indeterminate').evaluate((input) => input.indeterminate)).toBe(true)
 
-    return {
-      uncheckedBorder: getComputedStyle(unchecked).borderStyle,
-      uncheckedMarkOpacity: uncheckedMark.opacity,
-      checkedMarkOpacity: checkedMark.opacity,
-      checkedMarkContent: checkedMark.content,
-    }
+  const checkboxState = await page.evaluate(() => {
+    const ids = [
+      'checkbox-unchecked',
+      'checkbox-checked',
+      'checkbox-disabled',
+      'checkbox-disabled-checked',
+      'checkbox-indeterminate',
+    ]
+
+    return ids.map((id) => {
+      const input = document.getElementById(id)
+      const style = getComputedStyle(input)
+      const rect = input.getBoundingClientRect()
+      return {
+        id,
+        appearance: style.appearance,
+        opacity: style.opacity,
+        width: rect.width,
+        height: rect.height,
+        checked: input.checked,
+        indeterminate: input.indeterminate,
+        disabled: input.disabled,
+        customControlDisplay: getComputedStyle(input.nextElementSibling).display,
+      }
+    })
   })
 
-  expect(checkboxState.uncheckedBorder).toBe('solid')
-  expect(checkboxState.uncheckedMarkOpacity).toBe('0')
-  expect(checkboxState.checkedMarkOpacity).toBe('1')
-  expect(checkboxState.checkedMarkContent).not.toBe('none')
+  for (const state of checkboxState) {
+    expect(state.appearance).not.toBe('none')
+    expect(state.opacity).toBe('1')
+    expect(state.width).toBeGreaterThan(0)
+    expect(state.height).toBeGreaterThan(0)
+    expect(state.customControlDisplay).toBe('none')
+  }
+  expect(checkboxState.map(({ checked, indeterminate, disabled }) => ({ checked, indeterminate, disabled }))).toEqual([
+    { checked: false, indeterminate: false, disabled: false },
+    { checked: true, indeterminate: false, disabled: false },
+    { checked: false, indeterminate: false, disabled: true },
+    { checked: true, indeterminate: false, disabled: true },
+    { checked: false, indeterminate: true, disabled: false },
+  ])
 
   const checkbox = page.locator('#checkbox-unchecked')
   await checkbox.focus()
   await expect(checkbox).toBeFocused()
-  const checkboxFocus = await checkbox.evaluate((input) => getComputedStyle(input.nextElementSibling).outlineStyle)
+  const checkboxFocus = await checkbox.evaluate((input) => getComputedStyle(input).outlineStyle)
   expect(checkboxFocus).toBe('solid')
 
   const radioState = await page.evaluate(() => ({
@@ -107,6 +132,111 @@ test('native and custom form controls retain visible affordances', async ({ page
   expect(fileState.buttonBorder).toBe('solid')
   expect(fileState.buttonDisplay).not.toBe('none')
   expect(fileState.outline).toBe('solid')
+
+  for (const [selector, type] of [
+    ['#date-picker-standard', 'date'],
+    ['#time-picker-working-hours', 'time'],
+  ]) {
+    const pickerState = await page.locator(selector).evaluate((control) => {
+      const indicator = getComputedStyle(control, '::-webkit-calendar-picker-indicator')
+      return {
+        type: control.type,
+        colorScheme: getComputedStyle(control).colorScheme,
+        indicatorDisplay: indicator.display,
+        indicatorOpacity: indicator.opacity,
+        indicatorPointerEvents: indicator.pointerEvents,
+        indicatorWidth: parseFloat(indicator.width),
+        indicatorHeight: parseFloat(indicator.height),
+      }
+    })
+
+    expect(pickerState.type).toBe(type)
+    expect(pickerState.colorScheme).not.toBe('light')
+    expect(pickerState.indicatorDisplay).not.toBe('none')
+    expect(pickerState.indicatorOpacity).toBe('1')
+    expect(pickerState.indicatorPointerEvents).not.toBe('none')
+    expect(pickerState.indicatorWidth).toBeGreaterThan(0)
+    expect(pickerState.indicatorHeight).toBeGreaterThan(0)
+  }
+})
+
+test('responsive Navigation toggle retains forced-colors menu and close geometry', async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 })
+  await page.goto('/')
+
+  const toggle = page.locator('[data-navigation-toggle]')
+  const bars = toggle.locator('.site-header__menu-icon > span')
+  await expect(toggle).toBeVisible()
+  await expect(toggle).toHaveAttribute('aria-expanded', 'false')
+
+  const closedState = await bars.evaluateAll((elements) => elements.map((element) => {
+    const style = getComputedStyle(element)
+    const rect = element.getBoundingClientRect()
+    return {
+      visible: rect.width > 0 && rect.height > 0,
+      borderStyle: style.borderBlockStartStyle,
+      borderWidth: parseFloat(style.borderBlockStartWidth),
+    }
+  }))
+  expect(closedState).toHaveLength(3)
+  for (const bar of closedState) {
+    expect(bar.visible).toBe(true)
+    expect(bar.borderStyle).toBe('solid')
+    expect(bar.borderWidth).toBeGreaterThan(0)
+  }
+
+  await toggle.focus()
+  await expect(toggle).toBeFocused()
+  expect(await toggle.evaluate((control) => getComputedStyle(control).outlineStyle)).toBe('solid')
+
+  await toggle.click()
+  await expect(toggle).toHaveAttribute('aria-expanded', 'true')
+  await expect(bars.nth(1)).toBeHidden()
+  const openState = await Promise.all([bars.first(), bars.last()].map((bar) => bar.evaluate((element) => {
+    const style = getComputedStyle(element)
+    const rect = element.getBoundingClientRect()
+    return {
+      visible: rect.width > 0 && rect.height > 0,
+      borderStyle: style.borderBlockStartStyle,
+      transform: style.transform,
+    }
+  })))
+  for (const bar of openState) {
+    expect(bar.visible).toBe(true)
+    expect(bar.borderStyle).toBe('solid')
+    expect(bar.transform).not.toBe('none')
+  }
+
+  await toggle.click()
+  await expect(toggle).toHaveAttribute('aria-expanded', 'false')
+  await expect(bars.nth(1)).toBeVisible()
+
+  await page.setViewportSize({ width: 1440, height: 900 })
+  await page.goto('/playground.html')
+
+  const playgroundToggle = page.locator('[data-playground-navigation-toggle]')
+  const playgroundBars = playgroundToggle.locator('.site-header__menu-icon > span')
+  const playgroundClose = playgroundToggle.locator('.playground-navigation-toggle__close-icon')
+  await expect(playgroundToggle).toBeVisible()
+  await expect(playgroundToggle).toHaveAttribute('aria-expanded', 'false')
+  await expect(playgroundBars).toHaveCount(3)
+  for (const bar of await playgroundBars.all()) {
+    await expect(bar).toHaveCSS('border-block-start-style', 'solid')
+    expect(parseFloat(await bar.evaluate((element) => getComputedStyle(element).borderBlockStartWidth))).toBeGreaterThan(0)
+  }
+
+  await playgroundToggle.click()
+  await expect(playgroundToggle).toHaveAttribute('aria-expanded', 'true')
+  await expect(playgroundBars.first()).toBeHidden()
+  await expect(playgroundClose).toBeVisible()
+  const closeState = await playgroundClose.evaluate((icon) => ({
+    width: icon.getBoundingClientRect().width,
+    height: icon.getBoundingClientRect().height,
+    stroke: getComputedStyle(icon).stroke,
+  }))
+  expect(closeState.width).toBeGreaterThan(0)
+  expect(closeState.height).toBeGreaterThan(0)
+  expect(closeState.stroke).not.toBe('none')
 })
 
 test('current states, feedback, and Modal retain visible boundaries', async ({ page }) => {

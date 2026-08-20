@@ -113,25 +113,21 @@
 }
 
 @media (forced-colors: active) {
+  .checkbox__input {
+    position: static;
+    width: var(--control-icon-size-md);
+    height: var(--control-icon-size-md);
+    margin-block-start: var(--space-3xs);
+    opacity: 1;
+    appearance: auto;
+  }
+
   .checkbox__control {
-    color: HighlightText;
-    background-color: Canvas;
-    border-color: CanvasText;
+    display: none;
   }
 
-  .checkbox__input:is(:checked, :indeterminate) + .checkbox__control {
-    background-color: Highlight;
-    border-color: Highlight;
-  }
-
-  .checkbox__input:focus-visible + .checkbox__control {
-    outline-color: Highlight;
-  }
-
-  .checkbox__input:disabled ~ .checkbox__control,
   .checkbox__input:disabled ~ .checkbox__content {
     color: GrayText;
-    border-color: GrayText;
     opacity: 1;
   }
 }

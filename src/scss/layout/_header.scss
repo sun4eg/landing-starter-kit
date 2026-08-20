@@ -143,6 +143,19 @@ html[data-navigation-scroll-lock] {
   }
 }
 
+@media (forced-colors: active) {
+  .site-header__menu-toggle {
+    color: ButtonText;
+    border-color: ButtonText;
+  }
+
+  .site-header__menu-icon > span {
+    height: var(--space-0);
+    background-color: var(--color-transparent);
+    border-block-start: var(--border-width) solid ButtonText;
+  }
+}
+
 @media (max-width: breakpoints.$tablet) {
   .site-header:not([data-navigation-enhanced]) {
     position: static;

@@ -57,3 +57,17 @@
     border-color: var(--color-interactive);
   }
 }
+
+@media (forced-colors: active) {
+  .time-picker__control {
+    color: CanvasText;
+    background-color: Canvas;
+    border-color: ButtonText;
+    color-scheme: normal;
+  }
+
+  .time-picker__control::-webkit-calendar-picker-indicator {
+    color: ButtonText;
+    opacity: 1;
+  }
+}

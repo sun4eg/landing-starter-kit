@@ -106,8 +106,8 @@ Progress, and reading-order workflows, with no issue observed in the tested
 scenarios. The iOS pass included a basic touch smoke, and Android Chrome/touch
 spot checks completed so far reported no issue. This is focused
 verification, not complete Safari, iOS, or VoiceOver certification. Windows
-NVDA and physical Windows High Contrast remain pending; broader Android and
-device coverage remains evidence-driven.
+NVDA and physical re-verification of Windows High Contrast fixes remain
+pending; broader Android and device coverage remains evidence-driven.
 
 ### Windows High Contrast manual checklist
 
@@ -123,8 +123,11 @@ where practical, Firefox:
 - Progress and Spinner: visible track/fill or ring geometry and reduced-motion combination.
 - With NVDA, spot-check names and states for the custom controls, Tabs, Modal, and actionable Toast.
 
-These physical Windows and NVDA checks remain incomplete until performed on an
-actual Windows system.
+A physical Windows Chrome pass with the High Contrast Black theme reproduced
+Checkbox state, native date/time picker-indicator, and closed Navigation-icon
+visibility defects. The targeted fixes have Chromium forced-colors emulation
+coverage, but still require re-verification on that physical setup; NVDA checks
+also remain pending.
 
 ### VoiceOver and NVDA manual checklist
 
@@ -142,8 +145,8 @@ smoke. No issue was observed in these tested workflows. With Windows 11 NVDA
 and Chrome or Edge, verify Navigation, Accordion, Tabs, Modal, Toast,
 Checkbox/Radio/Switch, Password Input, Number Stepper, Range, File Input, native
 validation, and Progress; combine this with the High Contrast spot checks where
-practical. The Windows checks remain incomplete until executed on the named
-platform; broader Android/device coverage remains non-exhaustive despite the
+practical. Windows NVDA and physical High Contrast fix re-verification remain
+incomplete; broader Android/device coverage remains non-exhaustive despite the
 completed Android Chrome/touch spot checks.
 
 ## Project structure

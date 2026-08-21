@@ -395,6 +395,23 @@ test('current states, feedback, and Modal retain visible boundaries', async ({ p
   }))
   expect(modalState).toBe('solid')
   expect(closeState).toEqual({ border: 'solid', outline: 'solid' })
+
+  await page.keyboard.press('Escape')
+  await page.locator('[data-modal-open="contact-drawer-modal"]').evaluate((opener) => opener.click())
+  const drawer = page.locator('#contact-drawer-modal [data-modal-dialog]')
+  const drawerClose = drawer.locator('[data-modal-close]').first()
+  await expect(drawerClose).toBeFocused()
+  const drawerState = await drawer.evaluate((element) => ({
+    border: getComputedStyle(element).borderStyle,
+    borderWidth: parseFloat(getComputedStyle(element).borderWidth),
+  }))
+  const drawerCloseState = await drawerClose.evaluate((control) => ({
+    border: getComputedStyle(control).borderStyle,
+    outline: getComputedStyle(control).outlineStyle,
+  }))
+  expect(drawerState.border).toBe('solid')
+  expect(drawerState.borderWidth).toBeGreaterThan(0)
+  expect(drawerCloseState).toEqual({ border: 'solid', outline: 'solid' })
 })
 
 test('featured marketing surfaces remain readable and bounded', async ({ page }) => {

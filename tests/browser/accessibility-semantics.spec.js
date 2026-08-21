@@ -75,6 +75,19 @@ test('Modal exposes one labelled dialog and restores focus without stale isolati
   await expect(dialog).toBeHidden()
   await expect(opener).toBeFocused()
   await expect(page.locator('body > .site-header')).toHaveJSProperty('inert', false)
+
+  const drawerOpener = page.getByRole('button', { name: 'Open contact Drawer' })
+  await drawerOpener.click()
+
+  const drawer = page.getByRole('dialog', { name: 'Contact the project team' })
+  await expect(drawer).toBeVisible()
+  await expect(drawer).toHaveAttribute('aria-modal', 'true')
+  await expect(drawer).toHaveAttribute('aria-labelledby', 'contact-drawer-modal-title')
+  await expect(drawer).toHaveAttribute('aria-describedby', 'contact-drawer-modal-description')
+  await expect(drawer.getByRole('button', { name: 'Close contact team Drawer' })).toBeFocused()
+  await page.keyboard.press('Escape')
+  await expect(drawer).toBeHidden()
+  await expect(drawerOpener).toBeFocused()
 })
 
 test('Toast and Alert use scoped announcements and contextual dismiss names', async ({ page }) => {

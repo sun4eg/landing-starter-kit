@@ -6,11 +6,13 @@ The format is based on Keep a Changelog, and this project adheres to Semantic Ve
 
 ## [Unreleased]
 
+## [2.0.3] - 2026-08-21
+
 ### Fixed
 
-- Improved Checkbox state legibility in Windows High Contrast.
+- Improved Checkbox state legibility in Windows High Contrast by preserving explicit checked, mixed, disabled, and focus geometry.
 - Restored responsive Navigation toggle icon visibility in forced colors.
-- Corrected date and time picker-indicator positioning in Windows High Contrast.
+- Corrected native date and time picker-indicator visibility and positioning in Windows High Contrast while preserving native interaction.
 
 ## [2.0.2] - 2026-08-20
 

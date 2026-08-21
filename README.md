@@ -2,9 +2,9 @@
 
 An AI-ready foundation for modern, accessible, responsive landing pages, built with Vite, token-driven Sass, BEM, semantic HTML, and vanilla JavaScript ES Modules—without a UI framework.
 
-[![Version 2.0.2](https://img.shields.io/badge/version-2.0.2-0A7EA4)](./CHANGELOG.md) [![MIT License](https://img.shields.io/badge/license-MIT-green)](./LICENSE) [![Vite](https://img.shields.io/badge/Vite-8.2-646CFF?logo=vite&logoColor=white)](https://vite.dev/) [![Sass](https://img.shields.io/badge/Sass-1.102-CC6699?logo=sass&logoColor=white)](https://sass-lang.com/) [![JavaScript ES Modules](https://img.shields.io/badge/JavaScript-ES%20Modules-F7DF1E?logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules) [![Accessibility](https://img.shields.io/badge/Accessibility-A11y-005A9C)](https://www.w3.org/WAI/) [![AI Ready](https://img.shields.io/badge/AI-Ready-8A2BE2)](./AI_RULES.md)
+[![Version 2.0.3](https://img.shields.io/badge/version-2.0.3-0A7EA4)](./CHANGELOG.md) [![MIT License](https://img.shields.io/badge/license-MIT-green)](./LICENSE) [![Vite](https://img.shields.io/badge/Vite-8.2-646CFF?logo=vite&logoColor=white)](https://vite.dev/) [![Sass](https://img.shields.io/badge/Sass-1.102-CC6699?logo=sass&logoColor=white)](https://sass-lang.com/) [![JavaScript ES Modules](https://img.shields.io/badge/JavaScript-ES%20Modules-F7DF1E?logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules) [![Accessibility](https://img.shields.io/badge/Accessibility-A11y-005A9C)](https://www.w3.org/WAI/) [![AI Ready](https://img.shields.io/badge/AI-Ready-8A2BE2)](./AI_RULES.md)
 
-> `v2.0.2` is the current stable maintenance release of the documented v2 component APIs. Automated
+> `v2.0.3` is the current stable maintenance release of the documented v2 component APIs. Automated
 > regression and targeted platform testing support this release, while deployment-specific
 > browser, device, forced-colors, and assistive-technology verification remains recommended.
 
@@ -105,9 +105,9 @@ priority Navigation, disclosure, Tabs, Modal, Toast, Form Control, validation,
 Progress, and reading-order workflows, with no issue observed in the tested
 scenarios. The iOS pass included a basic touch smoke, and Android Chrome/touch
 spot checks completed so far reported no issue. This is focused
-verification, not complete Safari, iOS, or VoiceOver certification. Windows
-NVDA and physical re-verification of Windows High Contrast fixes remain
-pending; broader Android and device coverage remains evidence-driven.
+verification, not complete Safari, iOS, or VoiceOver certification. Targeted
+physical Windows High Contrast Black verification is complete; Windows NVDA
+remains pending, and broader Android and device coverage remains evidence-driven.
 
 ### Windows High Contrast manual checklist
 
@@ -123,11 +123,11 @@ where practical, Firefox:
 - Progress and Spinner: visible track/fill or ring geometry and reduced-motion combination.
 - With NVDA, spot-check names and states for the custom controls, Tabs, Modal, and actionable Toast.
 
-A physical Windows Chrome pass with the High Contrast Black theme reproduced
-Checkbox state, native date/time picker-indicator, and closed Navigation-icon
-visibility defects. The targeted fixes have Chromium forced-colors emulation
-coverage, but still require re-verification on that physical setup; NVDA checks
-also remain pending.
+A targeted physical Windows Chrome pass with the High Contrast Black theme
+confirmed distinct Checkbox states, visible responsive Navigation toggle icons,
+and correctly positioned native date/time picker indicators after remediation.
+Chromium forced-colors emulation supplements this physical evidence; broader
+Windows High Contrast and NVDA verification remains manual.
 
 ### VoiceOver and NVDA manual checklist
 
@@ -145,9 +145,9 @@ smoke. No issue was observed in these tested workflows. With Windows 11 NVDA
 and Chrome or Edge, verify Navigation, Accordion, Tabs, Modal, Toast,
 Checkbox/Radio/Switch, Password Input, Number Stepper, Range, File Input, native
 validation, and Progress; combine this with the High Contrast spot checks where
-practical. Windows NVDA and physical High Contrast fix re-verification remain
-incomplete; broader Android/device coverage remains non-exhaustive despite the
-completed Android Chrome/touch spot checks.
+practical. Windows NVDA remains incomplete; broader Windows High Contrast and
+Android/device coverage remains non-exhaustive despite the completed targeted
+High Contrast and Android Chrome/touch checks.
 
 ## Project structure
 

@@ -41,6 +41,15 @@
   animation: modal-fade-in var(--duration-normal) var(--ease-standard);
 }
 
+.modal--drawer .modal__dialog {
+  align-self: stretch;
+  justify-self: end;
+}
+
+.modal--drawer.modal--drawer-start .modal__dialog {
+  justify-self: start;
+}
+
 .modal__header {
   display: grid;
   grid-template-columns: minmax(var(--space-0), 1fr) auto;

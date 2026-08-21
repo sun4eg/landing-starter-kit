@@ -2579,6 +2579,68 @@
               </div>
             </article>
 
+            <article class="playground-demo-group stack" aria-labelledby="modal-drawer-examples-title">
+              <header class="playground-demo-group__header stack">
+                <h3 class="playground-demo-group__title" id="modal-drawer-examples-title">Drawer presentations</h3>
+                <p class="playground-demo-group__description text text--muted">
+                  Add a Drawer modifier for blocking task-oriented side panels. The same Modal data API owns focus,
+                  isolation, Escape, scroll locking, and restoration.
+                </p>
+              </header>
+              <div class="playground-card-grid">
+                <div class="playground-demo stack">
+                  <h4>Inline-end task Drawer</h4>
+                  <p class="text text--muted">Collect focused request details without replacing the current page.</p>
+                  <button class="button button--primary" type="button" aria-controls="contact-drawer-modal" data-modal-open="contact-drawer-modal" hidden>Open contact Drawer</button>
+                </div>
+                <div class="playground-demo stack">
+                  <h4>Inline-start filter Drawer</h4>
+                  <p class="text text--muted">Keep a bounded set of blocking filters together before applying them.</p>
+                  <button class="button button--outline" type="button" aria-controls="filter-drawer-modal" data-modal-open="filter-drawer-modal" hidden>Open filter Drawer</button>
+                </div>
+              </div>
+
+              <div class="modal modal--drawer" id="contact-drawer-modal" data-modal hidden>
+                <div class="modal__dialog" role="dialog" aria-modal="true" aria-labelledby="contact-drawer-modal-title" aria-describedby="contact-drawer-modal-description" data-modal-dialog tabindex="-1">
+                  <header class="modal__header">
+                    <h3 class="modal__title" id="contact-drawer-modal-title">Contact the project team</h3>
+                    <button class="modal__close" type="button" aria-label="Close contact team Drawer" data-modal-close><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m6 6 12 12M18 6 6 18" /></svg></button>
+                    <p class="modal__description" id="contact-drawer-modal-description">Share the essentials for a focused project follow-up. This example does not submit personal data.</p>
+                  </header>
+                  <div class="modal__body">
+                    <form class="form" id="contact-drawer-form">
+                      <div class="form__field"><input class="form__input" id="contact-drawer-name" name="contact-drawer-name" type="text" autocomplete="name" placeholder=" " /><label class="form__label" for="contact-drawer-name">Name</label></div>
+                      <div class="form__field"><input class="form__input" id="contact-drawer-email" name="contact-drawer-email" type="email" autocomplete="email" placeholder=" " /><label class="form__label" for="contact-drawer-email">Email address</label></div>
+                      <div class="form__field"><textarea class="form__textarea" id="contact-drawer-summary" name="contact-drawer-summary" rows="4" placeholder=" "></textarea><label class="form__label" for="contact-drawer-summary">Project summary</label></div>
+                    </form>
+                  </div>
+                  <footer class="modal__footer">
+                    <button class="button button--ghost" type="button" data-modal-close>Cancel</button>
+                    <button class="button button--primary" type="button">Send request</button>
+                  </footer>
+                </div>
+              </div>
+
+              <div class="modal modal--drawer modal--drawer-start" id="filter-drawer-modal" data-modal hidden>
+                <div class="modal__dialog" role="dialog" aria-modal="true" aria-labelledby="filter-drawer-modal-title" aria-describedby="filter-drawer-modal-description" data-modal-dialog tabindex="-1">
+                  <header class="modal__header">
+                    <h3 class="modal__title" id="filter-drawer-modal-title">Filter project results</h3>
+                    <button class="modal__close" type="button" aria-label="Close project filters Drawer" data-modal-close><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m6 6 12 12M18 6 6 18" /></svg></button>
+                    <p class="modal__description" id="filter-drawer-modal-description">Choose the result groups to include before applying the filters.</p>
+                  </header>
+                  <div class="modal__body">
+                    <label class="checkbox" for="drawer-filter-active"><input class="checkbox__input" id="drawer-filter-active" name="drawer-filter-status" type="checkbox" checked /><span class="checkbox__control" aria-hidden="true"></span><span class="checkbox__label">Active projects</span></label>
+                    <label class="checkbox" for="drawer-filter-review"><input class="checkbox__input" id="drawer-filter-review" name="drawer-filter-status" type="checkbox" /><span class="checkbox__control" aria-hidden="true"></span><span class="checkbox__label">Awaiting review</span></label>
+                    <label class="checkbox" for="drawer-filter-archived"><input class="checkbox__input" id="drawer-filter-archived" name="drawer-filter-status" type="checkbox" /><span class="checkbox__control" aria-hidden="true"></span><span class="checkbox__label">Archived projects</span></label>
+                  </div>
+                  <footer class="modal__footer">
+                    <button class="button button--ghost" type="button">Reset</button>
+                    <button class="button button--primary" type="button" data-modal-close>Apply filters</button>
+                  </footer>
+                </div>
+              </div>
+            </article>
+
             <div class="playground-explainer-grid">
               <section class="playground-demo stack" aria-labelledby="modal-keyboard-title">
                 <h3 id="modal-keyboard-title">Keyboard interaction</h3>
@@ -2593,7 +2655,7 @@
             <aside class="playground-guidance playground-demo stack" aria-labelledby="modal-guidance-title">
               <h3 class="playground-guidance__title" id="modal-guidance-title">Usage and accessibility guidance</h3>
               <ul class="playground-guidance__list text">
-                <li>Use Modal for focused tasks and confirmations, not for navigation, transient Toasts, Tooltips, Popovers, or Drawer content.</li>
+                <li>Centered Modal remains the default. Use <code>.modal--drawer</code> for a blocking task-oriented side sheet, not for persistent navigation or a nonmodal sidebar.</li>
                 <li>Provide a concise title, a persistent close button, and only the actions required to complete or cancel the task.</li>
                 <li>Use <code>aria-describedby</code> when a short description helps explain the dialog; omit it for complex body content.</li>
                 <li>Choose initial focus deliberately for destructive confirmations; the safer action is usually appropriate.</li>
@@ -2610,6 +2672,7 @@
                 </header>
                 <dl class="playground-api__list stack">
                   <div class="playground-api__group stack"><dt class="playground-demo__label">Base</dt><dd><code>.modal</code></dd></div>
+                  <div class="playground-api__group stack"><dt class="playground-demo__label">Drawer modifiers</dt><dd><ul class="playground-api__classes cluster" role="list"><li><code>.modal--drawer</code></li><li><code>.modal--drawer-start</code></li></ul></dd></div>
                   <div class="playground-api__group stack"><dt class="playground-demo__label">Elements</dt><dd><ul class="playground-api__classes cluster" role="list"><li><code>.modal__dialog</code></li><li><code>.modal__header</code></li><li><code>.modal__title</code></li><li><code>.modal__description</code></li><li><code>.modal__body</code></li><li><code>.modal__footer</code></li><li><code>.modal__close</code></li></ul></dd></div>
                   <div class="playground-api__group stack"><dt class="playground-demo__label">Data hooks</dt><dd><ul class="playground-api__classes cluster" role="list"><li><code>data-modal</code></li><li><code>data-modal-dialog</code></li><li><code>data-modal-open="modal-id"</code></li><li><code>data-modal-close</code></li></ul></dd></div>
                 </dl>
@@ -2632,6 +2695,15 @@
     &lt;footer class=&quot;modal__footer&quot;&gt;…&lt;/footer&gt;
   &lt;/div&gt;
 &lt;/div&gt;</code></pre>
+                <p class="playground-demo__label">Logical side Drawer</p>
+                <pre class="playground-code"><code>&lt;div class=&quot;modal modal--drawer&quot; id=&quot;example-drawer&quot; data-modal hidden&gt;
+  &lt;div class=&quot;modal__dialog&quot; role=&quot;dialog&quot; aria-modal=&quot;true&quot;
+    aria-labelledby=&quot;example-drawer-title&quot; data-modal-dialog tabindex=&quot;-1&quot;&gt;
+    …
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Add modal--drawer-start for logical inline-start placement. --&gt;</code></pre>
               </section>
             </div>
           </div>

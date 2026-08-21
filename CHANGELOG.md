@@ -6,6 +6,10 @@ The format is based on Keep a Changelog, and this project adheres to Semantic Ve
 
 ## [Unreleased]
 
+### Added
+
+- Added logical inline-end and inline-start Drawer presentations to Modal for blocking task-oriented side panels while reusing the existing dialog lifecycle and accessibility behavior.
+
 ## [2.0.3] - 2026-08-21
 
 ### Fixed

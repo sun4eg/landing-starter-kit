@@ -46,11 +46,12 @@ This roadmap tracks the development of a reusable, accessible, and production-re
 - [x] **Stable v2 automated coverage** — Retain production-build installed-Chrome checks and managed Chromium, Firefox, and WebKit CI coverage for the documented interaction contracts.
 - [x] **Targeted Chrome zoom and Modal reflow verification** — Confirm Modal action reachability at actual 200% Chrome zoom and protect the unusually short, 400%-equivalent reflow condition with a browser regression test.
 - [x] **Targeted Windows High Contrast verification** — Complete a physical Chrome + High Contrast Black pass and remediation/retest for Checkbox states, responsive Navigation icons, and native date/time picker indicators.
+- [x] **v2.1 Modal Drawer capability** — Add logical inline-end and inline-start blocking side-sheet presentations as opt-in Modal modifiers while reusing the established Modal data API, JavaScript lifecycle, and accessibility semantics.
 - [ ] **SEO setup** — Add metadata, social previews, canonical information, structured data, sitemap, and robots directives.
 - [ ] **Performance optimization** — Optimize images, fonts, asset delivery, rendering behavior, and Core Web Vitals.
 - [ ] **Post-2.0 platform evidence** — Complete Windows NVDA, broader Windows High Contrast coverage, true 400% and Firefox/Safari browser-zoom checks, and broader evidence-driven device checks when the required environments are available.
 - [ ] **Post-2.0 regression expansion** — Add engine-specific scenarios only where production feedback identifies concrete interoperability risks.
-- [ ] **Post-2.0 features and API evolution** — Treat optional naming cleanup, new components, and new variants as separately reviewed future-version work.
+- [ ] **Future component and API evolution** — Review remaining components and variants individually against concrete adopter demand; Tooltip and Popover remain pending.
 - [ ] **Adopter production integration** — Complete deployment-specific content, backend/error handling, performance, privacy, SEO, and hosting checks for each consuming project.
 
 ## Next Component Phase
@@ -70,7 +71,7 @@ This roadmap tracks the development of a reusable, accessible, and production-re
 13. Toast — completed
 14. Tooltip
 15. Popover
-16. Drawer
+16. Drawer — completed as logical Modal presentation variants
 17. Stats — completed
 18. Logo Cloud — completed
 19. CTA Banner — completed

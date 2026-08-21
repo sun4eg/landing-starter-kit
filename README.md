@@ -2,9 +2,9 @@
 
 An AI-ready foundation for modern, accessible, responsive landing pages, built with Vite, token-driven Sass, BEM, semantic HTML, and vanilla JavaScript ES Modules—without a UI framework.
 
-[![Version 2.0.3](https://img.shields.io/badge/version-2.0.3-0A7EA4)](./CHANGELOG.md) [![MIT License](https://img.shields.io/badge/license-MIT-green)](./LICENSE) [![Vite](https://img.shields.io/badge/Vite-8.2-646CFF?logo=vite&logoColor=white)](https://vite.dev/) [![Sass](https://img.shields.io/badge/Sass-1.102-CC6699?logo=sass&logoColor=white)](https://sass-lang.com/) [![JavaScript ES Modules](https://img.shields.io/badge/JavaScript-ES%20Modules-F7DF1E?logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules) [![Accessibility](https://img.shields.io/badge/Accessibility-A11y-005A9C)](https://www.w3.org/WAI/) [![AI Ready](https://img.shields.io/badge/AI-Ready-8A2BE2)](./AI_RULES.md)
+[![Version 2.1.0](https://img.shields.io/badge/version-2.1.0-0A7EA4)](./CHANGELOG.md) [![MIT License](https://img.shields.io/badge/license-MIT-green)](./LICENSE) [![Vite](https://img.shields.io/badge/Vite-8.2-646CFF?logo=vite&logoColor=white)](https://vite.dev/) [![Sass](https://img.shields.io/badge/Sass-1.102-CC6699?logo=sass&logoColor=white)](https://sass-lang.com/) [![JavaScript ES Modules](https://img.shields.io/badge/JavaScript-ES%20Modules-F7DF1E?logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules) [![Accessibility](https://img.shields.io/badge/Accessibility-A11y-005A9C)](https://www.w3.org/WAI/) [![AI Ready](https://img.shields.io/badge/AI-Ready-8A2BE2)](./AI_RULES.md)
 
-> `v2.0.3` is the current stable maintenance release of the documented v2 component APIs. Automated
+> `v2.1.0` is the current stable release of the documented v2 component APIs. Automated
 > regression and targeted platform testing support this release, while deployment-specific
 > browser, device, forced-colors, and assistive-technology verification remains recommended.
 
@@ -15,7 +15,7 @@ An AI-ready foundation for modern, accessible, responsive landing pages, built w
 - Actions and navigation: Button, Accordion, Tabs, Breadcrumbs, and Pagination
 - Forms: Form plus native Checkbox, Radio, Switch, Select, Password Input, Number Stepper, Range Slider, Date Picker, Time Picker, DateTime Local, and File Input controls
 - Feedback and states: Badge, Alert, Divider, Progress, Spinner, Skeleton, Empty State, and Toast
-- Overlays: Modal
+- Overlays: Modal, including opt-in logical inline-end and inline-start Drawer presentations that reuse the Modal lifecycle
 - Marketing and content: Service Card, Project Card, Pricing Card, Stats, Timeline, Logo Cloud, CTA Banner, and Testimonial
 - Keyboard-accessible navigation and Accordion behavior
 - Sticky Header, anchor offsets, reduced-motion handling, and visible focus foundations

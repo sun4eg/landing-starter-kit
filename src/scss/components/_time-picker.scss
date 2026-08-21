@@ -60,27 +60,22 @@
 
 @media (forced-colors: active) {
   .time-picker__control {
-    padding-inline-end: calc(var(--control-padding-inline-md) + var(--control-icon-size-md) + var(--space-2xs));
     color: CanvasText;
     background-color: Canvas;
     border-color: ButtonText;
   }
 
-  .time-picker::after {
-    grid-row: 2;
-    grid-column: 1;
-    align-self: center;
-    justify-self: end;
+  .time-picker__control::-webkit-calendar-picker-indicator {
     width: var(--control-icon-size-md);
-    aspect-ratio: var(--aspect-ratio-square);
-    margin-inline-end: var(--control-padding-inline-md);
+    height: var(--control-icon-size-md);
+    padding: var(--space-0);
+    color: ButtonText;
     background:
       linear-gradient(ButtonText, ButtonText) center 25% / var(--border-width) 30% no-repeat,
       linear-gradient(ButtonText, ButtonText) 68% 55% / 30% var(--border-width) no-repeat;
     border: var(--border-width) solid ButtonText;
     border-radius: var(--radius-full);
-    content: '';
-    pointer-events: none;
+    opacity: 1;
     forced-color-adjust: none;
   }
 }

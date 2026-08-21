@@ -149,10 +149,15 @@ html[data-navigation-scroll-lock] {
     border-color: ButtonText;
   }
 
+  .site-header__menu-icon {
+    color: ButtonText;
+    forced-color-adjust: none;
+  }
+
   .site-header__menu-icon > span {
-    height: var(--space-0);
-    background-color: var(--color-transparent);
-    border-block-start: var(--border-width) solid ButtonText;
+    height: var(--focus-ring-width);
+    background-color: ButtonText;
+    border: none;
   }
 }
 

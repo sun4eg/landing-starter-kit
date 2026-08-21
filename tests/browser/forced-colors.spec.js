@@ -21,28 +21,36 @@ test('custom selection controls retain state geometry and focus', async ({ page 
 
     return ids.map((id) => {
       const input = document.getElementById(id)
-      const style = getComputedStyle(input)
-      const rect = input.getBoundingClientRect()
+      const control = input.nextElementSibling
+      const controlStyle = getComputedStyle(control)
+      const markStyle = getComputedStyle(control, '::after')
       return {
         id,
-        appearance: style.appearance,
-        opacity: style.opacity,
-        width: rect.width,
-        height: rect.height,
         checked: input.checked,
         indeterminate: input.indeterminate,
         disabled: input.disabled,
-        customControlDisplay: getComputedStyle(input.nextElementSibling).display,
+        controlDisplay: controlStyle.display,
+        controlBorderStyle: controlStyle.borderStyle,
+        controlBorderWidth: parseFloat(controlStyle.borderWidth),
+        controlColor: controlStyle.color,
+        markOpacity: markStyle.opacity,
+        markWidth: parseFloat(markStyle.width),
+        markHeight: parseFloat(markStyle.height),
+        markBorderBlockStartStyle: markStyle.borderBlockStartStyle,
+        markBorderBlockStartWidth: parseFloat(markStyle.borderBlockStartWidth),
+        markBorderInlineEndStyle: markStyle.borderInlineEndStyle,
+        markBorderInlineEndWidth: parseFloat(markStyle.borderInlineEndWidth),
+        markBorderBlockEndStyle: markStyle.borderBlockEndStyle,
+        markBorderBlockEndWidth: parseFloat(markStyle.borderBlockEndWidth),
+        markTransform: markStyle.transform,
       }
     })
   })
 
   for (const state of checkboxState) {
-    expect(state.appearance).not.toBe('none')
-    expect(state.opacity).toBe('1')
-    expect(state.width).toBeGreaterThan(0)
-    expect(state.height).toBeGreaterThan(0)
-    expect(state.customControlDisplay).toBe('none')
+    expect(state.controlDisplay).toBe('grid')
+    expect(state.controlBorderStyle).toBe('solid')
+    expect(state.controlBorderWidth).toBeGreaterThan(0)
   }
   expect(checkboxState.map(({ checked, indeterminate, disabled }) => ({ checked, indeterminate, disabled }))).toEqual([
     { checked: false, indeterminate: false, disabled: false },
@@ -51,11 +59,27 @@ test('custom selection controls retain state geometry and focus', async ({ page 
     { checked: true, indeterminate: false, disabled: true },
     { checked: false, indeterminate: true, disabled: false },
   ])
+  const [unchecked, checked, disabledUnchecked, disabledChecked, indeterminate] = checkboxState
+  expect(unchecked.markOpacity).toBe('0')
+  expect(checked.markOpacity).toBe('1')
+  expect(checked.markBorderInlineEndStyle).toBe('solid')
+  expect(checked.markBorderInlineEndWidth).toBeGreaterThan(0)
+  expect(checked.markBorderBlockEndStyle).toBe('solid')
+  expect(checked.markBorderBlockEndWidth).toBeGreaterThan(0)
+  expect(checked.markTransform).not.toBe('none')
+  expect(indeterminate.markOpacity).toBe('1')
+  expect(indeterminate.markBorderBlockStartStyle).toBe('solid')
+  expect(indeterminate.markBorderBlockStartWidth).toBeGreaterThan(0)
+  expect(indeterminate.markWidth).toBeGreaterThan(indeterminate.markHeight)
+  expect(disabledChecked.markOpacity).toBe('1')
+  expect(disabledChecked.markBorderInlineEndWidth).toBeGreaterThan(0)
+  expect(disabledUnchecked.controlColor).toBe(disabledChecked.controlColor)
+  expect(disabledChecked.controlColor).not.toBe(checked.controlColor)
 
   const checkbox = page.locator('#checkbox-unchecked')
   await checkbox.focus()
   await expect(checkbox).toBeFocused()
-  const checkboxFocus = await checkbox.evaluate((input) => getComputedStyle(input).outlineStyle)
+  const checkboxFocus = await checkbox.evaluate((input) => getComputedStyle(input.nextElementSibling).outlineStyle)
   expect(checkboxFocus).toBe('solid')
 
   const radioState = await page.evaluate(() => ({
@@ -134,64 +158,90 @@ test('native and custom form controls retain visible affordances', async ({ page
   expect(fileState.outline).toBe('solid')
 
   const pickerCases = [
-    ['#date-picker-standard', 'date', '.date-picker'],
-    ['#time-picker-working-hours', 'time', '.time-picker'],
+    ['#date-picker-standard', 'date'],
+    ['#time-picker-working-hours', 'time'],
   ]
+  const productionCss = await page.evaluate(async () => {
+    const urls = [...document.styleSheets].map((sheet) => sheet.href).filter(Boolean)
+    return (await Promise.all(urls.map((url) => fetch(url).then((response) => response.text())))).join('\n')
+  })
+  for (const selector of ['date-picker', 'time-picker']) {
+    expect(productionCss).toMatch(new RegExp(`\\.${selector}__control::-webkit-calendar-picker-indicator\\{[^}]*forced-color-adjust:none`))
+  }
   const forcedPickerStates = []
 
-  for (const [selector, type, wrapperSelector] of pickerCases) {
-    const pickerState = await page.locator(selector).evaluate((control, hostSelector) => {
-      const host = control.closest(hostSelector)
-      const fallback = getComputedStyle(host, '::after')
+  for (const [selector, type] of pickerCases) {
+    const pickerState = await page.locator(selector).evaluate((control) => {
       const indicator = getComputedStyle(control, '::-webkit-calendar-picker-indicator')
+      const controlStyle = getComputedStyle(control)
       const rect = control.getBoundingClientRect()
       return {
         type: control.type,
-        inputPointerEvents: getComputedStyle(control).pointerEvents,
+        inputPointerEvents: controlStyle.pointerEvents,
         inputWidth: rect.width,
         inputHeight: rect.height,
+        inputPaddingInlineEnd: parseFloat(controlStyle.paddingInlineEnd),
+        indicatorDisplay: indicator.display,
+        indicatorPosition: indicator.position,
         indicatorPointerEvents: indicator.pointerEvents,
-        fallbackContent: fallback.content,
-        fallbackWidth: parseFloat(fallback.width),
-        fallbackHeight: parseFloat(fallback.height),
-        fallbackBorderStyle: fallback.borderStyle,
-        fallbackBorderWidth: parseFloat(fallback.borderWidth),
-        fallbackBackground: fallback.backgroundImage,
-        fallbackPointerEvents: fallback.pointerEvents,
-        fallbackForcedColorAdjust: fallback.forcedColorAdjust,
+        indicatorBorderStyle: indicator.borderStyle,
+        indicatorBorderWidth: parseFloat(indicator.borderWidth),
       }
-    }, wrapperSelector)
+    })
 
     expect(pickerState.type).toBe(type)
     expect(pickerState.inputPointerEvents).not.toBe('none')
     expect(pickerState.inputWidth).toBeGreaterThan(0)
     expect(pickerState.inputHeight).toBeGreaterThan(0)
+    expect(pickerState.inputPaddingInlineEnd).toBeGreaterThan(0)
+    expect(pickerState.indicatorDisplay).not.toBe('none')
+    expect(['absolute', 'fixed']).not.toContain(pickerState.indicatorPosition)
     expect(pickerState.indicatorPointerEvents).not.toBe('none')
-    expect(pickerState.fallbackContent).not.toBe('none')
-    expect(pickerState.fallbackWidth).toBeGreaterThan(0)
-    expect(pickerState.fallbackHeight).toBeGreaterThan(0)
-    expect(pickerState.fallbackBorderStyle).toBe('solid')
-    expect(pickerState.fallbackBorderWidth).toBeGreaterThan(0)
-    expect(pickerState.fallbackBackground).not.toBe('none')
-    expect(pickerState.fallbackPointerEvents).toBe('none')
-    expect(pickerState.fallbackForcedColorAdjust).toBe('none')
+    expect(pickerState.indicatorBorderStyle).toBe('solid')
+    expect(pickerState.indicatorBorderWidth).toBeGreaterThan(0)
     forcedPickerStates.push(pickerState)
+  }
+
+  for (const width of [320, 390, 768, 1024, 1440]) {
+    await page.setViewportSize({ width, height: 844 })
+    const geometry = await page.evaluate((selectors) => ({
+      overflow: document.documentElement.scrollWidth - document.documentElement.clientWidth,
+      controls: selectors.map((selector) => {
+        const control = document.querySelector(selector)
+        const indicator = getComputedStyle(control, '::-webkit-calendar-picker-indicator')
+        const rect = control.getBoundingClientRect()
+        return {
+          width: rect.width,
+          height: rect.height,
+          paddingInlineEnd: parseFloat(getComputedStyle(control).paddingInlineEnd),
+          indicatorDisplay: indicator.display,
+        }
+      }),
+    }), pickerCases.map(([selector]) => selector))
+    expect(geometry.overflow).toBeLessThanOrEqual(1)
+    for (const control of geometry.controls) {
+      expect(control.width).toBeLessThanOrEqual(width)
+      expect(control.indicatorDisplay).not.toBe('none')
+      expect(control.paddingInlineEnd).toBeGreaterThan(0)
+    }
   }
 
   await page.emulateMedia({ forcedColors: 'none' })
   await expect.poll(() => page.evaluate(() => matchMedia('(forced-colors: active)').matches)).toBe(false)
 
-  for (const [index, [selector, , wrapperSelector]] of pickerCases.entries()) {
-    const normalState = await page.locator(selector).evaluate((control, hostSelector) => {
+  await page.setViewportSize({ width: 1280, height: 720 })
+  for (const [index, [selector]] of pickerCases.entries()) {
+    const normalState = await page.locator(selector).evaluate((control) => {
       const rect = control.getBoundingClientRect()
+      const indicator = getComputedStyle(control, '::-webkit-calendar-picker-indicator')
       return {
         inputWidth: rect.width,
         inputHeight: rect.height,
-        fallbackContent: getComputedStyle(control.closest(hostSelector), '::after').content,
+        indicatorForcedColorAdjust: indicator.forcedColorAdjust,
       }
-    }, wrapperSelector)
+    })
 
-    expect(['none', 'normal']).toContain(normalState.fallbackContent)
+    expect(normalState.indicatorForcedColorAdjust).not.toBe('none')
     expect(normalState.inputWidth).toBeCloseTo(forcedPickerStates[index].inputWidth, 0)
     expect(normalState.inputHeight).toBeCloseTo(forcedPickerStates[index].inputHeight, 0)
   }
@@ -211,15 +261,15 @@ test('responsive Navigation toggle retains forced-colors menu and close geometry
     const rect = element.getBoundingClientRect()
     return {
       visible: rect.width > 0 && rect.height > 0,
-      borderStyle: style.borderBlockStartStyle,
-      borderWidth: parseFloat(style.borderBlockStartWidth),
+      backgroundColor: style.backgroundColor,
+      forcedColorAdjust: getComputedStyle(element.parentElement).forcedColorAdjust,
     }
   }))
   expect(closedState).toHaveLength(3)
   for (const bar of closedState) {
     expect(bar.visible).toBe(true)
-    expect(bar.borderStyle).toBe('solid')
-    expect(bar.borderWidth).toBeGreaterThan(0)
+    expect(bar.backgroundColor).not.toBe('rgba(0, 0, 0, 0)')
+    expect(bar.forcedColorAdjust).toBe('none')
   }
 
   await toggle.focus()
@@ -234,13 +284,13 @@ test('responsive Navigation toggle retains forced-colors menu and close geometry
     const rect = element.getBoundingClientRect()
     return {
       visible: rect.width > 0 && rect.height > 0,
-      borderStyle: style.borderBlockStartStyle,
+      backgroundColor: style.backgroundColor,
       transform: style.transform,
     }
   })))
   for (const bar of openState) {
     expect(bar.visible).toBe(true)
-    expect(bar.borderStyle).toBe('solid')
+    expect(bar.backgroundColor).not.toBe('rgba(0, 0, 0, 0)')
     expect(bar.transform).not.toBe('none')
   }
 
@@ -258,8 +308,10 @@ test('responsive Navigation toggle retains forced-colors menu and close geometry
   await expect(playgroundToggle).toHaveAttribute('aria-expanded', 'false')
   await expect(playgroundBars).toHaveCount(3)
   for (const bar of await playgroundBars.all()) {
-    await expect(bar).toHaveCSS('border-block-start-style', 'solid')
-    expect(parseFloat(await bar.evaluate((element) => getComputedStyle(element).borderBlockStartWidth))).toBeGreaterThan(0)
+    expect(await bar.evaluate((element) => {
+      const style = getComputedStyle(element)
+      return element.getBoundingClientRect().height > 0 && style.backgroundColor !== 'rgba(0, 0, 0, 0)'
+    })).toBe(true)
   }
 
   await playgroundToggle.click()

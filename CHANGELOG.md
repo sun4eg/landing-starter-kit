@@ -8,7 +8,9 @@ The format is based on Keep a Changelog, and this project adheres to Semantic Ve
 
 ### Fixed
 
-- Restored distinct Checkbox states, date/time picker affordances, and responsive Navigation icons in Windows High Contrast and forced-colors modes.
+- Improved Checkbox state legibility in Windows High Contrast.
+- Restored responsive Navigation toggle icon visibility in forced colors.
+- Corrected date and time picker-indicator positioning in Windows High Contrast.
 
 ## [2.0.2] - 2026-08-20
 

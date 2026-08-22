@@ -59,20 +59,54 @@ test('keyboard focus opens immediately, Escape suppresses reopening until diseng
 })
 
 test('fine-pointer delay, hover bridge, and pointer exit follow the timing contract', async ({ page }) => {
+  await page.goto('/playground.html')
   const trigger = page.locator(saveTrigger)
   const content = page.locator(saveContent)
-  const startedAt = Date.now()
+
+  await page.mouse.move(1, 1)
+  await page.evaluate(({ triggerSelector, contentSelector }) => {
+    const trigger = document.querySelector(triggerSelector)
+    const content = document.querySelector(contentSelector)
+    const timing = {}
+
+    window.__tooltipTiming = timing
+    trigger.addEventListener('pointerenter', () => { timing.triggerEntered = performance.now() }, { once: true })
+    content.addEventListener('pointerenter', () => { timing.contentEntered = performance.now() }, { once: true })
+    content.addEventListener('pointerleave', () => { timing.contentLeft = performance.now() }, { once: true })
+
+    new MutationObserver(() => {
+      if (content.hidden) {
+        timing.closed = performance.now()
+      } else {
+        timing.opened = performance.now()
+      }
+    }).observe(content, { attributes: true, attributeFilter: ['hidden'] })
+  }, { triggerSelector: saveTrigger, contentSelector: saveContent })
 
   await trigger.hover()
-  await expect(content).toBeHidden()
-  await expect(content).toBeVisible()
-  expect(Date.now() - startedAt).toBeGreaterThanOrEqual(300)
+  await expect(content).toBeVisible({ timeout: 2_000 })
 
-  await content.hover()
+  const openDelay = await page.evaluate(
+    () => window.__tooltipTiming.opened - window.__tooltipTiming.triggerEntered,
+  )
+  expect(openDelay).toBeGreaterThanOrEqual(300)
+
+  const contentBox = await content.boundingBox()
+  expect(contentBox).not.toBeNull()
+  await page.mouse.move(contentBox.x + contentBox.width / 2, contentBox.y + contentBox.height / 2)
+  await expect.poll(() => page.evaluate(() => {
+    const { contentEntered } = window.__tooltipTiming
+    return contentEntered === undefined ? 0 : performance.now() - contentEntered
+  })).toBeGreaterThanOrEqual(150)
   await expect(content).toBeVisible()
 
   await page.mouse.move(1, 1)
-  await expect(content).toBeHidden()
+  await expect(content).toBeHidden({ timeout: 1_500 })
+
+  const closeDelay = await page.evaluate(
+    () => window.__tooltipTiming.closed - window.__tooltipTiming.contentLeft,
+  )
+  expect(closeDelay).toBeGreaterThanOrEqual(75)
 })
 
 test('activation and outside pointerdown close without blocking trigger behavior', async ({ page }) => {

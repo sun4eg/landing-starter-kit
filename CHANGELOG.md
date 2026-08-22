@@ -6,6 +6,10 @@ The format is based on Keep a Changelog, and this project adheres to Semantic Ve
 
 ## [Unreleased]
 
+### Added
+
+- Added an accessible authored-DOM Tooltip component for concise supplemental text on enabled buttons and links, with keyboard and fine-pointer behavior plus viewport-safe positioning.
+
 ## [2.1.0] - 2026-08-22
 
 ### Added

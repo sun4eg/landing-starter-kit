@@ -10,6 +10,7 @@ import { initPlaygroundNavigations } from './js/modules/playground-navigation.js
 import { initStickyHeaders } from './js/modules/sticky-header.js'
 import { initTabs } from './js/modules/tabs.js'
 import { initToasts } from './js/modules/toast.js'
+import { initTooltips } from './js/modules/tooltip.js'
 import './scss/main.scss'
 
 initAccordions()
@@ -24,3 +25,4 @@ initPlaygroundNavigations()
 initStickyHeaders()
 initTabs()
 initToasts()
+initTooltips()

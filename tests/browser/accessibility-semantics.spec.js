@@ -197,3 +197,29 @@ test('Progress, Spinner, Skeleton, and static content preserve concise reading c
   await expect(featuredPricing).not.toHaveAttribute('role')
   await expect(featuredPricing.getByText('Recommended', { exact: true })).toBeVisible()
 })
+
+test('Tooltip keeps accessible names independent from persistent descriptions', async ({ page }) => {
+  await page.goto('/playground.html#tooltips-title')
+
+  const trigger = page.locator('#tooltip-save-trigger')
+  const content = page.locator('#tooltip-save-content')
+
+  await expect(trigger).toHaveRole('button')
+  await expect(trigger).toHaveAccessibleName('Save draft')
+  await expect(trigger).toHaveAttribute('aria-describedby', 'tooltip-save-content')
+  await expect(trigger).not.toHaveAttribute('aria-expanded')
+  await expect(trigger).not.toHaveAttribute('aria-haspopup')
+  await expect(content).toHaveRole('tooltip')
+  await expect(content).not.toHaveAttribute('aria-live')
+  await expect(content).not.toHaveAttribute('tabindex')
+  await expect(content.locator('a, button, input, select, textarea, [tabindex]')).toHaveCount(0)
+
+  await trigger.focus()
+  await expect(content).toBeVisible()
+  await expect(trigger).toBeFocused()
+  await expect(trigger).toHaveAccessibleName('Save draft')
+  await page.keyboard.press('Escape')
+  await expect(content).toBeHidden()
+  await expect(trigger).toHaveAttribute('aria-describedby', 'tooltip-save-content')
+  await expect(trigger).toHaveAccessibleName('Save draft')
+})

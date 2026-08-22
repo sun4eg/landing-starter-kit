@@ -434,3 +434,37 @@ test('featured marketing surfaces remain readable and bounded', async ({ page })
     expect(state.headingColor).not.toBe('transparent')
   }
 })
+
+test('Tooltip surface, border, text, and trigger focus remain visible in forced colors', async ({ page }) => {
+  await page.goto('/playground.html#tooltips-title')
+
+  const trigger = page.locator('#tooltip-save-trigger')
+  const content = page.locator('#tooltip-save-content')
+
+  await trigger.focus()
+  await expect(content).toBeVisible()
+
+  const styles = await page.evaluate(() => {
+    const trigger = document.querySelector('#tooltip-save-trigger')
+    const content = document.querySelector('#tooltip-save-content')
+    const triggerStyle = getComputedStyle(trigger)
+    const contentStyle = getComputedStyle(content)
+
+    return {
+      backgroundColor: contentStyle.backgroundColor,
+      color: contentStyle.color,
+      borderWidth: parseFloat(contentStyle.borderTopWidth),
+      borderColor: contentStyle.borderTopColor,
+      forcedColorAdjust: contentStyle.forcedColorAdjust,
+      outlineWidth: parseFloat(triggerStyle.outlineWidth),
+      outlineStyle: triggerStyle.outlineStyle,
+    }
+  })
+
+  expect(styles.borderWidth).toBeGreaterThan(0)
+  expect(styles.backgroundColor).not.toBe(styles.color)
+  expect(styles.borderColor).toBe(styles.color)
+  expect(styles.forcedColorAdjust).not.toBe('none')
+  expect(styles.outlineWidth).toBeGreaterThan(0)
+  expect(styles.outlineStyle).not.toBe('none')
+})

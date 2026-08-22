@@ -136,6 +136,12 @@
   --cluster-alignment: flex-start;
 }
 
+.playground-tooltip-edge {
+  display: flex;
+  justify-content: flex-end;
+  min-width: var(--space-0);
+}
+
 .playground-section__content {
   --stack-gap: var(--space-xl);
 }

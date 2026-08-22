@@ -60,6 +60,7 @@
             <li class="primary-navigation__item"><a class="site-header__navigation-link primary-navigation__link" href="#skeletons-title" data-playground-navigation-link>Skeletons</a></li>
             <li class="primary-navigation__item"><a class="site-header__navigation-link primary-navigation__link" href="#empty-states-title" data-playground-navigation-link>Empty States</a></li>
             <li class="primary-navigation__item"><a class="site-header__navigation-link primary-navigation__link" href="#tabs" data-playground-navigation-link>Tabs</a></li>
+            <li class="primary-navigation__item"><a class="site-header__navigation-link primary-navigation__link" href="#tooltips-title" data-playground-navigation-link>Tooltips</a></li>
             <li class="primary-navigation__item"><a class="site-header__navigation-link primary-navigation__link" href="#modals-title" data-playground-navigation-link>Modals</a></li>
             <li class="primary-navigation__item"><a class="site-header__navigation-link primary-navigation__link" href="#toasts" data-playground-navigation-link>Toasts</a></li>
             <li class="primary-navigation__item"><a class="site-header__navigation-link primary-navigation__link" href="#breadcrumbs-title" data-playground-navigation-link>Breadcrumbs</a></li>
@@ -154,6 +155,7 @@
             <li><a class="playground-navigation-panel__link" href="#skeletons-title" data-playground-navigation-link>Skeletons</a></li>
             <li><a class="playground-navigation-panel__link" href="#empty-states-title" data-playground-navigation-link>Empty States</a></li>
             <li><a class="playground-navigation-panel__link" href="#tabs" data-playground-navigation-link>Tabs</a></li>
+            <li><a class="playground-navigation-panel__link" href="#tooltips-title" data-playground-navigation-link>Tooltips</a></li>
             <li><a class="playground-navigation-panel__link" href="#modals-title" data-playground-navigation-link>Modals</a></li>
             <li><a class="playground-navigation-panel__link" href="#toasts" data-playground-navigation-link>Toasts</a></li>
             <li><a class="playground-navigation-panel__link" href="#breadcrumbs-title" data-playground-navigation-link>Breadcrumbs</a></li>
@@ -2398,6 +2400,192 @@
     aria-label=&quot;Account settings&quot; aria-orientation=&quot;vertical&quot;
     data-tabs-list&gt;…&lt;/div&gt;
 &lt;/div&gt;</code></pre>
+              </section>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="playground-section section" aria-labelledby="tooltips-title">
+        <div class="container">
+          <header class="playground-section__header section-heading">
+            <p class="section-heading__eyebrow">Component</p>
+            <h2 class="playground-section__title section-heading__title" id="tooltips-title">Tooltips</h2>
+            <p class="playground-section__description section-heading__lead">
+              Tooltip presents concise supplemental plain text for an enabled button or link without moving focus or
+              replacing the trigger’s accessible name.
+            </p>
+          </header>
+
+          <div class="playground-section__content stack">
+            <article class="playground-demo-group stack" aria-labelledby="tooltip-examples-title">
+              <header class="playground-demo-group__header stack">
+                <h3 class="playground-demo-group__title" id="tooltip-examples-title">Authored examples</h3>
+                <p class="playground-demo-group__description text text--muted">
+                  Use keyboard focus or a fine-pointer hover to inspect each Tooltip. Touch activation remains
+                  unchanged and does not display a visual Tooltip.
+                </p>
+              </header>
+
+              <div class="playground-comparison__grid">
+                <section class="playground-demo stack" aria-labelledby="tooltip-icon-button-title">
+                  <h4 id="tooltip-icon-button-title">Icon-only button</h4>
+                  <div class="cluster">
+                    <span class="tooltip" data-tooltip>
+                      <button
+                        class="button button--ghost button--sm"
+                        id="tooltip-save-trigger"
+                        type="button"
+                        aria-label="Save draft"
+                        aria-describedby="tooltip-save-content"
+                        data-tooltip-trigger
+                      >
+                        <span class="button__icon" aria-hidden="true">
+                          <svg viewBox="0 0 24 24" focusable="false">
+                            <path d="M5 4h12l2 2v14H5V4Zm3 0v6h8V4M8 20v-6h8v6" />
+                          </svg>
+                        </span>
+                      </button>
+                      <span
+                        class="tooltip__content"
+                        id="tooltip-save-content"
+                        role="tooltip"
+                        data-tooltip-content
+                        hidden
+                      >Save draft</span>
+                    </span>
+                  </div>
+                  <p class="text text--muted">
+                    The button’s <code>aria-label</code> supplies its name; the Tooltip adds matching visible context.
+                  </p>
+                </section>
+
+                <section class="playground-demo stack" aria-labelledby="tooltip-link-title">
+                  <h4 id="tooltip-link-title">Compact link</h4>
+                  <div class="cluster">
+                    <span class="tooltip" data-tooltip>
+                      <a
+                        id="tooltip-link-trigger"
+                        href="#tooltip-guidance-title"
+                        aria-describedby="tooltip-link-content"
+                        data-tooltip-trigger
+                      >API reference</a>
+                      <span
+                        class="tooltip__content"
+                        id="tooltip-link-content"
+                        role="tooltip"
+                        data-tooltip-content
+                        hidden
+                      >Review the Tooltip usage and accessibility contract</span>
+                    </span>
+                  </div>
+                  <p class="text text--muted">
+                    The visible link text remains its name; the authored Tooltip is a supplemental description.
+                  </p>
+                </section>
+              </div>
+            </article>
+
+            <article class="playground-demo-group stack" aria-labelledby="tooltip-resilience-title">
+              <header class="playground-demo-group__header stack">
+                <h3 class="playground-demo-group__title" id="tooltip-resilience-title">Positioning and content resilience</h3>
+                <p class="playground-demo-group__description text text--muted">
+                  Automatic positioning prefers logical block-start, falls back to block-end, and clamps within the
+                  visual viewport without exposing placement controls.
+                </p>
+              </header>
+
+              <div class="playground-comparison__grid">
+                <section class="playground-demo stack" aria-labelledby="tooltip-edge-title">
+                  <h4 id="tooltip-edge-title">Viewport-edge clamping</h4>
+                  <div class="playground-tooltip-edge">
+                    <span class="tooltip" data-tooltip>
+                      <button
+                        class="button button--outline button--sm"
+                        id="tooltip-edge-trigger"
+                        type="button"
+                        aria-describedby="tooltip-edge-content"
+                        data-tooltip-trigger
+                      >Inspect edge</button>
+                      <span
+                        class="tooltip__content"
+                        id="tooltip-edge-content"
+                        role="tooltip"
+                        data-tooltip-content
+                        hidden
+                      >This Tooltip remains inside the visible viewport edge</span>
+                    </span>
+                  </div>
+                </section>
+
+                <section class="playground-demo stack" aria-labelledby="tooltip-wrap-title">
+                  <h4 id="tooltip-wrap-title">Bounded wrapping</h4>
+                  <span class="tooltip" data-tooltip>
+                    <button
+                      class="button button--outline button--sm"
+                      id="tooltip-wrap-trigger"
+                      type="button"
+                      aria-describedby="tooltip-wrap-content"
+                      data-tooltip-trigger
+                    >Review publishing state</button>
+                    <span
+                      class="tooltip__content"
+                      id="tooltip-wrap-content"
+                      role="tooltip"
+                      data-tooltip-content
+                      hidden
+                    >Publishing makes the approved workspace available to everyone with the shared link</span>
+                  </span>
+                </section>
+              </div>
+            </article>
+
+            <aside class="playground-guidance playground-demo stack" aria-labelledby="tooltip-guidance-title">
+              <h3 class="playground-guidance__title" id="tooltip-guidance-title">Usage and accessibility guidance</h3>
+              <ul class="playground-guidance__list text">
+                <li>Keep Tooltip content concise, supplemental, plain, and noninteractive.</li>
+                <li>Give every trigger an independent visible or programmatic accessible name.</li>
+                <li>Keep the Tooltip ID in the trigger’s <code>aria-describedby</code> value from initial markup.</li>
+                <li>Use only enabled native buttons and links; disabled controls and generic focusable wrappers are unsupported.</li>
+                <li>Do not place links, buttons, forms, essential instructions, validation, or task content inside Tooltip.</li>
+                <li>Touch does not visually open Tooltip, so touch users must never depend on its content.</li>
+                <li>Use Popover—not Tooltip—for interactive or structurally rich floating content.</li>
+              </ul>
+            </aside>
+
+            <div class="playground-api-grid">
+              <section class="playground-api playground-demo stack" aria-labelledby="tooltip-api-title">
+                <header class="playground-api__header stack">
+                  <h3 class="playground-api__title" id="tooltip-api-title">Public API reference</h3>
+                  <p class="playground-api__description text text--muted">
+                    Content, relationships, and accessible text are authored in HTML. Placement and timing are private
+                    component behavior.
+                  </p>
+                </header>
+                <dl class="playground-api__list stack">
+                  <div class="playground-api__group stack"><dt class="playground-demo__label">Base</dt><dd><code>.tooltip</code></dd></div>
+                  <div class="playground-api__group stack"><dt class="playground-demo__label">Content</dt><dd><code>.tooltip__content</code></dd></div>
+                  <div class="playground-api__group stack"><dt class="playground-demo__label">Hooks</dt><dd><ul class="playground-api__classes cluster" role="list"><li><code>data-tooltip</code></li><li><code>data-tooltip-trigger</code></li><li><code>data-tooltip-content</code></li></ul></dd></div>
+                  <div class="playground-api__group stack"><dt class="playground-demo__label">Required relationship</dt><dd>Unique content <code>id</code>, <code>role="tooltip"</code>, initial <code>hidden</code>, and matching trigger <code>aria-describedby</code>.</dd></div>
+                  <div class="playground-api__group stack"><dt class="playground-demo__label">Supported triggers</dt><dd>Enabled native <code>button</code> and <code>a[href]</code>.</dd></div>
+                </dl>
+              </section>
+
+              <section class="playground-demo stack" aria-labelledby="tooltip-markup-title">
+                <h3 id="tooltip-markup-title">Authored markup</h3>
+                <pre class="playground-code"><code>&lt;span class=&quot;tooltip&quot; data-tooltip&gt;
+  &lt;button type=&quot;button&quot; aria-label=&quot;Save draft&quot;
+    aria-describedby=&quot;save-tooltip&quot; data-tooltip-trigger&gt;
+    &lt;svg aria-hidden=&quot;true&quot;&gt;…&lt;/svg&gt;
+  &lt;/button&gt;
+  &lt;span class=&quot;tooltip__content&quot; id=&quot;save-tooltip&quot;
+    role=&quot;tooltip&quot; data-tooltip-content hidden&gt;
+    Save draft
+  &lt;/span&gt;
+&lt;/span&gt;</code></pre>
+                <p class="text text--muted">
+                  There is no placement, delay, arrow, animation, touch-toggle, or interactive-content API.
+                </p>
               </section>
             </div>
           </div>

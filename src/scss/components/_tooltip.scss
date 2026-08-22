@@ -1,0 +1,45 @@
+.tooltip {
+  display: inline-flex;
+  max-width: var(--size-full);
+}
+
+.tooltip__content {
+  --tooltip-gap: var(--space-2xs);
+  --tooltip-viewport-inset: var(--space-xs);
+  --tooltip-available-inline-size: calc(var(--size-full) - (var(--space-xs) * 2));
+  --tooltip-available-block-size: var(--viewport-height);
+
+  position: fixed;
+  z-index: var(--z-dropdown);
+  inline-size: max-content;
+  max-inline-size: min(var(--tooltip-available-inline-size), calc(var(--content-measure) / 2));
+  max-block-size: var(--tooltip-available-block-size);
+  padding: var(--space-2xs) var(--space-xs);
+  color: var(--color-text-primary);
+  background-color: var(--color-background);
+  border: var(--border-width) solid var(--color-border);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-md);
+  font-size: var(--font-size-sm);
+  line-height: var(--line-height-base);
+  overflow: auto;
+  overflow-wrap: anywhere;
+  visibility: hidden;
+}
+
+.tooltip__content[hidden] {
+  display: none;
+}
+
+.tooltip__content[data-tooltip-positioned] {
+  visibility: visible;
+}
+
+@media (forced-colors: active) {
+  .tooltip__content {
+    color: CanvasText;
+    background-color: Canvas;
+    border-color: CanvasText;
+    box-shadow: var(--shadow-none);
+  }
+}
